@@ -1,0 +1,647 @@
+export interface Material {
+  id: string;
+  name: string;
+  brand: string;
+  category: MaterialCategory;
+  machines: Machine[];
+  blade: BladeType;
+  pressure: number; // 1-350 scale
+  speed?: number; // optional, some materials don't specify
+  multiCut: number; // number of passes
+  matType: MatType;
+  notes?: string;
+  popular?: boolean;
+}
+
+export type MaterialCategory = 
+  | "vinyl-adhesive"
+  | "vinyl-htv"
+  | "paper"
+  | "cardstock"
+  | "fabric"
+  | "leather"
+  | "specialty"
+  | "infusible-ink"
+  | "smart-materials";
+
+export type Machine = "maker" | "maker3" | "explore" | "explore3" | "joy";
+
+export type BladeType = 
+  | "fine-point"
+  | "deep-point"
+  | "knife"
+  | "rotary"
+  | "bonded-fabric"
+  | "perforation"
+  | "wavy"
+  | "fine-point-joy";
+
+export type MatType = "light" | "standard" | "strong" | "fabric" | "none";
+
+export const categoryLabels: Record<MaterialCategory, string> = {
+  "vinyl-adhesive": "Adhesive Vinyl",
+  "vinyl-htv": "Iron-On / HTV",
+  "paper": "Paper",
+  "cardstock": "Cardstock",
+  "fabric": "Fabric",
+  "leather": "Leather & Faux Leather",
+  "specialty": "Specialty Materials",
+  "infusible-ink": "Infusible Ink",
+  "smart-materials": "Smart Materials",
+};
+
+export const machineLabels: Record<Machine, string> = {
+  maker: "Maker",
+  maker3: "Maker 3",
+  explore: "Explore Air 2",
+  explore3: "Explore 3",
+  joy: "Joy",
+};
+
+export const bladeLabels: Record<BladeType, string> = {
+  "fine-point": "Fine-Point Blade",
+  "deep-point": "Deep-Point Blade",
+  "knife": "Knife Blade",
+  "rotary": "Rotary Blade",
+  "bonded-fabric": "Bonded Fabric Blade",
+  "perforation": "Perforation Blade",
+  "wavy": "Wavy Blade",
+  "fine-point-joy": "Joy Fine-Point Blade",
+};
+
+export const matLabels: Record<MatType, string> = {
+  light: "LightGrip (Blue)",
+  standard: "StandardGrip (Green)",
+  strong: "StrongGrip (Purple)",
+  fabric: "FabricGrip (Pink)",
+  none: "No Mat (Smart Materials)",
+};
+
+export const materials: Material[] = [
+  // ADHESIVE VINYL
+  {
+    id: "oracal-651",
+    name: "Premium Vinyl (Oracal 651)",
+    brand: "Oracal",
+    category: "vinyl-adhesive",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 190,
+    multiCut: 1,
+    matType: "standard",
+    notes: "The most popular permanent vinyl. Great for outdoor use, tumblers, car decals.",
+    popular: true,
+  },
+  {
+    id: "oracal-631",
+    name: "Removable Vinyl (Oracal 631)",
+    brand: "Oracal",
+    category: "vinyl-adhesive",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 175,
+    multiCut: 1,
+    matType: "standard",
+    notes: "Matte finish, removable adhesive. Perfect for wall decals and indoor decorations.",
+    popular: true,
+  },
+  {
+    id: "cricut-vinyl-permanent",
+    name: "Premium Vinyl - Permanent",
+    brand: "Cricut",
+    category: "vinyl-adhesive",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 188,
+    multiCut: 1,
+    matType: "standard",
+    notes: "Official Cricut vinyl. Select 'Premium Vinyl' in Design Space for best results.",
+    popular: true,
+  },
+  {
+    id: "cricut-vinyl-removable",
+    name: "Premium Vinyl - Removable",
+    brand: "Cricut",
+    category: "vinyl-adhesive",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 175,
+    multiCut: 1,
+    matType: "standard",
+  },
+  {
+    id: "glitter-vinyl",
+    name: "Glitter Vinyl",
+    brand: "Generic",
+    category: "vinyl-adhesive",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 230,
+    multiCut: 1,
+    matType: "standard",
+    notes: "Thicker than regular vinyl. May need extra pressure. Weed slowly to avoid pulling glitter.",
+    popular: true,
+  },
+  {
+    id: "holographic-vinyl",
+    name: "Holographic Vinyl",
+    brand: "Generic",
+    category: "vinyl-adhesive",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 200,
+    multiCut: 1,
+    matType: "standard",
+    notes: "Similar to glitter vinyl thickness. Beautiful rainbow effect.",
+  },
+  {
+    id: "shimmer-vinyl",
+    name: "Shimmer Vinyl",
+    brand: "Cricut",
+    category: "vinyl-adhesive",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 195,
+    multiCut: 1,
+    matType: "standard",
+  },
+  
+  // IRON-ON / HTV
+  {
+    id: "cricut-everyday-iron-on",
+    name: "Everyday Iron-On",
+    brand: "Cricut",
+    category: "vinyl-htv",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 190,
+    multiCut: 1,
+    matType: "standard",
+    notes: "MIRROR your design! Place shiny side DOWN on mat. Most popular HTV.",
+    popular: true,
+  },
+  {
+    id: "siser-easyweed",
+    name: "EasyWeed HTV",
+    brand: "Siser",
+    category: "vinyl-htv",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 185,
+    multiCut: 1,
+    matType: "standard",
+    notes: "MIRROR your design! Shiny carrier side DOWN. Industry favorite for softness.",
+    popular: true,
+  },
+  {
+    id: "glitter-iron-on",
+    name: "Glitter Iron-On",
+    brand: "Cricut",
+    category: "vinyl-htv",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 230,
+    multiCut: 1,
+    matType: "standard",
+    notes: "MIRROR! Shiny side DOWN. Thicker than regular HTV - may need 2 passes for intricate designs.",
+    popular: true,
+  },
+  {
+    id: "foil-iron-on",
+    name: "Foil Iron-On",
+    brand: "Cricut",
+    category: "vinyl-htv",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 210,
+    multiCut: 1,
+    matType: "standard",
+    notes: "MIRROR! Metallic finish. Beautiful for special occasions.",
+  },
+  {
+    id: "holographic-sparkle-iron-on",
+    name: "Holographic Sparkle Iron-On",
+    brand: "Cricut",
+    category: "vinyl-htv",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 215,
+    multiCut: 1,
+    matType: "standard",
+    notes: "MIRROR! Rainbow holographic effect. Stunning on dark fabrics.",
+  },
+  {
+    id: "sportflex-iron-on",
+    name: "SportFlex Iron-On",
+    brand: "Cricut",
+    category: "vinyl-htv",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 185,
+    multiCut: 1,
+    matType: "standard",
+    notes: "MIRROR! Stretchy HTV for athletic wear and stretchy fabrics.",
+  },
+  {
+    id: "patterned-iron-on",
+    name: "Patterned Iron-On",
+    brand: "Cricut",
+    category: "vinyl-htv",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 195,
+    multiCut: 1,
+    matType: "standard",
+    notes: "MIRROR! Pre-printed patterns. DO NOT mirror if pattern has text.",
+  },
+
+  // PAPER
+  {
+    id: "copy-paper",
+    name: "Copy Paper (20 lb)",
+    brand: "Generic",
+    category: "paper",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 100,
+    multiCut: 1,
+    matType: "light",
+    notes: "Standard printer paper. Use LightGrip mat to prevent tearing.",
+  },
+  {
+    id: "construction-paper",
+    name: "Construction Paper",
+    brand: "Generic",
+    category: "paper",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 140,
+    multiCut: 1,
+    matType: "light",
+  },
+  {
+    id: "crepe-paper",
+    name: "Crepe Paper",
+    brand: "Generic",
+    category: "paper",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 75,
+    multiCut: 1,
+    matType: "light",
+    notes: "Very delicate. Use lowest pressure setting.",
+  },
+  {
+    id: "vellum",
+    name: "Vellum",
+    brand: "Generic",
+    category: "paper",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 120,
+    multiCut: 1,
+    matType: "light",
+    notes: "Translucent paper. Great for wedding invitations and overlays.",
+  },
+
+  // CARDSTOCK
+  {
+    id: "cardstock-light",
+    name: "Light Cardstock (65 lb)",
+    brand: "Generic",
+    category: "cardstock",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 175,
+    multiCut: 1,
+    matType: "light",
+    popular: true,
+  },
+  {
+    id: "cardstock-medium",
+    name: "Medium Cardstock (80 lb)",
+    brand: "Generic",
+    category: "cardstock",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 210,
+    multiCut: 1,
+    matType: "standard",
+    popular: true,
+  },
+  {
+    id: "cardstock-heavy",
+    name: "Heavy Cardstock (100+ lb)",
+    brand: "Generic",
+    category: "cardstock",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 275,
+    multiCut: 2,
+    matType: "standard",
+    notes: "May need 2 passes. Use StrongGrip mat for best results.",
+  },
+  {
+    id: "glitter-cardstock",
+    name: "Glitter Cardstock",
+    brand: "Generic",
+    category: "cardstock",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 255,
+    multiCut: 1,
+    matType: "standard",
+    notes: "Cuts through glitter layer. Place glitter side UP. Dulls blades faster.",
+    popular: true,
+  },
+  {
+    id: "kraft-board",
+    name: "Kraft Board",
+    brand: "Cricut",
+    category: "cardstock",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 290,
+    multiCut: 2,
+    matType: "strong",
+    notes: "Thick chipboard-like material. Great for gift tags and sturdy projects.",
+  },
+  {
+    id: "poster-board",
+    name: "Poster Board",
+    brand: "Generic",
+    category: "cardstock",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 230,
+    multiCut: 1,
+    matType: "standard",
+  },
+
+  // SPECIALTY
+  {
+    id: "sticker-paper",
+    name: "Printable Sticker Paper",
+    brand: "Generic",
+    category: "specialty",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 185,
+    multiCut: 1,
+    matType: "light",
+    notes: "Print first, then cut! Use Print Then Cut feature in Design Space.",
+    popular: true,
+  },
+  {
+    id: "printable-vinyl",
+    name: "Printable Vinyl",
+    brand: "Generic",
+    category: "specialty",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 195,
+    multiCut: 1,
+    matType: "standard",
+    notes: "Print your design, then cut. Use Print Then Cut feature.",
+  },
+  {
+    id: "acetate",
+    name: "Acetate / Transparency",
+    brand: "Generic",
+    category: "specialty",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 150,
+    multiCut: 1,
+    matType: "standard",
+    notes: "Clear plastic sheets. Great for shaker cards and windows.",
+  },
+  {
+    id: "cork",
+    name: "Cork (1mm)",
+    brand: "Generic",
+    category: "specialty",
+    machines: ["maker", "maker3"],
+    blade: "deep-point",
+    pressure: 300,
+    multiCut: 2,
+    matType: "strong",
+    notes: "Maker only for best results. Tape edges to prevent shifting.",
+  },
+  {
+    id: "felt",
+    name: "Felt",
+    brand: "Generic",
+    category: "specialty",
+    machines: ["maker", "maker3"],
+    blade: "rotary",
+    pressure: 250,
+    multiCut: 1,
+    matType: "fabric",
+    notes: "Maker only - requires Rotary Blade. Use FabricGrip mat.",
+    popular: true,
+  },
+  {
+    id: "window-cling",
+    name: "Window Cling",
+    brand: "Cricut",
+    category: "specialty",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 165,
+    multiCut: 1,
+    matType: "standard",
+    notes: "Static cling material for windows. Repositionable.",
+  },
+
+  // LEATHER
+  {
+    id: "faux-leather-paper-thin",
+    name: "Faux Leather (Paper Thin)",
+    brand: "Generic",
+    category: "leather",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 255,
+    multiCut: 2,
+    matType: "strong",
+    notes: "Thinnest faux leather. Works with Explore on high pressure.",
+    popular: true,
+  },
+  {
+    id: "faux-leather-thick",
+    name: "Faux Leather (Thick)",
+    brand: "Generic",
+    category: "leather",
+    machines: ["maker", "maker3"],
+    blade: "deep-point",
+    pressure: 320,
+    multiCut: 3,
+    matType: "strong",
+    notes: "Maker only. May need multiple passes. Tape down edges.",
+  },
+  {
+    id: "genuine-leather",
+    name: "Genuine Leather (2-3 oz)",
+    brand: "Generic",
+    category: "leather",
+    machines: ["maker", "maker3"],
+    blade: "knife",
+    pressure: 350,
+    multiCut: 8,
+    matType: "strong",
+    notes: "Maker with Knife Blade only. TAPE all edges. Takes 8+ passes.",
+  },
+
+  // INFUSIBLE INK
+  {
+    id: "infusible-ink-sheets",
+    name: "Infusible Ink Transfer Sheets",
+    brand: "Cricut",
+    category: "infusible-ink",
+    machines: ["maker", "maker3", "explore", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 190,
+    multiCut: 1,
+    matType: "standard",
+    notes: "MIRROR your design! Do NOT weed - transfer whole sheet. Works on polyester and Cricut blanks only.",
+    popular: true,
+  },
+  {
+    id: "infusible-ink-markers",
+    name: "Infusible Ink Pens/Markers",
+    brand: "Cricut",
+    category: "infusible-ink",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "fine-point",
+    pressure: 100,
+    multiCut: 1,
+    matType: "light",
+    notes: "Draw on laser copy paper. MIRROR when drawing text!",
+  },
+
+  // SMART MATERIALS
+  {
+    id: "smart-vinyl-permanent",
+    name: "Smart Vinyl - Permanent",
+    brand: "Cricut",
+    category: "smart-materials",
+    machines: ["maker3", "explore3"],
+    blade: "fine-point",
+    pressure: 188,
+    multiCut: 1,
+    matType: "none",
+    notes: "No mat needed! Cuts up to 12 feet long. For Maker 3 and Explore 3 only.",
+    popular: true,
+  },
+  {
+    id: "smart-vinyl-removable",
+    name: "Smart Vinyl - Removable",
+    brand: "Cricut",
+    category: "smart-materials",
+    machines: ["maker3", "explore3"],
+    blade: "fine-point",
+    pressure: 175,
+    multiCut: 1,
+    matType: "none",
+    notes: "No mat needed! Perfect for long wall decals.",
+  },
+  {
+    id: "smart-iron-on",
+    name: "Smart Iron-On",
+    brand: "Cricut",
+    category: "smart-materials",
+    machines: ["maker3", "explore3"],
+    blade: "fine-point",
+    pressure: 190,
+    multiCut: 1,
+    matType: "none",
+    notes: "No mat needed! MIRROR your design! Shiny side goes into machine first.",
+    popular: true,
+  },
+  {
+    id: "smart-paper-sticker-cardstock",
+    name: "Smart Paper Sticker Cardstock",
+    brand: "Cricut",
+    category: "smart-materials",
+    machines: ["maker3", "explore3", "joy"],
+    blade: "fine-point",
+    pressure: 185,
+    multiCut: 1,
+    matType: "none",
+    notes: "No mat needed! Adhesive-backed cardstock for labels and stickers.",
+  },
+
+  // FABRIC
+  {
+    id: "cotton-fabric",
+    name: "Cotton Fabric",
+    brand: "Generic",
+    category: "fabric",
+    machines: ["maker", "maker3"],
+    blade: "rotary",
+    pressure: 200,
+    multiCut: 1,
+    matType: "fabric",
+    notes: "Maker with Rotary Blade. Use FabricGrip mat. Iron fabric flat before cutting.",
+    popular: true,
+  },
+  {
+    id: "bonded-cotton",
+    name: "Bonded Cotton (with stabilizer)",
+    brand: "Generic",
+    category: "fabric",
+    machines: ["maker", "maker3", "explore", "explore3"],
+    blade: "bonded-fabric",
+    pressure: 255,
+    multiCut: 1,
+    matType: "standard",
+    notes: "Apply Heat'n'Bond or stabilizer to back of fabric first. Then it cuts like paper!",
+  },
+  {
+    id: "denim",
+    name: "Denim",
+    brand: "Generic",
+    category: "fabric",
+    machines: ["maker", "maker3"],
+    blade: "rotary",
+    pressure: 275,
+    multiCut: 1,
+    matType: "fabric",
+    notes: "Maker only. Works best with lightweight denim (8oz or less).",
+  },
+  {
+    id: "canvas",
+    name: "Canvas",
+    brand: "Generic",
+    category: "fabric",
+    machines: ["maker", "maker3"],
+    blade: "rotary",
+    pressure: 290,
+    multiCut: 1,
+    matType: "fabric",
+    notes: "Maker only. Heavy fabric - may need increased pressure.",
+  },
+];
+
+// Helper functions
+export function getMaterialsByCategory(category: MaterialCategory): Material[] {
+  return materials.filter(m => m.category === category);
+}
+
+export function getPopularMaterials(): Material[] {
+  return materials.filter(m => m.popular);
+}
+
+export function searchMaterials(query: string): Material[] {
+  const lowerQuery = query.toLowerCase();
+  return materials.filter(m => 
+    m.name.toLowerCase().includes(lowerQuery) ||
+    m.brand.toLowerCase().includes(lowerQuery) ||
+    m.notes?.toLowerCase().includes(lowerQuery)
+  );
+}
+
+export function getMaterialById(id: string): Material | undefined {
+  return materials.find(m => m.id === id);
+}
