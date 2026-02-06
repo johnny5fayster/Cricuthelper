@@ -190,7 +190,10 @@ function TroubleshootContent() {
           <div className="mt-8 pt-6 border-t border-gray-200">
             <p className="text-gray-600 mb-4">Did this solve your problem?</p>
             <div className="flex gap-3">
-              <button className="px-6 py-2 bg-green-500 text-white rounded-full font-medium hover:bg-green-600 transition-colors">
+              <button 
+                onClick={handleStartOver}
+                className="px-6 py-2 bg-green-500 text-white rounded-full font-medium hover:bg-green-600 transition-colors"
+              >
                 👍 Yes, thanks!
               </button>
               <button 
