@@ -26,11 +26,14 @@ export function Navigation() {
             <Link href="/materials" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
               📋 Materials
             </Link>
-            <Link href="/calculator" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
-              🧮 Calculator
+            <Link href="/heat-press" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
+              🔥 Heat Press
             </Link>
-            <Link href="/guides" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
-              📚 Guides
+            <Link href="/calculator" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
+              🧮 Cut Calc
+            </Link>
+            <Link href="/profit-calculator" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
+              💰 Profit Calc
             </Link>
           </div>
 
@@ -59,11 +62,14 @@ export function Navigation() {
               <Link href="/materials" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
                 📋 Materials
               </Link>
-              <Link href="/calculator" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
-                🧮 Calculator
+              <Link href="/heat-press" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+                🔥 Heat Press
               </Link>
-              <Link href="/guides" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
-                📚 Guides
+              <Link href="/calculator" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+                🧮 Cut Calculator
+              </Link>
+              <Link href="/profit-calculator" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+                💰 Profit Calculator
               </Link>
             </div>
           </div>

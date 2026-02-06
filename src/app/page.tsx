@@ -45,6 +45,24 @@ export default function Home() {
           color="purple"
         />
         <FeatureCard
+          emoji="🔥"
+          title="Heat Press Guide"
+          description="Temperature, time, and pressure settings for every HTV type. Plus troubleshooting tips!"
+          href="/heat-press"
+          color="pink"
+        />
+      </section>
+
+      {/* Seller Tools */}
+      <section className="grid md:grid-cols-2 gap-8">
+        <FeatureCard
+          emoji="💰"
+          title="Profit Calculator"
+          description="Calculate your true profit per item including materials, labor, and Etsy/marketplace fees."
+          href="/profit-calculator"
+          color="purple"
+        />
+        <FeatureCard
           emoji="🧮"
           title="Cut Calculator"
           description="Calculate exactly how much vinyl, HTV, or other material you need. No more waste!"
