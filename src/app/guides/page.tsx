@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: "Print Then Cut Not Lining Up? 9 Proven Fixes",
+    description: "Cricut cutting off-center from your printed design? Step-by-step guide to fix alignment issues.",
+    href: "/guides/print-then-cut-not-lining-up",
+    category: "Troubleshooting",
+    readTime: "12 min",
+    featured: true,
+  },
+  {
     title: "Cricut Not Cutting Through Vinyl? 7 Fixes That Actually Work",
     description: "The most common Cricut problem, solved. Step-by-step guide to fix cutting issues with vinyl.",
     href: "/guides/cricut-not-cutting-vinyl",
@@ -22,7 +30,7 @@ const guides = [
     href: "/guides/cricut-bluetooth-not-connecting",
     category: "Troubleshooting",
     readTime: "12 min",
-    featured: true,
+    featured: false,
   },
   {
     title: "HTV Peeling After Washing? 9 Fixes for Iron-On That Won't Stay",
@@ -36,8 +44,8 @@ const guides = [
 
 const upcomingGuides = [
   "Cricut Design Space Slow or Crashing: How to Fix It",
-  "Print Then Cut Not Working: Complete Troubleshooting Guide",
   "Complete Guide to Cutting Cardstock with Cricut",
+  "Weeding Tips: How to Weed Vinyl Like a Pro",
 ];
 
 export default function GuidesPage() {
