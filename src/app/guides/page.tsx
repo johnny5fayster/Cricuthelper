@@ -72,6 +72,14 @@ const guides = [
     readTime: "12 min",
     featured: false,
   },
+  {
+    title: "Cricut Won't Turn On? 8 Fixes for Power Problems",
+    description: "No lights? Red light? Step-by-step troubleshooting for all power issues on Explore, Maker, and Joy.",
+    href: "/guides/cricut-wont-turn-on",
+    category: "Power",
+    readTime: "10 min",
+    featured: false,
+  },
 ];
 
 const upcomingGuides = [
