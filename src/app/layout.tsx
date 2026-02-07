@@ -46,11 +46,20 @@ export const metadata: Metadata = {
     siteName: "CricutHelper",
     title: "CricutHelper - Free Troubleshooting & Material Settings",
     description: "Free troubleshooting guides and material settings for Cricut Maker, Explore, and Joy. Fix issues fast!",
+    images: [
+      {
+        url: "https://cricuthelper.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CricutHelper - Free Cricut Troubleshooting",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "CricutHelper - Free Cricut Troubleshooting",
     description: "Free troubleshooting guides and material settings for Cricut users.",
+    images: ["https://cricuthelper.com/og-image.jpg"],
   },
   verification: {
     // Add these when you have them:
