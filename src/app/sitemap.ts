@@ -119,6 +119,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/shop/cheat-sheets`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/niches`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
