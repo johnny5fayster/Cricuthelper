@@ -17,6 +17,15 @@ export const metadata: Metadata = {
   authors: [{ name: "CricutHelper" }],
   creator: "CricutHelper",
   publisher: "CricutHelper",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "CricutHelper",
+  },
+  formatDetection: {
+    telephone: false,
+  },
   robots: {
     index: true,
     follow: true,
@@ -55,6 +64,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="application-name" content="CricutHelper" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="CricutHelper" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#EC4899" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+      </head>
       <body className={`${inter.className} antialiased bg-gradient-to-b from-pink-50 to-white min-h-screen`}>
         <Navigation />
         <main className="max-w-6xl mx-auto px-4 py-8">
@@ -62,6 +81,24 @@ export default function RootLayout({
         </main>
         <Footer />
         <Analytics />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js').then(
+                    function(registration) {
+                      console.log('SW registered: ', registration);
+                    },
+                    function(error) {
+                      console.log('SW registration failed: ', error);
+                    }
+                  );
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );
