@@ -1,6 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { FAQSchema } from '@/components/SchemaMarkup';
+
+// FAQ data for schema markup - these appear as rich snippets in Google
+const faqData = [
+  { question: "Why is my Cricut not cutting through vinyl?", answer: "The most common causes are a dull blade, incorrect pressure settings, or material not properly adhered to the mat. Try replacing your blade, increasing pressure, and using a brayer to firmly press material onto the mat." },
+  { question: "Why does my Cricut Design Space keep crashing?", answer: "Design Space crashes are usually caused by corrupted cache, outdated software, or system resource issues. Clear the app cache, reinstall Design Space, and make sure your computer meets minimum requirements." },
+  { question: "Why won't my Cricut connect to Bluetooth?", answer: "First, ensure Bluetooth is enabled on your device. Turn off your Cricut, wait 10 seconds, and turn it back on. Forget the device in Bluetooth settings and re-pair. If issues persist, try a USB connection." },
+  { question: "Why is my HTV peeling off after washing?", answer: "HTV peeling is usually caused by incorrect temperature, insufficient pressure, or washing too soon. Ensure you're pressing at the right temperature for your HTV type, apply firm pressure, and wait 24-48 hours before first wash." },
+  { question: "Why is my Cricut Print Then Cut misaligned?", answer: "Calibrate your machine in Design Space (Menu → Calibration). Make sure you're printing at 100% scale (not 'Fit to Page'), use matte white paper, and ensure good lighting so the sensor can read the registration marks." },
+  { question: "How do I make my Cricut mat sticky again?", answer: "Clean your mat with baby wipes and let it air dry completely. For mats that have lost adhesive, you can use a repositionable spray adhesive or a glue stick applied in thin layers. Replace mats every 25-50 projects." },
+];
 
 const problemCategories = [
   {
@@ -91,6 +102,7 @@ const problemCategories = [
 export default function ProblemsPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+      <FAQSchema faqs={faqData} />
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
