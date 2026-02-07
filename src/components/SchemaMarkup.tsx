@@ -30,7 +30,12 @@ export function OrganizationSchema() {
     "url": "https://cricuthelper.com",
     "logo": "https://cricuthelper.com/icons/icon-512x512.png",
     "description": "The Cricut community that actually helps. Free troubleshooting and material settings.",
-    "sameAs": []  // Add social links when we have them
+    "sameAs": [
+      "https://pinterest.com/cricuthelper1",
+      "https://instagram.com/cricuthelper1",
+      "https://tiktok.com/@cricuthelper1",
+      "https://x.com/CricutHelper"
+    ]
   };
 
   return (
