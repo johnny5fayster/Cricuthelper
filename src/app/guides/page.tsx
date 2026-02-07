@@ -16,12 +16,18 @@ const guides = [
     readTime: "10 min",
     featured: true,
   },
-  // More guides will be added here
+  {
+    title: "Cricut Bluetooth Not Connecting? 8 Fixes That Actually Work",
+    description: "Cricut won't connect? Step-by-step solutions for Windows, Mac, iPhone, iPad, and Android.",
+    href: "/guides/cricut-bluetooth-not-connecting",
+    category: "Troubleshooting",
+    readTime: "12 min",
+    featured: true,
+  },
 ];
 
 const upcomingGuides = [
   "HTV Not Sticking to Shirt? Here's What You're Doing Wrong",
-  "Why Is My Cricut Not Connecting? Bluetooth Troubleshooting Guide",
   "Cricut Design Space Slow or Crashing: How to Fix It",
   "Print Then Cut Not Working: Complete Troubleshooting Guide",
   "Complete Guide to Cutting Cardstock with Cricut",
