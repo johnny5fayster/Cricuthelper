@@ -113,6 +113,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/guides/how-to-use-transfer-tape`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/niches`,
       lastModified: new Date(),
       changeFrequency: 'weekly',

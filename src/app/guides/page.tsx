@@ -80,6 +80,14 @@ const guides = [
     readTime: "10 min",
     featured: false,
   },
+  {
+    title: "How to Use Transfer Tape: Complete Guide for Vinyl Decals",
+    description: "Master transfer tape with our step-by-step tutorial. Fixes for bubbles, sticking issues, and more.",
+    href: "/guides/how-to-use-transfer-tape",
+    category: "Technique",
+    readTime: "12 min",
+    featured: false,
+  },
 ];
 
 const upcomingGuides = [
