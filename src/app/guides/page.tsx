@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: "Cricut Design Space Not Working? 11 Fixes That Actually Work",
+    description: "Design Space frozen, slow, or showing a blank screen? Fix loading issues, lag, crashes, and connection problems.",
+    href: "/guides/cricut-design-space-not-working",
+    category: "Software",
+    readTime: "14 min",
+    featured: true,
+  },
+  {
     title: "Print Then Cut Not Lining Up? 9 Proven Fixes",
     description: "Cricut cutting off-center from your printed design? Step-by-step guide to fix alignment issues.",
     href: "/guides/print-then-cut-not-lining-up",
@@ -43,9 +51,9 @@ const guides = [
 ];
 
 const upcomingGuides = [
-  "Cricut Design Space Slow or Crashing: How to Fix It",
   "Complete Guide to Cutting Cardstock with Cricut",
   "Weeding Tips: How to Weed Vinyl Like a Pro",
+  "Cricut Mat Not Sticky? How to Clean & Restick",
 ];
 
 export default function GuidesPage() {
