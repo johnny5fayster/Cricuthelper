@@ -41,6 +41,9 @@ export function Navigation() {
             <Link href="/profit-calculator" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
               💰 Profit Calc
             </Link>
+            <Link href="/niches" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
+              🎯 Niches
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -82,6 +85,9 @@ export function Navigation() {
               </Link>
               <Link href="/profit-calculator" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
                 💰 Profit Calculator
+              </Link>
+              <Link href="/niches" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+                🎯 Craft Niches
               </Link>
             </div>
           </div>
