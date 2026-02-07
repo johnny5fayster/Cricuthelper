@@ -56,11 +56,18 @@ const guides = [
     readTime: "12 min",
     featured: false,
   },
+  {
+    title: "How to Weed Vinyl Like a Pro: 12 Tips for Perfect Results",
+    description: "Master weeding with pro techniques for small letters, intricate designs, and the reverse weeding trick.",
+    href: "/guides/how-to-weed-vinyl",
+    category: "Technique",
+    readTime: "14 min",
+    featured: false,
+  },
 ];
 
 const upcomingGuides = [
   "Complete Guide to Cutting Cardstock with Cricut",
-  "Weeding Tips: How to Weed Vinyl Like a Pro",
   "Cricut Maker vs Explore: Which One Should You Buy?",
 ];
 
