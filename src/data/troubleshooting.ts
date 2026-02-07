@@ -910,7 +910,6 @@ export const troubleshootingFlows: Record<string, TroubleshootingStep[]> = {
       ],
     },
   ],
-};
 
   "design-space": [
     {

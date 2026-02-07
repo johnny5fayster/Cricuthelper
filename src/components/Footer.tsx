@@ -30,13 +30,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* More */}
           <div>
-            <h3 className="font-semibold text-gray-800 mb-4">Resources</h3>
+            <h3 className="font-semibold text-gray-800 mb-4">More</h3>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-gray-600 hover:text-pink-500">About</Link></li>
-              <li><Link href="/contact" className="text-gray-600 hover:text-pink-500">Contact</Link></li>
-              <li><Link href="/privacy" className="text-gray-600 hover:text-pink-500">Privacy Policy</Link></li>
+              <li><Link href="/heat-press" className="text-gray-600 hover:text-pink-500">Heat Press Guide</Link></li>
+              <li><Link href="/problems" className="text-gray-600 hover:text-pink-500">Common Problems</Link></li>
+              <li><Link href="/community" className="text-gray-600 hover:text-pink-500">Community</Link></li>
+              <li><Link href="/niches" className="text-gray-600 hover:text-pink-500">Project Niches</Link></li>
             </ul>
           </div>
         </div>
