@@ -6,52 +6,120 @@ export default function Home() {
     <div className="space-y-16">
       {/* Hero Section */}
       <section className="text-center py-12">
+        <p className="text-pink-500 font-semibold mb-4 text-lg">
+          🎉 The Cricut community that actually helps
+        </p>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-          Cricut Problems? <span className="text-pink-500">We've Got Answers.</span>
+          Get Unstuck Fast. <span className="text-pink-500">For Free.</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-          Free troubleshooting guides, material cut settings, and tools to help you 
-          get perfect cuts every time. No more guessing!
+          Real answers from real crafters. No corporate scripts. No 15-minute YouTube videos. 
+          Just solutions that work — in seconds.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link 
             href="/troubleshoot" 
             className="bg-pink-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-600 transition-colors shadow-lg hover:shadow-xl"
           >
-            🔧 Fix a Problem
+            🔧 Fix My Problem
           </Link>
           <Link 
-            href="/materials" 
+            href="/community" 
             className="bg-white text-pink-500 border-2 border-pink-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-50 transition-colors"
           >
-            📋 Find Cut Settings
+            ✨ Join the Community
           </Link>
         </div>
       </section>
 
-      {/* Feature Cards */}
+      {/* Why Us Section */}
+      <section className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-3xl p-8 md:p-12">
+        <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
+          Why crafters choose CricutHelper
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <div className="text-4xl mb-4">⚡</div>
+            <h3 className="font-bold text-gray-800 mb-2">Answers in Seconds</h3>
+            <p className="text-gray-600">Not a 20-minute video. Not scrolling through 50 Facebook comments. Just the fix.</p>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl mb-4">💯</div>
+            <h3 className="font-bold text-gray-800 mb-2">Honest & Real</h3>
+            <p className="text-gray-600">We tell you when Cricut products suck. We recommend what actually works.</p>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl mb-4">🆓</div>
+            <h3 className="font-bold text-gray-800 mb-2">Free Forever</h3>
+            <p className="text-gray-600">No subscription required. Core help is always free. We're crafters, not a corporation.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Tools */}
       <section className="grid md:grid-cols-3 gap-8">
         <FeatureCard
           emoji="🔧"
           title="Troubleshooting Wizard"
-          description="Step-by-step diagnostic to identify and fix your Cricut issues. Works for Maker, Explore, and Joy."
+          description="Click through and find your fix in 60 seconds. Works for Maker, Explore, and Joy."
           href="/troubleshoot"
           color="pink"
         />
         <FeatureCard
           emoji="📋"
-          title="Material Settings Database"
-          description="Search 100+ materials to find the perfect blade, pressure, and speed settings for your cuts."
+          title="Material Settings"
+          description="100+ materials with exact blade, pressure, and speed settings. Stop guessing."
           href="/materials"
           color="purple"
         />
         <FeatureCard
           emoji="🔥"
           title="Heat Press Guide"
-          description="Temperature, time, and pressure settings for every HTV type. Plus troubleshooting tips!"
+          description="Temperature and time for every HTV type. Plus why it's not sticking."
           href="/heat-press"
           color="pink"
         />
+      </section>
+
+      {/* Common Problems - Quick Links */}
+      <section className="bg-white rounded-2xl shadow-lg p-8">
+        <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">
+          What's going wrong?
+        </h2>
+        <p className="text-gray-500 text-center mb-6">Click your problem. Get the fix.</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <ProblemLink title="Not cutting through" href="/troubleshoot?issue=not-cutting" />
+          <ProblemLink title="HTV peeling off" href="/troubleshoot?issue=htv-problems" />
+          <ProblemLink title="Design Space crashing" href="/troubleshoot?issue=design-space" />
+          <ProblemLink title="Bluetooth won't connect" href="/troubleshoot?issue=bluetooth" />
+          <ProblemLink title="Print Then Cut off" href="/troubleshoot?issue=print-then-cut" />
+          <ProblemLink title="Mat not sticky" href="/troubleshoot?issue=mat-grip" />
+          <ProblemLink title="Weeding is hard" href="/troubleshoot?issue=weeding" />
+          <ProblemLink title="Vinyl won't stick" href="/troubleshoot?issue=adhesion" />
+        </div>
+        <div className="text-center mt-6">
+          <Link href="/problems" className="text-pink-500 font-semibold hover:underline">
+            See all common problems →
+          </Link>
+        </div>
+      </section>
+
+      {/* Niche Guides */}
+      <section>
+        <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">
+          What are you making?
+        </h2>
+        <p className="text-gray-500 text-center mb-6">Specialized guides for your craft</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <NicheCard emoji="💒" name="Weddings" href="/niches/wedding" />
+          <NicheCard emoji="👶" name="Baby & Nursery" href="/niches/baby-nursery" />
+          <NicheCard emoji="🎭" name="Cosplay" href="/niches/cosplay" />
+          <NicheCard emoji="🐕" name="Pet Items" href="/niches/pets" />
+          <NicheCard emoji="🎂" name="Cake Decorating" href="/niches/cake-decorating" />
+          <NicheCard emoji="🎄" name="Seasonal" href="/niches/seasonal" />
+          <NicheCard emoji="🏠" name="Home Staging" href="/niches/home-staging" />
+          <NicheCard emoji="🕊️" name="Memorial" href="/niches/memorial" />
+        </div>
       </section>
 
       {/* Seller Tools */}
@@ -59,54 +127,35 @@ export default function Home() {
         <FeatureCard
           emoji="💰"
           title="Profit Calculator"
-          description="Calculate your true profit per item including materials, labor, and Etsy/marketplace fees."
+          description="Know your real profit per item — materials, labor, and marketplace fees included."
           href="/profit-calculator"
           color="purple"
         />
         <FeatureCard
           emoji="🧮"
-          title="Cut Calculator"
-          description="Calculate exactly how much vinyl, HTV, or other material you need. No more waste!"
+          title="Material Calculator"
+          description="Calculate exactly how much vinyl or HTV you need. No more expensive mistakes."
           href="/calculator"
           color="blue"
         />
       </section>
 
-      {/* Common Problems Section */}
-      <section className="bg-white rounded-2xl shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          Common Problems We Solve
+      {/* Community Spotlight Teaser */}
+      <section className="bg-gradient-to-r from-amber-50 to-pink-50 rounded-3xl p-8 text-center">
+        <span className="text-5xl mb-4 block">✨</span>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          Community Spotlight
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <ProblemLink title="Not cutting through" href="/troubleshoot?issue=not-cutting" />
-          <ProblemLink title="Mat not gripping" href="/troubleshoot?issue=mat-grip" />
-          <ProblemLink title="Vinyl tearing" href="/troubleshoot?issue=tearing" />
-          <ProblemLink title="Bluetooth won't connect" href="/troubleshoot?issue=bluetooth" />
-          <ProblemLink title="Blade not detected" href="/troubleshoot?issue=blade" />
-          <ProblemLink title="Design Space errors" href="/troubleshoot?issue=software" />
-          <ProblemLink title="Uneven cuts" href="/troubleshoot?issue=uneven" />
-          <ProblemLink title="Material shifting" href="/troubleshoot?issue=shifting" />
-        </div>
-      </section>
-
-      {/* Popular Materials Section */}
-      <section>
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          Popular Material Settings
-        </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <MaterialCard name="Premium Vinyl (Oracal 651)" machine="All" />
-          <MaterialCard name="Glitter Iron-On (HTV)" machine="Maker, Explore" />
-          <MaterialCard name="Cardstock (65 lb)" machine="All" />
-          <MaterialCard name="Faux Leather" machine="Maker" />
-          <MaterialCard name="Infusible Ink" machine="All" />
-          <MaterialCard name="Smart Vinyl" machine="Maker 3, Explore 3" />
-        </div>
-        <div className="text-center mt-6">
-          <Link href="/materials" className="text-pink-500 font-semibold hover:underline">
-            View all 100+ materials →
-          </Link>
-        </div>
+        <p className="text-gray-600 max-w-xl mx-auto mb-6">
+          Show off your projects and get featured! We celebrate our community's creativity 
+          every week. Your project could be next.
+        </p>
+        <Link 
+          href="/community"
+          className="inline-block bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
+        >
+          Submit Your Project →
+        </Link>
       </section>
 
       {/* Email Capture */}
@@ -116,9 +165,14 @@ export default function Home() {
 
       {/* Trust Section */}
       <section className="text-center py-8 bg-pink-50 rounded-2xl">
-        <p className="text-gray-600 mb-2">🎉 Helping crafters since 2026</p>
-        <p className="text-2xl font-bold text-gray-800">
-          Stop guessing. Start crafting.
+        <p className="text-gray-600 mb-2">
+          Made by crafters, for crafters 💕
+        </p>
+        <p className="text-2xl font-bold text-gray-800 mb-4">
+          Where crafters help crafters.
+        </p>
+        <p className="text-gray-500">
+          No subscription required. No corporate BS. Just help.
         </p>
       </section>
     </div>
@@ -165,14 +219,14 @@ function ProblemLink({ title, href }: { title: string; href: string }) {
   );
 }
 
-function MaterialCard({ name, machine }: { name: string; machine: string }) {
+function NicheCard({ emoji, name, href }: { emoji: string; name: string; href: string }) {
   return (
     <Link 
-      href={`/materials?search=${encodeURIComponent(name)}`}
-      className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+      href={href}
+      className="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
     >
-      <h4 className="font-semibold text-gray-800">{name}</h4>
-      <p className="text-sm text-gray-500">Compatible: {machine}</p>
+      <span className="text-2xl">{emoji}</span>
+      <span className="font-medium text-gray-800">{name}</span>
     </Link>
   );
 }
