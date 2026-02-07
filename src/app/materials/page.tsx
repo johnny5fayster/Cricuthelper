@@ -45,6 +45,7 @@ function MaterialsContent() {
     "paper",
     "fabric",
     "leather",
+    "engraving",
     "specialty",
     "infusible-ink",
     "smart-materials",

@@ -22,7 +22,8 @@ export type MaterialCategory =
   | "leather"
   | "specialty"
   | "infusible-ink"
-  | "smart-materials";
+  | "smart-materials"
+  | "engraving";
 
 export type Machine = "maker" | "maker3" | "explore" | "explore3" | "joy";
 
@@ -34,7 +35,9 @@ export type BladeType =
   | "bonded-fabric"
   | "perforation"
   | "wavy"
-  | "fine-point-joy";
+  | "fine-point-joy"
+  | "engraving"
+  | "debossing";
 
 export type MatType = "light" | "standard" | "strong" | "fabric" | "none";
 
@@ -48,6 +51,7 @@ export const categoryLabels: Record<MaterialCategory, string> = {
   "specialty": "Specialty Materials",
   "infusible-ink": "Infusible Ink",
   "smart-materials": "Smart Materials",
+  "engraving": "Engraving & Etching",
 };
 
 export const machineLabels: Record<Machine, string> = {
@@ -67,6 +71,8 @@ export const bladeLabels: Record<BladeType, string> = {
   "perforation": "Perforation Blade",
   "wavy": "Wavy Blade",
   "fine-point-joy": "Joy Fine-Point Blade",
+  "engraving": "Engraving Tip",
+  "debossing": "Debossing Tip",
 };
 
 export const matLabels: Record<MatType, string> = {
@@ -621,6 +627,143 @@ export const materials: Material[] = [
     multiCut: 1,
     matType: "fabric",
     notes: "Maker only. Heavy fabric - may need increased pressure.",
+  },
+
+  // ENGRAVING & ETCHING (Maker only)
+  {
+    id: "aluminum-sheets",
+    name: "Aluminum Sheets (Thin)",
+    brand: "Generic",
+    category: "engraving",
+    machines: ["maker", "maker3"],
+    blade: "engraving",
+    pressure: 350,
+    multiCut: 3,
+    matType: "strong",
+    notes: "Maker with Engraving Tip only. Use anodized aluminum for best results. Tape securely to mat.",
+    popular: true,
+  },
+  {
+    id: "aluminum-blanks",
+    name: "Aluminum Blanks (Dog Tags, Ornaments)",
+    brand: "Generic",
+    category: "engraving",
+    machines: ["maker", "maker3"],
+    blade: "engraving",
+    pressure: 350,
+    multiCut: 4,
+    matType: "strong",
+    notes: "Secure blank with strong tape. May need multiple passes. Start with test piece.",
+  },
+  {
+    id: "acrylic-engraving",
+    name: "Acrylic (1/16\" or 1.5mm)",
+    brand: "Generic",
+    category: "engraving",
+    machines: ["maker", "maker3"],
+    blade: "engraving",
+    pressure: 320,
+    multiCut: 2,
+    matType: "strong",
+    notes: "Engraving Tip creates frosted look. Tape down firmly. Can crack if too much pressure.",
+    popular: true,
+  },
+  {
+    id: "leather-engraving",
+    name: "Leather (for Engraving)",
+    brand: "Generic",
+    category: "engraving",
+    machines: ["maker", "maker3"],
+    blade: "engraving",
+    pressure: 280,
+    multiCut: 1,
+    matType: "strong",
+    notes: "Creates beautiful embossed/engraved look. Use vegetable-tanned leather. Genuine leather only.",
+  },
+  {
+    id: "faux-leather-engraving",
+    name: "Faux Leather (for Engraving)",
+    brand: "Generic",
+    category: "engraving",
+    machines: ["maker", "maker3"],
+    blade: "engraving",
+    pressure: 250,
+    multiCut: 1,
+    matType: "strong",
+    notes: "Test first - some faux leather melts or doesn't engrave well. Lower pressure than genuine leather.",
+  },
+  {
+    id: "wood-veneer-engraving",
+    name: "Wood Veneer (for Engraving)",
+    brand: "Generic",
+    category: "engraving",
+    machines: ["maker", "maker3"],
+    blade: "engraving",
+    pressure: 300,
+    multiCut: 2,
+    matType: "strong",
+    notes: "Thin wood veneer only. Creates darker burned look. Tape down all edges.",
+  },
+  {
+    id: "kraft-board-deboss",
+    name: "Kraft Board (Debossing)",
+    brand: "Cricut",
+    category: "engraving",
+    machines: ["maker", "maker3"],
+    blade: "debossing",
+    pressure: 320,
+    multiCut: 1,
+    matType: "strong",
+    notes: "Use Debossing Tip for raised/pressed designs on thick cardstock. Beautiful for invitations.",
+  },
+  {
+    id: "leather-deboss",
+    name: "Leather (Debossing)",
+    brand: "Generic",
+    category: "engraving",
+    machines: ["maker", "maker3"],
+    blade: "debossing",
+    pressure: 350,
+    multiCut: 2,
+    matType: "strong",
+    notes: "Creates pressed/indented design. Vegetable-tanned leather works best. Dampen slightly for deeper impression.",
+    popular: true,
+  },
+  {
+    id: "copper-sheets",
+    name: "Copper Sheets (36 gauge)",
+    brand: "Generic",
+    category: "engraving",
+    machines: ["maker", "maker3"],
+    blade: "engraving",
+    pressure: 350,
+    multiCut: 4,
+    matType: "strong",
+    notes: "Very thin copper only. Creates beautiful etched look. Secure with strong tape. Wear gloves - edges sharp.",
+  },
+  {
+    id: "brass-sheets",
+    name: "Brass Sheets (Thin)",
+    brand: "Generic",
+    category: "engraving",
+    machines: ["maker", "maker3"],
+    blade: "engraving",
+    pressure: 350,
+    multiCut: 5,
+    matType: "strong",
+    notes: "Requires multiple passes. Use 36 gauge or thinner. Polish after engraving for shine.",
+  },
+  {
+    id: "acetate-engraving",
+    name: "Acetate/Transparency (Engraving)",
+    brand: "Generic",
+    category: "engraving",
+    machines: ["maker", "maker3"],
+    blade: "engraving",
+    pressure: 200,
+    multiCut: 1,
+    matType: "standard",
+    notes: "Low pressure! Creates frosted engraved look on clear plastic. Great for ornaments.",
   },
 ];
 
