@@ -912,14 +912,874 @@ export const troubleshootingFlows: Record<string, TroubleshootingStep[]> = {
   ],
 };
 
+  "design-space": [
+    {
+      id: "start",
+      question: "What's happening with Design Space?",
+      options: [
+        { label: "Slow/lagging", nextStep: "slow" },
+        { label: "Crashes or freezes", nextStep: "crashes" },
+        { label: "Won't open/blank screen", nextStep: "wont-open" },
+        { label: "Can't log in", nextStep: "login" },
+        { label: "Won't find my machine", nextStep: "no-machine" },
+      ],
+    },
+    {
+      id: "slow",
+      question: "When does it lag?",
+      options: [
+        { label: "All the time", solution: {
+          title: "Speed Up Design Space",
+          description: "Design Space can be resource-hungry. Here's how to improve performance.",
+          steps: [
+            "Close other programs — especially Chrome/browsers",
+            "Clear the Design Space cache (see steps below)",
+            "Windows: C:\\Users\\[You]\\AppData\\Local\\Cricut Design Space\\Cache — delete contents",
+            "Mac: ~/Library/Application Support/Cricut Design Space/Cache — delete contents",
+            "Uninstall and reinstall Design Space (fresh install)",
+            "Disable 'Efficiency Mode' in Windows (Settings → Apps → Design Space)",
+            "Make sure your computer meets minimum requirements (8GB RAM recommended)",
+            "Consider using the web version: design.cricut.com",
+          ],
+        }},
+        { label: "Only with large/complex designs", solution: {
+          title: "Optimize Complex Designs",
+          description: "Large designs slow down Design Space. Here's how to work with them.",
+          steps: [
+            "Break large designs into smaller pieces",
+            "Flatten layers you're done editing",
+            "Reduce image quality/resolution before uploading",
+            "Avoid using many small images — combine them first",
+            "Weld shapes together when possible",
+            "Close and reopen Design Space periodically",
+            "Save your work frequently",
+          ],
+        }},
+        { label: "After a recent update", solution: {
+          title: "Post-Update Lag Fix",
+          description: "Updates often cause temporary performance issues.",
+          steps: [
+            "Wait 24-48 hours — sometimes updates need to 'settle'",
+            "Clear Design Space cache",
+            "Completely uninstall, then reinstall from cricut.com/setup",
+            "Check Cricut community forums — often others have the same issue",
+            "Report the issue to Cricut so they can fix in next update",
+            "Try the web version temporarily: design.cricut.com",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "crashes",
+      question: "When does it crash?",
+      options: [
+        { label: "When I try to cut/send to machine", solution: {
+          title: "Fix Crashes When Cutting",
+          description: "Crashes during cut are often connection or file issues.",
+          steps: [
+            "Restart both Design Space AND your Cricut machine",
+            "Disconnect and reconnect your machine (Bluetooth or USB)",
+            "Reduce design complexity — try a simple test cut first",
+            "Clear Design Space cache",
+            "Check for antivirus/firewall blocking Design Space",
+            "Add Design Space to your firewall's allowed list",
+            "Try USB cable instead of Bluetooth",
+            "Update your machine firmware (Settings → Update Firmware)",
+          ],
+        }},
+        { label: "Randomly while designing", solution: {
+          title: "Fix Random Crashes",
+          description: "Random crashes often point to software corruption or resource issues.",
+          steps: [
+            "Save work frequently! (Ctrl/Cmd + S)",
+            "Clear the Design Space cache",
+            "Uninstall completely, restart computer, reinstall fresh",
+            "Make sure you have at least 2GB free disk space",
+            "Update your graphics drivers",
+            "Run as Administrator (Windows) — right-click, 'Run as Administrator'",
+            "Check Windows Event Viewer for error details",
+            "Try on a different device to rule out computer issues",
+          ],
+        }},
+        { label: "When uploading images", solution: {
+          title: "Fix Upload Crashes",
+          description: "Large or incompatible files can crash the upload process.",
+          steps: [
+            "Reduce image file size — aim for under 5MB",
+            "Use PNG or SVG formats (avoid BMP, TIFF)",
+            "Make sure SVG files aren't corrupt — open in another program first",
+            "For photos, reduce resolution before uploading",
+            "Clear browser cache if using web version",
+            "Try uploading from a different device",
+            "Convert complex SVGs to simpler versions using Inkscape",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "wont-open",
+      question: "What happens when you try to open Design Space?",
+      options: [
+        { label: "Shows blank white screen", solution: {
+          title: "Fix Blank Screen",
+          description: "A blank screen usually means corrupted cache or display issues.",
+          steps: [
+            "Clear Design Space cache:",
+            "Windows: Delete contents of C:\\Users\\[You]\\AppData\\Local\\Cricut Design Space\\Cache",
+            "Mac: Delete contents of ~/Library/Application Support/Cricut Design Space/Cache",
+            "Restart your computer",
+            "Uninstall Design Space, restart, reinstall fresh from cricut.com/setup",
+            "Update your graphics drivers",
+            "Try running in compatibility mode (Windows)",
+            "Disable hardware acceleration in graphics settings",
+          ],
+        }},
+        { label: "Loads then closes immediately", solution: {
+          title: "Fix Immediate Close",
+          description: "Instant closes often indicate corruption or blocked processes.",
+          steps: [
+            "Right-click Design Space → Run as Administrator",
+            "Disable antivirus temporarily and try again",
+            "Check Task Manager — end any stuck Design Space processes",
+            "Clear Design Space cache files",
+            "Completely uninstall (use Revo Uninstaller for thorough removal)",
+            "Restart computer, reinstall fresh",
+            "If still failing, try creating a new Windows user account and installing there",
+          ],
+        }},
+        { label: "Spinner forever/infinite loading", solution: {
+          title: "Fix Infinite Loading",
+          description: "Infinite spinner usually means network or login issues.",
+          steps: [
+            "Check your internet connection",
+            "Restart your router/modem",
+            "Clear Design Space cache",
+            "Check if Cricut servers are down (check @cricutdesigns on Twitter)",
+            "Disable VPN if you're using one",
+            "Try using web version: design.cricut.com",
+            "Reinstall Design Space fresh",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "login",
+      question: "What's the login issue?",
+      options: [
+        { label: "Password not working", solution: {
+          title: "Password Reset",
+          description: "If your password isn't working, reset it through Cricut's website.",
+          steps: [
+            "Go to cricut.com and click 'Sign In'",
+            "Click 'Forgot Password'",
+            "Enter your email and check your inbox",
+            "Click the reset link (check spam folder if not in inbox)",
+            "Create a new password (8+ characters, mix of letters/numbers)",
+            "Try logging into Design Space with new password",
+            "If still failing, contact Cricut support",
+          ],
+        }},
+        { label: "Account locked/error message", solution: {
+          title: "Unlock Account",
+          description: "Too many failed login attempts can lock your account.",
+          steps: [
+            "Wait 30 minutes and try again",
+            "Clear browser cookies and cache",
+            "Reset your password (even if you think it's correct)",
+            "Try logging in at cricut.com first",
+            "Contact Cricut Member Care if still locked",
+            "Cricut Support: help.cricut.com",
+          ],
+        }},
+        { label: "Can't create account", solution: {
+          title: "Account Creation Issues",
+          description: "Having trouble creating a new Cricut account?",
+          steps: [
+            "Make sure email isn't already registered",
+            "Try a different email address",
+            "Use a different browser",
+            "Disable ad blockers temporarily",
+            "Check that password meets requirements (8+ chars, numbers, special char)",
+            "Try creating account at cricut.com, not in Design Space",
+            "Contact Cricut support if issues persist",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "no-machine",
+      question: "Is the machine turned on with a solid light?",
+      options: [
+        { label: "Yes, light is solid", nextStep: "machine-solid" },
+        { label: "Light is blinking", solution: {
+          title: "Machine Still Connecting",
+          description: "A blinking light means the machine is still starting up or searching.",
+          steps: [
+            "Wait 30-60 seconds for light to become solid",
+            "If still blinking, turn off machine, wait 10 seconds, turn back on",
+            "Make sure Bluetooth is enabled on your device",
+            "Move machine closer to computer (within 10 feet)",
+            "Try USB cable connection instead of Bluetooth",
+            "Check if machine is already connected to a different device",
+          ],
+        }},
+        { label: "No light/machine won't turn on", solution: {
+          title: "Machine Power Issues",
+          description: "If the machine won't turn on, check power connections.",
+          steps: [
+            "Ensure power cord is firmly plugged into machine AND outlet",
+            "Try a different outlet",
+            "Check if outlet works (plug in a lamp)",
+            "Try a different power cord if available",
+            "Look for any tripped breakers",
+            "If none of this works, contact Cricut — may be hardware issue",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "machine-solid",
+      question: "Is the machine paired in your Bluetooth settings?",
+      options: [
+        { label: "Yes", solution: {
+          title: "Machine Paired But Not Found",
+          description: "Sometimes the connection gets stuck. Here's how to reset it.",
+          steps: [
+            "Close Design Space completely",
+            "Turn OFF the Cricut machine",
+            "Forget/remove the machine from your Bluetooth settings",
+            "Restart your computer",
+            "Turn ON the Cricut (wait for solid light)",
+            "Re-pair in Bluetooth settings",
+            "Open Design Space",
+            "If still not found, try USB cable",
+          ],
+        }},
+        { label: "No, can't find it to pair", solution: {
+          title: "Machine Not Appearing in Bluetooth",
+          description: "If the machine isn't showing up in Bluetooth search:",
+          steps: [
+            "Turn off machine, wait 10 seconds, turn back on",
+            "Wait for solid light (not blinking)",
+            "On your computer, turn Bluetooth off then on",
+            "Click 'Add Bluetooth device' and search again",
+            "Try on a different device (phone/other computer)",
+            "If using USB Bluetooth adapter, try a different USB port",
+            "Some older machines need USB — check your model",
+          ],
+        }},
+      ],
+    },
+  ],
+
+  "print-then-cut": [
+    {
+      id: "start",
+      question: "What's the Print Then Cut issue?",
+      options: [
+        { label: "Cuts are misaligned/offset", nextStep: "misaligned" },
+        { label: "Machine can't read the sensor marks", nextStep: "sensor-marks" },
+        { label: "Calibration keeps failing", nextStep: "calibration-fail" },
+        { label: "Print size is wrong", nextStep: "print-size" },
+      ],
+    },
+    {
+      id: "misaligned",
+      question: "How far off is the cut?",
+      options: [
+        { label: "Way off (1/4 inch or more)", nextStep: "calibration-fail" },
+        { label: "Slightly off (consistent direction)", solution: {
+          title: "Fine-Tune Calibration",
+          description: "If cuts are consistently off in one direction, recalibrate with precision.",
+          steps: [
+            "Go to Design Space → Menu (☰) → Calibration",
+            "Print the calibration sheet (don't use 'fit to page' — print at 100%)",
+            "Run through calibration carefully — really look at those lines",
+            "After the rough calibration, do the FINE calibration",
+            "Fine calibration adjusts in small increments — take your time",
+            "If still off after calibration, note which direction and contact Cricut",
+          ],
+        }},
+        { label: "Varies/inconsistent", solution: {
+          title: "Fix Inconsistent Cut Alignment",
+          description: "If alignment varies between cuts, it's usually a material or feeding issue.",
+          steps: [
+            "Make sure material is FLAT against the mat — use a brayer",
+            "Ensure mat is feeding straight (check rollers for debris)",
+            "Use a fresh, sticky mat",
+            "Don't load mat at an angle",
+            "Check that room lighting isn't interfering (avoid direct sunlight)",
+            "Make sure sensor window on machine is clean",
+            "Try printing on plain white paper first as a test",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "sensor-marks",
+      question: "What type of paper are you using?",
+      options: [
+        { label: "Glossy/shiny sticker paper", solution: {
+          title: "Sensor Can't Read Glossy Paper",
+          description: "Glossy and reflective papers interfere with the sensor. Here's the fix.",
+          steps: [
+            "Apply MATTE transparent tape over the black sensor marks",
+            "Or use matte sticker paper instead of glossy",
+            "Make sure lighting in the room isn't causing reflections",
+            "Try tilting the machine slightly away from lights",
+            "Ensure sensor marks printed solid black (not gray/faded)",
+            "Clean the sensor lens on your machine with a soft cloth",
+          ],
+          products: [
+            { name: "Matte Printable Sticker Paper", reason: "Works best with Print Then Cut" },
+            { name: "Scotch Magic Tape (Matte)", reason: "Covers glossy sensor marks" },
+          ],
+        }},
+        { label: "Colored/kraft paper", solution: {
+          title: "Use White Paper Only",
+          description: "Print Then Cut only works on white or very light paper. The sensor needs contrast.",
+          steps: [
+            "Use WHITE paper only — sensor needs black marks on white background",
+            "Light cream/ivory may work, but results vary",
+            "Kraft, colored, or dark paper will NOT work",
+            "Consider printing onto white sticker paper, then applying to colored surface after",
+          ],
+        }},
+        { label: "White matte paper", solution: {
+          title: "Sensor Reading Issues on Matte Paper",
+          description: "If even matte white paper fails, try these fixes.",
+          steps: [
+            "Clean the sensor lens on your machine (small window near blade)",
+            "Make sure sensor marks are DARK black — check printer ink levels",
+            "Use 'Best' or 'High Quality' print setting — draft mode can fade marks",
+            "Avoid direct sunlight/bright lights shining on the machine",
+            "Try a different lighting angle in the room",
+            "Make sure paper is flat and smooth on mat",
+            "Calibrate your machine (Menu → Calibration)",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "calibration-fail",
+      question: "What happens during calibration?",
+      options: [
+        { label: "Machine cuts, but lines don't match", solution: {
+          title: "Calibration Lines Off",
+          description: "If calibration cuts don't match printed lines, here's how to get it right.",
+          steps: [
+            "Print calibration page at EXACTLY 100% — don't use 'Fit to Page'",
+            "In print dialog, make sure 'Actual Size' or '100%' is selected",
+            "Use bright lighting when evaluating the cuts",
+            "Really look at which line the cut goes through — be precise",
+            "If you can't tell, try again with fresh printout",
+            "After selecting lines, run the FINE calibration too",
+            "If still way off, try factory reset (Settings → Reset) then recalibrate",
+          ],
+        }},
+        { label: "Machine won't read calibration page", solution: {
+          title: "Can't Read Calibration Page",
+          description: "Same fixes as sensor mark issues apply here.",
+          steps: [
+            "Make sure you printed from Design Space (not downloaded PDF)",
+            "Print at 100% scale — no shrinking or fitting",
+            "Use white, matte paper",
+            "Check that black lines printed solid (not faded)",
+            "Clean the sensor lens on machine",
+            "Avoid bright lights shining on the mat",
+            "Try covering any glossy areas with matte tape",
+          ],
+        }},
+        { label: "Machine doesn't cut at all", solution: {
+          title: "Calibration Not Cutting",
+          description: "If the machine moves but doesn't cut during calibration:",
+          steps: [
+            "Make sure blade is installed in Clamp B",
+            "Check that blade is seated properly (push until it clicks)",
+            "Try a new blade",
+            "Ensure mat is loaded correctly — machine should grab it",
+            "Check for debris in blade housing",
+            "Restart machine and Design Space, try again",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "print-size",
+      question: "What's wrong with the print size?",
+      options: [
+        { label: "Print is smaller than expected", solution: {
+          title: "Print Shrinking — Scale Issue",
+          description: "This is the #1 Print Then Cut problem! Here's the fix.",
+          steps: [
+            "When printing, NEVER use 'Fit to Page' or 'Scale to Fit'",
+            "Select 'Actual Size' or '100%' in print settings",
+            "Check the preview — it should match your Design Space size",
+            "If printing from Design Space, let it handle the sizing",
+            "For system print dialog: Actual Size > Fit/Shrink",
+            "If still wrong, check your printer's default settings",
+            "Some printers have 'Borderless' settings that affect size",
+          ],
+        }},
+        { label: "Print is larger than expected", solution: {
+          title: "Print Enlarging",
+          description: "Enlarging is less common but can happen.",
+          steps: [
+            "Check print settings — should be '100%' or 'Actual Size'",
+            "Disable any 'Borderless' printing options",
+            "Verify the design size in Design Space before printing",
+            "Make sure your printer driver isn't auto-scaling",
+            "Some photo printers enlarge by default — check settings",
+          ],
+        }},
+        { label: "Print is cropped/cut off", solution: {
+          title: "Print Being Cropped",
+          description: "If parts of your design aren't printing:",
+          steps: [
+            "Make sure design is within Print Then Cut limits (9.25\" x 6.75\")",
+            "Check margin/edge settings in print dialog",
+            "Avoid 'Borderless' printing — can cause cropping",
+            "Make sure entire design including sensor marks is on page",
+            "Verify paper size matches what you loaded (Letter vs A4)",
+          ],
+        }},
+      ],
+    },
+  ],
+
+  "htv-problems": [
+    {
+      id: "start",
+      question: "What's happening with your HTV/iron-on?",
+      options: [
+        { label: "Won't stick to fabric", nextStep: "not-sticking" },
+        { label: "Peels after washing", nextStep: "peel-wash" },
+        { label: "Peels when removing carrier sheet", nextStep: "peel-carrier" },
+        { label: "Cracking or flaking", nextStep: "cracking" },
+        { label: "Burnt or scorched look", nextStep: "burnt" },
+      ],
+    },
+    {
+      id: "not-sticking",
+      question: "Is your heat press/iron reaching proper temperature?",
+      options: [
+        { label: "Yes, verified with temp gun", nextStep: "temp-verified" },
+        { label: "I think so/not sure", solution: {
+          title: "Verify Your Temperature",
+          description: "Inaccurate temperature is the #1 cause of HTV failures. Heat presses can be off by 20-50°F!",
+          steps: [
+            "Get an infrared thermometer ($15-20) — essential tool",
+            "Check temp at multiple spots on your press — can vary across surface",
+            "Adjust press setting until gun reads correct temp (305-320°F for most HTV)",
+            "Regular irons are unreliable — temp settings don't match actual heat",
+            "If using iron, EasyPress is a worthy upgrade",
+            "Press surface should be hot throughout — preheat for 5+ minutes",
+          ],
+          products: [
+            { name: "Infrared Thermometer", reason: "Verify actual press temperature — essential" },
+            { name: "Cricut EasyPress 2", reason: "Consistent temp and pressure for HTV" },
+          ],
+        }},
+        { label: "Using a regular clothes iron", solution: {
+          title: "Irons Are Unreliable",
+          description: "Regular irons have inconsistent temperature and no pressure. This is likely your issue.",
+          steps: [
+            "Regular irons are the #1 cause of HTV failures",
+            "Settings (cotton, linen) don't match actual temperature",
+            "No steam! Steam = moisture = adhesive failure",
+            "If you must use iron: max heat, no steam, heavy pressure",
+            "Press multiple times: 15-20 seconds, lift, repeat",
+            "Seriously consider an EasyPress or heat press — game changer",
+          ],
+          products: [
+            { name: "Cricut EasyPress 2 (9x9)", reason: "Consistent temp, proper pressure, much better results" },
+            { name: "Heat Press Machine", reason: "Best option for serious crafting" },
+          ],
+        }},
+      ],
+    },
+    {
+      id: "temp-verified",
+      question: "Did you pre-press the fabric first?",
+      options: [
+        { label: "Yes", nextStep: "check-pressure" },
+        { label: "No, what's pre-pressing?", solution: {
+          title: "Pre-Press Your Fabric",
+          description: "Pre-pressing removes moisture and wrinkles — both enemies of HTV adhesion.",
+          steps: [
+            "Press blank fabric for 3-5 seconds BEFORE applying HTV",
+            "This removes moisture from fabric and sizing",
+            "Especially important for new shirts (manufacturing chemicals)",
+            "Also flattens any wrinkles or seams",
+            "Let fabric cool slightly, then apply HTV and press again",
+            "For best results on 100% cotton: wash the shirt first",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "check-pressure",
+      question: "Are you pressing with firm, even pressure?",
+      options: [
+        { label: "Yes, pressing hard", solution: {
+          title: "Check Other Factors",
+          description: "If temp and pressure are right, consider these other causes:",
+          steps: [
+            "Wrong side of HTV — shiny carrier should face UP during pressing",
+            "Fabric may have coating/finish that repels adhesive",
+            "Try a different blank from a different source",
+            "HTV may be old/expired — adhesive degrades over time",
+            "Try a different brand of HTV",
+            "Make sure pressing surface is FLAT and HARD",
+            "Check for seams/bumps under the design — use pressing pillow",
+          ],
+          products: [
+            { name: "Pressing Pillow", reason: "Creates even pressure over seams and buttons" },
+          ],
+        }},
+        { label: "Maybe not hard enough?", solution: {
+          title: "Apply More Pressure",
+          description: "Pressure is just as important as heat. Here's how to improve it.",
+          steps: [
+            "With EasyPress: lean your body weight into it",
+            "With regular iron: press down HARD with both hands",
+            "With heat press: should close with slight resistance",
+            "Surface MUST be hard — ironing boards are too soft",
+            "Use a flat, sturdy table or the floor",
+            "Put a folded towel or mat under the shirt for firm base",
+            "Press multiple areas if design is larger than press",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "peel-wash",
+      question: "How soon did you wash it?",
+      options: [
+        { label: "Within 24 hours", solution: {
+          title: "Wait Before Washing",
+          description: "HTV adhesive needs time to fully cure.",
+          steps: [
+            "Wait 24-48 hours before first wash — adhesive needs to cure",
+            "Some brands recommend 72 hours",
+            "This is the most commonly ignored instruction",
+            "After waiting, wash inside out on cold",
+            "No fabric softener! It breaks down adhesive",
+            "Tumble dry low or hang dry",
+          ],
+        }},
+        { label: "After 24+ hours", solution: {
+          title: "Improve Wash Durability",
+          description: "If you waited but it still peeled, try these improvements:",
+          steps: [
+            "Always wash inside out",
+            "Cold water only — hot water loosens adhesive",
+            "NO fabric softener — ever (breaks down adhesive)",
+            "No dryer sheets — same problem",
+            "Check detergent doesn't contain fabric softener",
+            "Tumble dry LOW or hang dry",
+            "Never iron directly on the design",
+            "Consider re-pressing the design for 5-10 extra seconds",
+            "Try a higher-quality HTV brand (Siser EasyWeed is highly rated)",
+          ],
+          products: [
+            { name: "Siser EasyWeed HTV", reason: "Known for excellent durability after washing" },
+          ],
+        }},
+      ],
+    },
+    {
+      id: "peel-carrier",
+      question: "Is the HTV a warm peel or cold peel?",
+      options: [
+        { label: "Warm peel", solution: {
+          title: "Warm Peel Technique",
+          description: "Warm peel HTV needs to be peeled while still warm but not hot.",
+          steps: [
+            "Remove carrier sheet while still warm to touch",
+            "Wait 5-10 seconds after pressing — not immediately",
+            "Peel slowly at a 45° angle",
+            "If HTV is lifting with carrier, press again for 10+ seconds",
+            "Try peeling from a different corner",
+            "Press again over the design after removing carrier (with parchment paper)",
+          ],
+        }},
+        { label: "Cold peel", solution: {
+          title: "Cold Peel Technique",
+          description: "Cold peel HTV must cool completely before removing carrier.",
+          steps: [
+            "Wait until COMPLETELY cool to touch",
+            "Don't rush — at least 30-60 seconds",
+            "Peel slowly at a 45° angle",
+            "If HTV is pulling up, wait longer",
+            "Press again if needed after carrier is removed",
+            "Some cold peel HTV benefits from pressing again after removal",
+          ],
+        }},
+        { label: "Not sure/mixed results", solution: {
+          title: "Determine Peel Type",
+          description: "If you're getting inconsistent results, try both methods to see what works.",
+          steps: [
+            "Check packaging or manufacturer website for peel instructions",
+            "If unknown: try cold peel first (safer)",
+            "Test on a scrap piece of fabric first",
+            "Generally: glitter/specialty HTV = cold peel, standard HTV = warm peel",
+            "Cricut Everyday Iron-On = warm peel",
+            "Cricut SportFlex = warm peel",
+            "Cricut Glitter = cold peel",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "cracking",
+      question: "Is it cracking right away or after wearing/washing?",
+      options: [
+        { label: "Right away", solution: {
+          title: "Fix Immediate Cracking",
+          description: "Cracking right after pressing usually means too much heat or wrong material choice.",
+          steps: [
+            "Temperature may be too HIGH — lower by 10-15°F",
+            "Time may be too long — reduce by 5-10 seconds",
+            "Make sure you're not pressing same area multiple times",
+            "Check HTV compatibility with fabric (poly needs lower temp)",
+            "Some cheap HTV cracks easily — try a quality brand",
+            "For stretch fabrics, use stretch HTV (like SportFlex)",
+          ],
+          products: [
+            { name: "Siser EasyWeed Stretch", reason: "Flexes with fabric, won't crack" },
+            { name: "Cricut SportFlex", reason: "Designed for athletic/stretchy materials" },
+          ],
+        }},
+        { label: "After multiple washes/wears", solution: {
+          title: "Extend HTV Life",
+          description: "Some cracking over time is normal, but you can extend the life.",
+          steps: [
+            "Use quality HTV — it lasts longer",
+            "Wash inside out, cold water",
+            "Avoid the dryer when possible — hang dry",
+            "Never iron directly on the design",
+            "Consider pressing again occasionally to 'refresh' adhesion",
+            "Stretch HTV lasts longer on stretchy fabrics",
+            "Thinner HTV tends to last longer than thick",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "burnt",
+      question: "What does the burn look like?",
+      options: [
+        { label: "HTV is discolored/yellowed", solution: {
+          title: "HTV Burning/Discoloration",
+          description: "Discolored HTV means too much heat or time.",
+          steps: [
+            "Lower your temperature by 15-20°F",
+            "Reduce press time — try 10-12 seconds",
+            "Use a Teflon sheet or parchment paper between press and HTV",
+            "Never press HTV multiple times without protection",
+            "White HTV shows heat damage most easily — be extra careful",
+            "Check your press temp with an infrared thermometer",
+          ],
+          products: [
+            { name: "Teflon Pressing Sheet", reason: "Protects HTV from direct heat/scorching" },
+          ],
+        }},
+        { label: "Fabric is burned/scorched", solution: {
+          title: "Fabric Scorching",
+          description: "If the fabric itself is burning, you need to adjust for that fabric type.",
+          steps: [
+            "Different fabrics need different temps:",
+            "Polyester: MAX 270-280°F — it melts at high temps",
+            "Nylon: MAX 265°F — very heat sensitive",
+            "Cotton: Can handle 305-320°F",
+            "Blends: Use lower temp of the blend (poly-blend = use poly temp)",
+            "Always test on a hidden area or scrap first",
+            "Pre-made shirts may have unknown fabric content",
+          ],
+        }},
+        { label: "Shiny/melted appearance", solution: {
+          title: "HTV Melting",
+          description: "A shiny, melted look means excessive heat or wrong HTV type.",
+          steps: [
+            "Lower temperature immediately — probably 20-30°F too high",
+            "Standard HTV shouldn't exceed 320°F",
+            "For polyester fabrics, use LOW-TEMP HTV only",
+            "Check that you're using the right side up (textured side down)",
+            "Never press longer than 15 seconds at high temps",
+            "Some HTV brands are more heat-sensitive than others",
+          ],
+          products: [
+            { name: "Low-Temp HTV", reason: "Required for polyester and heat-sensitive fabrics" },
+          ],
+        }},
+      ],
+    },
+  ],
+
+  "weeding": [
+    {
+      id: "start",
+      question: "What's making weeding difficult?",
+      options: [
+        { label: "Small pieces won't come out", nextStep: "small-pieces" },
+        { label: "Vinyl is tearing during weeding", nextStep: "tearing" },
+        { label: "Letters/shapes lifting with waste", nextStep: "lifting" },
+        { label: "Can't see what to weed", nextStep: "visibility" },
+      ],
+    },
+    {
+      id: "small-pieces",
+      question: "How small are the pieces?",
+      options: [
+        { label: "Tiny (inside of letters like o, e, a)", solution: {
+          title: "Remove Tiny Centers",
+          description: "The insides of letters are the hardest to weed. Here's how.",
+          steps: [
+            "Use a fine-point weeding tool — not the hook end",
+            "Poke into the CENTER of the piece, twist, lift",
+            "Good lighting is essential — use a bright lamp",
+            "A light pad under the vinyl helps see cut lines",
+            "For HTV: weed from the back side sometimes helps",
+            "Slow down — rushing tears things",
+            "If pieces won't lift, design may not have cut through — recut with more pressure",
+          ],
+          products: [
+            { name: "Cricut Weeding Tool Set", reason: "Multiple tip styles for different situations" },
+            { name: "LED Light Pad", reason: "See cut lines clearly — game changer" },
+          ],
+        }},
+        { label: "Intricate design with lots of small cuts", solution: {
+          title: "Weeding Complex Designs",
+          description: "Intricate designs require patience and technique.",
+          steps: [
+            "Consider if design is TOO intricate — simplify if possible",
+            "Use the 'weed all at once' method — peel waste vinyl in one sheet",
+            "Work from outside edges inward",
+            "Use fingers for large areas, tool for details",
+            "For adhesive vinyl: apply transfer tape FIRST, then weed from the back",
+            "Take breaks — eye strain causes mistakes",
+            "Good posture and lighting reduce fatigue",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "tearing",
+      question: "Is the vinyl tearing when you pull?",
+      options: [
+        { label: "Yes, rips instead of clean edges", solution: {
+          title: "Prevent Vinyl Tearing",
+          description: "Tearing usually means the blade didn't cut through cleanly.",
+          steps: [
+            "Blade may be dull — try a fresh blade",
+            "Increase cut pressure in Design Space",
+            "Slow down cut speed for intricate designs",
+            "Make sure vinyl is stuck firmly to mat",
+            "Pull waste at a 45° angle, not straight up",
+            "Pull slowly and evenly — don't jerk",
+            "Warm the vinyl slightly with a heat gun (low setting) to make it more pliable",
+          ],
+        }},
+        { label: "Vinyl stretches and distorts", solution: {
+          title: "Prevent Vinyl Stretching",
+          description: "Cheap vinyl or wrong technique causes stretching.",
+          steps: [
+            "Use quality vinyl — cheap vinyl stretches and tears more",
+            "Don't pull too fast",
+            "Keep the vinyl flat on the backing — don't bend it",
+            "Weed in a cool room — heat makes vinyl stretchy",
+            "If it's stretched, that piece is ruined — recut",
+            "For HTV: peel backing slowly to avoid stretching",
+          ],
+          products: [
+            { name: "Oracal 651 Vinyl", reason: "Quality vinyl that weeds cleanly" },
+            { name: "Siser EasyWeed HTV", reason: "Weeds beautifully, doesn't stretch" },
+          ],
+        }},
+      ],
+    },
+    {
+      id: "lifting",
+      question: "Design lifting with waste — what type of vinyl?",
+      options: [
+        { label: "Adhesive vinyl", solution: {
+          title: "Keep Adhesive Vinyl In Place",
+          description: "Adhesive vinyl lifting during weeding means cuts went too deep or vinyl isn't stuck.",
+          steps: [
+            "Make sure blade isn't cutting into the backing paper",
+            "Reduce pressure if you see backing marks",
+            "Press vinyl firmly to mat before cutting",
+            "Weed slowly — if piece starts to lift, press it back down",
+            "Use fingers to hold design while weeding around it",
+            "Pull waste AWAY from the design, not toward it",
+            "For permanent vinyl: try 'reverse weeding' — apply transfer tape, then weed from back",
+          ],
+        }},
+        { label: "HTV/Iron-on", solution: {
+          title: "Keep HTV Design In Place",
+          description: "HTV is usually easier to weed because it's on a carrier sheet.",
+          steps: [
+            "HTV should be cut mirrored and placed shiny-side DOWN",
+            "The carrier sheet holds everything in place — don't remove it",
+            "Weed from the textured/dull side (the cut side)",
+            "Use hook tool to lift waste, not the design",
+            "If design lifts, blade didn't cut through — increase pressure",
+            "Some HTV (like glitter) requires more pressure to cut through",
+          ],
+        }},
+      ],
+    },
+    {
+      id: "visibility",
+      question: "Hard to see what needs to be weeded?",
+      options: [
+        { label: "Can't see the cut lines", solution: {
+          title: "See Cut Lines Better",
+          description: "If you can't see where cuts are, try these tricks.",
+          steps: [
+            "Use an LED light pad under the vinyl — shows every cut",
+            "Angle a bright desk lamp to create shadows on cuts",
+            "Flex the vinyl slightly — cuts will show as lines",
+            "Try different colored vinyl (white on white is hardest)",
+            "For HTV: weed from the dull side where cuts are more visible",
+            "Mark the waste areas with a Sharpie before cutting",
+            "Use the 'Contour' feature in Design Space to simplify designs",
+          ],
+          products: [
+            { name: "LED Light Pad (A4 size)", reason: "Best tool for seeing cut lines" },
+            { name: "Cricut BrightPad", reason: "Official light pad, larger size" },
+          ],
+        }},
+        { label: "Eye strain/can't focus on details", solution: {
+          title: "Reduce Eye Strain",
+          description: "Detailed weeding is hard on the eyes. Here's how to make it easier.",
+          steps: [
+            "Use magnifying glasses or a magnifying lamp",
+            "Take breaks every 15-20 minutes — look away from work",
+            "Work in a well-lit area — no shadows",
+            "Position work at comfortable height",
+            "Use a light pad to reduce squinting",
+            "Consider making designs slightly larger if possible",
+            "Weed in the morning when eyes are fresh",
+          ],
+          products: [
+            { name: "Magnifying Lamp", reason: "Combines light and magnification" },
+            { name: "Cricut Bright 360 Lamp", reason: "Great lighting for crafting" },
+          ],
+        }},
+      ],
+    },
+  ],
+};
+
 export const issueCategories = [
   { id: "not-cutting", label: "Not cutting through material", icon: "✂️" },
   { id: "mat-grip", label: "Mat grip issues", icon: "📋" },
   { id: "bluetooth", label: "Bluetooth connection", icon: "📶" },
   { id: "adhesion", label: "Material won't stick to blank", icon: "🔥" },
-  { id: "tearing", label: "Material tearing", icon: "📄" },
-  { id: "blade", label: "Blade problems", icon: "🔪" },
-  { id: "software", label: "Design Space issues", icon: "💻" },
-  { id: "uneven", label: "Uneven/incomplete cuts", icon: "📐" },
-  { id: "shifting", label: "Material shifting", icon: "↔️" },
+  { id: "design-space", label: "Design Space problems", icon: "💻" },
+  { id: "print-then-cut", label: "Print Then Cut issues", icon: "🖨️" },
+  { id: "htv-problems", label: "HTV/Iron-on not working", icon: "👕" },
+  { id: "weeding", label: "Weeding difficulties", icon: "🔍" },
 ];

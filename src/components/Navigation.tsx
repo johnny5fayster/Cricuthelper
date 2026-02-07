@@ -20,6 +20,9 @@ export function Navigation() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6">
+            <Link href="/problems" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
+              ❓ Problems
+            </Link>
             <Link href="/troubleshoot" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
               🔧 Troubleshoot
             </Link>
@@ -59,6 +62,9 @@ export function Navigation() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-pink-100">
             <div className="flex flex-col gap-3">
+              <Link href="/problems" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+                ❓ Common Problems
+              </Link>
               <Link href="/troubleshoot" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
                 🔧 Troubleshoot
               </Link>
