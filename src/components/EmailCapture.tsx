@@ -11,7 +11,7 @@ interface EmailCaptureProps {
 export function EmailCapture({ 
   variant = "inline",
   title = "Get Cricut Tips & Updates",
-  description = "Join 1,000+ crafters getting weekly tips, new material settings, and troubleshooting guides."
+  description = "Be first to get new troubleshooting guides, material settings, and Cricut tips when we launch our newsletter."
 }: EmailCaptureProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -39,7 +39,8 @@ export function EmailCapture({
   if (status === "success") {
     return (
       <div className={`bg-green-50 border border-green-200 rounded-xl p-6 text-center ${variant === "banner" ? "w-full" : ""}`}>
-        <p className="text-green-800 font-medium">🎉 You're in! Check your inbox for a welcome email.</p>
+        <p className="text-green-800 font-medium">🎉 You're on the list!</p>
+        <p className="text-green-700 text-sm mt-1">We're setting up our newsletter now — you'll hear from us soon with Cricut tips and updates.</p>
       </div>
     );
   }
