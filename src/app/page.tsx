@@ -3,10 +3,15 @@ import { EmailCapture } from "@/components/EmailCapture";
 import { Testimonials } from "@/components/Testimonials";
 import { LiveQuestions } from "@/components/LiveQuestions";
 import { CommunityStats } from "@/components/CommunityStats";
+import { InstallPrompt, IOSInstallPrompt } from "@/components/InstallPrompt";
 
 export default function Home() {
   return (
     <div className="space-y-16">
+      {/* PWA Install Prompts - PRIMARY */}
+      <InstallPrompt />
+      <IOSInstallPrompt />
+
       {/* Hero Section */}
       <section className="text-center py-12">
         <p className="text-pink-500 font-semibold mb-4 text-lg">
