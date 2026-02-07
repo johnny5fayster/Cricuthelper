@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EmailCapture } from "@/components/EmailCapture";
 
 export default function Home() {
   return (
@@ -106,6 +107,11 @@ export default function Home() {
             View all 100+ materials →
           </Link>
         </div>
+      </section>
+
+      {/* Email Capture */}
+      <section>
+        <EmailCapture variant="banner" />
       </section>
 
       {/* Trust Section */}

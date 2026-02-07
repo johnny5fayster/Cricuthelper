@@ -8,9 +8,44 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CricutHelper - Troubleshooting & Material Settings for Cricut",
+  title: {
+    default: "CricutHelper - Free Troubleshooting & Material Settings for Cricut",
+    template: "%s | CricutHelper",
+  },
   description: "Free troubleshooting guides, material cut settings database, and tools for Cricut Maker, Explore, and Joy users. Fix issues fast and get perfect cuts every time.",
-  keywords: "Cricut, troubleshooting, material settings, cut settings, Cricut Maker, Cricut Explore, vinyl, HTV, help",
+  keywords: ["Cricut troubleshooting", "Cricut material settings", "Cricut cut settings", "Cricut Maker help", "Cricut Explore help", "vinyl settings", "HTV settings", "heat press settings", "Cricut not cutting"],
+  authors: [{ name: "CricutHelper" }],
+  creator: "CricutHelper",
+  publisher: "CricutHelper",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://cricuthelper.com",
+    siteName: "CricutHelper",
+    title: "CricutHelper - Free Troubleshooting & Material Settings",
+    description: "Free troubleshooting guides and material settings for Cricut Maker, Explore, and Joy. Fix issues fast!",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CricutHelper - Free Cricut Troubleshooting",
+    description: "Free troubleshooting guides and material settings for Cricut users.",
+  },
+  verification: {
+    // Add these when you have them:
+    // google: "your-google-verification-code",
+    // bing: "your-bing-verification-code",
+  },
 };
 
 export default function RootLayout({

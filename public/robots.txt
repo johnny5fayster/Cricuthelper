@@ -1,0 +1,9 @@
+# CricutHelper robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cricuthelper.com/sitemap.xml
+
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1
