@@ -24,10 +24,17 @@ const guides = [
     readTime: "12 min",
     featured: true,
   },
+  {
+    title: "HTV Peeling After Washing? 9 Fixes for Iron-On That Won't Stay",
+    description: "Why your iron-on vinyl is peeling and exactly how to fix it. Temperature, pressure, and wash care secrets.",
+    href: "/guides/htv-peeling-after-washing",
+    category: "Troubleshooting",
+    readTime: "15 min",
+    featured: false,
+  },
 ];
 
 const upcomingGuides = [
-  "HTV Not Sticking to Shirt? Here's What You're Doing Wrong",
   "Cricut Design Space Slow or Crashing: How to Fix It",
   "Print Then Cut Not Working: Complete Troubleshooting Guide",
   "Complete Guide to Cutting Cardstock with Cricut",
