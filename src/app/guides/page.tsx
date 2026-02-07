@@ -64,10 +64,17 @@ const guides = [
     readTime: "14 min",
     featured: false,
   },
+  {
+    title: "How to Cut Cardstock on Cricut: Settings, Tips & Fixing Tears",
+    description: "Get the right settings for any cardstock weight plus fixes for tearing, dragging, and incomplete cuts.",
+    href: "/guides/cutting-cardstock-cricut",
+    category: "Materials",
+    readTime: "12 min",
+    featured: false,
+  },
 ];
 
 const upcomingGuides = [
-  "Complete Guide to Cutting Cardstock with Cricut",
   "Cricut Maker vs Explore: Which One Should You Buy?",
 ];
 
