@@ -48,12 +48,20 @@ const guides = [
     readTime: "15 min",
     featured: false,
   },
+  {
+    title: "Cricut Mat Not Sticky? How to Clean & Restick Like New",
+    description: "Don't throw out that mat! 4 cleaning methods plus 3 ways to restick. Save money and extend mat life.",
+    href: "/guides/cricut-mat-not-sticky",
+    category: "Mat Care",
+    readTime: "12 min",
+    featured: false,
+  },
 ];
 
 const upcomingGuides = [
   "Complete Guide to Cutting Cardstock with Cricut",
   "Weeding Tips: How to Weed Vinyl Like a Pro",
-  "Cricut Mat Not Sticky? How to Clean & Restick",
+  "Cricut Maker vs Explore: Which One Should You Buy?",
 ];
 
 export default function GuidesPage() {
