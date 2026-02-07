@@ -4,6 +4,8 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { troubleshootingFlows, issueCategories, TroubleshootingStep, Solution } from "@/data/troubleshooting";
+import { FeedbackButton } from "@/components/FeedbackButton";
+import { RelatedProblems } from "@/components/RelatedProblems";
 
 function TroubleshootContent() {
   const searchParams = useSearchParams();
@@ -187,22 +189,24 @@ function TroubleshootContent() {
             </div>
           )}
 
+          {/* Feedback Button */}
           <div className="mt-8 pt-6 border-t border-gray-200">
-            <p className="text-gray-600 mb-4">Did this solve your problem?</p>
-            <div className="flex gap-3">
-              <button 
-                onClick={handleStartOver}
-                className="px-6 py-2 bg-green-500 text-white rounded-full font-medium hover:bg-green-600 transition-colors"
-              >
-                👍 Yes, thanks!
-              </button>
-              <button 
-                onClick={handleStartOver}
-                className="px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
-              >
-                👎 No, try again
-              </button>
-            </div>
+            <FeedbackButton solutionId={`${selectedIssue}-${solution.title}`} />
+          </div>
+
+          {/* Related Problems - Discovery */}
+          {selectedIssue && (
+            <RelatedProblems currentIssue={selectedIssue} />
+          )}
+
+          {/* Start Over */}
+          <div className="mt-6 text-center">
+            <button 
+              onClick={handleStartOver}
+              className="text-pink-500 hover:underline font-medium"
+            >
+              ← Start a new troubleshooting session
+            </button>
           </div>
         </div>
       )}

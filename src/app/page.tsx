@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { EmailCapture } from "@/components/EmailCapture";
+import { Testimonials } from "@/components/Testimonials";
+import { LiveQuestions } from "@/components/LiveQuestions";
+import { CommunityStats } from "@/components/CommunityStats";
 
 export default function Home() {
   return (
@@ -30,6 +33,16 @@ export default function Home() {
             ✨ Join the Community
           </Link>
         </div>
+      </section>
+
+      {/* Community Stats - Social Proof */}
+      <section>
+        <CommunityStats />
+      </section>
+
+      {/* Live Questions - Shows Activity */}
+      <section>
+        <LiveQuestions />
       </section>
 
       {/* Why Us Section */}
@@ -102,6 +115,11 @@ export default function Home() {
             See all common problems →
           </Link>
         </div>
+      </section>
+
+      {/* Testimonials - Social Proof */}
+      <section>
+        <Testimonials />
       </section>
 
       {/* Niche Guides */}
