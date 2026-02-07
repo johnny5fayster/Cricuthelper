@@ -23,6 +23,9 @@ export function Navigation() {
             <Link href="/troubleshoot" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
               🔧 Troubleshoot
             </Link>
+            <Link href="/error-codes" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
+              🚨 Errors
+            </Link>
             <Link href="/materials" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
               📋 Materials
             </Link>
@@ -58,6 +61,9 @@ export function Navigation() {
             <div className="flex flex-col gap-3">
               <Link href="/troubleshoot" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
                 🔧 Troubleshoot
+              </Link>
+              <Link href="/error-codes" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+                🚨 Error Codes
               </Link>
               <Link href="/materials" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
                 📋 Materials
