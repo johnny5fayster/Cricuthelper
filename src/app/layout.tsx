@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { WebsiteSchema, OrganizationSchema } from "@/components/SchemaMarkup";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -84,6 +85,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <Analytics />
+        <GoogleAnalytics />
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1500px;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 30%, #fbcfe8 70%, #f9a8d4 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Decorative circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+    .circle-1 {
+      width: 300px;
+      height: 300px;
+      background: #ec4899;
+      top: -100px;
+      left: -50px;
+    }
+    .circle-2 {
+      width: 200px;
+      height: 200px;
+      background: #f472b6;
+      bottom: -80px;
+      right: 100px;
+    }
+    .circle-3 {
+      width: 150px;
+      height: 150px;
+      background: #db2777;
+      top: 50px;
+      right: -30px;
+    }
+    .content {
+      text-align: center;
+      z-index: 10;
+    }
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .emoji {
+      font-size: 72px;
+    }
+    .logo {
+      font-size: 72px;
+      font-weight: 800;
+      color: #1f2937;
+    }
+    .logo .pink {
+      color: #ec4899;
+    }
+    .tagline {
+      font-size: 32px;
+      color: #6b7280;
+      font-weight: 500;
+    }
+    .features {
+      display: flex;
+      gap: 40px;
+      margin-top: 30px;
+      justify-content: center;
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      color: #374151;
+      font-weight: 600;
+    }
+    .feature-emoji {
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+  <div class="circle circle-3"></div>
+  
+  <div class="content">
+    <div class="logo-row">
+      <span class="emoji">✂️</span>
+      <span class="logo">Cricut<span class="pink">Helper</span></span>
+    </div>
+    <div class="tagline">Where crafters help crafters</div>
+    <div class="features">
+      <div class="feature">
+        <span class="feature-emoji">🔧</span>
+        <span>Free Troubleshooting</span>
+      </div>
+      <div class="feature">
+        <span class="feature-emoji">📚</span>
+        <span>Real Guides</span>
+      </div>
+      <div class="feature">
+        <span class="feature-emoji">⚡</span>
+        <span>Answers in 60s</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

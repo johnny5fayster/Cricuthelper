@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1000px;
+      height: 1500px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #fce7f3 0%, #f5d0fe 50%, #e9d5ff 100%);
+      display: flex;
+      flex-direction: column;
+      padding: 60px;
+    }
+    .badge {
+      background: #ec4899;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 24px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 40px;
+      align-self: flex-start;
+    }
+    h1 {
+      font-size: 72px;
+      font-weight: 800;
+      color: #1f2937;
+      line-height: 1.1;
+      margin-bottom: 40px;
+    }
+    h1 span {
+      color: #ec4899;
+    }
+    .problem-box {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    .problem-box h2 {
+      font-size: 32px;
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+    .checklist {
+      list-style: none;
+    }
+    .checklist li {
+      font-size: 36px;
+      color: #374151;
+      padding: 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .checklist li::before {
+      content: "✅";
+      font-size: 32px;
+    }
+    .cta {
+      margin-top: auto;
+      background: #ec4899;
+      color: white;
+      padding: 32px 48px;
+      border-radius: 20px;
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 40px;
+      justify-content: center;
+    }
+    .brand span {
+      font-size: 48px;
+    }
+    .brand-text {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1f2937;
+    }
+    .brand-text span {
+      color: #ec4899;
+      font-size: 36px;
+    }
+  </style>
+</head>
+<body>
+  <div class="badge">🔧 TROUBLESHOOTING</div>
+  
+  <h1>Why Your Cricut <span>Won't Cut</span> Through Vinyl</h1>
+  
+  <div class="problem-box">
+    <h2>Get the fix for:</h2>
+    <ul class="checklist">
+      <li>Dull blade syndrome</li>
+      <li>Wrong pressure settings</li>
+      <li>Mat grip issues</li>
+      <li>Material loading mistakes</li>
+    </ul>
+  </div>
+  
+  <div class="cta">
+    Tap to get the full guide →
+  </div>
+  
+  <div class="brand">
+    <span>✂️</span>
+    <div class="brand-text">Cricut<span>Helper</span>.com</div>
+  </div>
+</body>
+</html>
