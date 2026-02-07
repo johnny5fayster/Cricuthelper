@@ -64,18 +64,20 @@ export function FAQSchema({ faqs }: { faqs: { question: string; answer: string }
 }
 
 export function HowToSchema({ 
-  title, 
+  name, 
   description, 
-  steps 
+  steps,
+  totalTime
 }: { 
-  title: string; 
+  name: string; 
   description: string; 
-  steps: { name: string; text: string }[] 
+  steps: { name: string; text: string }[];
+  totalTime?: string; // ISO 8601 duration, e.g., "PT15M" for 15 minutes
 }) {
-  const schema = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": title,
+    "name": name,
     "description": description,
     "step": steps.map((step, i) => ({
       "@type": "HowToStep",
@@ -84,6 +86,10 @@ export function HowToSchema({
       "text": step.text
     }))
   };
+  
+  if (totalTime) {
+    schema.totalTime = totalTime;
+  }
 
   return (
     <script
