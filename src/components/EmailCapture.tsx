@@ -20,17 +20,19 @@ export function EmailCapture({
     e.preventDefault();
     setStatus("loading");
     
-    // For now, store in localStorage and log - will connect to email service later
     try {
-      const subscribers = JSON.parse(localStorage.getItem("cricuthelper_subscribers") || "[]");
-      subscribers.push({ email, date: new Date().toISOString() });
-      localStorage.setItem("cricuthelper_subscribers", JSON.stringify(subscribers));
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
       
-      // TODO: Connect to ConvertKit/Mailchimp/Buttondown
-      console.log("New subscriber:", email);
-      
-      setStatus("success");
-      setEmail("");
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
