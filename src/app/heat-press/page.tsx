@@ -265,7 +265,7 @@ export default function HeatPressPage() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <a
-            href="https://www.amazon.com/dp/B08LNV4SJV?tag=cricuthelpe03-20"
+            href="https://www.amazon.com/dp/B07G51DZ45?tag=cricuthelpe03-20"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
@@ -281,7 +281,7 @@ export default function HeatPressPage() {
           </a>
           
           <a
-            href="https://www.amazon.com/dp/B07H3QHXHV?tag=cricuthelpe03-20"
+            href="https://www.amazon.com/dp/B0B6GTVZFH?tag=cricuthelpe03-20"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
@@ -297,7 +297,7 @@ export default function HeatPressPage() {
           </a>
           
           <a
-            href="https://www.amazon.com/dp/B07BN2TXGJ?tag=cricuthelpe03-20"
+            href="https://www.amazon.com/dp/B074S8SNZN?tag=cricuthelpe03-20"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
@@ -313,7 +313,7 @@ export default function HeatPressPage() {
           </a>
           
           <a
-            href="https://www.amazon.com/dp/B07L4L8YKX?tag=cricuthelpe03-20"
+            href="https://www.amazon.com/dp/B0127RTOYQ?tag=cricuthelpe03-20"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
