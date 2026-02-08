@@ -12,6 +12,10 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 interface LinkCheck {
   url: string;
@@ -144,30 +148,28 @@ function extractLinks(): LinkCheck[] {
 async function checkUrl(url: string): Promise<{ ok: boolean; code: number; error?: string }> {
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    
+    // Use GET for Amazon (they block HEAD), HEAD for others
+    const method = url.includes('amazon.com') ? 'GET' : 'HEAD';
     
     const response = await fetch(url, {
-      method: 'HEAD',
+      method,
       redirect: 'follow',
       signal: controller.signal,
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.5'
       }
     });
     
     clearTimeout(timeout);
     
-    // For Amazon, also check if it's a "dog page" (404 with 200 status)
+    // For Amazon, check if it's a "dog page" (404 with 200 status)
     if (url.includes('amazon.com') && response.ok) {
-      const getResponse = await fetch(url, {
-        method: 'GET',
-        redirect: 'follow',
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
-        }
-      });
-      const text = await getResponse.text();
-      if (text.includes("couldn't find") || text.includes('Page Not Found') || text.includes('looking for something')) {
+      const text = await response.text();
+      if (text.includes("couldn't find") || text.includes('Page Not Found') || text.includes('looking for something') || text.includes("We're sorry")) {
         return { ok: false, code: 404, error: 'Amazon product not found (dog page)' };
       }
     }
