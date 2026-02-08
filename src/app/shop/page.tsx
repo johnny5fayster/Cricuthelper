@@ -250,6 +250,20 @@ export default function ShopPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [shoppingList, setShoppingList] = useState<string[]>([]);
   const [showList, setShowList] = useState(false);
+  const [amazonDomain, setAmazonDomain] = useState({ domain: "amazon.com", tag: "cricuthelpe03-20" });
+  
+  // Detect country on mount
+  useEffect(() => {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    const lang = navigator.language?.toLowerCase() || '';
+    const isCanada = tz.includes('Toronto') || tz.includes('Vancouver') || 
+                     tz.includes('Edmonton') || tz.includes('Winnipeg') || 
+                     tz.includes('Halifax') || lang.includes('en-ca');
+    
+    if (isCanada) {
+      setAmazonDomain({ domain: "amazon.ca", tag: "cricuthelper-20" });
+    }
+  }, []);
   
   // Load shopping list from localStorage
   useEffect(() => {
@@ -280,7 +294,7 @@ export default function ShopPage() {
   
   const copyListToClipboard = () => {
     const text = listProducts.map(p => 
-      `${p.title}\nhttps://www.amazon.com/dp/${p.asin}?tag=cricuthelpe03-20\n`
+      `${p.title}\nhttps://www.${amazonDomain.domain}/dp/${p.asin}?tag=${amazonDomain.tag}\n`
     ).join("\n");
     navigator.clipboard.writeText(text);
     alert("Shopping list copied to clipboard!");
@@ -359,7 +373,7 @@ export default function ShopPage() {
                     <div>
                       <p className="font-medium text-gray-800">{product.title}</p>
                       <a
-                        href={`https://www.amazon.com/dp/${product.asin}?tag=cricuthelpe03-20`}
+                        href={`https://www.${amazonDomain.domain}/dp/${product.asin}?tag=${amazonDomain.tag}`}
                         target="_blank"
                         rel="noopener noreferrer sponsored"
                         className="text-sm text-pink-600 hover:underline"
@@ -414,7 +428,7 @@ export default function ShopPage() {
               <p className="text-gray-500 text-sm mb-4 flex-grow">{product.note}</p>
               
               <a
-                href={`https://www.amazon.com/dp/${product.asin}?tag=cricuthelpe03-20`}
+                href={`https://www.${amazonDomain.domain}/dp/${product.asin}?tag=${amazonDomain.tag}`}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="block w-full bg-pink-500 text-white text-center py-2 rounded-xl font-medium hover:bg-pink-600 transition-colors mt-auto"
