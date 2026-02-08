@@ -6,7 +6,7 @@ import { useMemo, Suspense } from "react";
 
 // Searchable content database
 const searchableContent = [
-  // Guides
+  // Guides - Troubleshooting
   {
     title: "Cricut Not Cutting Through Vinyl? 7 Fixes That Actually Work",
     description: "Step-by-step guide to fix your Cricut when it won't cut through vinyl.",
@@ -27,6 +27,157 @@ const searchableContent = [
     href: "/guides/htv-peeling-after-washing",
     category: "Guide",
     keywords: ["htv", "iron-on", "peeling", "washing", "heat transfer", "vinyl", "temperature", "pressure"],
+  },
+  {
+    title: "Print Then Cut Not Lining Up? 9 Proven Fixes",
+    description: "Fix alignment and calibration issues with Print Then Cut.",
+    href: "/guides/print-then-cut-not-lining-up",
+    category: "Guide",
+    keywords: ["print then cut", "alignment", "calibration", "sensor", "offset", "misaligned"],
+  },
+  {
+    title: "Text Cutting Instead of Printing? Fix Print Then Cut Text Issues",
+    description: "Learn the difference between Flatten and Attach for Print Then Cut.",
+    href: "/guides/print-then-cut-text-cutting-fix",
+    category: "Guide",
+    keywords: ["print then cut", "text", "cutting", "flatten", "attach", "layers"],
+  },
+  {
+    title: "Cricut Design Space Not Working? 10 Quick Fixes",
+    description: "Fix crashes, freezes, and loading issues in Design Space.",
+    href: "/guides/cricut-design-space-not-working",
+    category: "Guide",
+    keywords: ["design space", "not working", "crash", "freeze", "slow", "login"],
+  },
+  {
+    title: "Cricut Mat Not Sticky? How to Clean and Restore Your Mat",
+    description: "Restore grip to your cutting mat without buying a new one.",
+    href: "/guides/cricut-mat-not-sticky",
+    category: "Guide",
+    keywords: ["mat", "sticky", "grip", "clean", "restore", "adhesive"],
+  },
+  {
+    title: "How to Weed Vinyl Like a Pro",
+    description: "Tips and tricks for weeding small details without tearing.",
+    href: "/guides/how-to-weed-vinyl",
+    category: "Guide",
+    keywords: ["weed", "weeding", "vinyl", "small", "details", "tearing"],
+  },
+  {
+    title: "How to Use Transfer Tape (Without Ruining Your Project)",
+    description: "Master transfer tape application for perfect vinyl transfers.",
+    href: "/guides/how-to-use-transfer-tape",
+    category: "Guide",
+    keywords: ["transfer tape", "vinyl", "application", "adhesive", "bubbles"],
+  },
+  {
+    title: "Cricut Won't Turn On? Troubleshooting Power Issues",
+    description: "Fix power and startup problems with your Cricut machine.",
+    href: "/guides/cricut-wont-turn-on",
+    category: "Guide",
+    keywords: ["won't turn on", "power", "startup", "dead", "not working"],
+  },
+  {
+    title: "How to Calibrate Your Cricut (Print Then Cut & Knife Blade)",
+    description: "Step-by-step calibration guide for perfect cuts.",
+    href: "/guides/how-to-calibrate-cricut",
+    category: "Guide",
+    keywords: ["calibrate", "calibration", "print then cut", "knife blade", "alignment"],
+  },
+  // Guides - Tutorials
+  {
+    title: "How to Make Stickers with Cricut (Print Then Cut)",
+    description: "Complete guide to making custom stickers with your Cricut.",
+    href: "/guides/how-to-make-stickers-cricut",
+    category: "Guide",
+    keywords: ["stickers", "print then cut", "sticker paper", "custom", "labels"],
+  },
+  {
+    title: "Cutting Cardstock with Cricut: Complete Settings Guide",
+    description: "Perfect cardstock cuts every time with the right settings.",
+    href: "/guides/cutting-cardstock-cricut",
+    category: "Guide",
+    keywords: ["cardstock", "paper", "cutting", "settings", "pressure"],
+  },
+  {
+    title: "How to Cut Leather with Cricut",
+    description: "Cut faux and genuine leather with your Cricut Maker.",
+    href: "/guides/how-to-cut-leather-cricut",
+    category: "Guide",
+    keywords: ["leather", "faux leather", "knife blade", "maker", "thick"],
+  },
+  {
+    title: "Infusible Ink Guide: Everything You Need to Know",
+    description: "Master Cricut Infusible Ink for vibrant, permanent designs.",
+    href: "/guides/infusible-ink-guide",
+    category: "Guide",
+    keywords: ["infusible ink", "sublimation", "heat press", "transfer", "permanent"],
+  },
+  {
+    title: "Cricut Smart Materials Guide",
+    description: "Everything about Smart Vinyl, Smart Iron-On, and matless cutting.",
+    href: "/guides/cricut-smart-materials",
+    category: "Guide",
+    keywords: ["smart materials", "smart vinyl", "smart iron-on", "matless", "maker 3", "explore 3"],
+  },
+  // Guides - Buying & Comparison
+  {
+    title: "Best Cricut for Beginners (2024 Buying Guide)",
+    description: "Which Cricut machine should you buy? Complete comparison.",
+    href: "/guides/best-cricut-for-beginners",
+    category: "Guide",
+    keywords: ["beginner", "buying", "which cricut", "first", "starter", "comparison"],
+  },
+  {
+    title: "Cricut Maker vs Explore: Which Should You Buy?",
+    description: "Detailed comparison of Maker and Explore series machines.",
+    href: "/guides/cricut-maker-vs-explore",
+    category: "Guide",
+    keywords: ["maker", "explore", "comparison", "difference", "vs", "which"],
+  },
+  {
+    title: "Cricut vs Silhouette: Honest Comparison",
+    description: "Compare Cricut and Silhouette cutting machines.",
+    href: "/guides/cricut-vs-silhouette",
+    category: "Guide",
+    keywords: ["cricut", "silhouette", "cameo", "comparison", "vs", "which"],
+  },
+  {
+    title: "Is Cricut Access Worth It? Complete Breakdown",
+    description: "Analyze if the Cricut Access subscription is worth the cost.",
+    href: "/guides/is-cricut-access-worth-it",
+    category: "Guide",
+    keywords: ["cricut access", "subscription", "worth it", "cost", "fonts", "images"],
+  },
+  {
+    title: "Cricut Blade Guide: Which Blade for Every Material",
+    description: "Complete guide to all Cricut blades and when to use each.",
+    href: "/guides/cricut-blade-guide",
+    category: "Guide",
+    keywords: ["blade", "fine point", "deep point", "knife", "rotary", "which blade"],
+  },
+  // Guides - Seasonal
+  {
+    title: "St. Patrick's Day Cricut Projects",
+    description: "Shamrocks, lucky charms, and green crafts for St. Paddy's Day.",
+    href: "/guides/cricut-st-patricks-day-projects",
+    category: "Guide",
+    keywords: ["st patricks", "shamrock", "lucky", "green", "irish", "seasonal"],
+  },
+  // Resources
+  {
+    title: "Cricut Creators We Love",
+    description: "Top Cricut YouTubers, bloggers, and influencers to follow.",
+    href: "/creators",
+    category: "Resource",
+    keywords: ["creators", "youtubers", "influencers", "bloggers", "tutorials", "learn"],
+  },
+  {
+    title: "Shop Cricut Supplies",
+    description: "Curated craft supplies and materials with affiliate links.",
+    href: "/shop",
+    category: "Resource",
+    keywords: ["shop", "buy", "supplies", "vinyl", "materials", "amazon"],
   },
   // Tools
   {
