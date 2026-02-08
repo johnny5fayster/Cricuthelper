@@ -9,12 +9,36 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: "Best Cricut for Beginners 2026: Which Machine to Buy First",
+    description: "Confused about which Cricut to buy? We compare Joy, Explore, and Maker with honest recommendations.",
+    href: "/guides/best-cricut-for-beginners",
+    category: "Buying Guide",
+    readTime: "15 min",
+    featured: true,
+  },
+  {
+    title: "How to Make Stickers with Cricut: Complete Guide",
+    description: "Step-by-step tutorial for making perfect stickers. Print Then Cut, best papers, waterproofing tips.",
+    href: "/guides/how-to-make-stickers-cricut",
+    category: "Tutorial",
+    readTime: "16 min",
+    featured: true,
+  },
+  {
+    title: "Cricut Blade Guide: Which Blade for Every Material",
+    description: "Complete guide to every Cricut blade. Fine Point, Deep Point, Rotary, Knife and more.",
+    href: "/guides/cricut-blade-guide",
+    category: "Reference",
+    readTime: "18 min",
+    featured: true,
+  },
+  {
     title: "Cricut Design Space Not Working? 11 Fixes That Actually Work",
     description: "Design Space frozen, slow, or showing a blank screen? Fix loading issues, lag, crashes, and connection problems.",
     href: "/guides/cricut-design-space-not-working",
     category: "Software",
     readTime: "14 min",
-    featured: true,
+    featured: false,
   },
   {
     title: "Print Then Cut Not Lining Up? 9 Proven Fixes",
@@ -22,7 +46,7 @@ const guides = [
     href: "/guides/print-then-cut-not-lining-up",
     category: "Troubleshooting",
     readTime: "12 min",
-    featured: true,
+    featured: false,
   },
   {
     title: "Cricut Not Cutting Through Vinyl? 7 Fixes That Actually Work",
@@ -30,7 +54,7 @@ const guides = [
     href: "/guides/cricut-not-cutting-vinyl",
     category: "Troubleshooting",
     readTime: "10 min",
-    featured: true,
+    featured: false,
   },
   {
     title: "Cricut Bluetooth Not Connecting? 8 Fixes That Actually Work",
