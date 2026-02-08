@@ -20,7 +20,7 @@ const products: Product[] = [
   {
     id: "explore3",
     title: "Cricut Explore 3",
-    asin: "B08YKRF84C",
+    asin: "B095X86D23",
     category: "machines",
     rating: "4.7",
     reviews: "8,200+",
@@ -133,12 +133,12 @@ const products: Product[] = [
   },
   {
     id: "basic-tools",
-    title: "Cricut Basic Tool Set",
-    asin: "B003B2FTBO",
+    title: "Cricut Basic Tool Set (5-Piece)",
+    asin: "B07TMK6SVK",
     category: "tools",
-    rating: "4.8",
-    reviews: "14,500+",
-    note: "Scissors, scraper, spatula, tweezers"
+    rating: "4.9",
+    reviews: "45,300+",
+    note: "Scissors, scraper, spatula, tweezers, weeder"
   },
   {
     id: "trimmer",
