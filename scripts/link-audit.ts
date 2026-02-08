@@ -95,6 +95,48 @@ function extractLinks(): LinkCheck[] {
     }
   }
   
+  // Heat-press page - Amazon links (inline hrefs)
+  const heatPressPath = path.join(srcDir, 'app', 'heat-press', 'page.tsx');
+  if (fs.existsSync(heatPressPath)) {
+    const heatPressContent = fs.readFileSync(heatPressPath, 'utf-8');
+    const amazonMatches = heatPressContent.matchAll(/href="https:\/\/www\.amazon\.com\/dp\/([A-Z0-9]+)\?tag=[^"]+"/g);
+    for (const match of amazonMatches) {
+      links.push({
+        url: `https://www.amazon.com/dp/${match[1]}`,
+        source: 'heat-press/page.tsx',
+        type: 'amazon',
+        status: 'ok'
+      });
+    }
+  }
+  
+  // Scan all guide pages for Amazon links
+  const guidesDir = path.join(srcDir, 'app', 'guides');
+  if (fs.existsSync(guidesDir)) {
+    const scanGuideDir = (dir: string) => {
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
+      for (const entry of entries) {
+        const fullPath = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          scanGuideDir(fullPath);
+        } else if (entry.name === 'page.tsx') {
+          const content = fs.readFileSync(fullPath, 'utf-8');
+          const amazonMatches = content.matchAll(/href="https:\/\/www\.amazon\.com\/dp\/([A-Z0-9]+)[^"]*"/g);
+          const relativePath = path.relative(srcDir, fullPath).replace(/\\/g, '/');
+          for (const match of amazonMatches) {
+            links.push({
+              url: `https://www.amazon.com/dp/${match[1]}`,
+              source: relativePath,
+              type: 'amazon',
+              status: 'ok'
+            });
+          }
+        }
+      }
+    };
+    scanGuideDir(guidesDir);
+  }
+  
   return links;
 }
 
