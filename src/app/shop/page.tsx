@@ -58,7 +58,7 @@ const products: Product[] = [
   {
     id: "oracal651",
     title: "Oracal 651 Vinyl Bundle (63 Sheets)",
-    asin: "B01LYBGBF1",
+    asin: "B071CFH6MS",
     category: "vinyl",
     rating: "4.7",
     reviews: "18,500+",
@@ -67,7 +67,7 @@ const products: Product[] = [
   {
     id: "cricut-vinyl-sampler",
     title: "Cricut Premium Vinyl Sampler Pack",
-    asin: "B08LPVQVPQ",
+    asin: "B01CTQKEK8",
     category: "vinyl",
     rating: "4.7",
     reviews: "12,400+",
@@ -85,7 +85,7 @@ const products: Product[] = [
   {
     id: "glitter-vinyl",
     title: "HTVRONT Glitter HTV Bundle (16 Sheets)",
-    asin: "B08DHP4VN1",
+    asin: "B08CXSR6SZ",
     category: "vinyl",
     rating: "4.5",
     reviews: "6,700+",
@@ -96,7 +96,7 @@ const products: Product[] = [
   {
     id: "siser-easyweed",
     title: "Siser EasyWeed HTV Bundle (12 Sheets)",
-    asin: "B07L4L8YKX",
+    asin: "B0127RTOYQ",
     category: "htv",
     rating: "4.8",
     reviews: "8,900+",
@@ -114,7 +114,7 @@ const products: Product[] = [
   {
     id: "cricut-everyday-ironon",
     title: "Cricut Everyday Iron-On Sampler",
-    asin: "B07NQGV3NR",
+    asin: "B07D4KKHVD",
     category: "htv",
     rating: "4.7",
     reviews: "4,100+",
@@ -385,7 +385,7 @@ export default function ShopPage() {
           {filteredProducts.map(product => (
             <div
               key={product.id}
-              className="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-lg hover:border-pink-300 transition-all relative"
+              className="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-lg hover:border-pink-300 transition-all relative flex flex-col h-full"
             >
               {/* Add to List Button */}
               <button
@@ -411,13 +411,13 @@ export default function ShopPage() {
                 <span className="text-gray-400">({product.reviews} reviews)</span>
               </div>
               
-              <p className="text-gray-500 text-sm mb-4">{product.note}</p>
+              <p className="text-gray-500 text-sm mb-4 flex-grow">{product.note}</p>
               
               <a
                 href={`https://www.amazon.com/dp/${product.asin}?tag=cricuthelpe03-20`}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="block w-full bg-pink-500 text-white text-center py-2 rounded-xl font-medium hover:bg-pink-600 transition-colors"
+                className="block w-full bg-pink-500 text-white text-center py-2 rounded-xl font-medium hover:bg-pink-600 transition-colors mt-auto"
               >
                 View on Amazon
               </a>
