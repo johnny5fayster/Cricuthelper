@@ -160,10 +160,19 @@ const guides = [
     readTime: "10 min",
     featured: false,
   },
+  {
+    title: "Cricut Smart Materials: Complete Guide",
+    description: "Everything about matless cutting. What Smart Materials are, how they work, and if they're worth it.",
+    href: "/guides/cricut-smart-materials",
+    category: "Materials",
+    readTime: "12 min",
+    featured: false,
+  },
 ];
 
 const upcomingGuides = [
-  "Cricut Smart Materials: What You Need to Know",
+  "Cricut Joy Review: Is It Worth It?",
+  "How to Cut Felt with Cricut",
 ];
 
 export default function GuidesPage() {
