@@ -58,7 +58,12 @@ export function Footer() {
 
         <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500 text-sm">
           <p>© {new Date().getFullYear()} CricutHelper. Not affiliated with Cricut, Inc.</p>
-          <p className="mt-1">Made with ❤️ for the crafting community</p>
+          <p className="mt-2">
+            <Link href="/privacy" className="hover:text-pink-500">Privacy Policy</Link>
+            {" · "}
+            <Link href="/terms" className="hover:text-pink-500">Terms of Service</Link>
+          </p>
+          <p className="mt-2">Made with ❤️ for the crafting community</p>
         </div>
       </div>
     </footer>
