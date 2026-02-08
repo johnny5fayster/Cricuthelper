@@ -37,20 +37,20 @@ const products: Product[] = [
   },
   {
     id: "joy",
-    title: "Cricut Joy",
-    asin: "B084LQYJPF",
+    title: "Cricut Joy Xtra",
+    asin: "B0DCWDJ2GX",
     category: "machines",
     rating: "4.6",
-    reviews: "11,000+",
+    reviews: "2,200+",
     note: "Compact, great for labels & cards"
   },
   {
     id: "easypress2",
     title: "Cricut EasyPress 2 (12x10)",
-    asin: "B08LNV4SJV",
+    asin: "B07G51DZ45",
     category: "machines",
     rating: "4.8",
-    reviews: "15,000+",
+    reviews: "24,000+",
     note: "Perfect heat transfers every time"
   },
   
@@ -75,20 +75,20 @@ const products: Product[] = [
   },
   {
     id: "removable-vinyl",
-    title: "Cricut Smart Vinyl Removable (13ft)",
-    asin: "B097T6BN7Y",
+    title: "Cricut Smart Vinyl Removable (12ft)",
+    asin: "B09433YZYZ",
     category: "vinyl",
-    rating: "4.6",
-    reviews: "3,200+",
+    rating: "4.8",
+    reviews: "900+",
     note: "Matless cutting, easy to remove"
   },
   {
     id: "glitter-vinyl",
-    title: "HTVRONT Glitter HTV Bundle (16 Sheets)",
-    asin: "B08CXSR6SZ",
+    title: "HTVRONT Glitter HTV Bundle (12 Rolls)",
+    asin: "B0991M2WK5",
     category: "vinyl",
-    rating: "4.5",
-    reviews: "6,700+",
+    rating: "4.6",
+    reviews: "1,200+",
     note: "Sparkly iron-on for apparel"
   },
   
@@ -105,7 +105,7 @@ const products: Product[] = [
   {
     id: "caregy-htv",
     title: "CAREGY HTV Bundle (26 Sheets)",
-    asin: "B07H7GZQX7",
+    asin: "B07SR2SZDZ",
     category: "htv",
     rating: "4.6",
     reviews: "15,200+",
@@ -124,8 +124,8 @@ const products: Product[] = [
   // Tools
   {
     id: "weeding-tools",
-    title: "Cricut Weeding Tool Set",
-    asin: "B00BHWPR6S",
+    title: "Cricut Weeding Tool Kit",
+    asin: "B071KMBGCR",
     category: "tools",
     rating: "4.8",
     reviews: "21,000+",
@@ -143,7 +143,7 @@ const products: Product[] = [
   {
     id: "trimmer",
     title: "Cricut Portable Trimmer",
-    asin: "B01LYLJ49N",
+    asin: "B00X3LLUTI",
     category: "tools",
     rating: "4.7",
     reviews: "7,800+",
@@ -152,10 +152,10 @@ const products: Product[] = [
   {
     id: "brightpad",
     title: "Cricut BrightPad Go",
-    asin: "B09MFQH8TJ",
+    asin: "B097NR7ZC8",
     category: "tools",
     rating: "4.8",
-    reviews: "2,900+",
+    reviews: "2,100+",
     note: "Makes weeding so much easier"
   },
   
