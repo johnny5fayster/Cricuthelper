@@ -250,20 +250,9 @@ export default function ShopPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [shoppingList, setShoppingList] = useState<string[]>([]);
   const [showList, setShowList] = useState(false);
-  const [amazonDomain, setAmazonDomain] = useState({ domain: "amazon.com", tag: "cricuthelpe03-20" });
-  
-  // Detect country on mount
-  useEffect(() => {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-    const lang = navigator.language?.toLowerCase() || '';
-    const isCanada = tz.includes('Toronto') || tz.includes('Vancouver') || 
-                     tz.includes('Edmonton') || tz.includes('Winnipeg') || 
-                     tz.includes('Halifax') || lang.includes('en-ca');
-    
-    if (isCanada) {
-      setAmazonDomain({ domain: "amazon.ca", tag: "cricuthelper-20" });
-    }
-  }, []);
+  // Use amazon.com - Amazon handles geo-redirects properly
+  // Note: ASINs differ between .com and .ca, so we use .com universally
+  const amazonDomain = { domain: "amazon.com", tag: "cricuthelpe03-20" };
   
   // Load shopping list from localStorage
   useEffect(() => {
