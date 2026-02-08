@@ -29,7 +29,7 @@ const products: Product[] = [
   {
     id: "maker3",
     title: "Cricut Maker 3",
-    asin: "B08YKBQV6S",
+    asin: "B0942SYJHY",
     category: "machines",
     rating: "4.7",
     reviews: "5,400+",
