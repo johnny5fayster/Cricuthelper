@@ -18,6 +18,7 @@ export interface Solution {
     affiliateUrl?: string;
   }[];
   videoUrl?: string;
+  guideUrl?: string; // Link to detailed guide
 }
 
 export const troubleshootingFlows: Record<string, TroubleshootingStep[]> = {
@@ -1180,6 +1181,17 @@ export const troubleshootingFlows: Record<string, TroubleshootingStep[]> = {
         { label: "Machine can't read the sensor marks", nextStep: "sensor-marks" },
         { label: "Calibration keeps failing", nextStep: "calibration-fail" },
         { label: "Print size is wrong", nextStep: "print-size" },
+        { label: "Text is cutting instead of printing", solution: {
+          title: "Text Cutting Instead of Printing",
+          description: "When you add text to an image, each layer cuts separately unless you flatten them together.",
+          steps: [
+            "Select BOTH your image AND all text layers (hold Shift and click each, or drag to select all)",
+            "Click 'Flatten' at the bottom of the Layers panel (NOT Attach!)",
+            "You should now see ONE combined layer that says 'Print Then Cut'",
+            "Flatten merges layers into one printable image; Attach just groups them but keeps separate cut lines",
+          ],
+          guideUrl: "/guides/print-then-cut-text-cutting-fix",
+        }},
       ],
     },
     {
@@ -1198,6 +1210,7 @@ export const troubleshootingFlows: Record<string, TroubleshootingStep[]> = {
             "Fine calibration adjusts in small increments — take your time",
             "If still off after calibration, note which direction and contact Cricut",
           ],
+          guideUrl: "/guides/print-then-cut-not-lining-up",
         }},
         { label: "Varies/inconsistent", solution: {
           title: "Fix Inconsistent Cut Alignment",
@@ -1266,6 +1279,7 @@ export const troubleshootingFlows: Record<string, TroubleshootingStep[]> = {
         { label: "Machine cuts, but lines don't match", solution: {
           title: "Calibration Lines Off",
           description: "If calibration cuts don't match printed lines, here's how to get it right.",
+          guideUrl: "/guides/how-to-calibrate-cricut",
           steps: [
             "Print calibration page at EXACTLY 100% — don't use 'Fit to Page'",
             "In print dialog, make sure 'Actual Size' or '100%' is selected",

@@ -170,6 +170,19 @@ function TroubleshootContent() {
             </ol>
           </div>
 
+          {solution.guideUrl && (
+            <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 mb-6">
+              <h3 className="font-semibold text-purple-800 mb-2">📚 Detailed Guide</h3>
+              <p className="text-gray-600 text-sm mb-3">Want more details? Check out our complete guide:</p>
+              <Link 
+                href={solution.guideUrl}
+                className="inline-flex items-center gap-2 bg-purple-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-purple-700 transition-colors"
+              >
+                Read Full Guide →
+              </Link>
+            </div>
+          )}
+
           {solution.products && solution.products.length > 0 && (
             <div className="bg-gray-50 rounded-xl p-4">
               <h3 className="font-semibold text-gray-800 mb-3">🛒 You might need:</h3>
