@@ -252,6 +252,83 @@ export default function HeatPressPage() {
           </div>
         </div>
       </div>
+
+      {/* Recommended Products */}
+      <div className="mt-12 pt-8 border-t border-gray-200">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-xs text-gray-600 mb-6">
+          <strong>Affiliate Disclosure:</strong> As an Amazon Associate, we earn from qualifying purchases. 
+          This helps support CricutHelper at no extra cost to you. We only recommend products we trust.
+        </div>
+        
+        <h2 className="text-2xl font-bold text-gray-800 mb-2">Recommended Heat Press Equipment</h2>
+        <p className="text-gray-600 mb-6">Top-rated tools for perfect HTV transfers</p>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <a
+            href="https://www.amazon.com/dp/B08LNV4SJV?tag=cricuthelpe03-20"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
+          >
+            <h4 className="font-semibold text-gray-900 text-sm mb-2">Cricut EasyPress 2 (12x10)</h4>
+            <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+              <span className="text-yellow-500">★</span>
+              <span>4.8</span>
+              <span className="text-gray-400">(15,000+ reviews)</span>
+            </div>
+            <p className="text-gray-500 text-xs">Best for beginners, precise temp control</p>
+            <p className="text-pink-600 text-xs mt-3 font-medium">View on Amazon →</p>
+          </a>
+          
+          <a
+            href="https://www.amazon.com/dp/B07H3QHXHV?tag=cricuthelpe03-20"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
+          >
+            <h4 className="font-semibold text-gray-900 text-sm mb-2">HTVRONT Heat Press Machine (15x15)</h4>
+            <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+              <span className="text-yellow-500">★</span>
+              <span>4.5</span>
+              <span className="text-gray-400">(9,500+ reviews)</span>
+            </div>
+            <p className="text-gray-500 text-xs">Budget-friendly, full pressure control</p>
+            <p className="text-pink-600 text-xs mt-3 font-medium">View on Amazon →</p>
+          </a>
+          
+          <a
+            href="https://www.amazon.com/dp/B07BN2TXGJ?tag=cricuthelpe03-20"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
+          >
+            <h4 className="font-semibold text-gray-900 text-sm mb-2">Cricut EasyPress Mat (12x12)</h4>
+            <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+              <span className="text-yellow-500">★</span>
+              <span>4.8</span>
+              <span className="text-gray-400">(11,000+ reviews)</span>
+            </div>
+            <p className="text-gray-500 text-xs">Protects surfaces, improves results</p>
+            <p className="text-pink-600 text-xs mt-3 font-medium">View on Amazon →</p>
+          </a>
+          
+          <a
+            href="https://www.amazon.com/dp/B07L4L8YKX?tag=cricuthelpe03-20"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
+          >
+            <h4 className="font-semibold text-gray-900 text-sm mb-2">Siser EasyWeed HTV Bundle (12 Sheets)</h4>
+            <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+              <span className="text-yellow-500">★</span>
+              <span>4.8</span>
+              <span className="text-gray-400">(8,900+ reviews)</span>
+            </div>
+            <p className="text-gray-500 text-xs">Industry-standard HTV, easy to weed</p>
+            <p className="text-pink-600 text-xs mt-3 font-medium">View on Amazon →</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

@@ -139,6 +139,75 @@ function MaterialsContent() {
           onClose={() => setSelectedMaterial(null)} 
         />
       )}
+
+      {/* Recommended Products */}
+      <RecommendedProducts />
+    </div>
+  );
+}
+
+function RecommendedProducts() {
+  const products = [
+    {
+      title: "Cricut Premium Vinyl (Permanent) - Sampler Pack",
+      asin: "B08LPVQVPQ",
+      rating: "4.7",
+      reviews: "12,400+",
+      note: "Great starter pack with popular colors"
+    },
+    {
+      title: "Siser EasyWeed HTV - 12\" x 15\" Bundle (12 Sheets)",
+      asin: "B07L4L8YKX",
+      rating: "4.8",
+      reviews: "8,900+",
+      note: "Top-rated iron-on vinyl"
+    },
+    {
+      title: "Cricut StandardGrip Machine Mats 12x12 (3-Pack)",
+      asin: "B00BQ5GJKG",
+      rating: "4.8",
+      reviews: "24,000+",
+      note: "Essential for most materials"
+    },
+    {
+      title: "CAREGY Heat Transfer Vinyl Bundle (26 Sheets)",
+      asin: "B07H7GZQX7",
+      rating: "4.6",
+      reviews: "15,200+",
+      note: "Budget-friendly variety pack"
+    },
+  ];
+
+  return (
+    <div className="mt-12 pt-8 border-t border-gray-200">
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-xs text-gray-600 mb-6">
+        <strong>Affiliate Disclosure:</strong> As an Amazon Associate, we earn from qualifying purchases. 
+        This helps support CricutHelper at no extra cost to you. We only recommend products we trust.
+      </div>
+      
+      <h2 className="text-2xl font-bold text-gray-800 mb-2">Recommended Materials</h2>
+      <p className="text-gray-600 mb-6">Top-rated supplies trusted by the community</p>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {products.map((product) => (
+          <a
+            key={product.asin}
+            href={`https://www.amazon.com/dp/${product.asin}?tag=cricuthelpe03-20`}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
+          >
+            <h4 className="font-semibold text-gray-900 text-sm mb-2 line-clamp-2">{product.title}</h4>
+            <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+              <span className="text-yellow-500">★</span>
+              <span>{product.rating}</span>
+              <span className="text-gray-400">({product.reviews})</span>
+            </div>
+            {product.note && <p className="text-gray-500 text-xs mt-2">{product.note}</p>}
+            <p className="text-pink-600 text-xs mt-3 font-medium">View on Amazon →</p>
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
