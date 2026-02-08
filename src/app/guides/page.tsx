@@ -104,10 +104,18 @@ const guides = [
     readTime: "15 min",
     featured: true,
   },
+  {
+    title: "Infusible Ink: Complete Beginner Guide",
+    description: "Vibrant, permanent designs that never peel. Transfer sheets, markers, blanks, and troubleshooting.",
+    href: "/guides/infusible-ink-guide",
+    category: "Tutorial",
+    readTime: "16 min",
+    featured: false,
+  },
 ];
 
 const upcomingGuides = [
-  "Infusible Ink: Complete Beginner's Guide",
+  "Cricut Smart Materials: What You Need to Know",
 ];
 
 export default function GuidesPage() {
