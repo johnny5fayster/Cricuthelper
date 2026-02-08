@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: "🍀 25 Cricut St. Patrick's Day Projects",
+    description: "DIY shamrock crafts, lucky shirts, and green decor. Easy projects for March 17!",
+    href: "/guides/cricut-st-patricks-day-projects",
+    category: "Seasonal",
+    readTime: "12 min",
+    featured: true,
+  },
+  {
     title: "Best Cricut for Beginners 2026: Which Machine to Buy First",
     description: "Confused about which Cricut to buy? We compare Joy, Explore, and Maker with honest recommendations.",
     href: "/guides/best-cricut-for-beginners",
