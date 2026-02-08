@@ -163,7 +163,7 @@ const products: Product[] = [
   {
     id: "standardgrip-mat",
     title: "Cricut StandardGrip Mats 12x12 (3-Pack)",
-    asin: "B00BQ5GJKG",
+    asin: "B079VWBFHF",
     category: "mats",
     rating: "4.8",
     reviews: "24,000+",
@@ -172,7 +172,7 @@ const products: Product[] = [
   {
     id: "lightgrip-mat",
     title: "Cricut LightGrip Mat 12x12 (3-Pack)",
-    asin: "B00BQ5K6Z0",
+    asin: "B079W5KWQ8",
     category: "mats",
     rating: "4.7",
     reviews: "9,800+",
@@ -181,7 +181,7 @@ const products: Product[] = [
   {
     id: "stronggrip-mat",
     title: "Cricut StrongGrip Mat 12x12 (3-Pack)",
-    asin: "B00BQ5K6UQ",
+    asin: "B079VWJW6D",
     category: "mats",
     rating: "4.7",
     reviews: "8,200+",
@@ -189,19 +189,19 @@ const products: Product[] = [
   },
   {
     id: "variety-mat",
-    title: "Cricut Variety Mat Pack (6 Mats)",
-    asin: "B0BC7JT8SH",
+    title: "Cricut Variety Mat Pack (4 Mats)",
+    asin: "B0DXX72FB2",
     category: "mats",
     rating: "4.8",
     reviews: "1,200+",
-    note: "One of each type - great starter set"
+    note: "2 StandardGrip, 1 LightGrip, 1 StrongGrip"
   },
   
   // Accessories
   {
     id: "transfer-tape",
     title: "Cricut Transfer Tape (12ft Roll)",
-    asin: "B00BQ5I0V0",
+    asin: "B0943DQ9CD",
     category: "accessories",
     rating: "4.7",
     reviews: "13,400+",
@@ -210,7 +210,7 @@ const products: Product[] = [
   {
     id: "fine-point-blades",
     title: "Cricut Fine Point Blade + Housing",
-    asin: "B01BHTWFDY",
+    asin: "B079MD6DCZ",
     category: "accessories",
     rating: "4.8",
     reviews: "11,200+",
@@ -219,7 +219,7 @@ const products: Product[] = [
   {
     id: "easypress-mat",
     title: "Cricut EasyPress Mat (12x12)",
-    asin: "B07BN2TXGJ",
+    asin: "B074S8SNZN",
     category: "accessories",
     rating: "4.8",
     reviews: "11,000+",
@@ -228,7 +228,7 @@ const products: Product[] = [
   {
     id: "infusible-ink",
     title: "Cricut Infusible Ink Sheets (4 Pack)",
-    asin: "B07SQ4LNL8",
+    asin: "B07T7KWDDX",
     category: "accessories",
     rating: "4.6",
     reviews: "3,800+",
