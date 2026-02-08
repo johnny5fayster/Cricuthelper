@@ -125,6 +125,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/guides/is-cricut-access-worth-it`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/niches`,
       lastModified: new Date(),
       changeFrequency: 'weekly',

@@ -88,6 +88,14 @@ const guides = [
     readTime: "12 min",
     featured: false,
   },
+  {
+    title: "Is Cricut Access Worth It? Honest Review + Who Should Skip It",
+    description: "Should you pay $120/year? Honest breakdown of what you get and who should skip it.",
+    href: "/guides/is-cricut-access-worth-it",
+    category: "Buying Guide",
+    readTime: "14 min",
+    featured: false,
+  },
 ];
 
 const upcomingGuides = [
