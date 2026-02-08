@@ -136,6 +136,30 @@ const guides = [
     readTime: "16 min",
     featured: false,
   },
+  {
+    title: "Cricut vs Silhouette 2026: Which is Better?",
+    description: "Honest comparison of both brands. Software, materials, pricing—we help you decide.",
+    href: "/guides/cricut-vs-silhouette",
+    category: "Buying Guide",
+    readTime: "18 min",
+    featured: false,
+  },
+  {
+    title: "How to Cut Leather with Cricut",
+    description: "Cut faux and genuine leather perfectly. Settings, blades, and pro tips for earrings, keychains, and more.",
+    href: "/guides/how-to-cut-leather-cricut",
+    category: "Materials",
+    readTime: "14 min",
+    featured: false,
+  },
+  {
+    title: "How to Calibrate Your Cricut",
+    description: "Fix Print Then Cut alignment and Knife blade accuracy. Step-by-step calibration guide.",
+    href: "/guides/how-to-calibrate-cricut",
+    category: "Troubleshooting",
+    readTime: "10 min",
+    featured: false,
+  },
 ];
 
 const upcomingGuides = [
