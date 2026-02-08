@@ -98,7 +98,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "The most popular permanent vinyl. Great for outdoor use, tumblers, car decals.",
     popular: true,
-    amazonAsin: "B01LYBGBF1",
+    amazonAsin: "B01CTQKEK8",
   },
   {
     id: "oracal-631",
@@ -112,7 +112,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "Matte finish, removable adhesive. Perfect for wall decals and indoor decorations.",
     popular: true,
-    amazonAsin: "B07H3QYX8K",
+    amazonAsin: "B01MXXK4KY",
   },
   {
     id: "cricut-vinyl-permanent",
@@ -126,7 +126,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "Official Cricut vinyl. Select 'Premium Vinyl' in Design Space for best results.",
     popular: true,
-    amazonAsin: "B08LPVQVPQ",
+    amazonAsin: "B01NA87HVJ",
   },
   {
     id: "cricut-vinyl-removable",
@@ -151,7 +151,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "Thicker than regular vinyl. May need extra pressure. Weed slowly to avoid pulling glitter.",
     popular: true,
-    amazonAsin: "B07P6MKSLJ",
+    amazonAsin: "B0127RTOYQ",
   },
   {
     id: "holographic-vinyl",
@@ -190,7 +190,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "MIRROR your design! Place shiny side DOWN on mat. Most popular HTV.",
     popular: true,
-    amazonAsin: "B07NQGV3NR",
+    amazonAsin: "B07D4KKHVD",
   },
   {
     id: "siser-easyweed",
@@ -204,7 +204,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "MIRROR your design! Shiny carrier side DOWN. Industry favorite for softness.",
     popular: true,
-    amazonAsin: "B07L4L8YKX",
+    amazonAsin: "B076CP47PG",
   },
   {
     id: "glitter-iron-on",
@@ -218,7 +218,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "MIRROR! Shiny side DOWN. Thicker than regular HTV - may need 2 passes for intricate designs.",
     popular: true,
-    amazonAsin: "B08DHP4VN1",
+    amazonAsin: "B071CFH6MS",
   },
   {
     id: "foil-iron-on",
