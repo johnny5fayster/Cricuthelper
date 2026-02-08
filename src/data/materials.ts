@@ -11,6 +11,7 @@ export interface Material {
   matType: MatType;
   notes?: string;
   popular?: boolean;
+  amazonAsin?: string; // Amazon product ID for affiliate links
 }
 
 export type MaterialCategory = 
@@ -97,6 +98,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "The most popular permanent vinyl. Great for outdoor use, tumblers, car decals.",
     popular: true,
+    amazonAsin: "B01LYBGBF1",
   },
   {
     id: "oracal-631",
@@ -110,6 +112,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "Matte finish, removable adhesive. Perfect for wall decals and indoor decorations.",
     popular: true,
+    amazonAsin: "B07H3QYX8K",
   },
   {
     id: "cricut-vinyl-permanent",
@@ -123,6 +126,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "Official Cricut vinyl. Select 'Premium Vinyl' in Design Space for best results.",
     popular: true,
+    amazonAsin: "B08LPVQVPQ",
   },
   {
     id: "cricut-vinyl-removable",
@@ -147,6 +151,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "Thicker than regular vinyl. May need extra pressure. Weed slowly to avoid pulling glitter.",
     popular: true,
+    amazonAsin: "B07P6MKSLJ",
   },
   {
     id: "holographic-vinyl",
@@ -185,6 +190,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "MIRROR your design! Place shiny side DOWN on mat. Most popular HTV.",
     popular: true,
+    amazonAsin: "B07NQGV3NR",
   },
   {
     id: "siser-easyweed",
@@ -198,6 +204,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "MIRROR your design! Shiny carrier side DOWN. Industry favorite for softness.",
     popular: true,
+    amazonAsin: "B07L4L8YKX",
   },
   {
     id: "glitter-iron-on",
@@ -211,6 +218,7 @@ export const materials: Material[] = [
     matType: "standard",
     notes: "MIRROR! Shiny side DOWN. Thicker than regular HTV - may need 2 passes for intricate designs.",
     popular: true,
+    amazonAsin: "B08DHP4VN1",
   },
   {
     id: "foil-iron-on",
@@ -322,6 +330,7 @@ export const materials: Material[] = [
     multiCut: 1,
     matType: "light",
     popular: true,
+    amazonAsin: "B077B5CXP9",
   },
   {
     id: "cardstock-medium",
@@ -334,6 +343,7 @@ export const materials: Material[] = [
     multiCut: 1,
     matType: "standard",
     popular: true,
+    amazonAsin: "B08TV2X36R",
   },
   {
     id: "cardstock-heavy",

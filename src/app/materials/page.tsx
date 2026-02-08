@@ -222,12 +222,9 @@ export default function MaterialsPage() {
 
 function MaterialCard({ material, onClick }: { material: Material; onClick: () => void }) {
   return (
-    <button
-      onClick={onClick}
-      className="w-full text-left bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all p-4"
-    >
+    <div className="w-full bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all p-4">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="flex-1">
+        <button onClick={onClick} className="flex-1 text-left">
           <div className="flex items-center gap-2">
             <h3 className="font-semibold text-gray-800">{material.name}</h3>
             {material.popular && <span className="text-xs bg-pink-100 text-pink-600 px-2 py-0.5 rounded-full">Popular</span>}
@@ -235,9 +232,9 @@ function MaterialCard({ material, onClick }: { material: Material; onClick: () =
           <p className="text-sm text-gray-500 mt-1">
             {material.brand} • {categoryLabels[material.category]}
           </p>
-        </div>
+        </button>
         
-        <div className="flex flex-wrap gap-2 sm:gap-4 text-sm">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-sm">
           <div className="bg-gray-50 px-3 py-1 rounded-lg">
             <span className="text-gray-500">Blade:</span>{" "}
             <span className="font-medium text-gray-700">{bladeLabels[material.blade].replace(" Blade", "")}</span>
@@ -250,9 +247,20 @@ function MaterialCard({ material, onClick }: { material: Material; onClick: () =
             <span className="text-gray-500">Passes:</span>{" "}
             <span className="font-medium text-gray-700">{material.multiCut}</span>
           </div>
+          {material.amazonAsin && (
+            <a
+              href={`https://www.amazon.com/dp/${material.amazonAsin}?tag=cricuthelpe03-20`}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              onClick={(e) => e.stopPropagation()}
+              className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg font-medium text-sm transition-colors"
+            >
+              🛒 Buy
+            </a>
+          )}
         </div>
       </div>
-    </button>
+    </div>
   );
 }
 
@@ -324,13 +332,25 @@ function MaterialModal({ material, onClose }: { material: Material; onClose: () 
             </ul>
           </div>
 
-          {/* Close button */}
-          <button 
-            onClick={onClose}
-            className="w-full mt-6 bg-pink-500 text-white py-3 rounded-xl font-semibold hover:bg-pink-600 transition-colors"
-          >
-            Close
-          </button>
+          {/* Action buttons */}
+          <div className="flex gap-3 mt-6">
+            {material.amazonAsin && (
+              <a
+                href={`https://www.amazon.com/dp/${material.amazonAsin}?tag=cricuthelpe03-20`}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="flex-1 bg-green-500 text-white py-3 rounded-xl font-semibold hover:bg-green-600 transition-colors text-center"
+              >
+                🛒 Buy on Amazon
+              </a>
+            )}
+            <button 
+              onClick={onClose}
+              className={`${material.amazonAsin ? 'flex-1' : 'w-full'} bg-pink-500 text-white py-3 rounded-xl font-semibold hover:bg-pink-600 transition-colors`}
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
