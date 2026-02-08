@@ -119,10 +119,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/shop/cheat-sheets`,
+      url: `${baseUrl}/shop`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/shop/cheat-sheets`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/guides/is-cricut-access-worth-it`,
