@@ -96,10 +96,18 @@ const guides = [
     readTime: "14 min",
     featured: false,
   },
+  {
+    title: "Cricut Maker vs Explore: Which Should You Buy?",
+    description: "The honest comparison. Maker or Explore? We tell you exactly which is right for YOUR projects.",
+    href: "/guides/cricut-maker-vs-explore",
+    category: "Buying Guide",
+    readTime: "15 min",
+    featured: true,
+  },
 ];
 
 const upcomingGuides = [
-  "Cricut Maker vs Explore: Which One Should You Buy?",
+  "Infusible Ink: Complete Beginner's Guide",
 ];
 
 export default function GuidesPage() {
