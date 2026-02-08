@@ -49,8 +49,8 @@ export function Footer() {
             <h3 className="font-semibold text-gray-800 mb-4">More</h3>
             <ul className="space-y-2">
               <li><Link href="/heat-press" className="text-gray-600 hover:text-pink-500">Heat Press Guide</Link></li>
-              <li><Link href="/problems" className="text-gray-600 hover:text-pink-500">Common Problems</Link></li>
-              <li><Link href="/community" className="text-gray-600 hover:text-pink-500">Community</Link></li>
+              <li><Link href="/shop" className="text-gray-600 hover:text-pink-500">Shop</Link></li>
+              <li><Link href="/creators" className="text-gray-600 hover:text-pink-500">Creators We Love</Link></li>
               <li><Link href="/niches" className="text-gray-600 hover:text-pink-500">Project Niches</Link></li>
             </ul>
           </div>
