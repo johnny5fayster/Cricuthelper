@@ -61,6 +61,9 @@ export function Navigation() {
             <Link href="/niches" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
               🎯 Niches
             </Link>
+            <Link href="/creators" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
+              ⭐ Creators
+            </Link>
             <Link href="/shop" className="text-green-600 hover:text-green-700 transition-colors font-semibold">
               🛒 Shop
             </Link>
@@ -150,6 +153,9 @@ export function Navigation() {
               </Link>
               <Link href="/niches" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
                 🎯 Craft Niches
+              </Link>
+              <Link href="/creators" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+                ⭐ Creators We Love
               </Link>
               <Link href="/shop" className="text-green-600 hover:text-green-700 py-2 font-semibold">
                 🛒 Shop
