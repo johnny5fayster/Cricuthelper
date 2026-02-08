@@ -57,6 +57,14 @@ const guides = [
     featured: false,
   },
   {
+    title: "Text Cutting Instead of Printing? Fix Print Then Cut Text Issues",
+    description: "Your text should print on the image, but Cricut is cutting around each letter? Learn the difference between Flatten and Attach.",
+    href: "/guides/print-then-cut-text-cutting-fix",
+    category: "Troubleshooting",
+    readTime: "6 min",
+    featured: false,
+  },
+  {
     title: "Cricut Not Cutting Through Vinyl? 7 Fixes That Actually Work",
     description: "The most common Cricut problem, solved. Step-by-step guide to fix cutting issues with vinyl.",
     href: "/guides/cricut-not-cutting-vinyl",

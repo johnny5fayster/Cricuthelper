@@ -83,6 +83,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/guides/print-then-cut-text-cutting-fix`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/guides/cricut-design-space-not-working`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
