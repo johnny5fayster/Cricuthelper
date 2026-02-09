@@ -223,6 +223,13 @@ const searchableContent = [
     keywords: ["profit", "pricing", "calculator", "etsy", "how much to charge", "price crafts", "fees", "handmade", "tumbler", "shirt", "vinyl"],
   },
   {
+    title: "How to Price Your Cricut Crafts: Complete Guide",
+    description: "Master the pricing formula for handmade items. Real examples for shirts, tumblers, stickers.",
+    href: "/guides/how-to-price-cricut-crafts",
+    category: "Guide",
+    keywords: ["how to price", "pricing formula", "cricut crafts", "handmade items", "etsy pricing", "how much to charge", "profit margin", "craft business"],
+  },
+  {
     title: "Material Settings Database",
     description: "Find the perfect cut settings for any material.",
     href: "/materials",
