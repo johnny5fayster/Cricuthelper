@@ -75,7 +75,14 @@ export default function Home() {
       </section>
 
       {/* Main Tools */}
-      <section className="grid md:grid-cols-3 gap-8">
+      <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <FeatureCard
+          emoji="💰"
+          title="Profit Calculator"
+          description="Know your REAL profit. Materials, labor, Etsy fees — all included. Stop underpricing!"
+          href="/profit-calculator"
+          color="green"
+        />
         <FeatureCard
           emoji="🔧"
           title="Troubleshooting Wizard"
@@ -145,21 +152,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seller Tools */}
+      {/* More Tools */}
       <section className="grid md:grid-cols-2 gap-8">
-        <FeatureCard
-          emoji="💰"
-          title="Profit Calculator"
-          description="Know your real profit per item — materials, labor, and marketplace fees included."
-          href="/profit-calculator"
-          color="purple"
-        />
         <FeatureCard
           emoji="🧮"
           title="Material Calculator"
           description="Calculate exactly how much vinyl or HTV you need. No more expensive mistakes."
           href="/calculator"
           color="blue"
+        />
+        <FeatureCard
+          emoji="⚠️"
+          title="Error Codes Lookup"
+          description="Got an error code? Find out what it means and how to fix it instantly."
+          href="/guides/error-codes-reference"
+          color="purple"
         />
       </section>
 
@@ -213,12 +220,13 @@ function FeatureCard({
   title: string; 
   description: string; 
   href: string;
-  color: "pink" | "purple" | "blue";
+  color: "pink" | "purple" | "blue" | "green";
 }) {
   const colorClasses = {
     pink: "bg-pink-100 border-pink-200 hover:border-pink-400",
     purple: "bg-purple-100 border-purple-200 hover:border-purple-400",
     blue: "bg-blue-100 border-blue-200 hover:border-blue-400",
+    green: "bg-green-100 border-green-200 hover:border-green-400",
   };
 
   return (

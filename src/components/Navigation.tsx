@@ -55,8 +55,8 @@ export function Navigation() {
             <Link href="/heat-press" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
               🔥 Heat Press
             </Link>
-            <Link href="/calculator" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
-              🧮 Calc
+            <Link href="/profit-calculator" className="text-green-600 hover:text-green-700 transition-colors font-semibold">
+              💰 Profit Calc
             </Link>
             <Link href="/niches" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
               🎯 Niches
