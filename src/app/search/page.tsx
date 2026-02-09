@@ -216,6 +216,13 @@ const searchableContent = [
     keywords: ["error", "code", "1001", "1002", "1006", "design space", "message"],
   },
   {
+    title: "Cricut Profit Calculator — Price Your Crafts Right",
+    description: "Free calculator for Cricut sellers. Includes materials, labor, Etsy fees, shipping.",
+    href: "/profit-calculator",
+    category: "Tool",
+    keywords: ["profit", "pricing", "calculator", "etsy", "how much to charge", "price crafts", "fees", "handmade", "tumbler", "shirt", "vinyl"],
+  },
+  {
     title: "Material Settings Database",
     description: "Find the perfect cut settings for any material.",
     href: "/materials",
