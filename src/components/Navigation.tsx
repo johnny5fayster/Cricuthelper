@@ -7,8 +7,10 @@ import { useRouter } from "next/navigation";
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const moreDropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -16,6 +18,17 @@ export function Navigation() {
       searchInputRef.current.focus();
     }
   }, [searchOpen]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (moreDropdownRef.current && !moreDropdownRef.current.contains(event.target as Node)) {
+        setMoreDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,13 +51,10 @@ export function Navigation() {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav - 6 items max */}
           <div className="hidden md:flex items-center gap-5">
             <Link href="/guides" className="text-pink-600 hover:text-pink-700 transition-colors font-semibold">
               📚 Guides
-            </Link>
-            <Link href="/problems" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
-              ❓ Problems
             </Link>
             <Link href="/troubleshoot" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
               🔧 Troubleshoot
@@ -52,21 +62,64 @@ export function Navigation() {
             <Link href="/materials" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
               📋 Materials
             </Link>
-            <Link href="/heat-press" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
-              🔥 Heat Press
-            </Link>
             <Link href="/profit-calculator" className="text-green-600 hover:text-green-700 transition-colors font-semibold">
               💰 Profit Calc
-            </Link>
-            <Link href="/niches" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
-              🎯 Niches
-            </Link>
-            <Link href="/creators" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
-              ⭐ Creators
             </Link>
             <Link href="/shop" className="text-green-600 hover:text-green-700 transition-colors font-semibold">
               🛒 Shop
             </Link>
+            
+            {/* More Dropdown */}
+            <div className="relative" ref={moreDropdownRef}>
+              <button
+                onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
+                className="text-gray-600 hover:text-pink-500 transition-colors font-medium flex items-center gap-1"
+              >
+                More
+                <svg 
+                  className={`w-4 h-4 transition-transform ${moreDropdownOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {moreDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
+                  <Link 
+                    href="/heat-press" 
+                    className="block px-4 py-2 text-gray-600 hover:bg-pink-50 hover:text-pink-600 transition-colors"
+                    onClick={() => setMoreDropdownOpen(false)}
+                  >
+                    🔥 Heat Press
+                  </Link>
+                  <Link 
+                    href="/niches" 
+                    className="block px-4 py-2 text-gray-600 hover:bg-pink-50 hover:text-pink-600 transition-colors"
+                    onClick={() => setMoreDropdownOpen(false)}
+                  >
+                    🎯 Niches
+                  </Link>
+                  <Link 
+                    href="/creators" 
+                    className="block px-4 py-2 text-gray-600 hover:bg-pink-50 hover:text-pink-600 transition-colors"
+                    onClick={() => setMoreDropdownOpen(false)}
+                  >
+                    ⭐ Creators
+                  </Link>
+                  <Link 
+                    href="/guides/error-codes-reference" 
+                    className="block px-4 py-2 text-gray-600 hover:bg-pink-50 hover:text-pink-600 transition-colors"
+                    onClick={() => setMoreDropdownOpen(false)}
+                  >
+                    ⚠️ Error Codes
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <button 
               onClick={() => setSearchOpen(!searchOpen)}
               className="text-gray-500 hover:text-pink-500 transition-colors p-1"
@@ -127,37 +180,31 @@ export function Navigation() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-pink-100">
             <div className="flex flex-col gap-3">
-              <Link href="/guides" className="text-pink-600 hover:text-pink-700 py-2 font-semibold">
+              <Link href="/guides" className="text-pink-600 hover:text-pink-700 py-2 font-semibold min-h-[44px] flex items-center">
                 📚 Guides
               </Link>
-              <Link href="/problems" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
-                ❓ Common Problems
-              </Link>
-              <Link href="/troubleshoot" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+              <Link href="/troubleshoot" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
                 🔧 Troubleshoot
               </Link>
-              <Link href="/error-codes" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
-                🚨 Error Codes
-              </Link>
-              <Link href="/materials" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+              <Link href="/materials" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
                 📋 Materials
               </Link>
-              <Link href="/heat-press" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+              <Link href="/heat-press" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
                 🔥 Heat Press
               </Link>
-              <Link href="/calculator" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
-                🧮 Cut Calculator
-              </Link>
-              <Link href="/profit-calculator" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+              <Link href="/profit-calculator" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
                 💰 Profit Calculator
               </Link>
-              <Link href="/niches" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+              <Link href="/niches" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
                 🎯 Craft Niches
               </Link>
-              <Link href="/creators" className="text-gray-600 hover:text-pink-500 py-2 font-medium">
+              <Link href="/creators" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
                 ⭐ Creators We Love
               </Link>
-              <Link href="/shop" className="text-green-600 hover:text-green-700 py-2 font-semibold">
+              <Link href="/guides/error-codes-reference" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
+                ⚠️ Error Codes
+              </Link>
+              <Link href="/shop" className="text-green-600 hover:text-green-700 py-2 font-semibold min-h-[44px] flex items-center">
                 🛒 Shop
               </Link>
             </div>

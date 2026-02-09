@@ -242,7 +242,7 @@ function ProblemLink({ title, href }: { title: string; href: string }) {
   return (
     <Link 
       href={href} 
-      className="flex items-center gap-2 p-3 rounded-lg bg-gray-50 hover:bg-pink-50 transition-colors text-gray-700 hover:text-pink-600"
+      className="flex items-center gap-2 p-4 min-h-[44px] rounded-lg bg-gray-50 hover:bg-pink-50 transition-colors text-gray-700 hover:text-pink-600"
     >
       <span className="text-pink-500">→</span>
       {title}

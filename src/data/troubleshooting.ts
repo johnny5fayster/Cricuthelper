@@ -21,6 +21,13 @@ export interface Solution {
   guideUrl?: string; // Link to detailed guide
 }
 
+export interface IssueCategory {
+  id: string;
+  label: string;
+  icon: string;
+  popular?: boolean;
+}
+
 export const troubleshootingFlows: Record<string, TroubleshootingStep[]> = {
   "not-cutting": [
     {
@@ -2186,13 +2193,13 @@ export const troubleshootingFlows: Record<string, TroubleshootingStep[]> = {
   ],
 };
 
-export const issueCategories = [
-  { id: "not-cutting", label: "Not cutting through material", icon: "✂️" },
+export const issueCategories: IssueCategory[] = [
+  { id: "not-cutting", label: "Not cutting through material", icon: "✂️", popular: true },
   { id: "mat-grip", label: "Mat grip issues", icon: "📋" },
-  { id: "bluetooth", label: "Bluetooth connection", icon: "📶" },
+  { id: "bluetooth", label: "Bluetooth connection", icon: "📶", popular: true },
   { id: "adhesion", label: "Material won't stick to blank", icon: "🔥" },
   { id: "design-space", label: "Design Space problems", icon: "💻" },
-  { id: "print-then-cut", label: "Print Then Cut issues", icon: "🖨️" },
+  { id: "print-then-cut", label: "Print Then Cut issues", icon: "🖨️", popular: true },
   { id: "htv-problems", label: "HTV/Iron-on not working", icon: "👕" },
   { id: "weeding", label: "Weeding difficulties", icon: "🔍" },
   { id: "maker-4", label: "Cricut Maker 4 problems", icon: "🆕" },

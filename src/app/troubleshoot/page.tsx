@@ -81,7 +81,7 @@ function TroubleshootContent() {
                 key={category.id}
                 onClick={() => handleSelectIssue(category.id)}
                 disabled={!troubleshootingFlows[category.id]}
-                className={`flex items-center gap-4 p-4 rounded-xl border-2 text-left transition-all ${
+                className={`flex items-center gap-4 p-4 min-h-[44px] rounded-xl border-2 text-left transition-all ${
                   troubleshootingFlows[category.id]
                     ? "border-gray-200 hover:border-pink-400 hover:bg-pink-50"
                     : "border-gray-100 bg-gray-50 text-gray-400 cursor-not-allowed"
@@ -89,6 +89,9 @@ function TroubleshootContent() {
               >
                 <span className="text-2xl">{category.icon}</span>
                 <span className="font-medium">{category.label}</span>
+                {category.popular && (
+                  <span className="ml-auto text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full font-medium">🔥 Most common</span>
+                )}
                 {!troubleshootingFlows[category.id] && (
                   <span className="ml-auto text-xs bg-gray-200 px-2 py-1 rounded">Coming soon</span>
                 )}
@@ -127,7 +130,7 @@ function TroubleshootContent() {
               <button
                 key={index}
                 onClick={() => handleSelectOption(option.nextStep, option.solution)}
-                className="p-4 rounded-xl border-2 border-gray-200 hover:border-pink-400 hover:bg-pink-50 text-left transition-all font-medium"
+                className="p-4 min-h-[44px] rounded-xl border-2 border-gray-200 hover:border-pink-400 hover:bg-pink-50 text-left transition-all font-medium"
               >
                 {option.label}
               </button>
