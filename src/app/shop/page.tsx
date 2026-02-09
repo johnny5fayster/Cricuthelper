@@ -27,15 +27,6 @@ const products: Product[] = [
     note: "Best for beginners, 2X faster with Smart Materials"
   },
   {
-    id: "maker3",
-    title: "Cricut Maker 3",
-    asin: "B0942SYJHY",
-    category: "machines",
-    rating: "4.7",
-    reviews: "5,400+",
-    note: "Cuts 300+ materials including leather & wood"
-  },
-  {
     id: "joy",
     title: "Cricut Joy Xtra",
     asin: "B0DCWDJ2GX",
@@ -65,13 +56,13 @@ const products: Product[] = [
     note: "Professional-grade permanent vinyl"
   },
   {
-    id: "cricut-vinyl-sampler",
-    title: "Cricut Premium Vinyl Sampler Pack",
+    id: "oracal-651-24pack",
+    title: "ORACAL 651 Glossy Vinyl (24 Pack)",
     asin: "B01CTQKEK8",
     category: "vinyl",
     rating: "4.7",
     reviews: "12,400+",
-    note: "Great starter pack with popular colors"
+    note: "Top colors, professional-grade permanent vinyl"
   },
   {
     id: "removable-vinyl",
@@ -112,13 +103,13 @@ const products: Product[] = [
     note: "Budget-friendly variety pack"
   },
   {
-    id: "cricut-everyday-ironon",
-    title: "Cricut Everyday Iron-On Sampler",
+    id: "siser-easyweed-white",
+    title: "Siser EasyWeed HTV (60\", White)",
     asin: "B07D4KKHVD",
     category: "htv",
-    rating: "4.7",
-    reviews: "4,100+",
-    note: "Official Cricut HTV, reliable"
+    rating: "4.5",
+    reviews: "2,800+",
+    note: "Industry standard HTV, great for beginners"
   },
   
   // Tools
