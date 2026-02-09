@@ -330,7 +330,7 @@ export const materials: Material[] = [
     multiCut: 1,
     matType: "light",
     popular: true,
-    amazonAsin: "B077B5CXP9",
+    amazonAsin: "B00006IDRW",
   },
   {
     id: "cardstock-medium",
@@ -343,7 +343,7 @@ export const materials: Material[] = [
     multiCut: 1,
     matType: "standard",
     popular: true,
-    amazonAsin: "B08TV2X36R",
+    amazonAsin: "B0DZGVVFWT",
   },
   {
     id: "cardstock-heavy",
