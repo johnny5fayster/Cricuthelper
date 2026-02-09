@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 
-export default function AuthPage() {
+function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -52,8 +52,8 @@ export default function AuthPage() {
         
         setMessage("Check your email for the confirmation link!");
       }
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setLoading(false);
     }
@@ -69,8 +69,8 @@ export default function AuthPage() {
         },
       });
       if (error) throw error;
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
       setLoading(false);
     }
   };
@@ -201,5 +201,26 @@ export default function AuthPage() {
         )}
       </div>
     </div>
+  );
+}
+
+function AuthLoading() {
+  return (
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <div className="max-w-md w-full text-center">
+        <div className="animate-pulse">
+          <div className="h-8 bg-gray-200 rounded w-32 mx-auto mb-4"></div>
+          <div className="h-64 bg-gray-200 rounded-2xl"></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function AuthPage() {
+  return (
+    <Suspense fallback={<AuthLoading />}>
+      <AuthForm />
+    </Suspense>
   );
 }
