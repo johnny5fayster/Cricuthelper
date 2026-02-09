@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { WebsiteSchema, OrganizationSchema } from "@/components/SchemaMarkup";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { Providers } from "@/components/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -86,13 +87,15 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
       </head>
       <body className={`${inter.className} antialiased bg-gradient-to-b from-pink-50 to-white min-h-screen`}>
-        <WebsiteSchema />
-        <OrganizationSchema />
-        <Navigation />
-        <main className="max-w-6xl mx-auto px-4 py-8">
-          {children}
-        </main>
-        <Footer />
+        <Providers>
+          <WebsiteSchema />
+          <OrganizationSchema />
+          <Navigation />
+          <main className="max-w-6xl mx-auto px-4 py-8">
+            {children}
+          </main>
+          <Footer />
+        </Providers>
         <Analytics />
         <GoogleAnalytics />
         <script
