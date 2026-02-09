@@ -33,6 +33,14 @@ const guides = [
     featured: true,
   },
   {
+    title: "🌈 Print Then Cut on Holographic Sticker Paper (The Trick That Works!)",
+    description: "Cricut sensor can't read holographic paper? Learn the matte laminate workaround and print-then-overlay method that actually works.",
+    href: "/guides/holographic-sticker-print-cut",
+    category: "Tutorial",
+    readTime: "15 min",
+    featured: true,
+  },
+  {
     title: "Cricut Blade Guide: Which Blade for Every Material",
     description: "Complete guide to every Cricut blade. Fine Point, Deep Point, Rotary, Knife and more.",
     href: "/guides/cricut-blade-guide",
