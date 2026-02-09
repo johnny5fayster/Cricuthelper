@@ -4,10 +4,16 @@ import { createClient } from '@supabase/supabase-js';
 import Stripe from 'stripe';
 
 // Use service role key for webhooks (server-side only)
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+// Lazy initialization to avoid build errors when env vars aren't present
+const getSupabaseAdmin = () => {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    throw new Error('Missing Supabase environment variables');
+  }
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+};
 
 export async function POST(request: NextRequest) {
   const body = await request.text();
@@ -35,9 +41,9 @@ export async function POST(request: NextRequest) {
 
         if (userId) {
           // Get subscription details
-          const subscription = await stripe.subscriptions.retrieve(session.subscription as string);
+          const subscription = await stripe.subscriptions.retrieve(session.subscription as string) as Stripe.Subscription;
           
-          await supabaseAdmin
+          await getSupabaseAdmin()
             .from('profiles')
             .update({
               subscription_status: subscription.status === 'trialing' ? 'trial' : 'active',
@@ -46,7 +52,7 @@ export async function POST(request: NextRequest) {
               trial_ends_at: subscription.trial_end 
                 ? new Date(subscription.trial_end * 1000).toISOString() 
                 : null,
-              subscription_ends_at: new Date(subscription.current_period_end * 1000).toISOString(),
+              subscription_ends_at: new Date((subscription as any).current_period_end * 1000).toISOString(),
             })
             .eq('id', userId);
         }
@@ -58,7 +64,7 @@ export async function POST(request: NextRequest) {
         const customerId = subscription.customer as string;
         
         // Find user by Stripe customer ID
-        const { data: profile } = await supabaseAdmin
+        const { data: profile } = await getSupabaseAdmin()
           .from('profiles')
           .select('id')
           .eq('stripe_customer_id', customerId)
@@ -76,14 +82,14 @@ export async function POST(request: NextRequest) {
             status = 'free';
           }
 
-          await supabaseAdmin
+          await getSupabaseAdmin()
             .from('profiles')
             .update({
               subscription_status: status,
               trial_ends_at: subscription.trial_end 
                 ? new Date(subscription.trial_end * 1000).toISOString() 
                 : null,
-              subscription_ends_at: new Date(subscription.current_period_end * 1000).toISOString(),
+              subscription_ends_at: new Date((subscription as any).current_period_end * 1000).toISOString(),
             })
             .eq('id', profile.id);
         }
@@ -94,14 +100,14 @@ export async function POST(request: NextRequest) {
         const subscription = event.data.object as Stripe.Subscription;
         const customerId = subscription.customer as string;
 
-        const { data: profile } = await supabaseAdmin
+        const { data: profile } = await getSupabaseAdmin()
           .from('profiles')
           .select('id')
           .eq('stripe_customer_id', customerId)
           .single();
 
         if (profile) {
-          await supabaseAdmin
+          await getSupabaseAdmin()
             .from('profiles')
             .update({
               subscription_status: 'cancelled',
@@ -116,14 +122,14 @@ export async function POST(request: NextRequest) {
         const invoice = event.data.object as Stripe.Invoice;
         const customerId = invoice.customer as string;
 
-        const { data: profile } = await supabaseAdmin
+        const { data: profile } = await getSupabaseAdmin()
           .from('profiles')
           .select('id')
           .eq('stripe_customer_id', customerId)
           .single();
 
         if (profile) {
-          await supabaseAdmin
+          await getSupabaseAdmin()
             .from('profiles')
             .update({
               subscription_status: 'expired',

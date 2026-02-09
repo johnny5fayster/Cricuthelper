@@ -247,7 +247,7 @@ export default function ShareMarginsModal({ isOpen, onClose, data }: ShareMargin
               </button>
             )}
 
-            {typeof navigator !== "undefined" && navigator.share && (
+            {typeof navigator !== "undefined" && "share" in navigator && (
               <button
                 onClick={nativeShare}
                 className="w-full py-3 bg-gray-100 text-gray-700 font-medium rounded-xl hover:bg-gray-200 transition-colors"
