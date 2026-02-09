@@ -22,6 +22,27 @@ const searchableContent = [
     keywords: ["bluetooth", "connection", "not connecting", "wireless", "pairing", "wifi"],
   },
   {
+    title: "How to Print Then Cut on Holographic Sticker Paper",
+    description: "The sensor workaround that actually works for holographic, glitter, and reflective sticker paper.",
+    href: "/guides/holographic-sticker-print-cut",
+    category: "Guide",
+    keywords: ["holographic", "sticker", "print then cut", "sensor", "shiny", "glitter", "reflective", "laminate", "overlay"],
+  },
+  {
+    title: "Cricut Maker 4 Problems & Fixes: Complete Troubleshooting Guide",
+    description: "Fix scoring wheel tearing, Bluetooth issues, firmware bugs, calibration problems, and more.",
+    href: "/guides/maker-4-problems-fixes",
+    category: "Guide",
+    keywords: ["maker 4", "maker4", "problems", "troubleshooting", "scoring", "firmware", "calibration", "bluetooth", "new machine"],
+  },
+  {
+    title: "Cricut Error Codes: Complete Reference Guide",
+    description: "Every Cricut error code explained with step-by-step fixes. 1001, 2003, 4001, and more.",
+    href: "/guides/error-codes-reference",
+    category: "Guide",
+    keywords: ["error", "code", "1001", "1002", "1006", "2003", "4001", "7001", "message", "fix", "reference"],
+  },
+  {
     title: "HTV Peeling After Washing? 9 Fixes for Iron-On That Won't Stay",
     description: "Why your iron-on vinyl is peeling and exactly how to fix it.",
     href: "/guides/htv-peeling-after-washing",

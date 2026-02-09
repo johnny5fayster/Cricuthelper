@@ -1788,6 +1788,402 @@ export const troubleshootingFlows: Record<string, TroubleshootingStep[]> = {
       ],
     },
   ],
+
+  // Maker 4 Specific Problems
+  "maker-4": [
+    {
+      id: "start",
+      question: "What issue are you having with your Maker 4?",
+      options: [
+        { label: "Scoring wheel is tearing my cardstock", nextStep: "scoring" },
+        { label: "Bluetooth keeps disconnecting", nextStep: "bluetooth-m4" },
+        { label: "Firmware issues or update problems", nextStep: "firmware" },
+        { label: "Cuts are inaccurate or misaligned", nextStep: "calibration" },
+        { label: "Machine stops mid-cut with error", nextStep: "mid-cut" },
+        { label: "Mat adhesion problems", nextStep: "mat-m4" },
+      ],
+    },
+    {
+      id: "scoring",
+      question: "What weight cardstock are you using?",
+      options: [
+        { label: "Light to medium (65-80 lb)", solution: {
+          title: "Reduce Scoring Pressure",
+          description: "The Maker 4's speed can cause scoring issues. Try these fixes.",
+          steps: [
+            "Reduce pressure by 2-4 points in Design Space material settings",
+            "Consider using the scoring stylus instead of the wheel for lighter cardstock",
+            "Create a custom material with lower pressure",
+            "Test on scrap cardstock first",
+          ],
+          guideUrl: "/guides/maker-4-problems-fixes#scoring-wheel",
+        }},
+        { label: "Heavy (100+ lb)", solution: {
+          title: "Heavy Cardstock Scoring Fix",
+          description: "Heavy cardstock needs different handling on Maker 4.",
+          steps: [
+            "Use the single scoring wheel, not double",
+            "Reduce pressure significantly (try -6 to -8)",
+            "Slow down the cut speed with custom material settings",
+            "Make sure cardstock is firmly adhered to mat",
+            "Consider pre-scoring by hand for very thick cardstock",
+          ],
+          guideUrl: "/guides/maker-4-problems-fixes#scoring-wheel",
+        }},
+      ],
+    },
+    {
+      id: "bluetooth-m4",
+      question: "When does the Bluetooth disconnect?",
+      options: [
+        { label: "Won't connect at all", solution: {
+          title: "Maker 4 Bluetooth Setup",
+          description: "Maker 4 needs to be paired at the system level first.",
+          steps: [
+            "Go to your device's Bluetooth settings (not Design Space)",
+            "Put Maker 4 in pairing mode (hold power until light flashes)",
+            "Pair at the system level first",
+            "THEN open Design Space and connect",
+            "On Android: Enable location permissions for Design Space",
+            "Only one device can connect at a time",
+          ],
+          guideUrl: "/guides/maker-4-problems-fixes#bluetooth",
+        }},
+        { label: "Disconnects during cuts", solution: {
+          title: "Fix Mid-Cut Disconnections",
+          description: "Bluetooth drops during cutting are common. Here's how to fix.",
+          steps: [
+            "Use USB connection instead (more reliable for large projects)",
+            "Move machine closer to your device (within 10-15 feet)",
+            "Remove other Bluetooth devices from the area",
+            "Disable WiFi on your device temporarily",
+            "Update Maker 4 firmware via USB",
+          ],
+          guideUrl: "/guides/maker-4-problems-fixes#bluetooth",
+        }},
+      ],
+    },
+    {
+      id: "firmware",
+      question: "What's happening with the firmware?",
+      options: [
+        { label: "Update keeps failing", solution: {
+          title: "Fix Firmware Update Failures",
+          description: "Firmware updates can be finicky. Use USB for reliability.",
+          steps: [
+            "Connect via USB cable (not Bluetooth)",
+            "Close ALL other programs on your computer",
+            "Ensure stable power — don't unplug during update",
+            "Restart both machine and Design Space, try again",
+            "If repeated failures: factory reset (hold power 10 sec)",
+            "Contact Cricut support if still failing",
+          ],
+          guideUrl: "/guides/maker-4-problems-fixes#firmware",
+        }},
+        { label: "Machine acting buggy after update", solution: {
+          title: "Post-Update Bug Fixes",
+          description: "New firmware can introduce bugs. Here's what to try.",
+          steps: [
+            "Power cycle the machine (off for 30 seconds, then on)",
+            "Recalibrate Print Then Cut and knife blade",
+            "Clear Design Space cache (Settings → Clear Cache)",
+            "Check Cricut forums for known issues with your firmware version",
+            "If serious issues: factory reset and re-update",
+          ],
+          guideUrl: "/guides/maker-4-problems-fixes#firmware",
+        }},
+      ],
+    },
+    {
+      id: "calibration",
+      question: "What type of cut is misaligned?",
+      options: [
+        { label: "Print Then Cut is off", solution: {
+          title: "Recalibrate Print Then Cut",
+          description: "The Maker 4 may need calibration after setup.",
+          steps: [
+            "Go to Design Space → Menu → Settings → Calibration",
+            "Select 'Print Then Cut'",
+            "Use white matte paper (not glossy)",
+            "Print at 100% scale — never 'Fit to Page'",
+            "Good lighting, no direct sunlight",
+            "Follow on-screen prompts carefully",
+            "Recalibrate monthly for best results",
+          ],
+          guideUrl: "/guides/maker-4-problems-fixes#calibration",
+        }},
+        { label: "Regular cuts are drifting", solution: {
+          title: "Fix Cut Drift",
+          description: "If cuts drift or don't align between passes.",
+          steps: [
+            "Clean the rollers with a lint-free cloth",
+            "Check mat adhesion — material shouldn't shift",
+            "Use appropriate mat for material (don't use LightGrip for heavy materials)",
+            "Slow down cut speed with custom material settings",
+            "Check that carriage moves smoothly on rails",
+          ],
+          guideUrl: "/guides/maker-4-problems-fixes#calibration",
+        }},
+      ],
+    },
+    {
+      id: "mid-cut",
+      question: "What happens when it stops?",
+      options: [
+        { label: "Shows an error code", solution: {
+          title: "Look Up Your Error Code",
+          description: "Error codes tell you exactly what's wrong.",
+          steps: [
+            "Note the error code number",
+            "Check our complete error codes reference",
+            "Most common: 1001 (connection), 7001 (carriage jam)",
+            "Follow the specific fix for your error",
+          ],
+          guideUrl: "/guides/error-codes-reference",
+        }},
+        { label: "Just stops with no message", solution: {
+          title: "Fix Silent Mid-Cut Stops",
+          description: "The Maker 4 has known firmware bugs causing mid-cut stops.",
+          steps: [
+            "Update to latest firmware (this is a known bug being patched)",
+            "Use USB instead of Bluetooth for large projects",
+            "Simplify complex designs — break into smaller cuts",
+            "Check that power cable is secure",
+            "Avoid using computer for other tasks during cut",
+          ],
+          guideUrl: "/guides/maker-4-problems-fixes#cutting",
+        }},
+      ],
+    },
+    {
+      id: "mat-m4",
+      question: "What's the mat problem?",
+      options: [
+        { label: "New mat is too sticky", solution: {
+          title: "Break In a New Mat",
+          description: "New Maker 4 mats are often too sticky.",
+          steps: [
+            "Lightly press a clean cotton t-shirt onto the mat",
+            "Peel off — this removes some adhesive",
+            "Repeat until materials release easily",
+            "Don't use tape or lint — it leaves residue",
+          ],
+          guideUrl: "/guides/maker-4-problems-fixes#mat-adhesion",
+        }},
+        { label: "Mat isn't gripping material", solution: {
+          title: "Restore Mat Grip",
+          description: "Mats lose grip over time. Here's how to restore it.",
+          steps: [
+            "Clean with baby wipes (no alcohol)",
+            "Let dry completely",
+            "If still weak: apply mat adhesive spray",
+            "Use the right mat type for your material",
+            "Replace mats every 25-50 projects",
+          ],
+          guideUrl: "/guides/cricut-mat-not-sticky",
+        }},
+      ],
+    },
+  ],
+
+  // Error Codes
+  "error-codes": [
+    {
+      id: "start",
+      question: "What error code are you seeing?",
+      options: [
+        { label: "1001 - Connection Error", solution: {
+          title: "Fix Error 1001",
+          description: "Design Space cannot connect to your machine.",
+          steps: [
+            "Check Bluetooth is enabled on your device",
+            "Move machine closer (within 15 feet)",
+            "Power cycle the Cricut (off 30 sec, then on)",
+            "Try USB cable instead of Bluetooth",
+            "Only one device can connect at a time",
+          ],
+          guideUrl: "/guides/error-codes-reference#connectivity",
+        }},
+        { label: "1006 - Machine Not Found", solution: {
+          title: "Fix Error 1006",
+          description: "Design Space cannot detect your Cricut.",
+          steps: [
+            "Ensure machine is powered on (solid light, not blinking)",
+            "Forget device in Bluetooth settings, re-pair",
+            "Close other apps that might be using the Cricut",
+            "Restart Design Space",
+            "Try USB connection",
+          ],
+          guideUrl: "/guides/error-codes-reference#connectivity",
+        }},
+        { label: "2003 - Sensor Can't Read Marks", solution: {
+          title: "Fix Error 2003",
+          description: "The Print Then Cut sensor can't read registration marks.",
+          steps: [
+            "Use matte paper, not glossy or holographic",
+            "Clean sensor lens with dry microfiber cloth",
+            "Ensure good lighting, no direct sunlight or glare",
+            "Recalibrate Print Then Cut",
+            "For holographic paper: see our workaround guide",
+          ],
+          guideUrl: "/guides/error-codes-reference#print-then-cut",
+        }},
+        { label: "4001 - USB Not Recognized", solution: {
+          title: "Fix Error 4001",
+          description: "Computer isn't detecting the Cricut via USB.",
+          steps: [
+            "Use a DATA-capable USB cable (not charge-only)",
+            "Try a different USB port",
+            "Connect directly, not through a hub",
+            "Update USB drivers (Windows)",
+            "Restart computer after connecting",
+          ],
+          guideUrl: "/guides/error-codes-reference#usb",
+        }},
+        { label: "7001 - Carriage Jam", solution: {
+          title: "Fix Error 7001",
+          description: "The carriage is stuck or obstructed.",
+          steps: [
+            "Turn off the machine immediately",
+            "Gently move carriage by hand to check for obstructions",
+            "Remove any material scraps or debris",
+            "Check blade housing is seated properly",
+            "Clean rails with dry cloth",
+            "Power on and try again",
+          ],
+          guideUrl: "/guides/error-codes-reference#cutting",
+        }},
+        { label: "Other error code", solution: {
+          title: "Look Up Your Error Code",
+          description: "Find your specific error code in our complete reference.",
+          steps: [
+            "Visit our complete error codes reference guide",
+            "Find your error code by number or category",
+            "Follow the step-by-step fix for your specific error",
+          ],
+          guideUrl: "/guides/error-codes-reference",
+        }},
+      ],
+    },
+  ],
+
+  // Holographic/Reflective Stickers
+  "holographic": [
+    {
+      id: "start",
+      question: "What's happening with your holographic stickers?",
+      options: [
+        { label: "Cricut won't read the sensor marks", nextStep: "sensor-fail" },
+        { label: "Cuts are misaligned on holographic paper", nextStep: "misaligned" },
+        { label: "Looking for holographic sticker options", nextStep: "options" },
+      ],
+    },
+    {
+      id: "sensor-fail",
+      question: "Have you tried the standard Print Then Cut fixes?",
+      options: [
+        { label: "Yes, nothing works", solution: {
+          title: "Holographic Paper Workaround",
+          description: "The Cricut sensor CANNOT read marks on holographic/reflective surfaces. This is a hardware limitation, not user error. But there are workarounds!",
+          steps: [
+            "METHOD 1 (Most Popular): Print on MATTE sticker paper first",
+            "Apply holographic laminate overlay OVER the printed design",
+            "The sensor reads through the overlay to see marks underneath",
+            "Then cut as normal",
+            "",
+            "METHOD 2: Apply matte laminate OVER holographic paper",
+            "Print on the matte laminate surface",
+            "Sensor reads the matte surface",
+            "",
+            "See our detailed guide for step-by-step instructions and material recommendations.",
+          ],
+          guideUrl: "/guides/holographic-sticker-print-cut",
+        }},
+        { label: "No, let me try basics first", solution: {
+          title: "Try Standard PTC Fixes First",
+          description: "Before using workarounds, try these standard Print Then Cut fixes.",
+          steps: [
+            "Clean the sensor lens with dry microfiber cloth",
+            "Use good lighting (no direct sunlight or glare)",
+            "Print at 100% scale, never 'Fit to Page'",
+            "Recalibrate Print Then Cut in Settings",
+            "Try placing paper in different position on mat",
+            "",
+            "If these don't work (common with holographic), see our holographic workaround guide.",
+          ],
+          guideUrl: "/guides/holographic-sticker-print-cut",
+        }},
+      ],
+    },
+    {
+      id: "misaligned",
+      question: "Is the paper holographic/reflective?",
+      options: [
+        { label: "Yes, holographic/glitter/shiny", solution: {
+          title: "Holographic Paper Alignment Issues",
+          description: "Reflective surfaces confuse the sensor, causing misalignment.",
+          steps: [
+            "The sensor cannot accurately read marks on reflective surfaces",
+            "You need to use one of the workaround methods:",
+            "",
+            "RECOMMENDED: Print-Then-Overlay Method",
+            "1. Print on matte sticker paper",
+            "2. Apply holographic laminate overlay",
+            "3. Cut through both layers",
+            "",
+            "This gives accurate cuts with holographic finish.",
+          ],
+          guideUrl: "/guides/holographic-sticker-print-cut",
+        }},
+        { label: "No, regular matte paper", solution: {
+          title: "Standard PTC Alignment Fix",
+          description: "For matte paper, try these calibration fixes.",
+          steps: [
+            "Recalibrate Print Then Cut (Settings → Calibration)",
+            "Use white paper for calibration",
+            "Print at exactly 100% scale",
+            "Check printer settings aren't scaling",
+            "Good lighting, no glare",
+          ],
+          guideUrl: "/guides/print-then-cut-not-lining-up",
+        }},
+      ],
+    },
+    {
+      id: "options",
+      question: "What holographic effect are you going for?",
+      options: [
+        { label: "Holographic finish on the entire sticker", solution: {
+          title: "Print-Then-Overlay Method",
+          description: "This is the most popular method for holographic stickers.",
+          steps: [
+            "Print your design on matte sticker paper",
+            "Apply holographic self-adhesive laminate over the entire sheet",
+            "Cut through both layers",
+            "The holographic effect covers your entire design",
+            "",
+            "Recommended materials:",
+            "- Matte printable sticker paper (Koala, Online Labels)",
+            "- Holographic cold laminate sheets (Amazon, craft stores)",
+          ],
+          guideUrl: "/guides/holographic-sticker-print-cut#method-2",
+        }},
+        { label: "Holographic background showing through design", solution: {
+          title: "Laminate-First Method",
+          description: "Use this for holographic background effects.",
+          steps: [
+            "Apply MATTE laminate OVER holographic sticker paper",
+            "Print on the matte surface",
+            "The sensor reads the matte laminate",
+            "Holographic shows through transparent areas of your design",
+            "",
+            "Note: Matte laminate slightly dulls the holographic effect",
+          ],
+          guideUrl: "/guides/holographic-sticker-print-cut#method-1",
+        }},
+      ],
+    },
+  ],
 };
 
 export const issueCategories = [
@@ -1799,4 +2195,7 @@ export const issueCategories = [
   { id: "print-then-cut", label: "Print Then Cut issues", icon: "🖨️" },
   { id: "htv-problems", label: "HTV/Iron-on not working", icon: "👕" },
   { id: "weeding", label: "Weeding difficulties", icon: "🔍" },
+  { id: "maker-4", label: "Cricut Maker 4 problems", icon: "🆕" },
+  { id: "error-codes", label: "Error codes & messages", icon: "⚠️" },
+  { id: "holographic", label: "Holographic/reflective stickers", icon: "✨" },
 ];
