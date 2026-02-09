@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { EmailCapture } from "@/components/EmailCapture";
 import { Testimonials } from "@/components/Testimonials";
-import { LiveQuestions } from "@/components/LiveQuestions";
-import { CommunityStats } from "@/components/CommunityStats";
 import { InstallPrompt, IOSInstallPrompt } from "@/components/InstallPrompt";
+import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 
 export default function Home() {
   return (
@@ -11,6 +10,9 @@ export default function Home() {
       {/* PWA Install Prompts - PRIMARY */}
       <InstallPrompt />
       <IOSInstallPrompt />
+
+      {/* Sticky Mobile CTA */}
+      <StickyMobileCTA />
 
       {/* Hero Section */}
       <section className="text-center py-12">
@@ -37,40 +39,6 @@ export default function Home() {
           >
             ✨ Join the Community
           </Link>
-        </div>
-      </section>
-
-      {/* Community Stats - Social Proof */}
-      <section>
-        <CommunityStats />
-      </section>
-
-      {/* Live Questions - Shows Activity */}
-      <section>
-        <LiveQuestions />
-      </section>
-
-      {/* Why Us Section */}
-      <section className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-3xl p-8 md:p-12">
-        <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
-          Why crafters choose CricutHelper
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="text-4xl mb-4">⚡</div>
-            <h3 className="font-bold text-gray-800 mb-2">Answers in Seconds</h3>
-            <p className="text-gray-600">Not a 20-minute video. Not scrolling through 50 Facebook comments. Just the fix.</p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl mb-4">💯</div>
-            <h3 className="font-bold text-gray-800 mb-2">Honest & Real</h3>
-            <p className="text-gray-600">We tell you when Cricut products suck. We recommend what actually works.</p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl mb-4">🆓</div>
-            <h3 className="font-bold text-gray-800 mb-2">Free Forever</h3>
-            <p className="text-gray-600">No subscription required. Core help is always free. We're crafters, not a corporation.</p>
-          </div>
         </div>
       </section>
 
@@ -106,7 +74,7 @@ export default function Home() {
         />
       </section>
 
-      {/* Common Problems - Quick Links */}
+      {/* Common Problems - Quick Links (STAR FEATURE) */}
       <section className="bg-white rounded-2xl shadow-lg p-8">
         <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">
           What's going wrong?
@@ -134,63 +102,20 @@ export default function Home() {
         <Testimonials />
       </section>
 
-      {/* Niche Guides */}
-      <section>
-        <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">
-          What are you making?
-        </h2>
-        <p className="text-gray-500 text-center mb-6">Specialized guides for your craft</p>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <NicheCard emoji="💒" name="Weddings" href="/niches/wedding" />
-          <NicheCard emoji="👶" name="Baby & Nursery" href="/niches/baby-nursery" />
-          <NicheCard emoji="🎭" name="Cosplay" href="/niches/cosplay" />
-          <NicheCard emoji="🐕" name="Pet Items" href="/niches/pets" />
-          <NicheCard emoji="🎂" name="Cake Decorating" href="/niches/cake-decorating" />
-          <NicheCard emoji="🎄" name="Seasonal" href="/niches/seasonal" />
-          <NicheCard emoji="🏠" name="Home Staging" href="/niches/home-staging" />
-          <NicheCard emoji="🕊️" name="Memorial" href="/niches/memorial" />
-        </div>
-      </section>
-
-      {/* More Tools */}
-      <section className="grid md:grid-cols-2 gap-8">
-        <FeatureCard
-          emoji="🧮"
-          title="Material Calculator"
-          description="Calculate exactly how much vinyl or HTV you need. No more expensive mistakes."
-          href="/calculator"
-          color="blue"
-        />
-        <FeatureCard
-          emoji="⚠️"
-          title="Error Codes Lookup"
-          description="Got an error code? Find out what it means and how to fix it instantly."
-          href="/guides/error-codes-reference"
-          color="purple"
-        />
-      </section>
-
-      {/* Community Spotlight Teaser */}
-      <section className="bg-gradient-to-r from-amber-50 to-pink-50 rounded-3xl p-8 text-center">
-        <span className="text-5xl mb-4 block">✨</span>
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Community Spotlight
-        </h2>
-        <p className="text-gray-600 max-w-xl mx-auto mb-6">
-          Show off your projects and get featured! We celebrate our community's creativity 
-          every week. Your project could be next.
-        </p>
-        <Link 
-          href="/community"
-          className="inline-block bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
-        >
-          Submit Your Project →
-        </Link>
-      </section>
-
-      {/* Email Capture */}
+      {/* Email Capture - Right after trust is at peak */}
       <section>
         <EmailCapture variant="banner" />
+      </section>
+
+      {/* Browse by Project Type - Collapsed from full grid */}
+      <section className="text-center py-6">
+        <p className="text-gray-600 mb-3">Making something specific?</p>
+        <Link 
+          href="/niches" 
+          className="inline-flex items-center gap-2 text-pink-500 font-semibold hover:text-pink-600 transition-colors"
+        >
+          Browse guides by project type →
+        </Link>
       </section>
 
       {/* Trust Section */}
@@ -246,18 +171,6 @@ function ProblemLink({ title, href }: { title: string; href: string }) {
     >
       <span className="text-pink-500">→</span>
       {title}
-    </Link>
-  );
-}
-
-function NicheCard({ emoji, name, href }: { emoji: string; name: string; href: string }) {
-  return (
-    <Link 
-      href={href}
-      className="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
-    >
-      <span className="text-2xl">{emoji}</span>
-      <span className="font-medium text-gray-800">{name}</span>
     </Link>
   );
 }
