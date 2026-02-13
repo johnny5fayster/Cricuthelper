@@ -1325,19 +1325,29 @@
       <!-- TAB: Costs -->
       <div class="tab-panel active" id="tab-costs">
       
+      <!-- Materials by Color -->
       <div class="calc-section">
-        <div class="calc-title">Your Costs</div>
-        <div class="calc-row">
-          <span class="calc-label">Materials <span style="color: var(--text-light); font-size: 13px;">(per color)</span></span>
-          <input type="text" class="cost-input" value="$8.50" id="materials-cost">
-        </div>
-        <div class="calc-row">
-          <span class="calc-label">Colors / Layers</span>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <input type="text" class="cost-input small" value="1" id="num-colors" style="width: 50px;">
-            <span style="color: var(--text-light); font-size: 13px;">× materials</span>
+        <div class="calc-title">Materials by Color/Layer</div>
+        <div id="color-list">
+          <div class="color-row" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <span style="background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;">1</span>
+            <input type="text" placeholder="Main color" class="cost-input color-name" value="Main" style="flex: 1; text-align: left;">
+            <input type="text" class="cost-input color-cost" value="$8.50" style="width: 70px;">
+            <button onclick="removeColor(this)" style="background: none; border: none; color: var(--text-light); font-size: 18px; cursor: pointer; padding: 4px;">×</button>
           </div>
         </div>
+        <button onclick="addColor()" style="width: 100%; padding: 12px; background: var(--bg); border: 2px dashed var(--border); border-radius: 12px; font-size: 14px; color: var(--text-light); cursor: pointer; margin-top: 4px;">
+          <span style="color: var(--primary); font-weight: 700;">+</span> Add Color/Layer
+        </button>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);">
+          <span style="font-weight: 600; color: var(--text);">Materials Total</span>
+          <span id="materials-total" style="font-weight: 800; font-size: 18px; color: var(--primary-dark);">$8.50</span>
+        </div>
+      </div>
+      
+      <!-- Other Costs -->
+      <div class="calc-section">
+        <div class="calc-title">Other Costs</div>
         <div class="calc-row">
           <span class="calc-label">Labor</span>
           <div style="display: flex; align-items: center; gap: 8px;">
@@ -2003,15 +2013,78 @@
       return parseFloat(str.replace(/[^0-9.]/g, '')) || 0;
     }
     
+    // ========================================
+    // DYNAMIC COLOR/LAYER MANAGEMENT
+    // ========================================
+    
+    let colorCount = 1;
+    
+    function addColor() {
+      colorCount++;
+      const colorList = document.getElementById('color-list');
+      const newRow = document.createElement('div');
+      newRow.className = 'color-row';
+      newRow.style.cssText = 'display: flex; align-items: center; gap: 10px; margin-bottom: 10px;';
+      newRow.innerHTML = `
+        <span style="background: var(--accent); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;">${colorCount}</span>
+        <input type="text" placeholder="Color name" class="cost-input color-name" value="Accent" style="flex: 1; text-align: left;">
+        <input type="text" class="cost-input color-cost" value="$3.00" style="width: 70px;">
+        <button onclick="removeColor(this)" style="background: none; border: none; color: var(--text-light); font-size: 18px; cursor: pointer; padding: 4px;">×</button>
+      `;
+      colorList.appendChild(newRow);
+      
+      // Add event listeners
+      newRow.querySelectorAll('.color-cost').forEach(input => {
+        input.addEventListener('input', updateMaterialsTotal);
+      });
+      
+      updateMaterialsTotal();
+      renumberColors();
+    }
+    
+    function removeColor(btn) {
+      const rows = document.querySelectorAll('.color-row');
+      if (rows.length > 1) {
+        btn.closest('.color-row').remove();
+        updateMaterialsTotal();
+        renumberColors();
+      }
+    }
+    
+    function renumberColors() {
+      const rows = document.querySelectorAll('.color-row');
+      rows.forEach((row, i) => {
+        const badge = row.querySelector('span');
+        badge.textContent = i + 1;
+        badge.style.background = i === 0 ? 'var(--primary)' : 'var(--accent)';
+      });
+      colorCount = rows.length;
+    }
+    
+    function updateMaterialsTotal() {
+      let total = 0;
+      document.querySelectorAll('.color-cost').forEach(input => {
+        total += parseNumber(input.value);
+      });
+      document.getElementById('materials-total').textContent = '$' + total.toFixed(2);
+      
+      // Trigger full cost recalc
+      const marginValue = parseInt(document.querySelector('.slider-input')?.value || 45);
+      updatePricing(marginValue);
+    }
+    
     function calculateTotalCost() {
-      const materialsPerColor = parseNumber(document.getElementById('materials-cost').value);
-      const numColors = parseNumber(document.getElementById('num-colors').value) || 1;
+      // Sum all color costs
+      let totalMaterials = 0;
+      document.querySelectorAll('.color-cost').forEach(input => {
+        totalMaterials += parseNumber(input.value);
+      });
+      
       const laborHours = parseNumber(document.getElementById('labor-hours').value);
       const laborRate = parseNumber(document.getElementById('labor-rate').value);
       const misc = parseNumber(document.getElementById('misc-cost').value);
       const overheadPct = parseNumber(document.getElementById('overhead-pct').value);
       
-      const totalMaterials = materialsPerColor * numColors;
       const laborCost = laborHours * laborRate;
       const subtotal = totalMaterials + laborCost + misc;
       const overhead = subtotal * (overheadPct / 100);
@@ -2019,6 +2092,11 @@
       
       return total;
     }
+    
+    // Initialize color cost listeners
+    document.querySelectorAll('.color-cost').forEach(input => {
+      input.addEventListener('input', updateMaterialsTotal);
+    });
     
     function updatePricing(marginPercent) {
       const totalCost = calculateTotalCost();
