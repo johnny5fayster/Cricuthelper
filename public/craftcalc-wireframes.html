@@ -1327,8 +1327,15 @@
       <div class="calc-section">
         <div class="calc-title">Your Costs</div>
         <div class="calc-row">
-          <span class="calc-label">Materials (vinyl, HTV, etc.)</span>
+          <span class="calc-label">Materials <span style="color: var(--text-light); font-size: 13px;">(per color)</span></span>
           <input type="text" class="cost-input" value="$8.50" id="materials-cost">
+        </div>
+        <div class="calc-row">
+          <span class="calc-label">Colors / Layers</span>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <input type="text" class="cost-input small" value="1" id="num-colors" style="width: 50px;">
+            <span style="color: var(--text-light); font-size: 13px;">× materials</span>
+          </div>
         </div>
         <div class="calc-row">
           <span class="calc-label">Labor</span>
@@ -1338,7 +1345,7 @@
           </div>
         </div>
         <div class="calc-row">
-          <span class="calc-label">Misc supplies (blades, mats)</span>
+          <span class="calc-label">Misc supplies <span style="color: var(--text-light); font-size: 13px;">(blades, mats)</span></span>
           <input type="text" class="cost-input" value="$2.00" id="misc-cost">
         </div>
         <div class="calc-row">
@@ -1979,14 +1986,16 @@
     }
     
     function calculateTotalCost() {
-      const materials = parseNumber(document.getElementById('materials-cost').value);
+      const materialsPerColor = parseNumber(document.getElementById('materials-cost').value);
+      const numColors = parseNumber(document.getElementById('num-colors').value) || 1;
       const laborHours = parseNumber(document.getElementById('labor-hours').value);
       const laborRate = parseNumber(document.getElementById('labor-rate').value);
       const misc = parseNumber(document.getElementById('misc-cost').value);
       const overheadPct = parseNumber(document.getElementById('overhead-pct').value);
       
+      const totalMaterials = materialsPerColor * numColors;
       const laborCost = laborHours * laborRate;
-      const subtotal = materials + laborCost + misc;
+      const subtotal = totalMaterials + laborCost + misc;
       const overhead = subtotal * (overheadPct / 100);
       const total = subtotal + overhead;
       
