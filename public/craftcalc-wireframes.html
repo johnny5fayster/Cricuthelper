@@ -2256,6 +2256,11 @@
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.getElementById('tab-' + step)?.classList.add('active');
       
+      // Recalculate costs when entering Step 2 or 3
+      if (step === 'costs' || step === 'pricing') {
+        recalculateCosts();
+      }
+      
       // Scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
