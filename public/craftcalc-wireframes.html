@@ -408,7 +408,16 @@
     .calc-tab.active {
       background: var(--primary);
       color: white;
-      box-shadow: 0 2px 8px rgba(157,181,160,0.3);
+      box-shadow: 0 2px 8px rgba(122,154,125,0.3);
+    }
+    
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
+    
+    .tab-panel.active {
+      display: block;
     }
     
     .calc-section {
@@ -955,10 +964,13 @@
       </div>
       
       <div class="calc-tabs">
-        <div class="calc-tab active">Pricing</div>
-        <div class="calc-tab">Materials</div>
-        <div class="calc-tab">Guide</div>
+        <div class="calc-tab active" data-tab="pricing">Pricing</div>
+        <div class="calc-tab" data-tab="materials">Materials</div>
+        <div class="calc-tab" data-tab="guide">Guide</div>
       </div>
+      
+      <!-- TAB: Pricing -->
+      <div class="tab-panel active" id="tab-pricing">
       
       <div class="calc-section">
         <div class="calc-title">Your Costs</div>
@@ -1051,36 +1063,6 @@
         </div>
       </div>
       
-      <div class="guide-section">
-        <div class="guide-header" onclick="this.parentElement.classList.toggle('collapsed')">
-          <h3>💝 The "What's Fair?" Guide</h3>
-          <div class="guide-toggle">▼</div>
-        </div>
-        <div class="guide-content">
-          <p style="font-size: 14px; margin-bottom: 16px; line-height: 1.6;">
-            Charging loved ones feels awkward — you're not alone. <strong>78% of crafters</strong> struggle with this exact question.
-          </p>
-          
-          <div class="guide-card">
-            <h4>✨ Remember</h4>
-            <p>Your time has value. Friends who care about your craft <em>want</em> to support it. Charging fairly isn't greedy — it's sustainable.</p>
-          </div>
-          
-          <div class="guide-card">
-            <h4>💬 What to Say</h4>
-            <p style="font-style: italic;">"I'd love to make this for you! My materials run about $31 — would that work? No pressure at all either way."</p>
-          </div>
-          
-          <div class="guide-card">
-            <h4>📊 What Other Crafters Do</h4>
-            <div class="stat-row"><span>Charge full price</span><span>12%</span></div>
-            <div class="stat-row"><span>Small discount (10-20%)</span><span>34%</span></div>
-            <div class="stat-row"><span>Cover costs only</span><span>41%</span></div>
-            <div class="stat-row"><span>Give it free</span><span>13%</span></div>
-          </div>
-        </div>
-      </div>
-      
       <div class="insight-card">
         <div class="insight-icon">📊</div>
         <div class="insight-text">
@@ -1088,6 +1070,151 @@
           <p>Crafters average <strong>42% margin</strong> on tumblers</p>
         </div>
       </div>
+      
+      </div><!-- /tab-pricing -->
+      
+      <!-- TAB: Materials -->
+      <div class="tab-panel" id="tab-materials">
+        <div class="calc-section">
+          <div class="calc-title">Project Details</div>
+          <div class="calc-row">
+            <span class="calc-label">Project type</span>
+            <select class="cost-input" style="width: 140px; text-align: left;">
+              <option>T-Shirt</option>
+              <option>Tumbler</option>
+              <option>Tote Bag</option>
+              <option>Decal</option>
+              <option>Custom</option>
+            </select>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Design width</span>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <input type="text" class="cost-input small" value="10" style="width: 55px;"> in
+            </div>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Design height</span>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <input type="text" class="cost-input small" value="8" style="width: 55px;"> in
+            </div>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Quantity</span>
+            <input type="text" class="cost-input small" value="10" style="width: 55px;">
+          </div>
+        </div>
+        
+        <div class="calc-section">
+          <div class="calc-title">Material Settings</div>
+          <div class="calc-row">
+            <span class="calc-label">Vinyl roll width</span>
+            <select class="cost-input" style="width: 100px; text-align: left;">
+              <option>12 inch</option>
+              <option>15 inch</option>
+              <option>24 inch</option>
+            </select>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Cost per foot</span>
+            <input type="text" class="cost-input" value="$1.50">
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Waste allowance</span>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <input type="text" class="cost-input small" value="15" style="width: 50px;"> %
+            </div>
+          </div>
+        </div>
+        
+        <div class="calc-result">
+          <div class="calc-result-label">Material Needed</div>
+          <div class="calc-result-value">7.7 ft</div>
+          <div class="calc-result-sub">~$11.50 in vinyl</div>
+        </div>
+        
+        <div class="insight-card">
+          <div class="insight-icon">💡</div>
+          <div class="insight-text">
+            <h4>Pro Tip</h4>
+            <p>Buy 15% extra for mistakes — it's cheaper than reordering!</p>
+          </div>
+        </div>
+      </div><!-- /tab-materials -->
+      
+      <!-- TAB: Guide -->
+      <div class="tab-panel" id="tab-guide">
+        <div class="calc-section" style="background: linear-gradient(135deg, #FDF2F3, #F9E8E9); border-color: rgba(232,180,184,0.3);">
+          <div style="text-align: center; padding: 10px 0 20px;">
+            <div style="font-size: 48px; margin-bottom: 12px;">💝</div>
+            <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">The "What's Fair?" Guide</h3>
+            <p style="color: var(--text-light); font-size: 15px;">Navigating pricing with loved ones</p>
+          </div>
+        </div>
+        
+        <div class="calc-section">
+          <div style="font-size: 15px; line-height: 1.7; margin-bottom: 16px;">
+            Charging family and friends feels awkward — <strong>you're not alone</strong>. 78% of crafters struggle with this exact question.
+          </div>
+          <div class="guide-card" style="background: var(--bg);">
+            <h4>✨ The Truth</h4>
+            <p>Your time has value. Friends who care about your craft <em>want</em> to support it. Charging fairly isn't greedy — it's what lets you keep crafting.</p>
+          </div>
+        </div>
+        
+        <div class="calc-section">
+          <div class="calc-title">Suggested Tiers</div>
+          <div class="tier-card">
+            <div class="tier-info">
+              <h4>💼 Customers</h4>
+              <p>Full price — they expect it</p>
+            </div>
+            <div style="color: var(--primary); font-weight: 700;">100%</div>
+          </div>
+          <div class="tier-card">
+            <div class="tier-info">
+              <h4>🤝 Friends</h4>
+              <p>"Support your craft" discount</p>
+            </div>
+            <div style="color: var(--text); font-weight: 700;">80%</div>
+          </div>
+          <div class="tier-card">
+            <div class="tier-info">
+              <h4>👨‍👩‍👧 Close Family</h4>
+              <p>Cover costs + small thank-you</p>
+            </div>
+            <div style="color: var(--text); font-weight: 700;">70%</div>
+          </div>
+          <div class="tier-card">
+            <div class="tier-info">
+              <h4>❤️ Gifts Only</h4>
+              <p>Special occasions, your choice</p>
+            </div>
+            <div style="color: var(--text-light); font-weight: 700;">Free</div>
+          </div>
+        </div>
+        
+        <div class="calc-section">
+          <div class="calc-title">What to Say</div>
+          <div class="guide-card" style="background: var(--bg); font-style: italic;">
+            "I'd love to make this for you! My materials cost about $X — would that work? No pressure either way."
+          </div>
+          <div class="guide-card" style="background: var(--bg); font-style: italic; margin-top: 10px;">
+            "I'm trying to turn this into a small business, so I charge friends a little less than my regular price. Would $X work for you?"
+          </div>
+        </div>
+        
+        <div class="calc-section">
+          <div class="calc-title">What Other Crafters Do</div>
+          <div style="font-size: 15px;">
+            <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border);"><span>Charge full price</span><span style="font-weight: 700;">12%</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border);"><span>Small discount (10-20%)</span><span style="font-weight: 700;">34%</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border);"><span>Cover costs only</span><span style="font-weight: 700;">41%</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 10px 0;"><span>Give it free</span><span style="font-weight: 700;">13%</span></div>
+          </div>
+        </div>
+      </div><!-- /tab-guide -->
+      
     </div>
     
     <!-- Screen 4: Settings -->
@@ -1376,8 +1503,15 @@
     // Tab switching
     document.querySelectorAll('.calc-tab').forEach(tab => {
       tab.addEventListener('click', function() {
+        const tabName = this.dataset.tab;
+        
+        // Update tab buttons
         document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
         this.classList.add('active');
+        
+        // Update tab panels
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('tab-' + tabName).classList.add('active');
       });
     });
     
