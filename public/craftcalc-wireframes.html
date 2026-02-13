@@ -54,6 +54,11 @@
     }
     
     .screen.active {
+      display: block !important;
+    }
+    
+    /* Fallback for iPad */
+    .screen:first-of-type {
       display: block;
     }
     
@@ -64,7 +69,8 @@
     
     /* Header */
     .header {
-      position: fixed;
+      position: -webkit-sticky;
+      position: sticky;
       top: 0;
       left: 0;
       right: 0;
@@ -232,7 +238,8 @@
     
     /* Bottom Nav */
     .bottom-nav {
-      position: fixed;
+      position: -webkit-sticky;
+      position: sticky;
       bottom: 0;
       left: 0;
       right: 0;
@@ -583,7 +590,7 @@
   </style>
 </head>
 <body>
-  <div class="phone-frame">
+  <div class="phone-frame" style="background:#FDFBF7;">
     <div class="screen-indicator">Tap nav to switch screens</div>
     
     <!-- Screen 1: Home -->
