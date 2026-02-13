@@ -1489,7 +1489,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <div>
             <div style="font-size: 12px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">✓ Material Cost (from Step 1)</div>
-            <div id="step2-material-cost" style="font-size: 24px; font-weight: 800; color: var(--primary-dark);">$1.35</div>
+            <div id="step2-material-cost" style="font-size: 24px; font-weight: 800; color: var(--primary-dark);">$3.00</div>
           </div>
           <button onclick="goToStep('project')" style="background: var(--card); border: 1px solid var(--border); padding: 8px 14px; border-radius: 10px; font-size: 13px; cursor: pointer;">✏️ Edit</button>
         </div>
@@ -1553,7 +1553,7 @@
         <div class="calc-title">💰 Cost Breakdown (per item)</div>
         <div class="calc-row">
           <span class="calc-label">Material</span>
-          <span id="breakdown-material" style="font-weight: 600;">$1.35</span>
+          <span id="breakdown-material" style="font-weight: 600;">$3.00</span>
         </div>
         <div class="calc-row">
           <span class="calc-label">Blank / Base</span>
@@ -1569,7 +1569,7 @@
         </div>
         <div class="calc-row" style="border-top: 2px solid var(--border); padding-top: 12px; margin-top: 8px;">
           <span class="calc-label" style="font-weight: 800; font-size: 16px;">TOTAL COST</span>
-          <span class="total-cost" style="font-weight: 800; font-size: 22px; color: var(--primary-dark);">$14.85</span>
+          <span class="total-cost" style="font-weight: 800; font-size: 22px; color: var(--primary-dark);">$16.50</span>
         </div>
       </div>
       
@@ -1592,7 +1592,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <div>
             <div style="font-size: 12px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">✓ Your Cost Per Item</div>
-            <div class="total-cost" style="font-size: 28px; font-weight: 800; color: var(--primary-dark);">$14.85</div>
+            <div class="total-cost" style="font-size: 28px; font-weight: 800; color: var(--primary-dark);">$16.50</div>
           </div>
           <button onclick="goToStep('costs')" style="background: var(--card); border: 1px solid var(--border); padding: 8px 14px; border-radius: 10px; font-size: 13px; cursor: pointer;">✏️ Edit</button>
         </div>
@@ -1613,8 +1613,8 @@
       <!-- Margin + Sell Price -->
       <div class="calc-result" style="padding-bottom: 20px;">
         <div class="calc-result-label">Sell For</div>
-        <div class="calc-result-value" id="sell-price-display">$27.00</div>
-        <div class="calc-result-sub" id="profit-display" style="margin-bottom: 20px;">You keep $12.15 profit per item</div>
+        <div class="calc-result-value" id="sell-price-display">$30.00</div>
+        <div class="calc-result-sub" id="profit-display" style="margin-bottom: 20px;">You keep $13.50 profit per item</div>
         
         <div style="background: rgba(255,255,255,0.15); border-radius: 16px; padding: 16px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
@@ -1643,28 +1643,28 @@
             <h4>💼 Customers</h4>
             <p>Full price — they expect it</p>
           </div>
-          <div class="tier-price" id="price-full">$27.00</div>
+          <div class="tier-price" id="price-full">$30.00</div>
         </div>
         <div class="tier-card">
           <div class="tier-info">
             <h4>🤝 Friends</h4>
             <p>Small discount to support you</p>
           </div>
-          <div class="tier-price" id="price-friends">$21.60</div>
+          <div class="tier-price" id="price-friends">$24.00</div>
         </div>
         <div class="tier-card">
           <div class="tier-info">
             <h4>👨‍👩‍👧 Family</h4>
             <p>Cover costs + a little extra</p>
           </div>
-          <div class="tier-price" id="price-family">$18.90</div>
+          <div class="tier-price" id="price-family">$21.00</div>
         </div>
         <div class="tier-card">
           <div class="tier-info">
             <h4>❤️ At Cost</h4>
             <p>Just materials + your time</p>
           </div>
-          <div class="tier-price muted" id="price-cost">$14.85</div>
+          <div class="tier-price muted" id="price-cost">$16.50</div>
         </div>
         <p style="font-size: 12px; color: var(--text-light); text-align: center; margin-top: 12px;">
           Tap "Guide" below for help talking about pricing with loved ones
@@ -2300,11 +2300,18 @@
       const qty = parseInt(document.getElementById('project-qty')?.value) || 1;
       document.getElementById('qty-label').textContent = qty === 1 ? 'item' : 'items';
       projectData.quantity = qty;
+      // Update batch display in pricing
+      updatePricingFromSlider(document.getElementById('margin-slider')?.value || 45);
     }
     
     function updateMaterialCost() {
       const cost = parseNumber(document.getElementById('material-cost-input')?.value || 0);
       projectData.materialCost = cost;
+      // Immediately update Step 2 display for real-time sync
+      const step2Display = document.getElementById('step2-material-cost');
+      if (step2Display) step2Display.textContent = '$' + cost.toFixed(2);
+      const breakdownDisplay = document.getElementById('breakdown-material');
+      if (breakdownDisplay) breakdownDisplay.textContent = '$' + cost.toFixed(2);
     }
     
     function adjustTime(delta) {
