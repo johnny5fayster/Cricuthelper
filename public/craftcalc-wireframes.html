@@ -1516,12 +1516,14 @@
           </div>
           <button onclick="adjustTime(5)" style="width: 40px; height: 40px; border-radius: 10px; border: 2px solid var(--border); background: var(--card); font-size: 16px; cursor: pointer;">+</button>
         </div>
-        <div style="background: var(--bg); border-radius: 10px; padding: 12px; display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-size: 14px; color: var(--text-light);">Your hourly rate:</span>
-          <div style="display: flex; align-items: center; gap: 4px;">
-            <span style="color: var(--text-light);">$</span>
-            <input type="number" class="cost-input" id="hourly-rate" value="15" style="width: 60px; text-align: center;" oninput="recalculateCosts()">
-            <span style="color: var(--text-light);">/hr</span>
+        <div style="background: var(--bg); border-radius: 10px; padding: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <span style="font-size: 14px; color: var(--text-light);">Hourly rate:</span>
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <span style="color: var(--text-light);">$</span>
+              <input type="number" class="cost-input" id="hourly-rate" value="15" style="width: 65px; text-align: center; padding: 8px;" oninput="recalculateCosts()">
+              <span style="color: var(--text-light); white-space: nowrap;">/hr</span>
+            </div>
           </div>
         </div>
         <div style="text-align: right; margin-top: 8px;">
@@ -1568,8 +1570,17 @@
           <span id="breakdown-other" style="font-weight: 600;">$1.00</span>
         </div>
         <div class="calc-row" style="border-top: 2px solid var(--border); padding-top: 12px; margin-top: 8px;">
-          <span class="calc-label" style="font-weight: 800; font-size: 16px;">TOTAL COST</span>
+          <span class="calc-label" style="font-weight: 800; font-size: 16px;">COST PER ITEM</span>
           <span class="total-cost" style="font-weight: 800; font-size: 22px; color: var(--primary-dark);">$16.50</span>
+        </div>
+      </div>
+      
+      <!-- Batch Total (shows when qty > 1) -->
+      <div id="step2-batch-totals" class="calc-section" style="background: linear-gradient(135deg, rgba(201,169,98,0.15), rgba(232,213,163,0.15)); border: 2px solid rgba(201,169,98,0.4); display: none;">
+        <div style="text-align: center;">
+          <div style="font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">📦 Making <span id="step2-batch-qty" style="font-weight: 700; color: var(--text-dark);">10</span> items</div>
+          <div style="font-size: 32px; font-weight: 800; color: var(--primary-dark);">$<span id="step2-batch-total">165.00</span></div>
+          <div style="font-size: 14px; color: var(--text-light); margin-top: 4px;">total cost for all items</div>
         </div>
       </div>
       
@@ -1596,8 +1607,26 @@
           </div>
           <button onclick="goToStep('costs')" style="background: var(--card); border: 1px solid var(--border); padding: 8px 14px; border-radius: 10px; font-size: 13px; cursor: pointer;">✏️ Edit</button>
         </div>
-        <div id="batch-cost-display" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-light); display: none;">
-          Total for <span id="batch-qty">10</span> items: <strong id="batch-total">$148.50</strong>
+      </div>
+      
+      <!-- Batch Totals (shows when qty > 1) -->
+      <div id="step3-batch-totals" class="calc-section" style="background: linear-gradient(135deg, rgba(201,169,98,0.2), rgba(232,213,163,0.2)); border: 2px solid var(--gold); display: none;">
+        <div style="text-align: center; padding: 8px 0;">
+          <div style="font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">📦 For <span id="batch-qty" style="font-weight: 700; color: var(--text-dark);">10</span> items</div>
+          <div style="display: flex; justify-content: space-around;">
+            <div>
+              <div style="font-size: 14px; color: var(--text-light);">Your Cost</div>
+              <div id="batch-total-cost" style="font-size: 28px; font-weight: 800; color: var(--text-dark);">$165.00</div>
+            </div>
+            <div style="width: 2px; background: var(--border);"></div>
+            <div>
+              <div style="font-size: 14px; color: var(--text-light);">Sell For</div>
+              <div id="batch-total-sell" style="font-size: 28px; font-weight: 800; color: var(--primary);">$300.00</div>
+            </div>
+          </div>
+          <div style="margin-top: 12px; font-size: 16px; font-weight: 700; color: var(--gold);">
+            💰 Profit: $<span id="batch-total-profit">135.00</span>
+          </div>
         </div>
       </div>
       
@@ -2403,13 +2432,34 @@
       document.getElementById('price-family').textContent = '$' + familyPrice.toFixed(2);
       document.getElementById('price-cost').textContent = '$' + totalCost.toFixed(2);
       
-      // Update batch display if qty > 1
+      // Update batch displays if qty > 1
+      const batchCost = totalCost * qty;
+      const batchSell = sellPrice * qty;
+      const batchProfit = profit * qty;
+      
       if (qty > 1) {
-        document.getElementById('batch-cost-display').style.display = 'block';
-        document.getElementById('batch-qty').textContent = qty;
-        document.getElementById('batch-total').textContent = '$' + (totalCost * qty).toFixed(2);
+        // Step 2 batch display
+        const step2Batch = document.getElementById('step2-batch-totals');
+        if (step2Batch) {
+          step2Batch.style.display = 'block';
+          document.getElementById('step2-batch-qty').textContent = qty;
+          document.getElementById('step2-batch-total').textContent = batchCost.toFixed(2);
+        }
+        
+        // Step 3 batch display
+        const step3Batch = document.getElementById('step3-batch-totals');
+        if (step3Batch) {
+          step3Batch.style.display = 'block';
+          document.getElementById('batch-qty').textContent = qty;
+          document.getElementById('batch-total-cost').textContent = '$' + batchCost.toFixed(2);
+          document.getElementById('batch-total-sell').textContent = '$' + batchSell.toFixed(2);
+          document.getElementById('batch-total-profit').textContent = batchProfit.toFixed(2);
+        }
       } else {
-        document.getElementById('batch-cost-display').style.display = 'none';
+        const step2Batch = document.getElementById('step2-batch-totals');
+        if (step2Batch) step2Batch.style.display = 'none';
+        const step3Batch = document.getElementById('step3-batch-totals');
+        if (step3Batch) step3Batch.style.display = 'none';
       }
       
       // Update slider visual
