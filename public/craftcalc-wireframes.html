@@ -2256,10 +2256,9 @@
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.getElementById('tab-' + step)?.classList.add('active');
       
-      // Recalculate costs when entering Step 2 or 3
-      if (step === 'costs' || step === 'pricing') {
-        recalculateCosts();
-      }
+      // Always recalculate when changing steps
+      console.log('goToStep:', step);
+      recalculateCosts();
       
       // Scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2300,18 +2299,27 @@
       const qty = parseInt(document.getElementById('project-qty')?.value) || 1;
       document.getElementById('qty-label').textContent = qty === 1 ? 'item' : 'items';
       projectData.quantity = qty;
-      // Update batch display in pricing
-      updatePricingFromSlider(document.getElementById('margin-slider')?.value || 45);
+      console.log('updateQtyLabel:', qty);
+      // Full recalculation to update everything
+      recalculateCosts();
     }
     
     function updateMaterialCost() {
-      const cost = parseNumber(document.getElementById('material-cost-input')?.value || 0);
+      const input = document.getElementById('material-cost-input');
+      if (!input) { console.error('material-cost-input not found'); return; }
+      const cost = parseFloat(input.value) || 0;
+      console.log('updateMaterialCost:', cost);
       projectData.materialCost = cost;
-      // Immediately update Step 2 display for real-time sync
+      
+      // Immediately update ALL material displays
       const step2Display = document.getElementById('step2-material-cost');
-      if (step2Display) step2Display.textContent = '$' + cost.toFixed(2);
       const breakdownDisplay = document.getElementById('breakdown-material');
-      if (breakdownDisplay) breakdownDisplay.textContent = '$' + cost.toFixed(2);
+      const formatted = '$' + cost.toFixed(2);
+      if (step2Display) step2Display.textContent = formatted;
+      if (breakdownDisplay) breakdownDisplay.textContent = formatted;
+      
+      // Also trigger full recalculation
+      recalculateCosts();
     }
     
     function adjustTime(delta) {
@@ -2323,42 +2331,49 @@
     }
     
     function recalculateCosts() {
-      // Get material cost from Step 1 input
-      const materialCost = parseNumber(document.getElementById('material-cost-input')?.value || 0);
-      projectData.materialCost = materialCost;
-      
-      // Get other values
-      const blankCost = parseNumber(document.getElementById('blank-cost')?.value || 5);
+      // Get all input values with safe defaults
+      const materialCost = parseFloat(document.getElementById('material-cost-input')?.value) || 0;
+      const blankCost = parseFloat(document.getElementById('blank-cost')?.value) || 0;
       const timeMinutes = parseInt(document.getElementById('time-minutes')?.value) || 30;
-      const hourlyRate = parseNumber(document.getElementById('hourly-rate')?.value || 15);
-      const packagingCost = parseNumber(document.getElementById('packaging-cost')?.value || 0.50);
-      const wearCost = parseNumber(document.getElementById('wear-cost')?.value || 0.50);
+      const hourlyRate = parseFloat(document.getElementById('hourly-rate')?.value) || 15;
+      const packagingCost = parseFloat(document.getElementById('packaging-cost')?.value) || 0;
+      const wearCost = parseFloat(document.getElementById('wear-cost')?.value) || 0;
+      const qty = parseInt(document.getElementById('project-qty')?.value) || 1;
       
       // Calculate
       const laborCost = (timeMinutes / 60) * hourlyRate;
       const otherCost = packagingCost + wearCost;
       const totalCost = materialCost + blankCost + laborCost + otherCost;
       
+      console.log('recalculateCosts:', { materialCost, blankCost, laborCost, otherCost, totalCost, qty });
+      
       // Store
+      projectData.materialCost = materialCost;
       projectData.blankCost = blankCost;
       projectData.laborCost = laborCost;
       projectData.otherCost = otherCost;
       projectData.totalCost = totalCost;
+      projectData.quantity = qty;
       
-      // Update Step 2 displays
-      document.getElementById('step2-material-cost').textContent = '$' + materialCost.toFixed(2);
-      document.getElementById('labor-cost-display').textContent = '$' + laborCost.toFixed(2);
-      document.getElementById('breakdown-material').textContent = '$' + materialCost.toFixed(2);
-      document.getElementById('breakdown-blank').textContent = '$' + blankCost.toFixed(2);
-      document.getElementById('breakdown-labor').textContent = '$' + laborCost.toFixed(2);
-      document.getElementById('breakdown-other').textContent = '$' + otherCost.toFixed(2);
+      // Update ALL displays
+      const updateEl = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = '$' + value.toFixed(2);
+      };
       
-      // Update total cost displays
+      updateEl('step2-material-cost', materialCost);
+      updateEl('breakdown-material', materialCost);
+      updateEl('breakdown-blank', blankCost);
+      updateEl('breakdown-labor', laborCost);
+      updateEl('breakdown-other', otherCost);
+      updateEl('labor-cost-display', laborCost);
+      
+      // Update all total-cost elements
       document.querySelectorAll('.total-cost').forEach(el => {
         el.textContent = '$' + totalCost.toFixed(2);
       });
       
-      // Update pricing
+      // Update pricing with current margin
       updatePricingFromSlider(document.getElementById('margin-slider')?.value || 45);
     }
     
@@ -2426,9 +2441,12 @@
     
     // Initialize on load
     document.addEventListener('DOMContentLoaded', function() {
-      updateQtyLabel();
-      updateMaterialCost();
-      recalculateCosts();
+      console.log('DOMContentLoaded: Initializing calculator');
+      // Force initial calculation
+      setTimeout(function() {
+        recalculateCosts();
+        console.log('Initial calculation complete');
+      }, 100);
     });
     
     // Legacy tab switching (for hidden tabs and Guide)
