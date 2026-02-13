@@ -48,7 +48,7 @@
       min-height: 100vh;
       background: var(--bg);
       position: relative;
-      padding-bottom: 90px;
+      padding-bottom: 24px;
     }
     
     .screen {
@@ -85,19 +85,143 @@
       padding: 20px 24px;
       z-index: 100;
       margin: -20px -20px 24px -20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     
-    .header h1 {
+    .header-left h1 {
       font-size: 24px;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
     
-    .header-subtitle {
+    .header-left .header-subtitle {
       font-size: 14px;
       opacity: 0.85;
       margin-top: 4px;
       font-weight: 500;
+    }
+    
+    .hamburger-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .hamburger-btn:active {
+      background: rgba(255,255,255,0.25);
+    }
+    
+    /* Slide-out Menu */
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 200;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .menu-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .slide-menu {
+      position: fixed;
+      top: 0;
+      right: -280px;
+      width: 280px;
+      height: 100%;
+      background: var(--card);
+      z-index: 201;
+      transition: right 0.3s ease;
+      padding: 24px;
+      box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+    }
+    
+    .menu-overlay.open .slide-menu {
+      right: 0;
+    }
+    
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .menu-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    
+    .menu-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-bottom: 8px;
+    }
+    
+    .menu-item:active, .menu-item.active {
+      background: var(--bg);
+    }
+    
+    .menu-item.active {
+      background: rgba(122,154,125,0.15);
+    }
+    
+    .menu-item-icon {
+      font-size: 24px;
+    }
+    
+    .menu-item-text h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    
+    .menu-item-text p {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    
+    .menu-item.active .menu-item-text h4 {
+      color: var(--primary-dark);
     }
     
     .search-box {
@@ -817,7 +941,7 @@
 </head>
 <body>
   <div class="phone-frame">
-    <div class="screen-indicator">Tap nav to switch • v2</div>
+    <div class="screen-indicator">Tap ☰ menu to navigate</div>
     
     <!-- Onboarding -->
     <div class="onboarding" id="onboarding">
@@ -835,11 +959,61 @@
       <button class="skip-btn" onclick="closeOnboarding()">Skip intro</button>
     </div>
     
+    <!-- Slide-out Menu -->
+    <div class="menu-overlay" id="menu-overlay" onclick="closeMenu()">
+      <div class="slide-menu" onclick="event.stopPropagation()">
+        <div class="menu-header">
+          <h2>Menu</h2>
+          <button class="menu-close" onclick="closeMenu()">✕</button>
+        </div>
+        <div class="menu-item active" onclick="navigateTo('home')">
+          <span class="menu-item-icon">🏠</span>
+          <div class="menu-item-text">
+            <h4>Home</h4>
+            <p>Dashboard & recent</p>
+          </div>
+        </div>
+        <div class="menu-item" onclick="navigateTo('results')">
+          <span class="menu-item-icon">🌡️</span>
+          <div class="menu-item-text">
+            <h4>Heat Guide</h4>
+            <p>HTV & iron-on settings</p>
+          </div>
+        </div>
+        <div class="menu-item" onclick="navigateTo('calculator')">
+          <span class="menu-item-icon">💰</span>
+          <div class="menu-item-text">
+            <h4>Pricing Calculator</h4>
+            <p>Price your crafts</p>
+          </div>
+        </div>
+        <div class="menu-item" onclick="navigateTo('settings')">
+          <span class="menu-item-icon">⚙️</span>
+          <div class="menu-item-text">
+            <h4>Settings</h4>
+            <p>Preferences & account</p>
+          </div>
+        </div>
+        <div style="border-top: 1px solid var(--border); margin-top: 16px; padding-top: 16px;">
+          <div class="menu-item" style="background: linear-gradient(135deg, rgba(201,169,98,0.15), rgba(232,213,163,0.15));">
+            <span class="menu-item-icon">⭐</span>
+            <div class="menu-item-text">
+              <h4 style="color: var(--gold);">Upgrade to Pro</h4>
+              <p>Cloud sync, no ads • $4.99/yr</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <!-- Screen 1: Home -->
     <div class="screen active" id="home">
       <div class="header">
-        <h1>Calc for Cricut</h1>
-        <div class="header-subtitle">Your crafting companion ✨</div>
+        <div class="header-left">
+          <h1>Calc for Cricut</h1>
+          <div class="header-subtitle">Your crafting companion ✨</div>
+        </div>
+        <button class="hamburger-btn" onclick="openMenu()">☰</button>
       </div>
       
       <div class="search-box">
@@ -959,8 +1133,11 @@
     <!-- Screen 3: Calculator -->
     <div class="screen" id="calculator">
       <div class="header">
-        <h1>Profit Calculator</h1>
-        <div class="header-subtitle">Price your crafts right 💰</div>
+        <div class="header-left">
+          <h1>Profit Calculator</h1>
+          <div class="header-subtitle">Price your crafts right 💰</div>
+        </div>
+        <button class="hamburger-btn" onclick="openMenu()">☰</button>
       </div>
       
       <div class="calc-tabs">
@@ -1220,8 +1397,11 @@
     <!-- Screen 4: Settings -->
     <div class="screen" id="settings">
       <div class="header">
-        <h1>Settings</h1>
-        <div class="header-subtitle">Customize your experience</div>
+        <div class="header-left">
+          <h1>Settings</h1>
+          <div class="header-subtitle">Customize your experience</div>
+        </div>
+        <button class="hamburger-btn" onclick="openMenu()">☰</button>
       </div>
       
       <div class="pro-banner">
@@ -1358,25 +1538,6 @@
       </div>
     </div>
     
-    <!-- Bottom Navigation -->
-    <div class="bottom-nav">
-      <div class="nav-item active" onclick="showScreen('home')" id="nav-home">
-        <span class="nav-icon">🏠</span>
-        <span class="nav-label">Home</span>
-      </div>
-      <div class="nav-item" onclick="showScreen('results')" id="nav-results">
-        <span class="nav-icon">🌡️</span>
-        <span class="nav-label">Heat Guide</span>
-      </div>
-      <div class="nav-item" onclick="showScreen('calculator')" id="nav-calculator">
-        <span class="nav-icon">💰</span>
-        <span class="nav-label">Pricing</span>
-      </div>
-      <div class="nav-item" onclick="showScreen('settings')" id="nav-settings">
-        <span class="nav-icon">⚙️</span>
-        <span class="nav-label">Settings</span>
-      </div>
-    </div>
   </div>
   
   <script>
@@ -1416,8 +1577,35 @@
     function showScreen(screenId) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById(screenId).classList.add('active');
-      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-      document.getElementById('nav-' + screenId).classList.add('active');
+      
+      // Update menu active state
+      document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+    }
+    
+    // ========================================
+    // HAMBURGER MENU
+    // ========================================
+    
+    function openMenu() {
+      document.getElementById('menu-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMenu() {
+      document.getElementById('menu-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    
+    function navigateTo(screenId) {
+      showScreen(screenId);
+      
+      // Update menu active state
+      document.querySelectorAll('.menu-item').forEach(item => {
+        const itemScreen = item.getAttribute('onclick')?.match(/navigateTo\('(\w+)'\)/)?.[1];
+        item.classList.toggle('active', itemScreen === screenId);
+      });
+      
+      closeMenu();
     }
     
     // Pricing Calculator Logic
