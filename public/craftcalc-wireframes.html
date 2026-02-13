@@ -1334,49 +1334,166 @@
         <button class="hamburger-btn" onclick="openMenu()">☰</button>
       </div>
       
-      <div class="calc-tabs">
-        <div class="calc-tab active" data-tab="costs">Costs</div>
-        <div class="calc-tab" data-tab="materials">Materials</div>
+      <!-- Step Indicator -->
+      <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 20px;">
+        <div class="step-dot active" data-step="project">
+          <span class="step-num">1</span>
+          <span class="step-label">Project</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-dot" data-step="costs">
+          <span class="step-num">2</span>
+          <span class="step-label">Costs</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-dot" data-step="pricing">
+          <span class="step-num">3</span>
+          <span class="step-label">Price</span>
+        </div>
+      </div>
+      
+      <style>
+        .step-dot {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 4px;
+          cursor: pointer;
+        }
+        .step-num {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: var(--border);
+          color: var(--text-light);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 700;
+          font-size: 14px;
+          transition: all 0.2s;
+        }
+        .step-dot.active .step-num,
+        .step-dot.completed .step-num {
+          background: var(--primary);
+          color: white;
+        }
+        .step-dot.completed .step-num {
+          background: var(--primary-light);
+        }
+        .step-label {
+          font-size: 11px;
+          color: var(--text-light);
+          font-weight: 600;
+        }
+        .step-dot.active .step-label {
+          color: var(--primary-dark);
+        }
+        .step-line {
+          width: 40px;
+          height: 2px;
+          background: var(--border);
+          margin-top: 15px;
+        }
+      </style>
+      
+      <div class="calc-tabs" style="display: none;">
+        <div class="calc-tab active" data-tab="project">Project</div>
+        <div class="calc-tab" data-tab="costs">Costs</div>
         <div class="calc-tab" data-tab="pricing">Pricing</div>
         <div class="calc-tab" data-tab="guide">Guide</div>
       </div>
       
-      <!-- TAB: Costs -->
-      <div class="tab-panel active" id="tab-costs">
+      <!-- STEP 1: PROJECT -->
+      <div class="tab-panel active" id="tab-project">
       
-      <!-- Material Type -->
       <div class="calc-section">
-        <div class="calc-title">Material Type</div>
-        <select id="material-type" onchange="updateMaterialDefaults(this.value)" style="width: 100%; padding: 14px 16px; font-size: 16px; font-weight: 600; border: 1.5px solid var(--border); border-radius: 12px; background: var(--bg); color: var(--text-dark); cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg fill=\"%233A3A3A\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7 10l5 5 5-5z\"/></svg>'); background-repeat: no-repeat; background-position: right 12px center; background-size: 24px;">
-          <optgroup label="Heat Transfer">
-            <option value="htv-standard">HTV / Iron-On (Standard)</option>
-            <option value="htv-glitter">HTV Glitter</option>
-            <option value="htv-puff">HTV Puff / 3D</option>
-            <option value="htv-foil">HTV Foil</option>
-            <option value="htv-holographic">HTV Holographic</option>
-            <option value="htv-flock">HTV Flock</option>
+        <div class="calc-title">📦 What are you making?</div>
+        <select class="cost-input" id="project-type-select" style="width: 100%; text-align: left; padding: 14px 16px; font-size: 16px;">
+          <optgroup label="Apparel">
+            <option value="tshirt">T-Shirt</option>
+            <option value="hoodie">Hoodie</option>
+            <option value="tank">Tank Top</option>
+            <option value="onesie">Onesie</option>
+            <option value="hat">Hat/Cap</option>
+            <option value="apron">Apron</option>
           </optgroup>
-          <optgroup label="Infusible Ink">
-            <option value="infusible-sheets">Infusible Ink Sheets</option>
-            <option value="infusible-pens">Infusible Ink Pens/Markers</option>
-            <option value="sublimation">Sublimation Transfer</option>
+          <optgroup label="Drinkware">
+            <option value="tumbler">Tumbler</option>
+            <option value="mug">Mug</option>
+            <option value="wineglass">Wine Glass</option>
+            <option value="bottle">Water Bottle</option>
+            <option value="coaster">Coaster</option>
+          </optgroup>
+          <optgroup label="Bags & Accessories">
+            <option value="tote">Tote Bag</option>
+            <option value="makeup">Makeup Bag</option>
+            <option value="keychain">Keychain</option>
+          </optgroup>
+          <optgroup label="Home & Decor">
+            <option value="sign">Wood Sign</option>
+            <option value="canvas">Canvas</option>
+            <option value="pillow">Pillow</option>
+            <option value="ornament">Ornament</option>
+            <option value="frame">Picture Frame</option>
+          </optgroup>
+          <optgroup label="Paper & Cards">
+            <option value="card">Greeting Card</option>
+            <option value="stickers">Stickers</option>
+            <option value="decal">Decal</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option value="custom">Custom Project</option>
+          </optgroup>
+        </select>
+      </div>
+      
+      <div class="calc-section">
+        <div class="calc-title">📐 How big is your design?</div>
+        <div class="calc-row">
+          <span class="calc-label">Width</span>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <input type="number" class="cost-input" id="design-width" value="10" style="width: 70px; text-align: center;"> 
+            <span style="color: var(--text-light);">inches</span>
+          </div>
+        </div>
+        <div class="calc-row">
+          <span class="calc-label">Height</span>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <input type="number" class="cost-input" id="design-height" value="8" style="width: 70px; text-align: center;"> 
+            <span style="color: var(--text-light);">inches</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calc-section">
+        <div class="calc-title">🔢 How many are you making?</div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button onclick="adjustQty(-1)" style="width: 44px; height: 44px; border-radius: 12px; border: 2px solid var(--border); background: var(--card); font-size: 20px; cursor: pointer;">−</button>
+          <input type="number" class="cost-input" id="project-qty" value="1" style="width: 70px; text-align: center; font-size: 20px; font-weight: 700;" oninput="recalculateProject()">
+          <button onclick="adjustQty(1)" style="width: 44px; height: 44px; border-radius: 12px; border: 2px solid var(--border); background: var(--card); font-size: 20px; cursor: pointer;">+</button>
+          <span style="color: var(--text-light); margin-left: 8px;" id="qty-label">item</span>
+        </div>
+      </div>
+      
+      <div class="calc-section">
+        <div class="calc-title">🎨 What material are you using?</div>
+        <select id="material-type" onchange="updateMaterialTip()" style="width: 100%; padding: 14px 16px; font-size: 16px; font-weight: 600; border: 1.5px solid var(--border); border-radius: 12px; background: var(--bg); color: var(--text-dark); cursor: pointer;">
+          <optgroup label="Heat Transfer (HTV)">
+            <option value="htv-standard" data-cost="1.50">HTV / Iron-On (Standard) — ~$1.50/ft</option>
+            <option value="htv-glitter" data-cost="2.50">HTV Glitter — ~$2.50/ft</option>
+            <option value="htv-puff" data-cost="3.00">HTV Puff / 3D — ~$3.00/ft</option>
+            <option value="htv-foil" data-cost="2.75">HTV Foil — ~$2.75/ft</option>
           </optgroup>
           <optgroup label="Adhesive Vinyl">
-            <option value="vinyl-permanent">Permanent Vinyl (Oracal 651)</option>
-            <option value="vinyl-removable">Removable Vinyl (Oracal 631)</option>
-            <option value="vinyl-glitter">Glitter Vinyl</option>
-            <option value="vinyl-holographic">Holographic Vinyl</option>
+            <option value="vinyl-permanent" data-cost="1.25">Permanent Vinyl (Oracal 651) — ~$1.25/ft</option>
+            <option value="vinyl-removable" data-cost="1.25">Removable Vinyl — ~$1.25/ft</option>
+            <option value="vinyl-glitter" data-cost="2.00">Glitter Vinyl — ~$2.00/ft</option>
           </optgroup>
-          <optgroup label="Paper & Cardstock">
-            <option value="cardstock">Cardstock</option>
-            <option value="cardstock-glitter">Glitter Cardstock</option>
-            <option value="paper-sticker">Sticker Paper</option>
-          </optgroup>
-          <optgroup label="Specialty">
-            <option value="leather">Faux Leather</option>
-            <option value="felt">Felt</option>
-            <option value="fabric">Fabric</option>
-            <option value="other">Other</option>
+          <optgroup label="Other">
+            <option value="infusible" data-cost="3.50">Infusible Ink — ~$3.50/sheet</option>
+            <option value="cardstock" data-cost="0.50">Cardstock — ~$0.50/sheet</option>
+            <option value="other" data-cost="1.50">Other — enter cost below</option>
           </optgroup>
         </select>
         <div id="material-tip" style="margin-top: 10px; padding: 10px 12px; background: rgba(122,154,125,0.1); border-radius: 10px; font-size: 13px; color: var(--text);">
@@ -1384,109 +1501,189 @@
         </div>
       </div>
       
-      <!-- Materials by Color -->
-      <div class="calc-section" style="padding: 20px 16px;">
-        <div class="calc-title">Colors / Layers</div>
-        <div style="display: flex; font-size: 10px; color: var(--text-light); padding: 0 0 8px 32px; text-transform: uppercase; letter-spacing: 0.3px; gap: 4px;">
-          <span style="flex: 1; min-width: 50px;">Name</span>
-          <span style="width: 50px; text-align: center;">$/ft</span>
-          <span style="width: 40px; text-align: center;">Feet</span>
-          <span style="width: 50px; text-align: right;">Cost</span>
-          <span style="width: 20px;"></span>
-        </div>
-        <div id="color-list">
-          <div class="color-row" style="display: flex; align-items: center; gap: 4px; margin-bottom: 10px;">
-            <span style="background: var(--primary); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;">1</span>
-            <input type="text" placeholder="Color" class="cost-input color-name" value="Main" style="flex: 1; text-align: left; min-width: 50px; padding: 8px 6px; font-size: 14px;">
-            <input type="text" class="cost-input color-rate" value="1.50" style="width: 50px; text-align: center; padding: 8px 4px; font-size: 14px;" oninput="updateMaterialsTotal()">
-            <input type="text" class="cost-input color-feet" value="3" style="width: 40px; text-align: center; padding: 8px 4px; font-size: 14px;" oninput="updateMaterialsTotal()">
-            <span class="color-subtotal" style="width: 50px; text-align: right; font-weight: 700; font-size: 13px; color: var(--primary-dark);">$4.50</span>
-            <button onclick="removeColor(this)" style="background: none; border: none; color: var(--text-light); font-size: 16px; cursor: pointer; padding: 2px; width: 20px;">×</button>
-          </div>
-        </div>
-        <button onclick="addColor()" style="width: 100%; padding: 12px; background: var(--bg); border: 2px dashed var(--border); border-radius: 12px; font-size: 14px; color: var(--text-light); cursor: pointer; margin-top: 4px;">
-          <span style="color: var(--primary); font-weight: 700;">+</span> Add Color/Layer
-        </button>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);">
-          <span style="font-weight: 600; color: var(--text);">Materials Total</span>
-          <span id="materials-total" style="font-weight: 800; font-size: 18px; color: var(--primary-dark);">$4.50</span>
-        </div>
-      </div>
-      
-      <!-- Other Costs -->
       <div class="calc-section">
-        <div class="calc-title">Other Costs</div>
+        <div class="calc-title">💵 Material cost</div>
         <div class="calc-row">
-          <span class="calc-label">Labor</span>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <input type="text" class="cost-input small" value="1.5" id="labor-hours" style="width: 50px;"> hrs × 
-            <input type="text" class="cost-input small" value="$15" id="labor-rate" style="width: 60px;">
+          <span class="calc-label">Cost per foot <span style="font-size: 12px; color: var(--text-light);">(check your roll)</span></span>
+          <div style="display: flex; align-items: center; gap: 4px;">
+            <span style="color: var(--text-light);">$</span>
+            <input type="number" step="0.01" class="cost-input" id="cost-per-foot" value="1.50" style="width: 70px; text-align: center;" oninput="recalculateProject()">
+            <span style="color: var(--text-light);">/ft</span>
           </div>
         </div>
         <div class="calc-row">
-          <span class="calc-label">Misc supplies <span style="color: var(--text-light); font-size: 13px;">(blades, mats)</span></span>
-          <input type="text" class="cost-input" value="$2.00" id="misc-cost">
-        </div>
-        <div class="calc-row">
-          <span class="calc-label">Equipment overhead</span>
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <input type="text" class="cost-input small" value="5" id="overhead-pct" style="width: 45px;">
-            <span style="color: var(--text-light);">%</span>
-          </div>
-        </div>
-        <div class="calc-row" style="border-top: 2px solid var(--border); padding-top: 14px; margin-top: 10px; background: var(--bg); margin: 10px -24px -24px; padding: 16px 24px; border-radius: 0 0 var(--radius) var(--radius);">
-          <span class="calc-label" style="font-weight: 800; color: var(--text-dark);">Total Cost</span>
-          <span class="calc-value total-cost" style="font-weight: 800; font-size: 20px; color: var(--primary-dark);">$35.08</span>
+          <span class="calc-label">Roll width</span>
+          <select class="cost-input" id="roll-width" style="width: 100px;" onchange="recalculateProject()">
+            <option value="12">12 inch</option>
+            <option value="15">15 inch</option>
+            <option value="24">24 inch</option>
+          </select>
         </div>
       </div>
       
-      <button class="save-btn" style="margin-top: 8px;">
-        <span>➡️</span> Continue to Pricing
+      <!-- Material Calculation Result -->
+      <div class="calc-result" style="margin-bottom: 16px;">
+        <div class="calc-result-label">Material You'll Need</div>
+        <div class="calc-result-value" id="material-needed">0.9 ft</div>
+        <div class="calc-result-sub" id="material-cost-display">~$1.35 in material</div>
+        <div style="font-size: 12px; opacity: 0.8; margin-top: 8px;" id="material-breakdown">
+          (includes 15% extra for mistakes)
+        </div>
+      </div>
+      
+      <button class="save-btn" onclick="goToStep('costs')" style="background: var(--primary); color: white; border-color: var(--primary);">
+        <span>➡️</span> Next: Add Other Costs
       </button>
+      
+      </div><!-- /tab-project -->
+      
+      <!-- STEP 2: COSTS -->
+      <div class="tab-panel" id="tab-costs">
+      
+      <!-- Material cost from Step 1 -->
+      <div class="calc-section" style="background: linear-gradient(135deg, rgba(122,154,125,0.1), rgba(157,181,160,0.1)); border: 2px solid rgba(122,154,125,0.3);">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 12px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">✓ Material Cost (from Step 1)</div>
+            <div id="step2-material-cost" style="font-size: 24px; font-weight: 800; color: var(--primary-dark);">$1.35</div>
+          </div>
+          <button onclick="goToStep('project')" style="background: var(--card); border: 1px solid var(--border); padding: 8px 14px; border-radius: 10px; font-size: 13px; cursor: pointer;">✏️ Edit</button>
+        </div>
+      </div>
+      
+      <div class="calc-section">
+        <div class="calc-title">🛍️ Blank / Base Item Cost</div>
+        <p style="font-size: 13px; color: var(--text-light); margin-bottom: 12px;">What does the t-shirt, tumbler, or blank cost you?</p>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 18px; color: var(--text-light);">$</span>
+          <input type="number" step="0.01" class="cost-input" id="blank-cost" value="5.00" style="width: 90px; text-align: center; font-size: 18px; font-weight: 600;" oninput="recalculateCosts()">
+          <span style="color: var(--text-light);">per item</span>
+        </div>
+      </div>
+      
+      <div class="calc-section">
+        <div class="calc-title">⏱️ Your Time</div>
+        <p style="font-size: 13px; color: var(--text-light); margin-bottom: 12px;">About how long does each one take?</p>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <button onclick="adjustTime(-5)" style="width: 40px; height: 40px; border-radius: 10px; border: 2px solid var(--border); background: var(--card); font-size: 16px; cursor: pointer;">−</button>
+          <div style="text-align: center;">
+            <input type="number" class="cost-input" id="time-minutes" value="30" style="width: 70px; text-align: center; font-size: 20px; font-weight: 700;" oninput="recalculateCosts()">
+            <div style="font-size: 12px; color: var(--text-light);">minutes</div>
+          </div>
+          <button onclick="adjustTime(5)" style="width: 40px; height: 40px; border-radius: 10px; border: 2px solid var(--border); background: var(--card); font-size: 16px; cursor: pointer;">+</button>
+        </div>
+        <div style="background: var(--bg); border-radius: 10px; padding: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 14px; color: var(--text-light);">Your hourly rate:</span>
+          <div style="display: flex; align-items: center; gap: 4px;">
+            <span style="color: var(--text-light);">$</span>
+            <input type="number" class="cost-input" id="hourly-rate" value="15" style="width: 60px; text-align: center;" oninput="recalculateCosts()">
+            <span style="color: var(--text-light);">/hr</span>
+          </div>
+        </div>
+        <div style="text-align: right; margin-top: 8px;">
+          <span style="font-size: 14px; color: var(--text-light);">Labor cost:</span>
+          <span id="labor-cost-display" style="font-weight: 700; color: var(--primary-dark); margin-left: 8px;">$7.50</span>
+        </div>
+      </div>
+      
+      <div class="calc-section">
+        <div class="calc-title">📦 Other Costs <span style="font-weight: 400; font-size: 12px;">(optional)</span></div>
+        <div class="calc-row">
+          <span class="calc-label">Packaging, tags, ribbon</span>
+          <div style="display: flex; align-items: center; gap: 4px;">
+            <span style="color: var(--text-light);">$</span>
+            <input type="number" step="0.01" class="cost-input" id="packaging-cost" value="0.50" style="width: 70px; text-align: center;" oninput="recalculateCosts()">
+          </div>
+        </div>
+        <div class="calc-row">
+          <span class="calc-label">Wear & tear <span style="font-size: 11px; color: var(--text-light);">(blades, mats)</span></span>
+          <div style="display: flex; align-items: center; gap: 4px;">
+            <span style="color: var(--text-light);">$</span>
+            <input type="number" step="0.01" class="cost-input" id="wear-cost" value="0.50" style="width: 70px; text-align: center;" oninput="recalculateCosts()">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cost Breakdown -->
+      <div class="calc-section" style="background: var(--bg);">
+        <div class="calc-title">💰 Cost Breakdown (per item)</div>
+        <div class="calc-row">
+          <span class="calc-label">Material</span>
+          <span id="breakdown-material" style="font-weight: 600;">$1.35</span>
+        </div>
+        <div class="calc-row">
+          <span class="calc-label">Blank / Base</span>
+          <span id="breakdown-blank" style="font-weight: 600;">$5.00</span>
+        </div>
+        <div class="calc-row">
+          <span class="calc-label">Your time</span>
+          <span id="breakdown-labor" style="font-weight: 600;">$7.50</span>
+        </div>
+        <div class="calc-row">
+          <span class="calc-label">Packaging + wear</span>
+          <span id="breakdown-other" style="font-weight: 600;">$1.00</span>
+        </div>
+        <div class="calc-row" style="border-top: 2px solid var(--border); padding-top: 12px; margin-top: 8px;">
+          <span class="calc-label" style="font-weight: 800; font-size: 16px;">TOTAL COST</span>
+          <span class="total-cost" style="font-weight: 800; font-size: 22px; color: var(--primary-dark);">$14.85</span>
+        </div>
+      </div>
+      
+      <div style="display: flex; gap: 10px; margin-top: 8px;">
+        <button onclick="goToStep('project')" style="flex: 1; padding: 14px; background: var(--card); border: 2px solid var(--border); border-radius: var(--radius); font-size: 15px; font-weight: 600; cursor: pointer;">
+          ← Back
+        </button>
+        <button class="save-btn" onclick="goToStep('pricing')" style="flex: 2; background: var(--primary); color: white; border-color: var(--primary); margin: 0;">
+          <span>➡️</span> Next: Set Your Price
+        </button>
+      </div>
       
       </div><!-- /tab-costs -->
       
-      <!-- TAB: Pricing -->
+      <!-- STEP 3: PRICING -->
       <div class="tab-panel" id="tab-pricing">
       
-      <!-- Cost Summary (linked from Costs tab) -->
-      <div class="calc-section" style="background: var(--bg); border: 2px dashed var(--border);">
+      <!-- Cost Summary -->
+      <div class="calc-section" style="background: linear-gradient(135deg, rgba(122,154,125,0.1), rgba(157,181,160,0.1)); border: 2px solid rgba(122,154,125,0.3);">
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <div>
-            <div style="font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">Your Total Cost</div>
-            <div class="total-cost" style="font-size: 28px; font-weight: 800; color: var(--primary-dark);">$35.08</div>
+            <div style="font-size: 12px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">✓ Your Cost Per Item</div>
+            <div class="total-cost" style="font-size: 28px; font-weight: 800; color: var(--primary-dark);">$14.85</div>
           </div>
-          <button onclick="document.querySelector('[data-tab=costs]').click()" style="background: var(--card); border: 1px solid var(--border); padding: 10px 16px; border-radius: 10px; font-size: 14px; cursor: pointer;">✏️ Edit Costs</button>
+          <button onclick="goToStep('costs')" style="background: var(--card); border: 1px solid var(--border); padding: 8px 14px; border-radius: 10px; font-size: 13px; cursor: pointer;">✏️ Edit</button>
+        </div>
+        <div id="batch-cost-display" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-light); display: none;">
+          Total for <span id="batch-qty">10</span> items: <strong id="batch-total">$148.50</strong>
         </div>
       </div>
       
       <!-- Community Insight -->
       <div class="insight-card" style="margin-bottom: 16px;">
-        <div class="insight-icon">📊</div>
+        <div class="insight-icon">💡</div>
         <div class="insight-text">
-          <h4>Community Insight</h4>
-          <p>Crafters average <strong>42% margin</strong> on tumblers</p>
+          <h4>Quick Tip</h4>
+          <p>Most crafters aim for <strong>40-50% profit margin</strong> to cover unexpected costs</p>
         </div>
       </div>
       
-      <!-- Margin + Sell Price Combined -->
+      <!-- Margin + Sell Price -->
       <div class="calc-result" style="padding-bottom: 20px;">
-        <div class="calc-result-label">Sell Price</div>
-        <div class="calc-result-value">$56.36</div>
-        <div class="calc-result-sub" style="margin-bottom: 20px;">Profit: $25.36 per item</div>
+        <div class="calc-result-label">Sell For</div>
+        <div class="calc-result-value" id="sell-price-display">$27.00</div>
+        <div class="calc-result-sub" id="profit-display" style="margin-bottom: 20px;">You keep $12.15 profit per item</div>
         
         <div style="background: rgba(255,255,255,0.15); border-radius: 16px; padding: 16px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <span style="font-size: 14px; opacity: 0.9;">Your Margin</span>
-            <span class="slider-value" style="font-size: 24px; font-weight: 800;">45%</span>
+            <span style="font-size: 14px; opacity: 0.9;">Your Profit Margin</span>
+            <span class="slider-value" id="margin-display" style="font-size: 24px; font-weight: 800;">45%</span>
           </div>
           <div class="slider-track">
-            <input type="range" min="0" max="100" value="45" class="slider-input" style="background: rgba(255,255,255,0.3);">
+            <input type="range" min="10" max="80" value="45" class="slider-input" id="margin-slider" oninput="updatePricingFromSlider(this.value)">
           </div>
           <div class="slider-presets" style="margin-top: 12px;">
-            <button class="preset-btn" style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); color: white;">30%</button>
-            <button class="preset-btn active" style="background: rgba(255,255,255,0.95); border-color: white; color: var(--primary-dark);">45%</button>
-            <button class="preset-btn" style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); color: white;">60%</button>
+            <button class="preset-btn" onclick="setMargin(30)" style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); color: white;">30%</button>
+            <button class="preset-btn active" onclick="setMargin(45)" style="background: rgba(255,255,255,0.95); border-color: white; color: var(--primary-dark);">45%</button>
+            <button class="preset-btn" onclick="setMargin(60)" style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); color: white;">60%</button>
           </div>
         </div>
       </div>
@@ -1496,143 +1693,50 @@
       </button>
       
       <div class="calc-section">
-        <div class="calc-title">Pricing Tiers</div>
-        <div class="tier-card">
+        <div class="calc-title">👥 Who are you selling to?</div>
+        <div class="tier-card" style="background: linear-gradient(135deg, rgba(122,154,125,0.1), rgba(201,169,98,0.1)); border: 2px solid var(--primary);">
           <div class="tier-info">
-            <h4>💼 Full Price</h4>
-            <p>Customers & strangers</p>
+            <h4>💼 Customers</h4>
+            <p>Full price — they expect it</p>
           </div>
-          <div class="tier-price">$56.36</div>
+          <div class="tier-price" id="price-full">$27.00</div>
         </div>
         <div class="tier-card">
           <div class="tier-info">
             <h4>🤝 Friends</h4>
-            <p>Support your craft (20% off)</p>
+            <p>Small discount to support you</p>
           </div>
-          <div class="tier-price">$45.09</div>
+          <div class="tier-price" id="price-friends">$21.60</div>
         </div>
         <div class="tier-card">
           <div class="tier-info">
             <h4>👨‍👩‍👧 Family</h4>
-            <p>Cover costs + small thank-you</p>
+            <p>Cover costs + a little extra</p>
           </div>
-          <div class="tier-price">$39.45</div>
+          <div class="tier-price" id="price-family">$18.90</div>
         </div>
         <div class="tier-card">
           <div class="tier-info">
-            <h4>❤️ Just Costs</h4>
-            <p>Materials + your time</p>
+            <h4>❤️ At Cost</h4>
+            <p>Just materials + your time</p>
           </div>
-          <div class="tier-price muted">$31.00</div>
+          <div class="tier-price muted" id="price-cost">$14.85</div>
         </div>
+        <p style="font-size: 12px; color: var(--text-light); text-align: center; margin-top: 12px;">
+          Tap "Guide" below for help talking about pricing with loved ones
+        </p>
+      </div>
+      
+      <div style="display: flex; gap: 10px; margin-top: 8px;">
+        <button onclick="goToStep('costs')" style="flex: 1; padding: 14px; background: var(--card); border: 2px solid var(--border); border-radius: var(--radius); font-size: 15px; font-weight: 600; cursor: pointer;">
+          ← Back
+        </button>
+        <button onclick="goToStep('guide')" style="flex: 2; padding: 14px; background: var(--accent); border: none; border-radius: var(--radius); font-size: 15px; font-weight: 600; cursor: pointer; color: var(--text-dark);">
+          💝 Pricing Guide
+        </button>
       </div>
       
       </div><!-- /tab-pricing -->
-      
-      <!-- TAB: Materials -->
-      <div class="tab-panel" id="tab-materials">
-        <div class="calc-section">
-          <div class="calc-title">Project Details</div>
-          <div class="calc-row">
-            <span class="calc-label">Project type</span>
-            <select class="cost-input" id="project-type-select" style="width: 140px; text-align: left;">
-              <optgroup label="Apparel">
-                <option>T-Shirt</option>
-                <option>Hoodie</option>
-                <option>Tank Top</option>
-                <option>Onesie</option>
-                <option>Hat/Cap</option>
-                <option>Apron</option>
-              </optgroup>
-              <optgroup label="Drinkware">
-                <option>Tumbler</option>
-                <option>Mug</option>
-                <option>Wine Glass</option>
-                <option>Water Bottle</option>
-                <option>Coaster</option>
-              </optgroup>
-              <optgroup label="Bags & Accessories">
-                <option>Tote Bag</option>
-                <option>Makeup Bag</option>
-                <option>Backpack</option>
-                <option>Keychain</option>
-              </optgroup>
-              <optgroup label="Home & Decor">
-                <option>Wood Sign</option>
-                <option>Canvas</option>
-                <option>Pillow</option>
-                <option>Ornament</option>
-                <option>Picture Frame</option>
-                <option>Tile/Trivet</option>
-              </optgroup>
-              <optgroup label="Paper & Cards">
-                <option>Greeting Card</option>
-                <option>Invitation</option>
-                <option>Stickers</option>
-                <option>Gift Tag</option>
-              </optgroup>
-              <optgroup label="Other">
-                <option>Decal</option>
-                <option>Car Decal</option>
-                <option>Wall Decal</option>
-                <option>Custom</option>
-              </optgroup>
-            </select>
-          </div>
-          <div class="calc-row">
-            <span class="calc-label">Design width</span>
-            <div style="display: flex; align-items: center; gap: 6px;">
-              <input type="text" class="cost-input small" value="10" style="width: 55px;"> in
-            </div>
-          </div>
-          <div class="calc-row">
-            <span class="calc-label">Design height</span>
-            <div style="display: flex; align-items: center; gap: 6px;">
-              <input type="text" class="cost-input small" value="8" style="width: 55px;"> in
-            </div>
-          </div>
-          <div class="calc-row">
-            <span class="calc-label">Quantity</span>
-            <input type="text" class="cost-input small" value="10" style="width: 55px;">
-          </div>
-        </div>
-        
-        <div class="calc-section">
-          <div class="calc-title">Material Settings</div>
-          <div class="calc-row">
-            <span class="calc-label">Vinyl roll width</span>
-            <select class="cost-input" style="width: 100px; text-align: left;">
-              <option>12 inch</option>
-              <option>15 inch</option>
-              <option>24 inch</option>
-            </select>
-          </div>
-          <div class="calc-row">
-            <span class="calc-label">Cost per foot</span>
-            <input type="text" class="cost-input" value="$1.50">
-          </div>
-          <div class="calc-row">
-            <span class="calc-label">Waste allowance</span>
-            <div style="display: flex; align-items: center; gap: 6px;">
-              <input type="text" class="cost-input small" value="15" style="width: 50px;"> %
-            </div>
-          </div>
-        </div>
-        
-        <div class="calc-result">
-          <div class="calc-result-label">Material Needed</div>
-          <div class="calc-result-value">7.7 ft</div>
-          <div class="calc-result-sub">~$11.50 in vinyl</div>
-        </div>
-        
-        <div class="insight-card">
-          <div class="insight-icon">💡</div>
-          <div class="insight-text">
-            <h4>Pro Tip</h4>
-            <p>Buy 15% extra for mistakes — it's cheaper than reordering!</p>
-          </div>
-        </div>
-      </div><!-- /tab-materials -->
       
       <!-- TAB: Guide -->
       <div class="tab-panel" id="tab-guide">
@@ -2172,221 +2276,250 @@
     
     // Pricing Calculator Logic
     function parseNumber(str) {
-      return parseFloat(str.replace(/[^0-9.]/g, '')) || 0;
+      if (typeof str === 'number') return str;
+      return parseFloat(String(str).replace(/[^0-9.]/g, '')) || 0;
     }
     
     // ========================================
-    // MATERIAL TYPE SELECTOR
+    // STEP-BASED NAVIGATION
+    // ========================================
+    
+    let projectData = {
+      materialCost: 0,
+      blankCost: 5.00,
+      laborCost: 7.50,
+      otherCost: 1.00,
+      totalCost: 14.85,
+      quantity: 1
+    };
+    
+    function goToStep(step) {
+      // Update step indicators
+      document.querySelectorAll('.step-dot').forEach(dot => {
+        dot.classList.remove('active', 'completed');
+      });
+      
+      const steps = ['project', 'costs', 'pricing'];
+      const currentIndex = steps.indexOf(step);
+      
+      steps.forEach((s, i) => {
+        const dot = document.querySelector(`.step-dot[data-step="${s}"]`);
+        if (i < currentIndex) dot?.classList.add('completed');
+        if (i === currentIndex) dot?.classList.add('active');
+      });
+      
+      // Switch tab panel
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('tab-' + step)?.classList.add('active');
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // Step indicator clicks
+    document.querySelectorAll('.step-dot').forEach(dot => {
+      dot.addEventListener('click', function() {
+        goToStep(this.dataset.step);
+      });
+    });
+    
+    // ========================================
+    // STEP 1: PROJECT CALCULATIONS
     // ========================================
     
     const materialTips = {
-      'htv-standard': { tip: 'Mirror your design before cutting!', avgCost: 8 },
-      'htv-glitter': { tip: 'Peel warm, not hot. Press at 320°F.', avgCost: 12 },
-      'htv-puff': { tip: 'Use LIGHT pressure — puff needs room to expand!', avgCost: 15 },
-      'htv-foil': { tip: 'Quick press only — foil scorches easily.', avgCost: 14 },
-      'htv-holographic': { tip: 'Let cool completely before peeling.', avgCost: 12 },
-      'htv-flock': { tip: 'Use firm pressure. Peel while hot.', avgCost: 14 },
-      'infusible-sheets': { tip: 'Use compatible Cricut blanks. 385°F for 40 sec.', avgCost: 18 },
-      'infusible-pens': { tip: 'Draw on laser copy paper, then transfer.', avgCost: 8 },
-      'sublimation': { tip: 'Only works on polyester or poly-coated items.', avgCost: 5 },
-      'vinyl-permanent': { tip: 'Great for outdoor use. Do NOT mirror.', avgCost: 6 },
-      'vinyl-removable': { tip: 'Perfect for walls & rentals. Easy removal.', avgCost: 6 },
-      'vinyl-glitter': { tip: 'Use StrongGrip mat. May need deep cut.', avgCost: 10 },
-      'vinyl-holographic': { tip: 'Use transfer tape for application.', avgCost: 10 },
-      'cardstock': { tip: 'Use scoring wheel for fold lines.', avgCost: 4 },
-      'cardstock-glitter': { tip: 'Use deep point blade. Multiple passes.', avgCost: 8 },
-      'paper-sticker': { tip: 'Print then Cut works great here!', avgCost: 6 },
-      'leather': { tip: 'Use deep point blade. Cut pretty side DOWN.', avgCost: 12 },
-      'felt': { tip: 'Use rotary blade for best results.', avgCost: 5 },
-      'fabric': { tip: 'Use fabric grip mat + rotary blade.', avgCost: 8 },
-      'other': { tip: 'Always do a test cut first!', avgCost: 8 }
+      'htv-standard': 'Mirror your design before cutting!',
+      'htv-glitter': 'Peel warm, not hot. Press at 320°F.',
+      'htv-puff': 'Use LIGHT pressure — puff needs room to expand!',
+      'htv-foil': 'Quick press only — foil scorches easily.',
+      'vinyl-permanent': 'Great for outdoor use. Do NOT mirror.',
+      'vinyl-removable': 'Perfect for walls & rentals. Easy removal.',
+      'vinyl-glitter': 'Use StrongGrip mat. May need deep cut.',
+      'infusible': 'Use compatible Cricut blanks. 385°F for 40 sec.',
+      'cardstock': 'Use scoring wheel for fold lines.',
+      'other': 'Always do a test cut first!'
     };
     
-    function updateMaterialDefaults(materialType) {
-      const data = materialTips[materialType] || materialTips['other'];
-      document.getElementById('material-tip').innerHTML = `💡 <strong>Tip:</strong> ${data.tip}`;
-    }
-    
-    // ========================================
-    // DYNAMIC COLOR/LAYER MANAGEMENT
-    // ========================================
-    
-    let colorCount = 1;
-    
-    function addColor() {
-      colorCount++;
-      const colorList = document.getElementById('color-list');
-      const newRow = document.createElement('div');
-      newRow.className = 'color-row';
-      newRow.style.cssText = 'display: flex; align-items: center; gap: 4px; margin-bottom: 10px;';
-      newRow.innerHTML = `
-        <span style="background: var(--accent); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;">${colorCount}</span>
-        <input type="text" placeholder="Color" class="cost-input color-name" value="Accent" style="flex: 1; text-align: left; min-width: 50px; padding: 8px 6px; font-size: 14px;">
-        <input type="text" class="cost-input color-rate" value="1.50" style="width: 50px; text-align: center; padding: 8px 4px; font-size: 14px;" oninput="updateMaterialsTotal()">
-        <input type="text" class="cost-input color-feet" value="1" style="width: 40px; text-align: center; padding: 8px 4px; font-size: 14px;" oninput="updateMaterialsTotal()">
-        <span class="color-subtotal" style="width: 50px; text-align: right; font-weight: 700; font-size: 13px; color: var(--primary-dark);">$1.50</span>
-        <button onclick="removeColor(this)" style="background: none; border: none; color: var(--text-light); font-size: 16px; cursor: pointer; padding: 2px; width: 20px;">×</button>
-      `;
-      colorList.appendChild(newRow);
+    function updateMaterialTip() {
+      const select = document.getElementById('material-type');
+      const value = select.value;
+      const tip = materialTips[value] || materialTips['other'];
       
-      updateMaterialsTotal();
-      renumberColors();
+      // Update cost per foot from data attribute
+      const option = select.options[select.selectedIndex];
+      const cost = option?.dataset?.cost || '1.50';
+      document.getElementById('cost-per-foot').value = cost;
+      
+      document.getElementById('material-tip').innerHTML = `💡 <strong>Tip:</strong> ${tip}`;
+      
+      recalculateProject();
     }
     
-    function removeColor(btn) {
-      const rows = document.querySelectorAll('.color-row');
-      if (rows.length > 1) {
-        btn.closest('.color-row').remove();
-        updateMaterialsTotal();
-        renumberColors();
-      }
+    function adjustQty(delta) {
+      const input = document.getElementById('project-qty');
+      let val = parseInt(input.value) || 1;
+      val = Math.max(1, val + delta);
+      input.value = val;
+      document.getElementById('qty-label').textContent = val === 1 ? 'item' : 'items';
+      recalculateProject();
     }
     
-    function renumberColors() {
-      const rows = document.querySelectorAll('.color-row');
-      rows.forEach((row, i) => {
-        const badge = row.querySelector('span');
-        badge.textContent = i + 1;
-        badge.style.background = i === 0 ? 'var(--primary)' : 'var(--accent)';
-        badge.style.width = '24px';
-        badge.style.height = '24px';
-        badge.style.fontSize = '12px';
+    function adjustTime(delta) {
+      const input = document.getElementById('time-minutes');
+      let val = parseInt(input.value) || 30;
+      val = Math.max(5, val + delta);
+      input.value = val;
+      recalculateCosts();
+    }
+    
+    function recalculateProject() {
+      const width = parseNumber(document.getElementById('design-width')?.value || 10);
+      const height = parseNumber(document.getElementById('design-height')?.value || 8);
+      const qty = parseInt(document.getElementById('project-qty')?.value) || 1;
+      const costPerFoot = parseNumber(document.getElementById('cost-per-foot')?.value || 1.50);
+      const rollWidth = parseInt(document.getElementById('roll-width')?.value) || 12;
+      
+      // Calculate material needed
+      // How many fit across the roll?
+      const itemWidth = width + 0.5; // 0.5" margin
+      const itemHeight = height + 0.5;
+      const acrossCount = Math.floor(rollWidth / itemWidth) || 1;
+      const rowsNeeded = Math.ceil(qty / acrossCount);
+      const totalInches = rowsNeeded * itemHeight + 1; // 1" margin
+      let totalFeet = totalInches / 12;
+      
+      // Add 15% waste
+      totalFeet = totalFeet * 1.15;
+      
+      // Calculate cost
+      const materialCost = totalFeet * costPerFoot;
+      
+      // Update display
+      document.getElementById('material-needed').textContent = totalFeet.toFixed(1) + ' ft';
+      document.getElementById('material-cost-display').textContent = '~$' + materialCost.toFixed(2) + ' in material';
+      document.getElementById('material-breakdown').textContent = 
+        qty > 1 ? `(for ${qty} items, includes 15% extra for mistakes)` : '(includes 15% extra for mistakes)';
+      
+      // Store for Step 2
+      projectData.materialCost = materialCost / qty; // Per-item cost
+      projectData.quantity = qty;
+      
+      // Update qty label
+      document.getElementById('qty-label').textContent = qty === 1 ? 'item' : 'items';
+    }
+    
+    function recalculateCosts() {
+      // Get values
+      const materialCost = projectData.materialCost;
+      const blankCost = parseNumber(document.getElementById('blank-cost')?.value || 5);
+      const timeMinutes = parseInt(document.getElementById('time-minutes')?.value) || 30;
+      const hourlyRate = parseNumber(document.getElementById('hourly-rate')?.value || 15);
+      const packagingCost = parseNumber(document.getElementById('packaging-cost')?.value || 0.50);
+      const wearCost = parseNumber(document.getElementById('wear-cost')?.value || 0.50);
+      
+      // Calculate
+      const laborCost = (timeMinutes / 60) * hourlyRate;
+      const otherCost = packagingCost + wearCost;
+      const totalCost = materialCost + blankCost + laborCost + otherCost;
+      
+      // Store
+      projectData.blankCost = blankCost;
+      projectData.laborCost = laborCost;
+      projectData.otherCost = otherCost;
+      projectData.totalCost = totalCost;
+      
+      // Update Step 2 displays
+      document.getElementById('step2-material-cost').textContent = '$' + materialCost.toFixed(2);
+      document.getElementById('labor-cost-display').textContent = '$' + laborCost.toFixed(2);
+      document.getElementById('breakdown-material').textContent = '$' + materialCost.toFixed(2);
+      document.getElementById('breakdown-blank').textContent = '$' + blankCost.toFixed(2);
+      document.getElementById('breakdown-labor').textContent = '$' + laborCost.toFixed(2);
+      document.getElementById('breakdown-other').textContent = '$' + otherCost.toFixed(2);
+      
+      // Update total cost displays
+      document.querySelectorAll('.total-cost').forEach(el => {
+        el.textContent = '$' + totalCost.toFixed(2);
       });
-      colorCount = rows.length;
+      
+      // Update pricing
+      updatePricingFromSlider(document.getElementById('margin-slider')?.value || 45);
     }
     
-    function updateMaterialsTotal() {
-      let total = 0;
+    function updatePricingFromSlider(marginPercent) {
+      marginPercent = parseInt(marginPercent);
+      const totalCost = projectData.totalCost;
+      const qty = projectData.quantity;
       
-      // Calculate each row's subtotal (rate × feet) and update display
-      document.querySelectorAll('.color-row').forEach(row => {
-        const rate = parseNumber(row.querySelector('.color-rate')?.value || '0');
-        const feet = parseNumber(row.querySelector('.color-feet')?.value || '0');
-        const subtotal = rate * feet;
-        
-        const subtotalEl = row.querySelector('.color-subtotal');
-        if (subtotalEl) {
-          subtotalEl.textContent = '$' + subtotal.toFixed(2);
-        }
-        
-        total += subtotal;
-      });
-      
-      document.getElementById('materials-total').textContent = '$' + total.toFixed(2);
-      
-      // Trigger full cost recalc
-      const marginValue = parseInt(document.querySelector('.slider-input')?.value || 45);
-      updatePricing(marginValue);
-    }
-    
-    function calculateTotalCost() {
-      // Sum all color costs (rate × feet for each)
-      let totalMaterials = 0;
-      document.querySelectorAll('.color-row').forEach(row => {
-        const rate = parseNumber(row.querySelector('.color-rate')?.value || '0');
-        const feet = parseNumber(row.querySelector('.color-feet')?.value || '0');
-        totalMaterials += rate * feet;
-      });
-      
-      const laborHours = parseNumber(document.getElementById('labor-hours').value);
-      const laborRate = parseNumber(document.getElementById('labor-rate').value);
-      const misc = parseNumber(document.getElementById('misc-cost').value);
-      const overheadPct = parseNumber(document.getElementById('overhead-pct').value);
-      
-      const laborCost = laborHours * laborRate;
-      const subtotal = totalMaterials + laborCost + misc;
-      const overhead = subtotal * (overheadPct / 100);
-      const total = subtotal + overhead;
-      
-      return total;
-    }
-    
-    // Initialize color cost listeners
-    document.querySelectorAll('.color-rate, .color-feet').forEach(input => {
-      input.addEventListener('input', updateMaterialsTotal);
-    });
-    
-    function updatePricing(marginPercent) {
-      const totalCost = calculateTotalCost();
+      // Calculate sell price from margin
+      // margin = (sellPrice - cost) / sellPrice
+      // sellPrice = cost / (1 - margin)
       const margin = marginPercent / 100;
       const sellPrice = margin >= 1 ? totalCost * 10 : totalCost / (1 - margin);
       const profit = sellPrice - totalCost;
+      
+      // Tier prices
       const friendsPrice = sellPrice * 0.80;
       const familyPrice = sellPrice * 0.70;
       
-      // Update total cost display
-      document.querySelector('.total-cost').textContent = '$' + totalCost.toFixed(2);
+      // Update displays
+      document.getElementById('margin-display').textContent = marginPercent + '%';
+      document.getElementById('sell-price-display').textContent = '$' + sellPrice.toFixed(2);
+      document.getElementById('profit-display').textContent = 'You keep $' + profit.toFixed(2) + ' profit per item';
       
-      // Update margin display
-      document.querySelector('.slider-value').textContent = marginPercent + '%';
-      document.querySelector('.calc-result-value').textContent = '$' + sellPrice.toFixed(2);
-      document.querySelector('.calc-result-sub').textContent = 'Profit: $' + profit.toFixed(2) + ' per item';
+      document.getElementById('price-full').textContent = '$' + sellPrice.toFixed(2);
+      document.getElementById('price-friends').textContent = '$' + friendsPrice.toFixed(2);
+      document.getElementById('price-family').textContent = '$' + familyPrice.toFixed(2);
+      document.getElementById('price-cost').textContent = '$' + totalCost.toFixed(2);
       
-      // Update tier prices
-      const tierPrices = document.querySelectorAll('.tier-price');
-      if (tierPrices.length >= 4) {
-        tierPrices[0].textContent = '$' + sellPrice.toFixed(2);
-        tierPrices[1].textContent = '$' + friendsPrice.toFixed(2);
-        tierPrices[2].textContent = '$' + familyPrice.toFixed(2);
-        tierPrices[3].textContent = '$' + totalCost.toFixed(2);
+      // Update batch display if qty > 1
+      if (qty > 1) {
+        document.getElementById('batch-cost-display').style.display = 'block';
+        document.getElementById('batch-qty').textContent = qty;
+        document.getElementById('batch-total').textContent = '$' + (totalCost * qty).toFixed(2);
+      } else {
+        document.getElementById('batch-cost-display').style.display = 'none';
       }
       
-      // Update slider track fill
-      const slider = document.querySelector('.slider-input');
-      slider.style.background = `linear-gradient(to right, var(--primary) ${marginPercent}%, var(--border) ${marginPercent}%)`;
+      // Update slider visual
+      const slider = document.getElementById('margin-slider');
+      if (slider) {
+        const percent = ((marginPercent - 10) / 70) * 100; // 10-80 range
+        slider.style.background = `linear-gradient(to right, var(--gold) ${percent}%, rgba(255,255,255,0.3) ${percent}%)`;
+      }
       
       // Update preset buttons
-      document.querySelectorAll('.preset-btn').forEach(btn => {
+      document.querySelectorAll('#tab-pricing .preset-btn').forEach(btn => {
         const btnValue = parseInt(btn.textContent);
-        btn.classList.toggle('active', btnValue === marginPercent);
+        if (btnValue === marginPercent) {
+          btn.style.background = 'rgba(255,255,255,0.95)';
+          btn.style.borderColor = 'white';
+          btn.style.color = 'var(--primary-dark)';
+        } else {
+          btn.style.background = 'rgba(255,255,255,0.2)';
+          btn.style.borderColor = 'rgba(255,255,255,0.3)';
+          btn.style.color = 'white';
+        }
       });
     }
     
-    // Cost input listeners
-    document.querySelectorAll('.cost-input').forEach(input => {
-      input.addEventListener('input', function() {
-        const marginValue = parseInt(document.querySelector('.slider-input').value);
-        updatePricing(marginValue);
-      });
+    function setMargin(value) {
+      document.getElementById('margin-slider').value = value;
+      updatePricingFromSlider(value);
+    }
+    
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', function() {
+      recalculateProject();
+      recalculateCosts();
     });
     
-    // Slider interactivity
-    document.querySelectorAll('.slider-input').forEach(slider => {
-      slider.addEventListener('input', function() {
-        updatePricing(parseInt(this.value));
-      });
-    });
-    
-    // Preset buttons
-    document.querySelectorAll('.preset-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const value = parseInt(this.textContent);
-        document.querySelector('.slider-input').value = value;
-        updatePricing(value);
-      });
-    });
-    
-    // Tab switching
+    // Legacy tab switching (for hidden tabs and Guide)
     document.querySelectorAll('.calc-tab').forEach(tab => {
       tab.addEventListener('click', function() {
         const tabName = this.dataset.tab;
-        
-        // Update tab buttons
-        document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-        
-        // Update tab panels
         document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        document.getElementById('tab-' + tabName).classList.add('active');
+        document.getElementById('tab-' + tabName)?.classList.add('active');
       });
-    });
-    
-    // Initialize pricing
-    updatePricing(45);
-    
-    // Continue to Pricing button
-    document.querySelector('#tab-costs .save-btn')?.addEventListener('click', function() {
-      document.querySelector('[data-tab="pricing"]').click();
     });
     
     // ========================================
@@ -2662,14 +2795,20 @@
     
     function openSaveModal() {
       // Update modal with current values
-      const sellPrice = document.querySelector('.calc-result-value')?.textContent || '$0';
+      const sellPrice = document.getElementById('sell-price-display')?.textContent || '$0';
       document.getElementById('modal-sell-price').textContent = sellPrice;
       
       // Suggest a name based on project type
-      const projectType = document.getElementById('project-type-select')?.value || 'Custom';
+      const projectSelect = document.getElementById('project-type-select');
+      const projectType = projectSelect?.options[projectSelect.selectedIndex]?.text || 'Custom Project';
       const today = new Date().toLocaleDateString();
       document.getElementById('project-name-input').value = projectType + ' - ' + today;
       document.getElementById('project-name-input').select();
+      
+      // Update total cost in modal
+      document.querySelectorAll('#save-modal .total-cost').forEach(el => {
+        el.textContent = '$' + projectData.totalCost.toFixed(2);
+      });
       
       // Show modal
       document.getElementById('save-modal').classList.add('active');
