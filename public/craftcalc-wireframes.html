@@ -1409,125 +1409,69 @@
       
       <div class="calc-section">
         <div class="calc-title">📦 What are you making?</div>
-        <select class="cost-input" id="project-type-select" style="width: 100%; text-align: left; padding: 14px 16px; font-size: 16px;">
+        <select class="cost-input" id="project-type-select" style="width: 100%; text-align: left; padding: 14px 16px; font-size: 16px;" onchange="updateProjectType()">
           <optgroup label="Apparel">
-            <option value="tshirt">T-Shirt</option>
-            <option value="hoodie">Hoodie</option>
-            <option value="tank">Tank Top</option>
-            <option value="onesie">Onesie</option>
-            <option value="hat">Hat/Cap</option>
-            <option value="apron">Apron</option>
+            <option value="tshirt" data-blank="5.00">T-Shirt</option>
+            <option value="hoodie" data-blank="15.00">Hoodie</option>
+            <option value="tank" data-blank="4.00">Tank Top</option>
+            <option value="onesie" data-blank="6.00">Onesie</option>
+            <option value="hat" data-blank="8.00">Hat/Cap</option>
+            <option value="apron" data-blank="10.00">Apron</option>
           </optgroup>
           <optgroup label="Drinkware">
-            <option value="tumbler">Tumbler</option>
-            <option value="mug">Mug</option>
-            <option value="wineglass">Wine Glass</option>
-            <option value="bottle">Water Bottle</option>
-            <option value="coaster">Coaster</option>
+            <option value="tumbler" data-blank="8.00">Tumbler</option>
+            <option value="mug" data-blank="5.00">Mug</option>
+            <option value="wineglass" data-blank="4.00">Wine Glass</option>
+            <option value="bottle" data-blank="10.00">Water Bottle</option>
+            <option value="coaster" data-blank="1.50">Coaster</option>
           </optgroup>
           <optgroup label="Bags & Accessories">
-            <option value="tote">Tote Bag</option>
-            <option value="makeup">Makeup Bag</option>
-            <option value="keychain">Keychain</option>
+            <option value="tote" data-blank="6.00">Tote Bag</option>
+            <option value="makeup" data-blank="4.00">Makeup Bag</option>
+            <option value="keychain" data-blank="1.00">Keychain</option>
           </optgroup>
           <optgroup label="Home & Decor">
-            <option value="sign">Wood Sign</option>
-            <option value="canvas">Canvas</option>
-            <option value="pillow">Pillow</option>
-            <option value="ornament">Ornament</option>
-            <option value="frame">Picture Frame</option>
+            <option value="sign" data-blank="8.00">Wood Sign</option>
+            <option value="canvas" data-blank="6.00">Canvas</option>
+            <option value="pillow" data-blank="10.00">Pillow</option>
+            <option value="ornament" data-blank="2.00">Ornament</option>
+            <option value="frame" data-blank="5.00">Picture Frame</option>
           </optgroup>
           <optgroup label="Paper & Cards">
-            <option value="card">Greeting Card</option>
-            <option value="stickers">Stickers</option>
-            <option value="decal">Decal</option>
+            <option value="card" data-blank="0.50">Greeting Card</option>
+            <option value="stickers" data-blank="0.25">Stickers</option>
+            <option value="decal" data-blank="0.00">Decal</option>
           </optgroup>
           <optgroup label="Other">
-            <option value="custom">Custom Project</option>
+            <option value="custom" data-blank="5.00">Custom Project</option>
           </optgroup>
         </select>
-      </div>
-      
-      <div class="calc-section">
-        <div class="calc-title">📐 How big is your design?</div>
-        <div class="calc-row">
-          <span class="calc-label">Width</span>
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <input type="number" class="cost-input" id="design-width" value="10" style="width: 70px; text-align: center;"> 
-            <span style="color: var(--text-light);">inches</span>
-          </div>
-        </div>
-        <div class="calc-row">
-          <span class="calc-label">Height</span>
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <input type="number" class="cost-input" id="design-height" value="8" style="width: 70px; text-align: center;"> 
-            <span style="color: var(--text-light);">inches</span>
-          </div>
-        </div>
       </div>
       
       <div class="calc-section">
         <div class="calc-title">🔢 How many are you making?</div>
         <div style="display: flex; align-items: center; gap: 12px;">
-          <button onclick="adjustQty(-1)" style="width: 44px; height: 44px; border-radius: 12px; border: 2px solid var(--border); background: var(--card); font-size: 20px; cursor: pointer;">−</button>
-          <input type="number" class="cost-input" id="project-qty" value="1" style="width: 70px; text-align: center; font-size: 20px; font-weight: 700;" oninput="recalculateProject()">
-          <button onclick="adjustQty(1)" style="width: 44px; height: 44px; border-radius: 12px; border: 2px solid var(--border); background: var(--card); font-size: 20px; cursor: pointer;">+</button>
-          <span style="color: var(--text-light); margin-left: 8px;" id="qty-label">item</span>
+          <button onclick="adjustQty(-1)" style="width: 48px; height: 48px; border-radius: 12px; border: 2px solid var(--border); background: var(--card); font-size: 24px; cursor: pointer;">−</button>
+          <input type="number" class="cost-input" id="project-qty" value="1" style="width: 80px; text-align: center; font-size: 24px; font-weight: 700;" oninput="updateQtyLabel()">
+          <button onclick="adjustQty(1)" style="width: 48px; height: 48px; border-radius: 12px; border: 2px solid var(--border); background: var(--card); font-size: 24px; cursor: pointer;">+</button>
+          <span style="color: var(--text-light); margin-left: 8px; font-size: 16px;" id="qty-label">item</span>
         </div>
       </div>
       
       <div class="calc-section">
-        <div class="calc-title">🎨 What material are you using?</div>
-        <select id="material-type" onchange="updateMaterialTip()" style="width: 100%; padding: 14px 16px; font-size: 16px; font-weight: 600; border: 1.5px solid var(--border); border-radius: 12px; background: var(--bg); color: var(--text-dark); cursor: pointer;">
-          <optgroup label="Heat Transfer (HTV)">
-            <option value="htv-standard" data-cost="1.50">HTV / Iron-On (Standard) — ~$1.50/ft</option>
-            <option value="htv-glitter" data-cost="2.50">HTV Glitter — ~$2.50/ft</option>
-            <option value="htv-puff" data-cost="3.00">HTV Puff / 3D — ~$3.00/ft</option>
-            <option value="htv-foil" data-cost="2.75">HTV Foil — ~$2.75/ft</option>
-          </optgroup>
-          <optgroup label="Adhesive Vinyl">
-            <option value="vinyl-permanent" data-cost="1.25">Permanent Vinyl (Oracal 651) — ~$1.25/ft</option>
-            <option value="vinyl-removable" data-cost="1.25">Removable Vinyl — ~$1.25/ft</option>
-            <option value="vinyl-glitter" data-cost="2.00">Glitter Vinyl — ~$2.00/ft</option>
-          </optgroup>
-          <optgroup label="Other">
-            <option value="infusible" data-cost="3.50">Infusible Ink — ~$3.50/sheet</option>
-            <option value="cardstock" data-cost="0.50">Cardstock — ~$0.50/sheet</option>
-            <option value="other" data-cost="1.50">Other — enter cost below</option>
-          </optgroup>
-        </select>
-        <div id="material-tip" style="margin-top: 10px; padding: 10px 12px; background: rgba(122,154,125,0.1); border-radius: 10px; font-size: 13px; color: var(--text);">
-          💡 <strong>HTV tip:</strong> Mirror your design before cutting!
+        <div class="calc-title">🎨 What did your materials cost?</div>
+        <p style="font-size: 14px; color: var(--text-light); margin-bottom: 14px;">
+          Vinyl, HTV, cardstock, ink — whatever you used for this project
+        </p>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 24px; color: var(--text-light);">$</span>
+          <input type="number" step="0.01" class="cost-input" id="material-cost-input" value="3.00" style="width: 100px; text-align: center; font-size: 24px; font-weight: 700; padding: 12px;" oninput="updateMaterialCost()">
+          <span style="color: var(--text-light); font-size: 16px;">per item</span>
         </div>
-      </div>
-      
-      <div class="calc-section">
-        <div class="calc-title">💵 Material cost</div>
-        <div class="calc-row">
-          <span class="calc-label">Cost per foot <span style="font-size: 12px; color: var(--text-light);">(check your roll)</span></span>
-          <div style="display: flex; align-items: center; gap: 4px;">
-            <span style="color: var(--text-light);">$</span>
-            <input type="number" step="0.01" class="cost-input" id="cost-per-foot" value="1.50" style="width: 70px; text-align: center;" oninput="recalculateProject()">
-            <span style="color: var(--text-light);">/ft</span>
-          </div>
-        </div>
-        <div class="calc-row">
-          <span class="calc-label">Roll width</span>
-          <select class="cost-input" id="roll-width" style="width: 100px;" onchange="recalculateProject()">
-            <option value="12">12 inch</option>
-            <option value="15">15 inch</option>
-            <option value="24">24 inch</option>
-          </select>
-        </div>
-      </div>
-      
-      <!-- Material Calculation Result -->
-      <div class="calc-result" style="margin-bottom: 16px;">
-        <div class="calc-result-label">Material You'll Need</div>
-        <div class="calc-result-value" id="material-needed">0.9 ft</div>
-        <div class="calc-result-sub" id="material-cost-display">~$1.35 in material</div>
-        <div style="font-size: 12px; opacity: 0.8; margin-top: 8px;" id="material-breakdown">
-          (includes 15% extra for mistakes)
+        <div style="margin-top: 12px; padding: 12px; background: rgba(122,154,125,0.1); border-radius: 10px;">
+          <p style="font-size: 13px; color: var(--text); margin: 0;">
+            💡 <strong>Not sure?</strong> Check your receipt or divide the roll cost by how many projects you can make from it.
+          </p>
         </div>
       </div>
       
@@ -2285,11 +2229,11 @@
     // ========================================
     
     let projectData = {
-      materialCost: 0,
+      materialCost: 3.00,
       blankCost: 5.00,
       laborCost: 7.50,
       otherCost: 1.00,
-      totalCost: 14.85,
+      totalCost: 16.50,
       quantity: 1
     };
     
@@ -2324,35 +2268,19 @@
     });
     
     // ========================================
-    // STEP 1: PROJECT CALCULATIONS
+    // STEP 1: PROJECT (SIMPLIFIED)
     // ========================================
     
-    const materialTips = {
-      'htv-standard': 'Mirror your design before cutting!',
-      'htv-glitter': 'Peel warm, not hot. Press at 320°F.',
-      'htv-puff': 'Use LIGHT pressure — puff needs room to expand!',
-      'htv-foil': 'Quick press only — foil scorches easily.',
-      'vinyl-permanent': 'Great for outdoor use. Do NOT mirror.',
-      'vinyl-removable': 'Perfect for walls & rentals. Easy removal.',
-      'vinyl-glitter': 'Use StrongGrip mat. May need deep cut.',
-      'infusible': 'Use compatible Cricut blanks. 385°F for 40 sec.',
-      'cardstock': 'Use scoring wheel for fold lines.',
-      'other': 'Always do a test cut first!'
-    };
-    
-    function updateMaterialTip() {
-      const select = document.getElementById('material-type');
-      const value = select.value;
-      const tip = materialTips[value] || materialTips['other'];
-      
-      // Update cost per foot from data attribute
+    function updateProjectType() {
+      const select = document.getElementById('project-type-select');
       const option = select.options[select.selectedIndex];
-      const cost = option?.dataset?.cost || '1.50';
-      document.getElementById('cost-per-foot').value = cost;
+      const suggestedBlank = option?.dataset?.blank || '5.00';
       
-      document.getElementById('material-tip').innerHTML = `💡 <strong>Tip:</strong> ${tip}`;
-      
-      recalculateProject();
+      // Update blank cost suggestion in Step 2
+      const blankInput = document.getElementById('blank-cost');
+      if (blankInput) {
+        blankInput.value = suggestedBlank;
+      }
     }
     
     function adjustQty(delta) {
@@ -2360,8 +2288,18 @@
       let val = parseInt(input.value) || 1;
       val = Math.max(1, val + delta);
       input.value = val;
-      document.getElementById('qty-label').textContent = val === 1 ? 'item' : 'items';
-      recalculateProject();
+      updateQtyLabel();
+    }
+    
+    function updateQtyLabel() {
+      const qty = parseInt(document.getElementById('project-qty')?.value) || 1;
+      document.getElementById('qty-label').textContent = qty === 1 ? 'item' : 'items';
+      projectData.quantity = qty;
+    }
+    
+    function updateMaterialCost() {
+      const cost = parseNumber(document.getElementById('material-cost-input')?.value || 0);
+      projectData.materialCost = cost;
     }
     
     function adjustTime(delta) {
@@ -2372,45 +2310,12 @@
       recalculateCosts();
     }
     
-    function recalculateProject() {
-      const width = parseNumber(document.getElementById('design-width')?.value || 10);
-      const height = parseNumber(document.getElementById('design-height')?.value || 8);
-      const qty = parseInt(document.getElementById('project-qty')?.value) || 1;
-      const costPerFoot = parseNumber(document.getElementById('cost-per-foot')?.value || 1.50);
-      const rollWidth = parseInt(document.getElementById('roll-width')?.value) || 12;
-      
-      // Calculate material needed
-      // How many fit across the roll?
-      const itemWidth = width + 0.5; // 0.5" margin
-      const itemHeight = height + 0.5;
-      const acrossCount = Math.floor(rollWidth / itemWidth) || 1;
-      const rowsNeeded = Math.ceil(qty / acrossCount);
-      const totalInches = rowsNeeded * itemHeight + 1; // 1" margin
-      let totalFeet = totalInches / 12;
-      
-      // Add 15% waste
-      totalFeet = totalFeet * 1.15;
-      
-      // Calculate cost
-      const materialCost = totalFeet * costPerFoot;
-      
-      // Update display
-      document.getElementById('material-needed').textContent = totalFeet.toFixed(1) + ' ft';
-      document.getElementById('material-cost-display').textContent = '~$' + materialCost.toFixed(2) + ' in material';
-      document.getElementById('material-breakdown').textContent = 
-        qty > 1 ? `(for ${qty} items, includes 15% extra for mistakes)` : '(includes 15% extra for mistakes)';
-      
-      // Store for Step 2
-      projectData.materialCost = materialCost / qty; // Per-item cost
-      projectData.quantity = qty;
-      
-      // Update qty label
-      document.getElementById('qty-label').textContent = qty === 1 ? 'item' : 'items';
-    }
-    
     function recalculateCosts() {
-      // Get values
-      const materialCost = projectData.materialCost;
+      // Get material cost from Step 1 input
+      const materialCost = parseNumber(document.getElementById('material-cost-input')?.value || 0);
+      projectData.materialCost = materialCost;
+      
+      // Get other values
       const blankCost = parseNumber(document.getElementById('blank-cost')?.value || 5);
       const timeMinutes = parseInt(document.getElementById('time-minutes')?.value) || 30;
       const hourlyRate = parseNumber(document.getElementById('hourly-rate')?.value || 15);
@@ -2509,7 +2414,8 @@
     
     // Initialize on load
     document.addEventListener('DOMContentLoaded', function() {
-      recalculateProject();
+      updateQtyLabel();
+      updateMaterialCost();
       recalculateCosts();
     });
     
