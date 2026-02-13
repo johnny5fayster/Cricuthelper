@@ -1382,38 +1382,35 @@
         </div>
       </div>
       
-      <div class="calc-section">
-        <div class="calc-title">Your Margin</div>
-        <div class="slider-container">
-          <div class="slider-labels">
-            <span>0%</span>
-            <span class="slider-value">45%</span>
-            <span>100%</span>
-          </div>
-          <div class="slider-track">
-            <input type="range" min="0" max="100" value="45" class="slider-input">
-          </div>
-          <div class="slider-presets">
-            <button class="preset-btn">30%</button>
-            <button class="preset-btn active">45%</button>
-            <button class="preset-btn">60%</button>
-          </div>
-        </div>
-        
-        <!-- Community Insight - moved up -->
-        <div class="insight-card" style="margin-top: 16px;">
-          <div class="insight-icon">📊</div>
-          <div class="insight-text">
-            <h4>Community Insight</h4>
-            <p>Crafters average <strong>42% margin</strong> on tumblers</p>
-          </div>
+      <!-- Community Insight -->
+      <div class="insight-card" style="margin-bottom: 16px;">
+        <div class="insight-icon">📊</div>
+        <div class="insight-text">
+          <h4>Community Insight</h4>
+          <p>Crafters average <strong>42% margin</strong> on tumblers</p>
         </div>
       </div>
       
-      <div class="calc-result">
+      <!-- Margin + Sell Price Combined -->
+      <div class="calc-result" style="padding-bottom: 20px;">
         <div class="calc-result-label">Sell Price</div>
         <div class="calc-result-value">$56.36</div>
-        <div class="calc-result-sub">Profit: $25.36 per item</div>
+        <div class="calc-result-sub" style="margin-bottom: 20px;">Profit: $25.36 per item</div>
+        
+        <div style="background: rgba(255,255,255,0.15); border-radius: 16px; padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="font-size: 14px; opacity: 0.9;">Your Margin</span>
+            <span class="slider-value" style="font-size: 24px; font-weight: 800;">45%</span>
+          </div>
+          <div class="slider-track">
+            <input type="range" min="0" max="100" value="45" class="slider-input" style="background: rgba(255,255,255,0.3);">
+          </div>
+          <div class="slider-presets" style="margin-top: 12px;">
+            <button class="preset-btn" style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); color: white;">30%</button>
+            <button class="preset-btn active" style="background: rgba(255,255,255,0.95); border-color: white; color: var(--primary-dark);">45%</button>
+            <button class="preset-btn" style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); color: white;">60%</button>
+          </div>
+        </div>
       </div>
       
       <button class="save-btn">
