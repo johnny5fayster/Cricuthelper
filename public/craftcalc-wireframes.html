@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Calc for Cricut — Wireframes</title>
+  <title>Calc for Cricut — Wireframes v2</title>
   <style>
     * {
       margin: 0;
@@ -16,10 +16,11 @@
       --primary: #2A9D8F;
       --primary-light: #40B4A6;
       --accent: #E9C46A;
+      --accent-warm: #F4A261;
       --bg: #FDFBF7;
       --card: #FFFFFF;
       --text: #264653;
-      --text-light: #5C7A86;
+      --text-light: #4A6670;
       --border: #E8E4DC;
       --success: #4CAF50;
       --radius: 16px;
@@ -42,79 +43,75 @@
       min-height: 100vh;
       background: var(--bg);
       position: relative;
-      padding-bottom: 80px;
+      padding-bottom: 90px;
     }
     
-    /* Screens */
     .screen {
       display: none;
       padding: 20px;
-      padding-top: 60px;
-      animation: fadeIn 0.2s ease;
+      padding-top: 70px;
+      animation: fadeIn 0.25s ease;
     }
     
     .screen.active {
       display: block !important;
     }
     
-    /* Fallback for iPad */
     .screen:first-of-type {
       display: block;
     }
     
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
     
-    /* Header */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
     .header {
       position: -webkit-sticky;
       position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      max-width: 390px;
-      margin: 0 auto;
       background: var(--primary);
       color: white;
       padding: 16px 20px;
       z-index: 100;
+      margin: -20px -20px 20px -20px;
     }
     
     .header h1 {
-      font-size: 20px;
-      font-weight: 600;
+      font-size: 22px;
+      font-weight: 700;
     }
     
     .header-subtitle {
-      font-size: 13px;
-      opacity: 0.85;
+      font-size: 14px;
+      opacity: 0.9;
       margin-top: 2px;
     }
     
-    /* Search Box */
     .search-box {
       background: var(--card);
       border-radius: var(--radius);
-      padding: 16px;
+      padding: 14px 16px;
       display: flex;
       align-items: center;
       gap: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       margin-bottom: 20px;
       border: 2px solid transparent;
-      transition: border-color 0.2s;
+      transition: all 0.2s;
     }
     
     .search-box:focus-within {
       border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(42,157,143,0.15);
     }
     
-    .search-icon {
-      font-size: 20px;
-      color: var(--text-light);
-    }
+    .search-icon { font-size: 20px; color: var(--text-light); }
     
     .search-box input {
       flex: 1;
@@ -125,18 +122,40 @@
       color: var(--text);
     }
     
-    .search-box input::placeholder {
-      color: var(--text-light);
+    .search-box input::placeholder { color: var(--text-light); }
+    
+    .voice-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: none;
+      color: white;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
     
-    /* Quick Actions */
     .section-title {
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 700;
       color: var(--text-light);
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
       margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .section-title .clear-btn {
+      font-size: 12px;
+      color: var(--primary);
+      text-transform: none;
+      font-weight: 600;
+      cursor: pointer;
     }
     
     .quick-grid {
@@ -154,35 +173,29 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       cursor: pointer;
       transition: transform 0.15s, box-shadow 0.15s;
+      border: 2px solid transparent;
     }
     
     .quick-card:active {
       transform: scale(0.97);
     }
     
-    .quick-card-icon {
-      font-size: 32px;
-      margin-bottom: 8px;
+    .quick-card.featured {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      border: none;
+      box-shadow: 0 4px 16px rgba(42,157,143,0.3);
     }
     
-    .quick-card-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
+    .quick-card.featured .quick-card-subtitle {
+      color: rgba(255,255,255,0.85);
     }
     
-    .quick-card-subtitle {
-      font-size: 13px;
-      color: var(--text-light);
-      margin-top: 4px;
-    }
+    .quick-card-icon { font-size: 32px; margin-bottom: 8px; }
+    .quick-card-title { font-size: 15px; font-weight: 700; }
+    .quick-card-subtitle { font-size: 13px; color: var(--text-light); margin-top: 4px; }
     
-    /* Recent Items */
-    .recent-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    .recent-list { display: flex; flex-direction: column; gap: 10px; }
     
     .recent-item {
       background: var(--card);
@@ -193,53 +206,35 @@
       justify-content: space-between;
       box-shadow: 0 1px 4px rgba(0,0,0,0.04);
       cursor: pointer;
+      transition: background 0.15s;
     }
     
-    .recent-item:active {
-      background: #f5f5f0;
-    }
+    .recent-item:active { background: #f5f5f0; }
     
-    .recent-info {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .recent-info { display: flex; align-items: center; gap: 12px; }
     
     .recent-icon {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       background: var(--primary);
-      border-radius: 10px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 18px;
+      font-size: 20px;
     }
     
     .recent-icon.vinyl { background: #E76F51; }
     .recent-icon.htv { background: #F4A261; }
     .recent-icon.paper { background: #2A9D8F; }
     
-    .recent-text h4 {
-      font-size: 15px;
-      font-weight: 600;
-    }
+    .recent-text h4 { font-size: 15px; font-weight: 600; }
+    .recent-text p { font-size: 14px; color: var(--text-light); }
+    .recent-arrow { color: var(--text-light); font-size: 20px; }
     
-    .recent-text p {
-      font-size: 13px;
-      color: var(--text-light);
-    }
-    
-    .recent-arrow {
-      color: var(--text-light);
-      font-size: 18px;
-    }
-    
-    /* Bottom Nav */
     .bottom-nav {
-      position: -webkit-sticky;
-      position: sticky;
+      position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
@@ -248,8 +243,8 @@
       background: var(--card);
       display: flex;
       justify-content: space-around;
-      padding: 12px 0 20px;
-      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+      padding: 10px 0 24px;
+      box-shadow: 0 -2px 16px rgba(0,0,0,0.1);
       z-index: 100;
     }
     
@@ -259,85 +254,95 @@
       align-items: center;
       gap: 4px;
       cursor: pointer;
-      padding: 8px 16px;
+      padding: 8px 14px;
       border-radius: 12px;
-      transition: background 0.15s;
+      transition: all 0.15s;
     }
     
-    .nav-item:active {
-      background: rgba(42, 157, 143, 0.1);
-    }
-    
-    .nav-item.active .nav-icon,
-    .nav-item.active .nav-label {
-      color: var(--primary);
-    }
-    
-    .nav-icon {
-      font-size: 24px;
-      color: var(--text-light);
-    }
-    
-    .nav-label {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-light);
-    }
+    .nav-item:active { background: rgba(42, 157, 143, 0.1); }
+    .nav-item.active .nav-icon { color: var(--primary); transform: scale(1.1); }
+    .nav-item.active .nav-label { color: var(--primary); font-weight: 600; }
+    .nav-icon { font-size: 26px; color: var(--text-light); transition: all 0.15s; }
+    .nav-label { font-size: 11px; font-weight: 500; color: var(--text-light); }
     
     /* Results Screen */
     .result-header {
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
       color: white;
-      padding: 24px 20px;
+      padding: 30px 24px;
       margin: -20px -20px 20px -20px;
-      margin-top: -60px;
-      padding-top: 70px;
+      margin-top: -70px;
+      padding-top: 80px;
+      text-align: center;
     }
     
-    .result-material {
-      font-size: 14px;
-      opacity: 0.85;
-      margin-bottom: 4px;
+    .result-material { font-size: 14px; opacity: 0.9; margin-bottom: 4px; }
+    .result-title { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    
+    .temp-display {
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 1;
+      margin: 16px 0;
     }
     
-    .result-title {
-      font-size: 24px;
-      font-weight: 700;
+    .temp-unit { font-size: 32px; font-weight: 600; }
+    
+    .screen-toggle {
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      margin-top: 12px;
+      cursor: pointer;
     }
     
-    .settings-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 24px;
+    .screen-toggle.active {
+      background: rgba(255,255,255,0.95);
+      color: var(--primary);
+      font-weight: 600;
     }
     
-    .setting-card {
+    .settings-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+    }
+    
+    .setting-pill {
       background: var(--card);
       border-radius: var(--radius);
-      padding: 16px;
+      padding: 16px 24px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     
-    .setting-value {
-      font-size: 28px;
+    .setting-pill-value { font-size: 24px; font-weight: 700; color: var(--primary); }
+    .setting-pill-label { font-size: 12px; color: var(--text-light); margin-top: 4px; text-transform: uppercase; }
+    
+    .timer-btn {
+      width: 100%;
+      background: var(--accent);
+      border: none;
+      border-radius: var(--radius);
+      padding: 18px;
+      font-size: 18px;
       font-weight: 700;
-      color: var(--primary);
+      color: var(--text);
+      cursor: pointer;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(233,196,106,0.4);
     }
     
-    .setting-unit {
-      font-size: 14px;
-      color: var(--text-light);
-    }
-    
-    .setting-label {
-      font-size: 12px;
-      color: var(--text-light);
-      margin-top: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
+    .timer-btn:active { transform: scale(0.98); }
     
     .tips-section {
       background: var(--card);
@@ -348,8 +353,8 @@
     
     .tips-title {
       font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 12px;
+      font-weight: 700;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -357,27 +362,43 @@
     
     .tip-item {
       display: flex;
-      gap: 10px;
-      padding: 10px 0;
+      gap: 12px;
+      padding: 12px 0;
       border-bottom: 1px solid var(--border);
-    }
-    
-    .tip-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-    
-    .tip-bullet {
-      color: var(--accent);
-      font-size: 18px;
-    }
-    
-    .tip-text {
       font-size: 14px;
-      color: var(--text);
     }
     
-    /* Calculator Screen */
+    .tip-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .tip-bullet { color: var(--accent); font-size: 18px; }
+    
+    /* Calculator Tabs */
+    .calc-tabs {
+      display: flex;
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 4px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    
+    .calc-tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-light);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .calc-tab.active {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 2px 8px rgba(42,157,143,0.3);
+    }
+    
     .calc-section {
       background: var(--card);
       border-radius: var(--radius);
@@ -386,55 +407,83 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     
-    .calc-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
+    .calc-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
     
     .calc-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     
-    .calc-label {
-      font-size: 15px;
-      color: var(--text);
+    .calc-row:last-child { margin-bottom: 0; }
+    .calc-label { font-size: 15px; color: var(--text); }
+    .calc-value { font-size: 16px; font-weight: 600; color: var(--text); }
+    
+    /* Slider */
+    .slider-container {
+      padding: 10px 0;
     }
     
-    .calc-input {
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    
+    .slider-labels span { font-size: 13px; color: var(--text-light); }
+    .slider-value { font-size: 28px; font-weight: 800; color: var(--primary); }
+    
+    .slider-track {
+      position: relative;
+      height: 44px;
       display: flex;
       align-items: center;
+    }
+    
+    .slider-input {
+      width: 100%;
+      height: 12px;
+      -webkit-appearance: none;
+      background: var(--border);
+      border-radius: 6px;
+      outline: none;
+    }
+    
+    .slider-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(42,157,143,0.4);
+    }
+    
+    .slider-presets {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
       gap: 8px;
     }
     
-    .calc-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+    .preset-btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
       border: 2px solid var(--border);
-      background: var(--bg);
-      font-size: 20px;
+      background: white;
+      font-size: 14px;
+      font-weight: 600;
       color: var(--text);
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      transition: all 0.15s;
     }
     
-    .calc-btn:active {
-      background: var(--primary);
-      color: white;
+    .preset-btn.active {
       border-color: var(--primary);
-    }
-    
-    .calc-value {
-      min-width: 60px;
-      text-align: center;
-      font-size: 18px;
-      font-weight: 600;
+      background: rgba(42,157,143,0.1);
+      color: var(--primary);
     }
     
     .calc-result {
@@ -443,29 +492,125 @@
       padding: 24px;
       color: white;
       text-align: center;
+      margin-bottom: 16px;
     }
     
-    .calc-result-label {
-      font-size: 14px;
-      opacity: 0.9;
-      margin-bottom: 4px;
+    .calc-result-label { font-size: 14px; opacity: 0.9; }
+    .calc-result-value { font-size: 44px; font-weight: 800; margin: 8px 0; }
+    .calc-result-sub { font-size: 14px; opacity: 0.85; }
+    
+    .save-btn {
+      width: 100%;
+      background: var(--card);
+      border: 2px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
     }
     
-    .calc-result-value {
-      font-size: 36px;
+    /* Pricing Tiers */
+    .tier-card {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .tier-card:last-child { margin-bottom: 0; }
+    .tier-info h4 { font-size: 15px; font-weight: 600; }
+    .tier-info p { font-size: 13px; color: var(--text-light); }
+    .tier-price { font-size: 22px; font-weight: 700; color: var(--primary); }
+    .tier-price.muted { color: var(--text-light); }
+    
+    /* Collapsible Guide */
+    .guide-section {
+      background: linear-gradient(135deg, #fef3e2, #fce8d5);
+      border: 2px solid rgba(244,162,97,0.3);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    
+    .guide-header {
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .guide-header h3 {
+      font-size: 16px;
       font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     
-    .calc-result-sub {
-      font-size: 13px;
-      opacity: 0.8;
-      margin-top: 8px;
+    .guide-toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(244,162,97,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: transform 0.2s;
     }
     
-    /* Settings Screen */
-    .settings-section {
-      margin-bottom: 24px;
+    .guide-content {
+      padding: 0 20px 20px;
     }
+    
+    .guide-card {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    
+    .guide-card:last-child { margin-bottom: 0; }
+    .guide-card h4 { font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 8px; }
+    .guide-card p { font-size: 14px; line-height: 1.6; }
+    
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 14px;
+    }
+    
+    .stat-row span:last-child { font-weight: 600; }
+    
+    /* Community Insight */
+    .insight-card {
+      background: linear-gradient(135deg, rgba(233,196,106,0.15), rgba(244,162,97,0.15));
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    
+    .insight-icon { font-size: 32px; }
+    .insight-text h4 { font-size: 14px; font-weight: 600; }
+    .insight-text p { font-size: 14px; color: var(--text-light); }
+    .insight-text strong { color: var(--primary); }
+    
+    /* Settings */
+    .settings-section { margin-bottom: 24px; }
     
     .settings-item {
       background: var(--card);
@@ -476,38 +621,14 @@
       border-bottom: 1px solid var(--border);
     }
     
-    .settings-item:first-child {
-      border-radius: var(--radius) var(--radius) 0 0;
-    }
+    .settings-item:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+    .settings-item:last-child { border-radius: 0 0 var(--radius) var(--radius); border-bottom: none; }
+    .settings-item:only-child { border-radius: var(--radius); }
     
-    .settings-item:last-child {
-      border-radius: 0 0 var(--radius) var(--radius);
-      border-bottom: none;
-    }
-    
-    .settings-item:only-child {
-      border-radius: var(--radius);
-    }
-    
-    .settings-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    
-    .settings-icon {
-      font-size: 22px;
-    }
-    
-    .settings-text h4 {
-      font-size: 16px;
-      font-weight: 500;
-    }
-    
-    .settings-text p {
-      font-size: 13px;
-      color: var(--text-light);
-    }
+    .settings-left { display: flex; align-items: center; gap: 14px; }
+    .settings-icon { font-size: 24px; }
+    .settings-text h4 { font-size: 16px; font-weight: 500; }
+    .settings-text p { font-size: 14px; color: var(--text-light); }
     
     .toggle {
       width: 52px;
@@ -519,9 +640,7 @@
       transition: background 0.2s;
     }
     
-    .toggle.on {
-      background: var(--primary);
-    }
+    .toggle.on { background: var(--primary); }
     
     .toggle::after {
       content: '';
@@ -536,43 +655,96 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     }
     
-    .toggle.on::after {
-      transform: translateX(20px);
-    }
+    .toggle.on::after { transform: translateX(20px); }
+    .chevron { color: var(--text-light); font-size: 20px; }
     
-    .chevron {
-      color: var(--text-light);
-      font-size: 20px;
-    }
-    
-    /* Pro Banner */
     .pro-banner {
-      background: linear-gradient(135deg, var(--accent), #F4A261);
+      background: linear-gradient(135deg, var(--accent), var(--accent-warm));
       border-radius: var(--radius);
       padding: 20px;
       margin-bottom: 24px;
-      color: var(--text);
     }
     
     .pro-badge {
       display: inline-block;
       background: rgba(255,255,255,0.3);
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 20px;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 8px;
     }
     
-    .pro-title {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 4px;
+    .pro-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .pro-text { font-size: 14px; opacity: 0.9; }
+    
+    /* Onboarding */
+    .onboarding {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-width: 390px;
+      margin: 0 auto;
+      background: var(--primary);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      padding: 60px 30px 40px;
     }
     
-    .pro-text {
+    .onboarding.hidden { display: none; }
+    
+    .onboarding-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .onboarding-icon { font-size: 80px; margin-bottom: 30px; }
+    .onboarding-title { font-size: 28px; font-weight: 700; margin-bottom: 16px; }
+    .onboarding-text { font-size: 16px; opacity: 0.9; line-height: 1.6; max-width: 280px; }
+    
+    .onboarding-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 30px;
+    }
+    
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .dot.active { background: white; width: 24px; border-radius: 5px; }
+    
+    .onboarding-btn {
+      width: 100%;
+      background: white;
+      border: none;
+      border-radius: var(--radius);
+      padding: 18px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    
+    .skip-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.7);
       font-size: 14px;
-      opacity: 0.9;
+      margin-top: 16px;
+      cursor: pointer;
     }
     
     .screen-indicator {
@@ -585,13 +757,29 @@
       border-radius: 20px;
       font-size: 11px;
       font-weight: 500;
-      z-index: 200;
+      z-index: 150;
     }
   </style>
 </head>
 <body>
-  <div class="phone-frame" style="background:#FDFBF7;">
-    <div class="screen-indicator">Tap nav to switch screens</div>
+  <div class="phone-frame">
+    <div class="screen-indicator">Tap nav to switch • v2</div>
+    
+    <!-- Onboarding -->
+    <div class="onboarding" id="onboarding">
+      <div class="onboarding-content" id="onboarding-content">
+        <div class="onboarding-icon">🌡️</div>
+        <h2 class="onboarding-title">Perfect Heat Settings</h2>
+        <p class="onboarding-text">Get the exact temperature, time, and pressure for any HTV or iron-on project.</p>
+      </div>
+      <div class="onboarding-dots">
+        <div class="dot active" id="dot1"></div>
+        <div class="dot" id="dot2"></div>
+        <div class="dot" id="dot3"></div>
+      </div>
+      <button class="onboarding-btn" onclick="nextOnboarding()">Next</button>
+      <button class="skip-btn" onclick="closeOnboarding()">Skip intro</button>
+    </div>
     
     <!-- Screen 1: Home -->
     <div class="screen active" id="home">
@@ -603,33 +791,37 @@
       <div class="search-box">
         <span class="search-icon">🔍</span>
         <input type="text" placeholder="Search materials, settings...">
+        <button class="voice-btn" title="Voice search">🎤</button>
       </div>
       
       <div class="section-title">Quick Access</div>
       <div class="quick-grid">
-        <div class="quick-card" onclick="showScreen('results')">
+        <div class="quick-card featured" onclick="showScreen('results')">
           <div class="quick-card-icon">🌡️</div>
           <div class="quick-card-title">Heat Guide</div>
           <div class="quick-card-subtitle">HTV & Iron-on</div>
         </div>
         <div class="quick-card" onclick="showScreen('calculator')">
-          <div class="quick-card-icon">📐</div>
-          <div class="quick-card-title">Calculator</div>
-          <div class="quick-card-subtitle">Vinyl & Materials</div>
+          <div class="quick-card-icon">💰</div>
+          <div class="quick-card-title">Pricing</div>
+          <div class="quick-card-subtitle">Profit Calculator</div>
         </div>
         <div class="quick-card">
-          <div class="quick-card-icon">⚙️</div>
+          <div class="quick-card-icon">✂️</div>
           <div class="quick-card-title">Cut Settings</div>
           <div class="quick-card-subtitle">Blade & Pressure</div>
         </div>
         <div class="quick-card">
-          <div class="quick-card-icon">❓</div>
+          <div class="quick-card-icon">🔧</div>
           <div class="quick-card-title">Troubleshoot</div>
           <div class="quick-card-subtitle">Fix Issues</div>
         </div>
       </div>
       
-      <div class="section-title">Recent</div>
+      <div class="section-title">
+        Recent
+        <span class="clear-btn">Clear All</span>
+      </div>
       <div class="recent-list">
         <div class="recent-item" onclick="showScreen('results')">
           <div class="recent-info">
@@ -664,187 +856,177 @@
       </div>
     </div>
     
-    <!-- Screen 2: Results -->
+    <!-- Screen 2: Heat Guide Results -->
     <div class="screen" id="results">
       <div class="result-header">
-        <div class="result-material">Heat Transfer Vinyl</div>
-        <div class="result-title">Glitter HTV on Cotton</div>
+        <div class="result-material">Glitter HTV on Cotton</div>
+        <div class="temp-display">320<span class="temp-unit">°F</span></div>
+        <div class="screen-toggle active" onclick="this.classList.toggle('active')">
+          📱 Keep Screen On
+        </div>
       </div>
       
-      <div class="settings-grid">
-        <div class="setting-card">
-          <div class="setting-value">320</div>
-          <div class="setting-unit">°F</div>
-          <div class="setting-label">Temp</div>
+      <div class="settings-row">
+        <div class="setting-pill">
+          <div class="setting-pill-value">15s</div>
+          <div class="setting-pill-label">Time</div>
         </div>
-        <div class="setting-card">
-          <div class="setting-value">15</div>
-          <div class="setting-unit">sec</div>
-          <div class="setting-label">Time</div>
-        </div>
-        <div class="setting-card">
-          <div class="setting-value">Med</div>
-          <div class="setting-unit">press</div>
-          <div class="setting-label">Pressure</div>
+        <div class="setting-pill">
+          <div class="setting-pill-value">Med</div>
+          <div class="setting-pill-label">Pressure</div>
         </div>
       </div>
+      
+      <button class="timer-btn">
+        <span>⏱️</span> Start 15 Second Timer
+      </button>
       
       <div class="tips-section">
         <div class="tips-title">💡 Pro Tips</div>
         <div class="tip-item">
           <span class="tip-bullet">✦</span>
-          <span class="tip-text">Pre-heat garment for 3-5 seconds to remove moisture</span>
+          <span>Pre-heat garment for 3-5 seconds to remove moisture</span>
         </div>
         <div class="tip-item">
           <span class="tip-bullet">✦</span>
-          <span class="tip-text">Peel carrier sheet while warm for glitter HTV</span>
+          <span>Peel carrier sheet while warm for glitter HTV</span>
         </div>
         <div class="tip-item">
           <span class="tip-bullet">✦</span>
-          <span class="tip-text">Cover with parchment and press backside for 5 sec</span>
+          <span>Cover with parchment and press backside for 5 sec</span>
         </div>
         <div class="tip-item">
           <span class="tip-bullet">✦</span>
-          <span class="tip-text">Wait 24 hours before first wash</span>
+          <span>Wait 24 hours before first wash</span>
         </div>
       </div>
     </div>
     
-    <!-- Screen 3: Calculator (Profit Calculator) -->
+    <!-- Screen 3: Calculator -->
     <div class="screen" id="calculator">
       <div class="header">
         <h1>Profit Calculator</h1>
         <div class="header-subtitle">Price your crafts right 💰</div>
       </div>
       
+      <div class="calc-tabs">
+        <div class="calc-tab active">Pricing</div>
+        <div class="calc-tab">Materials</div>
+        <div class="calc-tab">Guide</div>
+      </div>
+      
       <div class="calc-section">
         <div class="calc-title">Your Costs</div>
         <div class="calc-row">
           <span class="calc-label">Materials</span>
-          <div class="calc-input">
-            <span class="calc-value" style="min-width:80px;">$8.50</span>
-          </div>
+          <span class="calc-value">$8.50</span>
         </div>
         <div class="calc-row">
           <span class="calc-label">Labor (1.5 hrs × $15)</span>
-          <div class="calc-input">
-            <span class="calc-value" style="min-width:80px;">$22.50</span>
-          </div>
+          <span class="calc-value">$22.50</span>
         </div>
-        <div class="calc-row" style="border-top: 1px solid var(--border); padding-top: 12px; margin-top: 4px;">
-          <span class="calc-label" style="font-weight: 600;">Total Cost</span>
-          <div class="calc-input">
-            <span class="calc-value" style="min-width:80px; font-weight: 700;">$31.00</span>
-          </div>
+        <div class="calc-row" style="border-top: 2px solid var(--border); padding-top: 14px; margin-top: 6px;">
+          <span class="calc-label" style="font-weight: 700;">Total Cost</span>
+          <span class="calc-value" style="font-weight: 700; font-size: 18px;">$31.00</span>
         </div>
       </div>
       
-      <!-- Margin Slider -->
       <div class="calc-section">
         <div class="calc-title">Your Margin</div>
-        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-          <span style="font-size: 14px; color: var(--text-light);">0%</span>
-          <span style="font-size: 18px; font-weight: 700; color: var(--primary);" id="margin-display">45%</span>
-          <span style="font-size: 14px; color: var(--text-light);">100%</span>
-        </div>
-        <input type="range" min="0" max="100" value="45" style="width: 100%; height: 8px; -webkit-appearance: none; background: linear-gradient(to right, var(--primary) 45%, var(--border) 45%); border-radius: 4px; outline: none;" id="margin-slider">
-        <div style="display: flex; justify-content: space-around; margin-top: 12px;">
-          <button style="padding: 8px 16px; border-radius: 20px; border: 2px solid var(--border); background: white; font-size: 13px; color: var(--text);">30%</button>
-          <button style="padding: 8px 16px; border-radius: 20px; border: 2px solid var(--primary); background: rgba(42,157,143,0.1); font-size: 13px; color: var(--primary); font-weight: 600;">45%</button>
-          <button style="padding: 8px 16px; border-radius: 20px; border: 2px solid var(--border); background: white; font-size: 13px; color: var(--text);">60%</button>
+        <div class="slider-container">
+          <div class="slider-labels">
+            <span>0%</span>
+            <span class="slider-value">45%</span>
+            <span>100%</span>
+          </div>
+          <div class="slider-track">
+            <input type="range" min="0" max="100" value="45" class="slider-input">
+          </div>
+          <div class="slider-presets">
+            <button class="preset-btn">30%</button>
+            <button class="preset-btn active">45%</button>
+            <button class="preset-btn">60%</button>
+          </div>
         </div>
       </div>
       
-      <!-- Pricing Result -->
       <div class="calc-result">
         <div class="calc-result-label">Sell Price</div>
         <div class="calc-result-value">$56.36</div>
         <div class="calc-result-sub">Profit: $25.36 per item</div>
       </div>
       
-      <!-- Quick Pricing -->
-      <div class="calc-section" style="margin-top: 16px;">
+      <button class="save-btn">
+        <span>💾</span> Save This Project
+      </button>
+      
+      <div class="calc-section">
         <div class="calc-title">Pricing Tiers</div>
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <div style="background: var(--bg); border-radius: 12px; padding: 14px; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div style="font-size: 14px; font-weight: 600; color: var(--text);">💼 Full Price</div>
-              <div style="font-size: 12px; color: var(--text-light);">Customers & strangers</div>
-            </div>
-            <div style="font-size: 20px; font-weight: 700; color: var(--primary);">$56.36</div>
+        <div class="tier-card">
+          <div class="tier-info">
+            <h4>💼 Full Price</h4>
+            <p>Customers & strangers</p>
           </div>
-          <div style="background: var(--bg); border-radius: 12px; padding: 14px; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div style="font-size: 14px; font-weight: 600; color: var(--text);">🤝 Friends</div>
-              <div style="font-size: 12px; color: var(--text-light);">Support your craft (20% off)</div>
-            </div>
-            <div style="font-size: 20px; font-weight: 700; color: var(--text);">$45.09</div>
+          <div class="tier-price">$56.36</div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-info">
+            <h4>🤝 Friends</h4>
+            <p>Support your craft (20% off)</p>
           </div>
-          <div style="background: var(--bg); border-radius: 12px; padding: 14px; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div style="font-size: 14px; font-weight: 600; color: var(--text);">👨‍👩‍👧 Family</div>
-              <div style="font-size: 12px; color: var(--text-light);">Cover costs + small thank-you</div>
-            </div>
-            <div style="font-size: 20px; font-weight: 700; color: var(--text);">$39.45</div>
+          <div class="tier-price">$45.09</div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-info">
+            <h4>👨‍👩‍👧 Family</h4>
+            <p>Cover costs + small thank-you</p>
           </div>
-          <div style="background: var(--bg); border-radius: 12px; padding: 14px; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div style="font-size: 14px; font-weight: 600; color: var(--text);">❤️ Just Costs</div>
-              <div style="font-size: 12px; color: var(--text-light);">Materials + your time</div>
-            </div>
-            <div style="font-size: 20px; font-weight: 700; color: var(--text-light);">$31.00</div>
+          <div class="tier-price">$39.45</div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-info">
+            <h4>❤️ Just Costs</h4>
+            <p>Materials + your time</p>
+          </div>
+          <div class="tier-price muted">$31.00</div>
+        </div>
+      </div>
+      
+      <div class="guide-section">
+        <div class="guide-header" onclick="this.parentElement.classList.toggle('collapsed')">
+          <h3>💝 The "What's Fair?" Guide</h3>
+          <div class="guide-toggle">▼</div>
+        </div>
+        <div class="guide-content">
+          <p style="font-size: 14px; margin-bottom: 16px; line-height: 1.6;">
+            Charging loved ones feels awkward — you're not alone. <strong>78% of crafters</strong> struggle with this exact question.
+          </p>
+          
+          <div class="guide-card">
+            <h4>✨ Remember</h4>
+            <p>Your time has value. Friends who care about your craft <em>want</em> to support it. Charging fairly isn't greedy — it's sustainable.</p>
+          </div>
+          
+          <div class="guide-card">
+            <h4>💬 What to Say</h4>
+            <p style="font-style: italic;">"I'd love to make this for you! My materials run about $31 — would that work? No pressure at all either way."</p>
+          </div>
+          
+          <div class="guide-card">
+            <h4>📊 What Other Crafters Do</h4>
+            <div class="stat-row"><span>Charge full price</span><span>12%</span></div>
+            <div class="stat-row"><span>Small discount (10-20%)</span><span>34%</span></div>
+            <div class="stat-row"><span>Cover costs only</span><span>41%</span></div>
+            <div class="stat-row"><span>Give it free</span><span>13%</span></div>
           </div>
         </div>
       </div>
       
-      <!-- Family & Friends Guide -->
-      <div class="calc-section" style="margin-top: 16px; background: linear-gradient(135deg, #fef3e2, #fce8d5); border: 2px solid #f4a26144;">
-        <div class="calc-title" style="display: flex; align-items: center; gap: 8px;">
-          <span>💝</span> The "What's Fair?" Guide
-        </div>
-        <p style="font-size: 14px; color: var(--text); margin-bottom: 16px; line-height: 1.6;">
-          Charging loved ones feels awkward — you're not alone. <strong>78% of crafters</strong> struggle with this exact question.
-        </p>
-        
-        <div style="background: white; border-radius: 12px; padding: 14px; margin-bottom: 12px;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px;">✨ Remember</div>
-          <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin: 0;">
-            Your time has value. Friends who care about your craft <em>want</em> to support it. Charging fairly isn't greedy — it's sustainable.
-          </p>
-        </div>
-        
-        <div style="background: white; border-radius: 12px; padding: 14px; margin-bottom: 12px;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px;">💬 What to Say</div>
-          <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin: 0; font-style: italic;">
-            "I'd love to make this for you! My materials run about $31 — would that work? No pressure at all either way."
-          </p>
-        </div>
-        
-        <div style="background: white; border-radius: 12px; padding: 14px;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px;">📊 What Others Do</div>
-          <div style="font-size: 13px; color: var(--text); line-height: 1.6;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-              <span>Charge full price</span><span style="font-weight: 600;">12%</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-              <span>Small discount (10-20%)</span><span style="font-weight: 600;">34%</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-              <span>Cover costs only</span><span style="font-weight: 600;">41%</span>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-              <span>Give it free</span><span style="font-weight: 600;">13%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Community Benchmark -->
-      <div style="background: linear-gradient(135deg, #E9C46A22, #F4A26122); border-radius: var(--radius); padding: 16px; margin-top: 16px; display: flex; align-items: center; gap: 12px;">
-        <div style="font-size: 28px;">📊</div>
-        <div>
-          <div style="font-size: 14px; font-weight: 600; color: var(--text);">Community Insight</div>
-          <div style="font-size: 13px; color: var(--text-light);">Crafters average <strong style="color: var(--primary);">42% margin</strong> on tumblers</div>
+      <div class="insight-card">
+        <div class="insight-icon">📊</div>
+        <div class="insight-text">
+          <h4>Community Insight</h4>
+          <p>Crafters average <strong>42% margin</strong> on tumblers</p>
         </div>
       </div>
     </div>
@@ -862,13 +1044,61 @@
         <div class="pro-text">Offline mode, custom materials, no ads • $4.99/year</div>
       </div>
       
-      <div class="section-title">Preferences</div>
+      <div class="section-title">Display</div>
+      <div class="settings-section">
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">📱</span>
+            <div class="settings-text">
+              <h4>Keep Screen On</h4>
+              <p>During heat press countdown</p>
+            </div>
+          </div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">🌙</span>
+            <div class="settings-text">
+              <h4>Dark Mode</h4>
+              <p>Easier on the eyes</p>
+            </div>
+          </div>
+          <div class="toggle" onclick="this.classList.toggle('on')"></div>
+        </div>
+      </div>
+      
+      <div class="section-title">Pricing Defaults</div>
+      <div class="settings-section">
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">💵</span>
+            <div class="settings-text">
+              <h4>My Hourly Rate</h4>
+              <p>$15.00 / hour</p>
+            </div>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">📊</span>
+            <div class="settings-text">
+              <h4>Default Margin</h4>
+              <p>45%</p>
+            </div>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+      </div>
+      
+      <div class="section-title">Units</div>
       <div class="settings-section">
         <div class="settings-item">
           <div class="settings-left">
             <span class="settings-icon">🌡️</span>
             <div class="settings-text">
-              <h4>Temperature Unit</h4>
+              <h4>Temperature</h4>
               <p>Fahrenheit</p>
             </div>
           </div>
@@ -884,19 +1114,9 @@
           </div>
           <span class="chevron">›</span>
         </div>
-        <div class="settings-item">
-          <div class="settings-left">
-            <span class="settings-icon">📱</span>
-            <div class="settings-text">
-              <h4>Keep Screen On</h4>
-              <p>During heat press</p>
-            </div>
-          </div>
-          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
-        </div>
       </div>
       
-      <div class="section-title">My Machine</div>
+      <div class="section-title">My Equipment</div>
       <div class="settings-section">
         <div class="settings-item">
           <div class="settings-left">
@@ -913,7 +1133,7 @@
             <span class="settings-icon">🔥</span>
             <div class="settings-text">
               <h4>Heat Press</h4>
-              <p>Cricut EasyPress 2 (12×10)</p>
+              <p>EasyPress 2 (12×10)</p>
             </div>
           </div>
           <span class="chevron">›</span>
@@ -940,6 +1160,15 @@
           </div>
           <span class="chevron">›</span>
         </div>
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">🔒</span>
+            <div class="settings-text">
+              <h4>Privacy Policy</h4>
+            </div>
+          </div>
+          <span class="chevron">›</span>
+        </div>
       </div>
     </div>
     
@@ -954,8 +1183,8 @@
         <span class="nav-label">Heat Guide</span>
       </div>
       <div class="nav-item" onclick="showScreen('calculator')" id="nav-calculator">
-        <span class="nav-icon">📐</span>
-        <span class="nav-label">Calculator</span>
+        <span class="nav-icon">💰</span>
+        <span class="nav-label">Pricing</span>
       </div>
       <div class="nav-item" onclick="showScreen('settings')" id="nav-settings">
         <span class="nav-icon">⚙️</span>
@@ -965,25 +1194,67 @@
   </div>
   
   <script>
+    let onboardingStep = 0;
+    const onboardingData = [
+      { icon: '🌡️', title: 'Perfect Heat Settings', text: 'Get the exact temperature, time, and pressure for any HTV or iron-on project.' },
+      { icon: '💰', title: 'Price With Confidence', text: 'Calculate fair prices for your crafts — including tips for family & friends.' },
+      { icon: '✨', title: 'Join 10,000+ Crafters', text: 'See what margins others use and learn from the community.' }
+    ];
+    
+    function nextOnboarding() {
+      onboardingStep++;
+      if (onboardingStep >= onboardingData.length) {
+        closeOnboarding();
+        return;
+      }
+      updateOnboarding();
+    }
+    
+    function updateOnboarding() {
+      const data = onboardingData[onboardingStep];
+      document.querySelector('.onboarding-icon').textContent = data.icon;
+      document.querySelector('.onboarding-title').textContent = data.title;
+      document.querySelector('.onboarding-text').textContent = data.text;
+      document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === onboardingStep);
+      });
+      if (onboardingStep === onboardingData.length - 1) {
+        document.querySelector('.onboarding-btn').textContent = 'Get Started';
+      }
+    }
+    
+    function closeOnboarding() {
+      document.getElementById('onboarding').classList.add('hidden');
+    }
+    
     function showScreen(screenId) {
-      // Hide all screens
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-      // Show selected screen
       document.getElementById(screenId).classList.add('active');
-      
-      // Update nav
       document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
       document.getElementById('nav-' + screenId).classList.add('active');
     }
     
-    // Toggle buttons
-    document.querySelectorAll('.calc-btn').forEach(btn => {
+    // Slider interactivity
+    document.querySelectorAll('.slider-input').forEach(slider => {
+      slider.addEventListener('input', function() {
+        const value = this.value;
+        document.querySelector('.slider-value').textContent = value + '%';
+      });
+    });
+    
+    // Preset buttons
+    document.querySelectorAll('.preset-btn').forEach(btn => {
       btn.addEventListener('click', function() {
-        const valueEl = this.parentElement.querySelector('.calc-value');
-        let val = parseInt(valueEl.textContent) || 12;
-        if (this.textContent === '+') val++;
-        if (this.textContent === '−') val = Math.max(1, val - 1);
-        valueEl.textContent = val + (valueEl.textContent.includes('"') ? '"' : '');
+        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+    
+    // Tab switching
+    document.querySelectorAll('.calc-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
       });
     });
   </script>
