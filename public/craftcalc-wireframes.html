@@ -1231,6 +1231,17 @@
           <span class="recent-arrow">›</span>
         </div>
       </div>
+      
+      <!-- Saved Projects Section -->
+      <div id="saved-projects-section" style="display: none; margin-top: 24px;">
+        <div class="section-title">
+          💾 Saved Projects
+          <span class="clear-btn" onclick="clearSavedProjects()">Clear All</span>
+        </div>
+        <div id="saved-projects-list" class="recent-list">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
     </div>
     
     <!-- Screen 2: Heat Guide Results -->
@@ -1808,13 +1819,31 @@
           <input type="text" id="project-name-input" placeholder="e.g., Custom Tumbler Order" style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 12px; font-size: 16px; outline: none;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'">
         </div>
         <div style="background: var(--bg); border-radius: 12px; padding: 14px; margin-bottom: 20px;">
-          <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px;">
-            <span>Total Cost:</span>
-            <span class="total-cost" style="font-weight: 700;">$35.08</span>
+          <!-- Per Item -->
+          <div style="font-size: 12px; color: var(--text-light); text-transform: uppercase; margin-bottom: 8px;">Per Item</div>
+          <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 4px;">
+            <span>Cost:</span>
+            <span class="total-cost" style="font-weight: 700;">$16.50</span>
           </div>
-          <div style="display: flex; justify-content: space-between; font-size: 14px;">
-            <span>Sell Price:</span>
-            <span id="modal-sell-price" style="font-weight: 700; color: var(--primary);">$56.36</span>
+          <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 12px;">
+            <span>Sell:</span>
+            <span id="modal-sell-price" style="font-weight: 700; color: var(--primary);">$30.00</span>
+          </div>
+          <!-- Batch Total (shows when qty > 1) -->
+          <div id="modal-batch-section" style="display: none; border-top: 2px solid var(--border); padding-top: 12px;">
+            <div style="font-size: 12px; color: var(--text-light); text-transform: uppercase; margin-bottom: 8px;">For <span id="modal-qty" style="font-weight: 700;">10</span> Items</div>
+            <div style="display: flex; justify-content: space-between; font-size: 16px; margin-bottom: 4px;">
+              <span>Total Cost:</span>
+              <span id="modal-batch-cost" style="font-weight: 700;">$165.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 16px; margin-bottom: 4px;">
+              <span>Total Sell:</span>
+              <span id="modal-batch-sell" style="font-weight: 700; color: var(--primary);">$300.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 16px; font-weight: 700; color: var(--gold);">
+              <span>💰 Profit:</span>
+              <span id="modal-batch-profit">$135.00</span>
+            </div>
           </div>
         </div>
         <button onclick="confirmSaveProject()" style="width: 100%; padding: 16px; background: linear-gradient(145deg, var(--primary), var(--primary-dark)); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer;">
@@ -2780,21 +2809,36 @@
     // ========================================
     
     function openSaveModal() {
-      // Update modal with current values
-      const sellPrice = document.getElementById('sell-price-display')?.textContent || '$0';
-      document.getElementById('modal-sell-price').textContent = sellPrice;
+      const qty = projectData.quantity || 1;
+      const totalCost = projectData.totalCost || 0;
+      const sellPrice = parseFloat(document.getElementById('sell-price-display')?.textContent.replace('$','')) || 0;
+      const profit = sellPrice - totalCost;
       
-      // Suggest a name based on project type
+      // Suggest a name based on project type and qty
       const projectSelect = document.getElementById('project-type-select');
       const projectType = projectSelect?.options[projectSelect.selectedIndex]?.text || 'Custom Project';
       const today = new Date().toLocaleDateString();
-      document.getElementById('project-name-input').value = projectType + ' - ' + today;
+      const qtyText = qty > 1 ? ` (${qty})` : '';
+      document.getElementById('project-name-input').value = projectType + qtyText + ' - ' + today;
       document.getElementById('project-name-input').select();
       
-      // Update total cost in modal
+      // Update per-item values
       document.querySelectorAll('#save-modal .total-cost').forEach(el => {
-        el.textContent = '$' + projectData.totalCost.toFixed(2);
+        el.textContent = '$' + totalCost.toFixed(2);
       });
+      document.getElementById('modal-sell-price').textContent = '$' + sellPrice.toFixed(2);
+      
+      // Update batch section
+      const batchSection = document.getElementById('modal-batch-section');
+      if (qty > 1 && batchSection) {
+        batchSection.style.display = 'block';
+        document.getElementById('modal-qty').textContent = qty;
+        document.getElementById('modal-batch-cost').textContent = '$' + (totalCost * qty).toFixed(2);
+        document.getElementById('modal-batch-sell').textContent = '$' + (sellPrice * qty).toFixed(2);
+        document.getElementById('modal-batch-profit').textContent = '$' + (profit * qty).toFixed(2);
+      } else if (batchSection) {
+        batchSection.style.display = 'none';
+      }
       
       // Show modal
       document.getElementById('save-modal').classList.add('active');
@@ -2806,20 +2850,22 @@
     
     function confirmSaveProject() {
       const projectName = document.getElementById('project-name-input').value.trim() || 'Untitled Project';
+      const qty = projectData.quantity || 1;
+      const totalCost = projectData.totalCost || 0;
+      const sellPrice = parseFloat(document.getElementById('sell-price-display')?.textContent.replace('$','')) || 0;
       
       const project = {
         id: Date.now(),
         name: projectName,
         date: new Date().toLocaleDateString(),
         projectType: document.getElementById('project-type-select')?.value || 'Custom',
-        materialsTotal: document.getElementById('materials-total')?.textContent || '$0',
-        laborHours: document.getElementById('labor-hours')?.value || '0',
-        laborRate: document.getElementById('labor-rate')?.value || '$15',
-        misc: document.getElementById('misc-cost')?.value || '$0',
-        overhead: document.getElementById('overhead-pct')?.value || '5',
-        margin: document.querySelector('.slider-input')?.value || '45',
-        totalCost: document.querySelector('.total-cost')?.textContent || '$0',
-        sellPrice: document.querySelector('.calc-result-value')?.textContent || '$0'
+        quantity: qty,
+        costPerItem: '$' + totalCost.toFixed(2),
+        sellPerItem: '$' + sellPrice.toFixed(2),
+        totalCost: qty > 1 ? '$' + (totalCost * qty).toFixed(2) : '$' + totalCost.toFixed(2),
+        totalSell: qty > 1 ? '$' + (sellPrice * qty).toFixed(2) : '$' + sellPrice.toFixed(2),
+        sellPrice: '$' + sellPrice.toFixed(2),
+        margin: document.getElementById('margin-slider')?.value || '45'
       };
       
       let projects = JSON.parse(localStorage.getItem('craftcalc-projects') || '[]');
@@ -2827,8 +2873,9 @@
       projects = projects.slice(0, 20); // Keep last 20
       localStorage.setItem('craftcalc-projects', JSON.stringify(projects));
       
-      // Close modal
+      // Close modal and refresh home screen
       closeSaveModal();
+      loadSavedProjects();
       
       // Visual feedback
       const btn = document.querySelector('#tab-pricing .save-btn');
@@ -2852,6 +2899,52 @@
     document.getElementById('save-modal')?.addEventListener('click', function(e) {
       if (e.target === this) closeSaveModal();
     });
+    
+    // Load and display saved projects on home screen
+    function loadSavedProjects() {
+      const projects = JSON.parse(localStorage.getItem('craftcalc-projects') || '[]');
+      const section = document.getElementById('saved-projects-section');
+      const list = document.getElementById('saved-projects-list');
+      
+      if (projects.length === 0) {
+        section.style.display = 'none';
+        return;
+      }
+      
+      section.style.display = 'block';
+      list.innerHTML = projects.slice(0, 5).map(p => `
+        <div class="recent-item" onclick="loadProject(${p.id})">
+          <div class="recent-info">
+            <div class="recent-icon" style="background: var(--gold);">💰</div>
+            <div class="recent-text">
+              <h4>${p.name}</h4>
+              <p>Cost: ${p.totalCost} • Sell: ${p.sellPrice}</p>
+            </div>
+          </div>
+          <span class="recent-arrow">›</span>
+        </div>
+      `).join('');
+    }
+    
+    function clearSavedProjects() {
+      if (confirm('Clear all saved projects?')) {
+        localStorage.removeItem('craftcalc-projects');
+        loadSavedProjects();
+      }
+    }
+    
+    function loadProject(projectId) {
+      const projects = JSON.parse(localStorage.getItem('craftcalc-projects') || '[]');
+      const project = projects.find(p => p.id === projectId);
+      if (!project) return;
+      
+      // Navigate to calculator and show a message
+      showScreen('calculator');
+      alert('Project: ' + project.name + '\\nCost: ' + project.totalCost + '\\nSell: ' + project.sellPrice + '\\n\\n(Full project loading coming soon!)');
+    }
+    
+    // Load saved projects when page loads
+    document.addEventListener('DOMContentLoaded', loadSavedProjects);
     
     // ========================================
     // SETTINGS PERSISTENCE
