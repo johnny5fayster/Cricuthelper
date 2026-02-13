@@ -1234,19 +1234,54 @@
       document.getElementById('nav-' + screenId).classList.add('active');
     }
     
+    // Pricing Calculator Logic
+    const totalCost = 31.00;
+    
+    function updatePricing(marginPercent) {
+      const margin = marginPercent / 100;
+      const sellPrice = totalCost / (1 - margin);
+      const profit = sellPrice - totalCost;
+      const friendsPrice = sellPrice * 0.80;
+      const familyPrice = sellPrice * 0.70;
+      
+      // Update display
+      document.querySelector('.slider-value').textContent = marginPercent + '%';
+      document.querySelector('.calc-result-value').textContent = '$' + sellPrice.toFixed(2);
+      document.querySelector('.calc-result-sub').textContent = 'Profit: $' + profit.toFixed(2) + ' per item';
+      
+      // Update tier prices
+      const tierPrices = document.querySelectorAll('.tier-price');
+      if (tierPrices.length >= 4) {
+        tierPrices[0].textContent = '$' + sellPrice.toFixed(2);
+        tierPrices[1].textContent = '$' + friendsPrice.toFixed(2);
+        tierPrices[2].textContent = '$' + familyPrice.toFixed(2);
+        tierPrices[3].textContent = '$' + totalCost.toFixed(2);
+      }
+      
+      // Update slider track fill
+      const slider = document.querySelector('.slider-input');
+      slider.style.background = `linear-gradient(to right, var(--primary) ${marginPercent}%, var(--border) ${marginPercent}%)`;
+      
+      // Update preset buttons
+      document.querySelectorAll('.preset-btn').forEach(btn => {
+        const btnValue = parseInt(btn.textContent);
+        btn.classList.toggle('active', btnValue === marginPercent);
+      });
+    }
+    
     // Slider interactivity
     document.querySelectorAll('.slider-input').forEach(slider => {
       slider.addEventListener('input', function() {
-        const value = this.value;
-        document.querySelector('.slider-value').textContent = value + '%';
+        updatePricing(parseInt(this.value));
       });
     });
     
     // Preset buttons
     document.querySelectorAll('.preset-btn').forEach(btn => {
       btn.addEventListener('click', function() {
-        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
+        const value = parseInt(this.textContent);
+        document.querySelector('.slider-input').value = value;
+        updatePricing(value);
       });
     });
     
@@ -1257,6 +1292,9 @@
         this.classList.add('active');
       });
     });
+    
+    // Initialize pricing
+    updatePricing(45);
   </script>
 </body>
 </html>
