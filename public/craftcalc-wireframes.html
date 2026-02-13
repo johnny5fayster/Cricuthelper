@@ -1316,13 +1316,14 @@
       </div>
       
       <div class="calc-tabs">
-        <div class="calc-tab active" data-tab="materials">Materials</div>
+        <div class="calc-tab active" data-tab="costs">Costs</div>
+        <div class="calc-tab" data-tab="materials">Materials</div>
         <div class="calc-tab" data-tab="pricing">Pricing</div>
         <div class="calc-tab" data-tab="guide">Guide</div>
       </div>
       
-      <!-- TAB: Pricing -->
-      <div class="tab-panel" id="tab-pricing">
+      <!-- TAB: Costs -->
+      <div class="tab-panel active" id="tab-costs">
       
       <div class="calc-section">
         <div class="calc-title">Your Costs</div>
@@ -1358,6 +1359,26 @@
         <div class="calc-row" style="border-top: 2px solid var(--border); padding-top: 14px; margin-top: 10px; background: var(--bg); margin: 10px -24px -24px; padding: 16px 24px; border-radius: 0 0 var(--radius) var(--radius);">
           <span class="calc-label" style="font-weight: 800; color: var(--text-dark);">Total Cost</span>
           <span class="calc-value total-cost" style="font-weight: 800; font-size: 20px; color: var(--primary-dark);">$35.08</span>
+        </div>
+      </div>
+      
+      <button class="save-btn" style="margin-top: 8px;">
+        <span>➡️</span> Continue to Pricing
+      </button>
+      
+      </div><!-- /tab-costs -->
+      
+      <!-- TAB: Pricing -->
+      <div class="tab-panel" id="tab-pricing">
+      
+      <!-- Cost Summary (linked from Costs tab) -->
+      <div class="calc-section" style="background: var(--bg); border: 2px dashed var(--border);">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">Your Total Cost</div>
+            <div class="total-cost" style="font-size: 28px; font-weight: 800; color: var(--primary-dark);">$35.08</div>
+          </div>
+          <button onclick="document.querySelector('[data-tab=costs]').click()" style="background: var(--card); border: 1px solid var(--border); padding: 10px 16px; border-radius: 10px; font-size: 14px; cursor: pointer;">✏️ Edit Costs</button>
         </div>
       </div>
       
@@ -1434,7 +1455,7 @@
       </div><!-- /tab-pricing -->
       
       <!-- TAB: Materials -->
-      <div class="tab-panel active" id="tab-materials">
+      <div class="tab-panel" id="tab-materials">
         <div class="calc-section">
           <div class="calc-title">Project Details</div>
           <div class="calc-row">
@@ -2079,6 +2100,11 @@
     
     // Initialize pricing
     updatePricing(45);
+    
+    // Continue to Pricing button
+    document.querySelector('#tab-costs .save-btn')?.addEventListener('click', function() {
+      document.querySelector('[data-tab="pricing"]').click();
+    });
     
     // ========================================
     // MATERIALS CALCULATOR
