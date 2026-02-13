@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Calc for Cricut — Wireframes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    :root {
+      --primary: #2A9D8F;
+      --primary-light: #40B4A6;
+      --accent: #E9C46A;
+      --bg: #FDFBF7;
+      --card: #FFFFFF;
+      --text: #264653;
+      --text-light: #5C7A86;
+      --border: #E8E4DC;
+      --success: #4CAF50;
+      --radius: 16px;
+      --radius-sm: 12px;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.5;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    .phone-frame {
+      max-width: 390px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background: var(--bg);
+      position: relative;
+      padding-bottom: 80px;
+    }
+    
+    /* Screens */
+    .screen {
+      display: none;
+      padding: 20px;
+      padding-top: 60px;
+      animation: fadeIn 0.2s ease;
+    }
+    
+    .screen.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      max-width: 390px;
+      margin: 0 auto;
+      background: var(--primary);
+      color: white;
+      padding: 16px 20px;
+      z-index: 100;
+    }
+    
+    .header h1 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    
+    .header-subtitle {
+      font-size: 13px;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+    
+    /* Search Box */
+    .search-box {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+      border: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+    
+    .search-box:focus-within {
+      border-color: var(--primary);
+    }
+    
+    .search-icon {
+      font-size: 20px;
+      color: var(--text-light);
+    }
+    
+    .search-box input {
+      flex: 1;
+      border: none;
+      font-size: 16px;
+      outline: none;
+      background: transparent;
+      color: var(--text);
+    }
+    
+    .search-box input::placeholder {
+      color: var(--text-light);
+    }
+    
+    /* Quick Actions */
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    
+    .quick-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    
+    .quick-card:active {
+      transform: scale(0.97);
+    }
+    
+    .quick-card-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    
+    .quick-card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    
+    .quick-card-subtitle {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+    
+    /* Recent Items */
+    .recent-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .recent-item {
+      background: var(--card);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      cursor: pointer;
+    }
+    
+    .recent-item:active {
+      background: #f5f5f0;
+    }
+    
+    .recent-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .recent-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+    }
+    
+    .recent-icon.vinyl { background: #E76F51; }
+    .recent-icon.htv { background: #F4A261; }
+    .recent-icon.paper { background: #2A9D8F; }
+    
+    .recent-text h4 {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    
+    .recent-text p {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    
+    .recent-arrow {
+      color: var(--text-light);
+      font-size: 18px;
+    }
+    
+    /* Bottom Nav */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-width: 390px;
+      margin: 0 auto;
+      background: var(--card);
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0 20px;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+      z-index: 100;
+    }
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: background 0.15s;
+    }
+    
+    .nav-item:active {
+      background: rgba(42, 157, 143, 0.1);
+    }
+    
+    .nav-item.active .nav-icon,
+    .nav-item.active .nav-label {
+      color: var(--primary);
+    }
+    
+    .nav-icon {
+      font-size: 24px;
+      color: var(--text-light);
+    }
+    
+    .nav-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+    
+    /* Results Screen */
+    .result-header {
+      background: var(--primary);
+      color: white;
+      padding: 24px 20px;
+      margin: -20px -20px 20px -20px;
+      margin-top: -60px;
+      padding-top: 70px;
+    }
+    
+    .result-material {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-bottom: 4px;
+    }
+    
+    .result-title {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    .settings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    
+    .setting-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    
+    .setting-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .setting-unit {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+    
+    .setting-label {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    
+    .tips-section {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    
+    .tips-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .tip-item {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .tip-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .tip-bullet {
+      color: var(--accent);
+      font-size: 18px;
+    }
+    
+    .tip-text {
+      font-size: 14px;
+      color: var(--text);
+    }
+    
+    /* Calculator Screen */
+    .calc-section {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    
+    .calc-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .calc-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    
+    .calc-label {
+      font-size: 15px;
+      color: var(--text);
+    }
+    
+    .calc-input {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .calc-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: var(--bg);
+      font-size: 20px;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .calc-btn:active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    .calc-value {
+      min-width: 60px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .calc-result {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: var(--radius);
+      padding: 24px;
+      color: white;
+      text-align: center;
+    }
+    
+    .calc-result-label {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 4px;
+    }
+    
+    .calc-result-value {
+      font-size: 36px;
+      font-weight: 700;
+    }
+    
+    .calc-result-sub {
+      font-size: 13px;
+      opacity: 0.8;
+      margin-top: 8px;
+    }
+    
+    /* Settings Screen */
+    .settings-section {
+      margin-bottom: 24px;
+    }
+    
+    .settings-item {
+      background: var(--card);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .settings-item:first-child {
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    
+    .settings-item:last-child {
+      border-radius: 0 0 var(--radius) var(--radius);
+      border-bottom: none;
+    }
+    
+    .settings-item:only-child {
+      border-radius: var(--radius);
+    }
+    
+    .settings-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    
+    .settings-icon {
+      font-size: 22px;
+    }
+    
+    .settings-text h4 {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    
+    .settings-text p {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    
+    .toggle {
+      width: 52px;
+      height: 32px;
+      background: var(--border);
+      border-radius: 16px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .toggle.on {
+      background: var(--primary);
+    }
+    
+    .toggle::after {
+      content: '';
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background: white;
+      border-radius: 13px;
+      top: 3px;
+      left: 3px;
+      transition: transform 0.2s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+    
+    .toggle.on::after {
+      transform: translateX(20px);
+    }
+    
+    .chevron {
+      color: var(--text-light);
+      font-size: 20px;
+    }
+    
+    /* Pro Banner */
+    .pro-banner {
+      background: linear-gradient(135deg, var(--accent), #F4A261);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+    
+    .pro-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.3);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .pro-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .pro-text {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    .screen-indicator {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      z-index: 200;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone-frame">
+    <div class="screen-indicator">Tap nav to switch screens</div>
+    
+    <!-- Screen 1: Home -->
+    <div class="screen active" id="home">
+      <div class="header">
+        <h1>Calc for Cricut</h1>
+        <div class="header-subtitle">Your crafting companion ✨</div>
+      </div>
+      
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search materials, settings...">
+      </div>
+      
+      <div class="section-title">Quick Access</div>
+      <div class="quick-grid">
+        <div class="quick-card" onclick="showScreen('results')">
+          <div class="quick-card-icon">🌡️</div>
+          <div class="quick-card-title">Heat Guide</div>
+          <div class="quick-card-subtitle">HTV & Iron-on</div>
+        </div>
+        <div class="quick-card" onclick="showScreen('calculator')">
+          <div class="quick-card-icon">📐</div>
+          <div class="quick-card-title">Calculator</div>
+          <div class="quick-card-subtitle">Vinyl & Materials</div>
+        </div>
+        <div class="quick-card">
+          <div class="quick-card-icon">⚙️</div>
+          <div class="quick-card-title">Cut Settings</div>
+          <div class="quick-card-subtitle">Blade & Pressure</div>
+        </div>
+        <div class="quick-card">
+          <div class="quick-card-icon">❓</div>
+          <div class="quick-card-title">Troubleshoot</div>
+          <div class="quick-card-subtitle">Fix Issues</div>
+        </div>
+      </div>
+      
+      <div class="section-title">Recent</div>
+      <div class="recent-list">
+        <div class="recent-item" onclick="showScreen('results')">
+          <div class="recent-info">
+            <div class="recent-icon htv">🌡️</div>
+            <div class="recent-text">
+              <h4>Glitter HTV on Cotton</h4>
+              <p>320°F • 15 sec • Medium</p>
+            </div>
+          </div>
+          <span class="recent-arrow">›</span>
+        </div>
+        <div class="recent-item">
+          <div class="recent-info">
+            <div class="recent-icon vinyl">✂️</div>
+            <div class="recent-text">
+              <h4>Oracal 651 on Glass</h4>
+              <p>Fine Point • Pressure 3</p>
+            </div>
+          </div>
+          <span class="recent-arrow">›</span>
+        </div>
+        <div class="recent-item">
+          <div class="recent-info">
+            <div class="recent-icon paper">📄</div>
+            <div class="recent-text">
+              <h4>65lb Cardstock</h4>
+              <p>Fine Point • Pressure 2.5</p>
+            </div>
+          </div>
+          <span class="recent-arrow">›</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Screen 2: Results -->
+    <div class="screen" id="results">
+      <div class="result-header">
+        <div class="result-material">Heat Transfer Vinyl</div>
+        <div class="result-title">Glitter HTV on Cotton</div>
+      </div>
+      
+      <div class="settings-grid">
+        <div class="setting-card">
+          <div class="setting-value">320</div>
+          <div class="setting-unit">°F</div>
+          <div class="setting-label">Temp</div>
+        </div>
+        <div class="setting-card">
+          <div class="setting-value">15</div>
+          <div class="setting-unit">sec</div>
+          <div class="setting-label">Time</div>
+        </div>
+        <div class="setting-card">
+          <div class="setting-value">Med</div>
+          <div class="setting-unit">press</div>
+          <div class="setting-label">Pressure</div>
+        </div>
+      </div>
+      
+      <div class="tips-section">
+        <div class="tips-title">💡 Pro Tips</div>
+        <div class="tip-item">
+          <span class="tip-bullet">✦</span>
+          <span class="tip-text">Pre-heat garment for 3-5 seconds to remove moisture</span>
+        </div>
+        <div class="tip-item">
+          <span class="tip-bullet">✦</span>
+          <span class="tip-text">Peel carrier sheet while warm for glitter HTV</span>
+        </div>
+        <div class="tip-item">
+          <span class="tip-bullet">✦</span>
+          <span class="tip-text">Cover with parchment and press backside for 5 sec</span>
+        </div>
+        <div class="tip-item">
+          <span class="tip-bullet">✦</span>
+          <span class="tip-text">Wait 24 hours before first wash</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Screen 3: Calculator -->
+    <div class="screen" id="calculator">
+      <div class="header">
+        <h1>Vinyl Calculator</h1>
+        <div class="header-subtitle">Estimate materials needed</div>
+      </div>
+      
+      <div class="calc-section">
+        <div class="calc-title">Project Size</div>
+        <div class="calc-row">
+          <span class="calc-label">Width (inches)</span>
+          <div class="calc-input">
+            <button class="calc-btn">−</button>
+            <span class="calc-value">12</span>
+            <button class="calc-btn">+</button>
+          </div>
+        </div>
+        <div class="calc-row">
+          <span class="calc-label">Height (inches)</span>
+          <div class="calc-input">
+            <button class="calc-btn">−</button>
+            <span class="calc-value">8</span>
+            <button class="calc-btn">+</button>
+          </div>
+        </div>
+        <div class="calc-row">
+          <span class="calc-label">Quantity</span>
+          <div class="calc-input">
+            <button class="calc-btn">−</button>
+            <span class="calc-value">10</span>
+            <button class="calc-btn">+</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calc-section">
+        <div class="calc-title">Material</div>
+        <div class="calc-row">
+          <span class="calc-label">Vinyl roll width</span>
+          <div class="calc-input">
+            <button class="calc-btn">−</button>
+            <span class="calc-value">12"</span>
+            <button class="calc-btn">+</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calc-result">
+        <div class="calc-result-label">You'll need approximately</div>
+        <div class="calc-result-value">7.5 feet</div>
+        <div class="calc-result-sub">~2.3 meters • Add 10% for mistakes</div>
+      </div>
+    </div>
+    
+    <!-- Screen 4: Settings -->
+    <div class="screen" id="settings">
+      <div class="header">
+        <h1>Settings</h1>
+        <div class="header-subtitle">Customize your experience</div>
+      </div>
+      
+      <div class="pro-banner">
+        <div class="pro-badge">⭐ PRO</div>
+        <div class="pro-title">Unlock All Features</div>
+        <div class="pro-text">Offline mode, custom materials, no ads • $4.99/year</div>
+      </div>
+      
+      <div class="section-title">Preferences</div>
+      <div class="settings-section">
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">🌡️</span>
+            <div class="settings-text">
+              <h4>Temperature Unit</h4>
+              <p>Fahrenheit</p>
+            </div>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">📏</span>
+            <div class="settings-text">
+              <h4>Measurements</h4>
+              <p>Inches</p>
+            </div>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">📱</span>
+            <div class="settings-text">
+              <h4>Keep Screen On</h4>
+              <p>During heat press</p>
+            </div>
+          </div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+      </div>
+      
+      <div class="section-title">My Machine</div>
+      <div class="settings-section">
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">✂️</span>
+            <div class="settings-text">
+              <h4>Cricut Model</h4>
+              <p>Maker 3</p>
+            </div>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">🔥</span>
+            <div class="settings-text">
+              <h4>Heat Press</h4>
+              <p>Cricut EasyPress 2 (12×10)</p>
+            </div>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+      </div>
+      
+      <div class="section-title">About</div>
+      <div class="settings-section">
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">⭐</span>
+            <div class="settings-text">
+              <h4>Rate the App</h4>
+            </div>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+        <div class="settings-item">
+          <div class="settings-left">
+            <span class="settings-icon">💬</span>
+            <div class="settings-text">
+              <h4>Send Feedback</h4>
+            </div>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+      <div class="nav-item active" onclick="showScreen('home')" id="nav-home">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('results')" id="nav-results">
+        <span class="nav-icon">🌡️</span>
+        <span class="nav-label">Heat Guide</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('calculator')" id="nav-calculator">
+        <span class="nav-icon">📐</span>
+        <span class="nav-label">Calculator</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('settings')" id="nav-settings">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-label">Settings</span>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function showScreen(screenId) {
+      // Hide all screens
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      // Show selected screen
+      document.getElementById(screenId).classList.add('active');
+      
+      // Update nav
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      document.getElementById('nav-' + screenId).classList.add('active');
+    }
+    
+    // Toggle buttons
+    document.querySelectorAll('.calc-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const valueEl = this.parentElement.querySelector('.calc-value');
+        let val = parseInt(valueEl.textContent) || 12;
+        if (this.textContent === '+') val++;
+        if (this.textContent === '−') val = Math.max(1, val - 1);
+        valueEl.textContent = val + (valueEl.textContent.includes('"') ? '"' : '');
+      });
+    });
+  </script>
+</body>
+</html>
