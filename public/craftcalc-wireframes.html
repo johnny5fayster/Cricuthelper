@@ -1517,6 +1517,250 @@
     
     // Initialize pricing
     updatePricing(45);
+    
+    // ========================================
+    // MATERIALS CALCULATOR
+    // ========================================
+    
+    function calculateMaterials() {
+      const width = parseNumber(document.getElementById('mat-width')?.value || '10');
+      const height = parseNumber(document.getElementById('mat-height')?.value || '8');
+      const quantity = parseNumber(document.getElementById('mat-qty')?.value || '10');
+      const rollWidth = parseNumber(document.getElementById('mat-roll-width')?.value || '12');
+      const costPerFoot = parseNumber(document.getElementById('mat-cost-per-foot')?.value || '1.50');
+      const wastePct = parseNumber(document.getElementById('mat-waste')?.value || '15');
+      
+      // Calculate how many cuts fit across the roll
+      const cutsPerRow = Math.floor(rollWidth / width) || 1;
+      const rowsNeeded = Math.ceil(quantity / cutsPerRow);
+      const totalInches = rowsNeeded * height;
+      const totalFeet = totalInches / 12;
+      const withWaste = totalFeet * (1 + wastePct / 100);
+      const totalCost = withWaste * costPerFoot;
+      
+      // Update display
+      const resultValue = document.querySelector('#tab-materials .calc-result-value');
+      const resultSub = document.querySelector('#tab-materials .calc-result-sub');
+      if (resultValue) resultValue.textContent = withWaste.toFixed(1) + ' ft';
+      if (resultSub) resultSub.textContent = '~$' + totalCost.toFixed(2) + ' in vinyl';
+      
+      // Store for use in pricing tab
+      window.calculatedMaterialCost = totalCost;
+      
+      return { feet: withWaste, cost: totalCost };
+    }
+    
+    // Add IDs to material inputs for calculation
+    document.addEventListener('DOMContentLoaded', function() {
+      const matInputs = document.querySelectorAll('#tab-materials .cost-input, #tab-materials select');
+      const ids = ['mat-type', 'mat-width', 'mat-height', 'mat-qty', 'mat-roll-width', 'mat-cost-per-foot', 'mat-waste'];
+      matInputs.forEach((input, i) => {
+        if (ids[i]) input.id = ids[i];
+        input.addEventListener('input', calculateMaterials);
+        input.addEventListener('change', calculateMaterials);
+      });
+      calculateMaterials();
+    });
+    
+    // ========================================
+    // HEAT GUIDE TIMER
+    // ========================================
+    
+    let timerInterval = null;
+    let timerSeconds = 15;
+    let wakeLock = null;
+    
+    function startTimer() {
+      const btn = document.querySelector('.timer-btn');
+      if (timerInterval) {
+        // Stop timer
+        clearInterval(timerInterval);
+        timerInterval = null;
+        btn.innerHTML = '<span>⏱️</span> Start 15 Second Timer';
+        btn.style.background = 'linear-gradient(145deg, var(--gold), var(--gold-light))';
+        timerSeconds = 15;
+        releaseWakeLock();
+        return;
+      }
+      
+      // Start timer
+      timerSeconds = 15;
+      requestWakeLock();
+      
+      timerInterval = setInterval(() => {
+        timerSeconds--;
+        btn.innerHTML = '<span>⏱️</span> ' + timerSeconds + 's remaining...';
+        btn.style.background = 'linear-gradient(145deg, #E8B4B8, #D4A5A5)';
+        
+        if (timerSeconds <= 0) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          btn.innerHTML = '<span>✅</span> Done! Tap to reset';
+          btn.style.background = 'linear-gradient(145deg, var(--primary), var(--primary-light))';
+          
+          // Play sound and vibrate
+          playTimerSound();
+          if (navigator.vibrate) navigator.vibrate([200, 100, 200, 100, 200]);
+          
+          releaseWakeLock();
+        }
+      }, 1000);
+    }
+    
+    function playTimerSound() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.frequency.value = 880;
+        osc.type = 'sine';
+        gain.gain.value = 0.3;
+        osc.start();
+        setTimeout(() => { osc.frequency.value = 1100; }, 150);
+        setTimeout(() => { osc.frequency.value = 880; }, 300);
+        setTimeout(() => { osc.stop(); ctx.close(); }, 500);
+      } catch(e) {}
+    }
+    
+    async function requestWakeLock() {
+      try {
+        if ('wakeLock' in navigator) {
+          wakeLock = await navigator.wakeLock.request('screen');
+        }
+      } catch(e) {}
+    }
+    
+    function releaseWakeLock() {
+      if (wakeLock) {
+        wakeLock.release();
+        wakeLock = null;
+      }
+    }
+    
+    // Attach timer to button
+    document.querySelector('.timer-btn')?.addEventListener('click', startTimer);
+    
+    // ========================================
+    // SCREEN KEEP-ON TOGGLE
+    // ========================================
+    
+    document.querySelector('.screen-toggle')?.addEventListener('click', async function() {
+      this.classList.toggle('active');
+      if (this.classList.contains('active')) {
+        await requestWakeLock();
+      } else {
+        releaseWakeLock();
+      }
+    });
+    
+    // ========================================
+    // SAVE PROJECT
+    // ========================================
+    
+    function saveProject() {
+      const project = {
+        id: Date.now(),
+        date: new Date().toLocaleDateString(),
+        materials: document.getElementById('materials-cost')?.value || '$0',
+        laborHours: document.getElementById('labor-hours')?.value || '0',
+        laborRate: document.getElementById('labor-rate')?.value || '$15',
+        misc: document.getElementById('misc-cost')?.value || '$0',
+        overhead: document.getElementById('overhead-pct')?.value || '5',
+        margin: document.querySelector('.slider-input')?.value || '45',
+        totalCost: document.querySelector('.total-cost')?.textContent || '$0',
+        sellPrice: document.querySelector('.calc-result-value')?.textContent || '$0'
+      };
+      
+      let projects = JSON.parse(localStorage.getItem('craftcalc-projects') || '[]');
+      projects.unshift(project);
+      projects = projects.slice(0, 10); // Keep last 10
+      localStorage.setItem('craftcalc-projects', JSON.stringify(projects));
+      
+      // Visual feedback
+      const btn = document.querySelector('.save-btn');
+      const original = btn.innerHTML;
+      btn.innerHTML = '<span>✅</span> Saved!';
+      btn.style.background = 'var(--primary)';
+      btn.style.color = 'white';
+      btn.style.borderColor = 'var(--primary)';
+      
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.borderColor = '';
+      }, 1500);
+    }
+    
+    document.querySelector('.save-btn')?.addEventListener('click', saveProject);
+    
+    // ========================================
+    // SETTINGS PERSISTENCE
+    // ========================================
+    
+    function loadSettings() {
+      const settings = JSON.parse(localStorage.getItem('craftcalc-settings') || '{}');
+      
+      if (settings.hourlyRate) {
+        const rateInput = document.getElementById('labor-rate');
+        if (rateInput) rateInput.value = settings.hourlyRate;
+      }
+      
+      if (settings.defaultMargin) {
+        const slider = document.querySelector('.slider-input');
+        if (slider) {
+          slider.value = settings.defaultMargin;
+          updatePricing(parseInt(settings.defaultMargin));
+        }
+      }
+      
+      // Apply toggle states
+      document.querySelectorAll('.settings-section .toggle').forEach((toggle, i) => {
+        const key = 'toggle-' + i;
+        if (settings[key]) toggle.classList.add('on');
+        else toggle.classList.remove('on');
+      });
+    }
+    
+    function saveSettings() {
+      const settings = {
+        hourlyRate: document.getElementById('labor-rate')?.value || '$15',
+        defaultMargin: document.querySelector('.slider-input')?.value || '45'
+      };
+      
+      document.querySelectorAll('.settings-section .toggle').forEach((toggle, i) => {
+        settings['toggle-' + i] = toggle.classList.contains('on');
+      });
+      
+      localStorage.setItem('craftcalc-settings', JSON.stringify(settings));
+    }
+    
+    // Save settings when toggles change
+    document.querySelectorAll('.settings-section .toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        setTimeout(saveSettings, 100);
+      });
+    });
+    
+    // Load settings on start
+    loadSettings();
+    
+    // ========================================
+    // USE MATERIAL COST IN PRICING
+    // ========================================
+    
+    document.querySelector('[data-tab="pricing"]')?.addEventListener('click', function() {
+      if (window.calculatedMaterialCost > 0) {
+        const matInput = document.getElementById('materials-cost');
+        if (matInput && confirm('Use calculated material cost ($' + window.calculatedMaterialCost.toFixed(2) + ') from Materials tab?')) {
+          matInput.value = '$' + window.calculatedMaterialCost.toFixed(2);
+          updatePricing(parseInt(document.querySelector('.slider-input').value));
+        }
+      }
+    });
+    
   </script>
 </body>
 </html>
