@@ -64,6 +64,9 @@ export function Footer() {
             <Link href="/terms" className="hover:text-pink-500">Terms of Service</Link>
           </p>
           <p className="mt-2">Made with ❤️ for the crafting community</p>
+          <p className="mt-2">
+            <a href="/craftcalc-wireframes.html" className="text-pink-500 hover:text-pink-600">📱 CraftCalc Wireframes (temp)</a>
+          </p>
         </div>
       </div>
     </footer>
