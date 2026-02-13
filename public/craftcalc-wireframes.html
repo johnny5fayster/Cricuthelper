@@ -184,6 +184,8 @@
       transition: right 0.3s ease;
       padding: 24px;
       box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
     
     .menu-overlay.open .slide-menu {
@@ -599,8 +601,8 @@
     .calc-value { font-size: 16px; font-weight: 600; color: var(--text); }
     
     .cost-input {
-      width: 80px;
-      padding: 10px 12px;
+      width: 90px;
+      padding: 10px 14px;
       border: 1.5px solid var(--border);
       border-radius: 10px;
       font-size: 16px;
@@ -619,9 +621,14 @@
     }
     
     .cost-input.small {
-      width: 50px;
-      padding: 8px 10px;
+      width: 55px;
+      padding: 8px 12px;
       text-align: center;
+    }
+    
+    .tier-price {
+      min-width: 75px;
+      text-align: right;
     }
     
     /* Slider */
@@ -647,21 +654,33 @@
     
     .slider-input {
       width: 100%;
-      height: 12px;
+      height: 14px;
       -webkit-appearance: none;
-      background: var(--border);
-      border-radius: 6px;
+      background: linear-gradient(to right, var(--gold) 45%, rgba(255,255,255,0.4) 45%);
+      border-radius: 7px;
       outline: none;
+      border: 2px solid rgba(255,255,255,0.5);
     }
     
     .slider-input::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 32px;
-      height: 32px;
-      background: var(--primary);
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(145deg, #FFFFFF, #F0F0F0);
       border-radius: 50%;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(157,181,160,0.4);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 0 0 3px var(--gold);
+      border: 2px solid var(--gold);
+    }
+    
+    .slider-input::-moz-range-thumb {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(145deg, #FFFFFF, #F0F0F0);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 0 0 3px var(--gold);
+      border: 2px solid var(--gold);
     }
     
     .slider-presets {
@@ -1259,7 +1278,7 @@
         
         <div class="result-material" id="heat-material-name">Standard HTV on Cotton</div>
         <div class="temp-display"><span id="heat-temp">305</span><span class="temp-unit">°F</span></div>
-        <div class="screen-toggle active" onclick="this.classList.toggle('active')">
+        <div class="screen-toggle active" id="screen-on-toggle" onclick="toggleScreenOn(this)">
           📱 Keep Screen On
         </div>
       </div>
@@ -1367,7 +1386,7 @@
       
       <!-- Materials by Color -->
       <div class="calc-section">
-        <div class="calc-title">Colors / Layers</div>
+        <div class="calc-title">Colors / Layers <span style="font-weight: 400; text-transform: none; font-size: 12px;">(cost per color)</span></div>
         <div id="color-list">
           <div class="color-row" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
             <span style="background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;">1</span>
@@ -1463,7 +1482,7 @@
         </div>
       </div>
       
-      <button class="save-btn">
+      <button class="save-btn" onclick="openSaveModal()">
         <span>💾</span> Save This Project
       </button>
       
@@ -1507,12 +1526,48 @@
           <div class="calc-title">Project Details</div>
           <div class="calc-row">
             <span class="calc-label">Project type</span>
-            <select class="cost-input" style="width: 140px; text-align: left;">
-              <option>T-Shirt</option>
-              <option>Tumbler</option>
-              <option>Tote Bag</option>
-              <option>Decal</option>
-              <option>Custom</option>
+            <select class="cost-input" id="project-type-select" style="width: 140px; text-align: left;">
+              <optgroup label="Apparel">
+                <option>T-Shirt</option>
+                <option>Hoodie</option>
+                <option>Tank Top</option>
+                <option>Onesie</option>
+                <option>Hat/Cap</option>
+                <option>Apron</option>
+              </optgroup>
+              <optgroup label="Drinkware">
+                <option>Tumbler</option>
+                <option>Mug</option>
+                <option>Wine Glass</option>
+                <option>Water Bottle</option>
+                <option>Coaster</option>
+              </optgroup>
+              <optgroup label="Bags & Accessories">
+                <option>Tote Bag</option>
+                <option>Makeup Bag</option>
+                <option>Backpack</option>
+                <option>Keychain</option>
+              </optgroup>
+              <optgroup label="Home & Decor">
+                <option>Wood Sign</option>
+                <option>Canvas</option>
+                <option>Pillow</option>
+                <option>Ornament</option>
+                <option>Picture Frame</option>
+                <option>Tile/Trivet</option>
+              </optgroup>
+              <optgroup label="Paper & Cards">
+                <option>Greeting Card</option>
+                <option>Invitation</option>
+                <option>Stickers</option>
+                <option>Gift Tag</option>
+              </optgroup>
+              <optgroup label="Other">
+                <option>Decal</option>
+                <option>Car Decal</option>
+                <option>Wall Decal</option>
+                <option>Custom</option>
+              </optgroup>
             </select>
           </div>
           <div class="calc-row">
@@ -1657,6 +1712,32 @@
       <div id="cut-detail-content"></div>
     </div>
     
+    <!-- Save Project Modal -->
+    <div class="tutorial-overlay" id="save-modal">
+      <div class="tutorial-card" style="text-align: left;">
+        <button class="tutorial-skip" onclick="closeSaveModal()">✕</button>
+        <h3 style="text-align: center;">💾 Save Project</h3>
+        <div style="margin: 20px 0;">
+          <label style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px;">Project Name</label>
+          <input type="text" id="project-name-input" placeholder="e.g., Custom Tumbler Order" style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 12px; font-size: 16px; outline: none;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'">
+        </div>
+        <div style="background: var(--bg); border-radius: 12px; padding: 14px; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px;">
+            <span>Total Cost:</span>
+            <span class="total-cost" style="font-weight: 700;">$35.08</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 14px;">
+            <span>Sell Price:</span>
+            <span id="modal-sell-price" style="font-weight: 700; color: var(--primary);">$56.36</span>
+          </div>
+        </div>
+        <button onclick="confirmSaveProject()" style="width: 100%; padding: 16px; background: linear-gradient(145deg, var(--primary), var(--primary-dark)); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer;">
+          Save Project
+        </button>
+        <p style="text-align: center; font-size: 13px; color: var(--text-light); margin-top: 12px;">Saved projects appear on your Home screen</p>
+      </div>
+    </div>
+    
     <!-- Tutorial Overlay -->
     <div class="tutorial-overlay" id="tutorial-overlay">
       <div class="tutorial-card">
@@ -1758,70 +1839,88 @@
       
       <div class="section-title">What's happening?</div>
       
-      <div class="calc-section" style="cursor: pointer;">
+      <div class="calc-section" style="cursor: pointer;" onclick="showTroubleshootDetail('not-cutting')">
         <div style="display: flex; gap: 14px; align-items: center;">
           <span style="font-size: 28px;">😫</span>
-          <div>
+          <div style="flex: 1;">
             <h4 style="font-weight: 700; margin-bottom: 4px;">Not cutting through</h4>
             <p style="color: var(--text-light); font-size: 14px;">Material isn't fully cut</p>
           </div>
+          <span style="font-size: 20px; color: var(--text-light);">›</span>
         </div>
       </div>
       
-      <div class="calc-section" style="cursor: pointer;">
+      <div class="calc-section" style="cursor: pointer;" onclick="showTroubleshootDetail('tearing')">
         <div style="display: flex; gap: 14px; align-items: center;">
           <span style="font-size: 28px;">😬</span>
-          <div>
+          <div style="flex: 1;">
             <h4 style="font-weight: 700; margin-bottom: 4px;">Tearing / ripping</h4>
             <p style="color: var(--text-light); font-size: 14px;">Material tears during cut</p>
           </div>
+          <span style="font-size: 20px; color: var(--text-light);">›</span>
         </div>
       </div>
       
-      <div class="calc-section" style="cursor: pointer;">
+      <div class="calc-section" style="cursor: pointer;" onclick="showTroubleshootDetail('alignment')">
         <div style="display: flex; gap: 14px; align-items: center;">
           <span style="font-size: 28px;">📐</span>
-          <div>
+          <div style="flex: 1;">
             <h4 style="font-weight: 700; margin-bottom: 4px;">Cuts not aligned</h4>
             <p style="color: var(--text-light); font-size: 14px;">Design is off-center or skewed</p>
           </div>
+          <span style="font-size: 20px; color: var(--text-light);">›</span>
         </div>
       </div>
       
-      <div class="calc-section" style="cursor: pointer;">
+      <div class="calc-section" style="cursor: pointer;" onclick="showTroubleshootDetail('connection')">
         <div style="display: flex; gap: 14px; align-items: center;">
           <span style="font-size: 28px;">🔌</span>
-          <div>
+          <div style="flex: 1;">
             <h4 style="font-weight: 700; margin-bottom: 4px;">Won't connect</h4>
             <p style="color: var(--text-light); font-size: 14px;">Bluetooth or USB issues</p>
           </div>
+          <span style="font-size: 20px; color: var(--text-light);">›</span>
         </div>
       </div>
       
-      <div class="calc-section" style="cursor: pointer;">
+      <div class="calc-section" style="cursor: pointer;" onclick="showTroubleshootDetail('print-cut')">
         <div style="display: flex; gap: 14px; align-items: center;">
           <span style="font-size: 28px;">🖨️</span>
-          <div>
+          <div style="flex: 1;">
             <h4 style="font-weight: 700; margin-bottom: 4px;">Print then Cut issues</h4>
             <p style="color: var(--text-light); font-size: 14px;">Sensor not reading</p>
           </div>
+          <span style="font-size: 20px; color: var(--text-light);">›</span>
         </div>
       </div>
       
-      <div class="calc-section" style="cursor: pointer;">
+      <div class="calc-section" style="cursor: pointer;" onclick="showTroubleshootDetail('error-codes')">
         <div style="display: flex; gap: 14px; align-items: center;">
           <span style="font-size: 28px;">⚠️</span>
-          <div>
+          <div style="flex: 1;">
             <h4 style="font-weight: 700; margin-bottom: 4px;">Error codes</h4>
             <p style="color: var(--text-light); font-size: 14px;">Machine showing an error</p>
           </div>
+          <span style="font-size: 20px; color: var(--text-light);">›</span>
         </div>
       </div>
       
       <div style="text-align: center; padding: 24px; color: var(--text-light); font-size: 14px;">
         <p>Can't find your issue?</p>
-        <button style="margin-top: 12px; padding: 12px 24px; background: var(--card); border: 2px solid var(--primary); border-radius: var(--radius); color: var(--primary); font-weight: 600; cursor: pointer;">Contact Support</button>
+        <button onclick="window.open('https://cricuthelper.com/troubleshoot', '_blank')" style="margin-top: 12px; padding: 12px 24px; background: var(--card); border: 2px solid var(--primary); border-radius: var(--radius); color: var(--primary); font-weight: 600; cursor: pointer;">View All Solutions</button>
       </div>
+    </div>
+    
+    <!-- Troubleshoot Detail Screen -->
+    <div class="screen" id="troubleshoot-detail">
+      <div class="header">
+        <div class="header-left">
+          <h1>Troubleshoot</h1>
+          <div class="header-subtitle" id="troubleshoot-detail-subtitle">Fix your issue 🔧</div>
+        </div>
+        <button class="hamburger-btn" onclick="openMenu()">☰</button>
+      </div>
+      <div id="troubleshoot-detail-content"></div>
     </div>
     
     <!-- Screen 4: Settings -->
@@ -1866,22 +1965,22 @@
       
       <div class="section-title">Pricing Defaults</div>
       <div class="settings-section">
-        <div class="settings-item">
+        <div class="settings-item" onclick="showSettingEditor('hourly-rate')" style="cursor: pointer;">
           <div class="settings-left">
             <span class="settings-icon">💵</span>
             <div class="settings-text">
               <h4>My Hourly Rate</h4>
-              <p>$15.00 / hour</p>
+              <p id="settings-hourly-rate">$15.00 / hour</p>
             </div>
           </div>
           <span class="chevron">›</span>
         </div>
-        <div class="settings-item">
+        <div class="settings-item" onclick="showSettingEditor('default-margin')" style="cursor: pointer;">
           <div class="settings-left">
             <span class="settings-icon">📊</span>
             <div class="settings-text">
               <h4>Default Margin</h4>
-              <p>45%</p>
+              <p id="settings-default-margin">45%</p>
             </div>
           </div>
           <span class="chevron">›</span>
@@ -1890,22 +1989,22 @@
       
       <div class="section-title">Units</div>
       <div class="settings-section">
-        <div class="settings-item">
+        <div class="settings-item" onclick="toggleTemperatureUnit()" style="cursor: pointer;">
           <div class="settings-left">
             <span class="settings-icon">🌡️</span>
             <div class="settings-text">
               <h4>Temperature</h4>
-              <p>Fahrenheit</p>
+              <p id="settings-temp-unit">Fahrenheit</p>
             </div>
           </div>
           <span class="chevron">›</span>
         </div>
-        <div class="settings-item">
+        <div class="settings-item" onclick="toggleMeasurementUnit()" style="cursor: pointer;">
           <div class="settings-left">
             <span class="settings-icon">📏</span>
             <div class="settings-text">
               <h4>Measurements</h4>
-              <p>Inches</p>
+              <p id="settings-measure-unit">Inches</p>
             </div>
           </div>
           <span class="chevron">›</span>
@@ -1914,22 +2013,22 @@
       
       <div class="section-title">My Equipment</div>
       <div class="settings-section">
-        <div class="settings-item">
+        <div class="settings-item" onclick="showSettingEditor('cricut-model')" style="cursor: pointer;">
           <div class="settings-left">
             <span class="settings-icon">✂️</span>
             <div class="settings-text">
               <h4>Cricut Model</h4>
-              <p>Maker 3</p>
+              <p id="settings-cricut-model">Maker 3</p>
             </div>
           </div>
           <span class="chevron">›</span>
         </div>
-        <div class="settings-item">
+        <div class="settings-item" onclick="showSettingEditor('heat-press')" style="cursor: pointer;">
           <div class="settings-left">
             <span class="settings-icon">🔥</span>
             <div class="settings-text">
               <h4>Heat Press</h4>
-              <p>EasyPress 2 (12×10)</p>
+              <p id="settings-heat-press">EasyPress 2 (12×10)</p>
             </div>
           </div>
           <span class="chevron">›</span>
@@ -1948,7 +2047,7 @@
           </div>
           <span class="chevron">›</span>
         </div>
-        <div class="settings-item">
+        <div class="settings-item" onclick="alert('Thanks for your support! ⭐')" style="cursor: pointer;">
           <div class="settings-left">
             <span class="settings-icon">⭐</span>
             <div class="settings-text">
@@ -1957,7 +2056,7 @@
           </div>
           <span class="chevron">›</span>
         </div>
-        <div class="settings-item">
+        <div class="settings-item" onclick="window.open('mailto:hello@cricuthelper.com?subject=CraftCalc%20Feedback', '_blank')" style="cursor: pointer;">
           <div class="settings-left">
             <span class="settings-icon">💬</span>
             <div class="settings-text">
@@ -1966,7 +2065,7 @@
           </div>
           <span class="chevron">›</span>
         </div>
-        <div class="settings-item">
+        <div class="settings-item" onclick="window.open('https://cricuthelper.com/privacy', '_blank')" style="cursor: pointer;">
           <div class="settings-left">
             <span class="settings-icon">🔒</span>
             <div class="settings-text">
@@ -1975,6 +2074,20 @@
           </div>
           <span class="chevron">›</span>
         </div>
+      </div>
+    </div>
+    
+    <!-- Settings Editor Modal -->
+    <div class="tutorial-overlay" id="settings-editor-modal">
+      <div class="tutorial-card" style="text-align: left;">
+        <button class="tutorial-skip" onclick="closeSettingsEditor()">✕</button>
+        <h3 id="settings-editor-title" style="text-align: center;">Edit Setting</h3>
+        <div style="margin: 20px 0;" id="settings-editor-content">
+          <!-- Dynamic content inserted here -->
+        </div>
+        <button onclick="saveSettingEdit()" style="width: 100%; padding: 16px; background: linear-gradient(145deg, var(--primary), var(--primary-dark)); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer;">
+          Save
+        </button>
       </div>
     </div>
     
@@ -2497,24 +2610,61 @@
     // SCREEN KEEP-ON TOGGLE
     // ========================================
     
-    document.querySelector('.screen-toggle')?.addEventListener('click', async function() {
-      this.classList.toggle('active');
-      if (this.classList.contains('active')) {
-        await requestWakeLock();
+    async function toggleScreenOn(el) {
+      el.classList.toggle('active');
+      if (el.classList.contains('active')) {
+        try {
+          await requestWakeLock();
+          el.innerHTML = '📱 Screen On ✓';
+        } catch(e) {
+          console.log('Wake lock not supported');
+        }
       } else {
         releaseWakeLock();
+        el.innerHTML = '📱 Keep Screen On';
+      }
+    }
+    
+    // Initialize screen toggle on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const screenToggle = document.getElementById('screen-on-toggle');
+      if (screenToggle && screenToggle.classList.contains('active')) {
+        requestWakeLock().catch(e => console.log('Initial wake lock failed'));
       }
     });
     
     // ========================================
-    // SAVE PROJECT
+    // SAVE PROJECT (with modal)
     // ========================================
     
-    function saveProject() {
+    function openSaveModal() {
+      // Update modal with current values
+      const sellPrice = document.querySelector('.calc-result-value')?.textContent || '$0';
+      document.getElementById('modal-sell-price').textContent = sellPrice;
+      
+      // Suggest a name based on project type
+      const projectType = document.getElementById('project-type-select')?.value || 'Custom';
+      const today = new Date().toLocaleDateString();
+      document.getElementById('project-name-input').value = projectType + ' - ' + today;
+      document.getElementById('project-name-input').select();
+      
+      // Show modal
+      document.getElementById('save-modal').classList.add('active');
+    }
+    
+    function closeSaveModal() {
+      document.getElementById('save-modal').classList.remove('active');
+    }
+    
+    function confirmSaveProject() {
+      const projectName = document.getElementById('project-name-input').value.trim() || 'Untitled Project';
+      
       const project = {
         id: Date.now(),
+        name: projectName,
         date: new Date().toLocaleDateString(),
-        materials: document.getElementById('materials-cost')?.value || '$0',
+        projectType: document.getElementById('project-type-select')?.value || 'Custom',
+        materialsTotal: document.getElementById('materials-total')?.textContent || '$0',
         laborHours: document.getElementById('labor-hours')?.value || '0',
         laborRate: document.getElementById('labor-rate')?.value || '$15',
         misc: document.getElementById('misc-cost')?.value || '$0',
@@ -2526,26 +2676,34 @@
       
       let projects = JSON.parse(localStorage.getItem('craftcalc-projects') || '[]');
       projects.unshift(project);
-      projects = projects.slice(0, 10); // Keep last 10
+      projects = projects.slice(0, 20); // Keep last 20
       localStorage.setItem('craftcalc-projects', JSON.stringify(projects));
       
-      // Visual feedback
-      const btn = document.querySelector('.save-btn');
-      const original = btn.innerHTML;
-      btn.innerHTML = '<span>✅</span> Saved!';
-      btn.style.background = 'var(--primary)';
-      btn.style.color = 'white';
-      btn.style.borderColor = 'var(--primary)';
+      // Close modal
+      closeSaveModal();
       
-      setTimeout(() => {
-        btn.innerHTML = original;
-        btn.style.background = '';
-        btn.style.color = '';
-        btn.style.borderColor = '';
-      }, 1500);
+      // Visual feedback
+      const btn = document.querySelector('#tab-pricing .save-btn');
+      if (btn) {
+        const original = btn.innerHTML;
+        btn.innerHTML = '<span>✅</span> Saved!';
+        btn.style.background = 'var(--primary)';
+        btn.style.color = 'white';
+        btn.style.borderColor = 'var(--primary)';
+        
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.style.borderColor = '';
+        }, 2000);
+      }
     }
     
-    document.querySelector('.save-btn')?.addEventListener('click', saveProject);
+    // Close modal on overlay click
+    document.getElementById('save-modal')?.addEventListener('click', function(e) {
+      if (e.target === this) closeSaveModal();
+    });
     
     // ========================================
     // SETTINGS PERSISTENCE
@@ -2737,6 +2895,293 @@
         }
       }
     });
+    
+    // ========================================
+    // TROUBLESHOOT DETAIL
+    // ========================================
+    
+    const troubleshootData = {
+      'not-cutting': {
+        title: 'Not Cutting Through',
+        emoji: '😫',
+        steps: [
+          { title: 'Check Your Blade', desc: 'Dull blades are the #1 cause. Replace if over 3 months old or 50+ projects.' },
+          { title: 'Increase Pressure', desc: 'Go up 2-4 pressure levels. For thick materials, try "More" or custom pressure.' },
+          { title: 'Slow Down Speed', desc: 'Reduce cut speed, especially for intricate designs or thick materials.' },
+          { title: 'Use Multi-Cut', desc: 'Set cuts to 2x or 3x for stubborn materials like glitter cardstock.' },
+          { title: 'Check Mat Grip', desc: 'If mat lost stickiness, material may shift. Re-grip or replace mat.' },
+          { title: 'Do a Test Cut', desc: 'Always test cut first! Settings vary by brand and even batch.' }
+        ]
+      },
+      'tearing': {
+        title: 'Material Tearing',
+        emoji: '😬',
+        steps: [
+          { title: 'Reduce Pressure', desc: 'Too much pressure causes tearing. Drop by 2-3 levels and test.' },
+          { title: 'Use Correct Blade', desc: 'Fine point for thin materials, deep point only for thick. Wrong blade = tears.' },
+          { title: 'Slow Down', desc: 'High speed + intricate cuts = tearing. Reduce speed for detailed designs.' },
+          { title: 'Check Material Orientation', desc: 'Some materials have grain direction. Rotate 90° and try again.' },
+          { title: 'Use Appropriate Mat', desc: 'LightGrip for paper/vinyl, StandardGrip for cardstock, StrongGrip for thick materials.' }
+        ]
+      },
+      'alignment': {
+        title: 'Cuts Not Aligned',
+        emoji: '📐',
+        steps: [
+          { title: 'Calibrate Your Machine', desc: 'Go to Settings > Calibration in Design Space. Run for both Print Then Cut and regular cuts.' },
+          { title: 'Clean the Rollers', desc: 'Debris on rollers causes slipping. Wipe with damp cloth.' },
+          { title: 'Secure Material Properly', desc: 'Use brayer to smooth material on mat. No bubbles or lifted corners.' },
+          { title: 'Check Star Wheels', desc: 'Make sure star wheels aren\'t in the cut path. Adjust position if needed.' },
+          { title: 'Level Surface', desc: 'Machine must be on flat, stable surface. Vibration causes misalignment.' }
+        ]
+      },
+      'connection': {
+        title: 'Connection Issues',
+        emoji: '🔌',
+        steps: [
+          { title: 'Restart Everything', desc: 'Turn off machine, close Design Space, restart both. Classic IT fix!' },
+          { title: 'Check Bluetooth Distance', desc: 'Stay within 10-15 feet. Walls and interference affect signal.' },
+          { title: 'Try USB Instead', desc: 'Use the included USB cable as backup. More stable than Bluetooth.' },
+          { title: 'Update Firmware', desc: 'Open Design Space, go to Settings > Update Firmware if available.' },
+          { title: 'Forget & Re-pair', desc: 'In phone/computer Bluetooth settings, forget Cricut, then re-pair from scratch.' },
+          { title: 'Check for Interference', desc: 'Other Bluetooth devices, microwaves, or USB 3.0 hubs can interfere.' }
+        ]
+      },
+      'print-cut': {
+        title: 'Print Then Cut Issues',
+        emoji: '🖨️',
+        steps: [
+          { title: 'Check Lighting', desc: 'Avoid direct sunlight or harsh overhead lights. Sensor needs even, diffused light.' },
+          { title: 'Use White Paper', desc: 'Print on plain white paper. Colored or textured paper confuses the sensor.' },
+          { title: 'Clean the Sensor', desc: 'Gently wipe the sensor lens with soft cloth. Dust blocks it.' },
+          { title: 'Calibrate Print Then Cut', desc: 'Settings > Calibration > Print Then Cut. Follow the on-screen steps.' },
+          { title: 'Resize Your Image', desc: 'Image must be under 9.25" x 6.75" for Maker/Explore. Check Design Space.' },
+          { title: 'Check Print Quality', desc: 'Faded or smeared registration marks won\'t scan. Reprint if needed.' }
+        ]
+      },
+      'error-codes': {
+        title: 'Error Codes',
+        emoji: '⚠️',
+        steps: [
+          { title: 'Error 1001-1010', desc: 'Communication errors. Restart machine, check cables, update Design Space.' },
+          { title: 'Error 2001-2010', desc: 'Firmware issues. Update firmware via Settings > Update Firmware.' },
+          { title: 'Error 3001-3010', desc: 'Carriage problems. Check for jams, debris, or stuck blades.' },
+          { title: 'Motor Stall', desc: 'Something blocking movement. Check for debris, loose material, or mat issues.' },
+          { title: 'Cut Sensor Error', desc: 'Clean sensor, check lighting, recalibrate.' },
+          { title: 'Still Stuck?', desc: 'Note the exact error code and contact Cricut Support with your machine serial number.' }
+        ]
+      }
+    };
+    
+    function showTroubleshootDetail(issueKey) {
+      const data = troubleshootData[issueKey];
+      if (!data) return;
+      
+      document.getElementById('troubleshoot-detail-subtitle').textContent = data.title + ' ' + data.emoji;
+      
+      let html = `
+        <div class="calc-section">
+          <button onclick="showScreen('troubleshoot')" style="background: var(--bg); border: 1px solid var(--border); padding: 10px 16px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; margin-bottom: 16px;">← Back</button>
+          <div style="text-align: center; margin-bottom: 20px;">
+            <span style="font-size: 48px;">${data.emoji}</span>
+            <h3 style="font-size: 22px; font-weight: 800; margin-top: 12px;">${data.title}</h3>
+          </div>
+        </div>
+        <div class="calc-section">
+          <div class="calc-title">Try These Fixes</div>
+      `;
+      
+      data.steps.forEach((step, i) => {
+        html += `
+          <div style="display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border);">
+            <span style="background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0;">${i + 1}</span>
+            <div>
+              <h4 style="font-weight: 700; margin-bottom: 4px;">${step.title}</h4>
+              <p style="color: var(--text-light); font-size: 14px; line-height: 1.5;">${step.desc}</p>
+            </div>
+          </div>
+        `;
+      });
+      
+      html += `
+        </div>
+        <div class="insight-card" style="margin-top: 16px;">
+          <div class="insight-icon">💡</div>
+          <div class="insight-text">
+            <h4>Still Having Issues?</h4>
+            <p>Visit <a href="https://cricuthelper.com/troubleshoot" target="_blank" style="color: var(--primary); font-weight: 600;">CricutHelper.com</a> for more detailed guides</p>
+          </div>
+        </div>
+      `;
+      
+      document.getElementById('troubleshoot-detail-content').innerHTML = html;
+      showScreen('troubleshoot-detail');
+    }
+    
+    // ========================================
+    // SETTINGS EDITOR
+    // ========================================
+    
+    let currentSettingKey = '';
+    
+    const settingsOptions = {
+      'hourly-rate': {
+        title: 'My Hourly Rate',
+        type: 'number',
+        placeholder: '15.00',
+        prefix: '$',
+        suffix: '/ hour'
+      },
+      'default-margin': {
+        title: 'Default Margin',
+        type: 'number',
+        placeholder: '45',
+        suffix: '%'
+      },
+      'cricut-model': {
+        title: 'Cricut Model',
+        type: 'select',
+        options: ['Joy', 'Joy Xtra', 'Explore Air', 'Explore Air 2', 'Explore Air 3', 'Explore 3', 'Maker', 'Maker 3', 'Venture', 'Other']
+      },
+      'heat-press': {
+        title: 'Heat Press',
+        type: 'select',
+        options: ['EasyPress Mini', 'EasyPress 2 (9×9)', 'EasyPress 2 (10×12)', 'EasyPress 2 (12×10)', 'EasyPress 3 (9×9)', 'EasyPress 3 (10×12)', 'EasyPress 3 (12×10)', 'Autopress', 'Hat Press', 'Mug Press', 'Other Heat Press', 'Iron (no press)']
+      }
+    };
+    
+    function showSettingEditor(settingKey) {
+      currentSettingKey = settingKey;
+      const config = settingsOptions[settingKey];
+      if (!config) return;
+      
+      document.getElementById('settings-editor-title').textContent = config.title;
+      
+      let html = '';
+      if (config.type === 'select') {
+        html = `<select id="setting-input" style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 12px; font-size: 16px; background: var(--bg);">`;
+        config.options.forEach(opt => {
+          const currentVal = document.getElementById('settings-' + settingKey.replace(/-/g, '-'))?.textContent || '';
+          const selected = currentVal.includes(opt) ? 'selected' : '';
+          html += `<option ${selected}>${opt}</option>`;
+        });
+        html += `</select>`;
+      } else {
+        const currentVal = parseFloat(document.getElementById('settings-' + settingKey)?.textContent?.replace(/[^0-9.]/g, '') || config.placeholder);
+        html = `
+          <div style="display: flex; align-items: center; gap: 8px;">
+            ${config.prefix ? `<span style="font-size: 18px; font-weight: 600;">${config.prefix}</span>` : ''}
+            <input type="number" id="setting-input" value="${currentVal}" placeholder="${config.placeholder}" style="flex: 1; padding: 14px 16px; border: 2px solid var(--border); border-radius: 12px; font-size: 18px; font-weight: 600; text-align: center;">
+            ${config.suffix ? `<span style="font-size: 16px; color: var(--text-light);">${config.suffix}</span>` : ''}
+          </div>
+        `;
+      }
+      
+      document.getElementById('settings-editor-content').innerHTML = html;
+      document.getElementById('settings-editor-modal').classList.add('active');
+      
+      // Focus input
+      setTimeout(() => document.getElementById('setting-input')?.focus(), 100);
+    }
+    
+    function closeSettingsEditor() {
+      document.getElementById('settings-editor-modal').classList.remove('active');
+    }
+    
+    function saveSettingEdit() {
+      const input = document.getElementById('setting-input');
+      const config = settingsOptions[currentSettingKey];
+      if (!input || !config) return;
+      
+      let displayValue = input.value;
+      if (config.type === 'number') {
+        displayValue = (config.prefix || '') + parseFloat(input.value).toFixed(config.suffix === '%' ? 0 : 2) + (config.suffix ? ' ' + config.suffix : '');
+      }
+      
+      const displayEl = document.getElementById('settings-' + currentSettingKey);
+      if (displayEl) displayEl.textContent = displayValue;
+      
+      // Save to localStorage
+      const settings = JSON.parse(localStorage.getItem('craftcalc-settings') || '{}');
+      settings[currentSettingKey] = input.value;
+      localStorage.setItem('craftcalc-settings', JSON.stringify(settings));
+      
+      // Update calculator if relevant
+      if (currentSettingKey === 'hourly-rate') {
+        const laborRate = document.getElementById('labor-rate');
+        if (laborRate) {
+          laborRate.value = '$' + parseFloat(input.value).toFixed(2);
+          updatePricing(parseInt(document.querySelector('.slider-input')?.value || 45));
+        }
+      } else if (currentSettingKey === 'default-margin') {
+        const slider = document.querySelector('.slider-input');
+        if (slider) {
+          slider.value = parseInt(input.value);
+          updatePricing(parseInt(input.value));
+        }
+      }
+      
+      closeSettingsEditor();
+    }
+    
+    function toggleTemperatureUnit() {
+      const el = document.getElementById('settings-temp-unit');
+      const current = el.textContent;
+      el.textContent = current === 'Fahrenheit' ? 'Celsius' : 'Fahrenheit';
+      localStorage.setItem('craftcalc-temp-unit', el.textContent);
+    }
+    
+    function toggleMeasurementUnit() {
+      const el = document.getElementById('settings-measure-unit');
+      const current = el.textContent;
+      el.textContent = current === 'Inches' ? 'Centimeters' : 'Inches';
+      localStorage.setItem('craftcalc-measure-unit', el.textContent);
+    }
+    
+    // Load settings on start
+    function loadAllSettings() {
+      const settings = JSON.parse(localStorage.getItem('craftcalc-settings') || '{}');
+      
+      if (settings['hourly-rate']) {
+        document.getElementById('settings-hourly-rate').textContent = '$' + parseFloat(settings['hourly-rate']).toFixed(2) + ' / hour';
+      }
+      if (settings['default-margin']) {
+        document.getElementById('settings-default-margin').textContent = settings['default-margin'] + '%';
+      }
+      if (settings['cricut-model']) {
+        document.getElementById('settings-cricut-model').textContent = settings['cricut-model'];
+      }
+      if (settings['heat-press']) {
+        document.getElementById('settings-heat-press').textContent = settings['heat-press'];
+      }
+      
+      const tempUnit = localStorage.getItem('craftcalc-temp-unit');
+      if (tempUnit) document.getElementById('settings-temp-unit').textContent = tempUnit;
+      
+      const measureUnit = localStorage.getItem('craftcalc-measure-unit');
+      if (measureUnit) document.getElementById('settings-measure-unit').textContent = measureUnit;
+    }
+    
+    // Initialize settings on load
+    document.addEventListener('DOMContentLoaded', loadAllSettings);
+    
+    // Close modals on overlay click
+    document.getElementById('settings-editor-modal')?.addEventListener('click', function(e) {
+      if (e.target === this) closeSettingsEditor();
+    });
+    
+    // ========================================
+    // TUTORIAL ON FIRST VISIT
+    // ========================================
+    
+    // Call tutorial after onboarding closes (if first visit)
+    const originalCloseOnboarding = closeOnboarding;
+    closeOnboarding = function() {
+      originalCloseOnboarding();
+      if (!localStorage.getItem('craftcalc-tutorial-seen')) {
+        setTimeout(startTutorial, 500);
+      }
+    };
     
   </script>
 </body>
