@@ -40,32 +40,32 @@ export function Navigation() {
   };
 
   return (
-    <nav className="bg-white shadow-sm border-b border-pink-100">
+    <nav className="bg-white shadow-sm border-b border-[#B8C9A9]">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl">✂️</span>
-            <span className="font-bold text-xl text-gray-800">
-              Cricut<span className="text-pink-500">Helper</span>
+            <span className="font-bold text-xl text-[#3D3D3D]">
+              Cricut<span className="text-[#9CAF88]">Helper</span>
             </span>
           </Link>
 
           {/* Desktop Nav - 6 items max */}
           <div className="hidden md:flex items-center gap-5">
-            <Link href="/guides" className="text-pink-600 hover:text-pink-700 transition-colors font-semibold">
+            <Link href="/guides" className="text-[#6B7F5E] hover:text-[#9CAF88] transition-colors font-semibold">
               📚 Guides
             </Link>
-            <Link href="/troubleshoot" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
+            <Link href="/troubleshoot" className="text-[#3D3D3D] hover:text-[#9CAF88] transition-colors font-medium">
               🔧 Troubleshoot
             </Link>
-            <Link href="/materials" className="text-gray-600 hover:text-pink-500 transition-colors font-medium">
+            <Link href="/materials" className="text-[#3D3D3D] hover:text-[#9CAF88] transition-colors font-medium">
               📋 Materials
             </Link>
-            <Link href="/profit-calculator" className="text-green-600 hover:text-green-700 transition-colors font-semibold">
+            <Link href="/profit-calculator" className="text-[#6B7F5E] hover:text-[#9CAF88] transition-colors font-semibold">
               💰 Profit Calc
             </Link>
-            <Link href="/shop" className="text-green-600 hover:text-green-700 transition-colors font-semibold">
+            <Link href="/shop" className="text-[#C9A962] hover:text-[#B89A52] transition-colors font-semibold">
               🛒 Shop
             </Link>
             
@@ -73,7 +73,7 @@ export function Navigation() {
             <div className="relative" ref={moreDropdownRef}>
               <button
                 onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
-                className="text-gray-600 hover:text-pink-500 transition-colors font-medium flex items-center gap-1"
+                className="text-[#3D3D3D] hover:text-[#9CAF88] transition-colors font-medium flex items-center gap-1"
               >
                 More
                 <svg 
@@ -87,31 +87,38 @@ export function Navigation() {
               </button>
               
               {moreDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-[#B8C9A9] py-2 z-50">
                   <Link 
                     href="/heat-press" 
-                    className="block px-4 py-2 text-gray-600 hover:bg-pink-50 hover:text-pink-600 transition-colors"
+                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5E6E6] hover:text-[#6B7F5E] transition-colors"
                     onClick={() => setMoreDropdownOpen(false)}
                   >
                     🔥 Heat Press
                   </Link>
                   <Link 
+                    href="/app" 
+                    className="block px-4 py-2 text-[#D4A5A5] hover:bg-[#F5E6E6] hover:text-[#C08B8B] transition-colors font-semibold"
+                    onClick={() => setMoreDropdownOpen(false)}
+                  >
+                    📱 CraftCalc App
+                  </Link>
+                  <Link 
                     href="/niches" 
-                    className="block px-4 py-2 text-gray-600 hover:bg-pink-50 hover:text-pink-600 transition-colors"
+                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5E6E6] hover:text-[#6B7F5E] transition-colors"
                     onClick={() => setMoreDropdownOpen(false)}
                   >
                     🎯 Niches
                   </Link>
                   <Link 
                     href="/creators" 
-                    className="block px-4 py-2 text-gray-600 hover:bg-pink-50 hover:text-pink-600 transition-colors"
+                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5E6E6] hover:text-[#6B7F5E] transition-colors"
                     onClick={() => setMoreDropdownOpen(false)}
                   >
                     ⭐ Creators
                   </Link>
                   <Link 
                     href="/guides/error-codes-reference" 
-                    className="block px-4 py-2 text-gray-600 hover:bg-pink-50 hover:text-pink-600 transition-colors"
+                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5E6E6] hover:text-[#6B7F5E] transition-colors"
                     onClick={() => setMoreDropdownOpen(false)}
                   >
                     ⚠️ Error Codes
@@ -122,7 +129,7 @@ export function Navigation() {
 
             <button 
               onClick={() => setSearchOpen(!searchOpen)}
-              className="text-gray-500 hover:text-pink-500 transition-colors p-1"
+              className="text-[#3D3D3D] hover:text-[#9CAF88] transition-colors p-1"
               aria-label="Search"
             >
               🔍
@@ -133,16 +140,16 @@ export function Navigation() {
           <div className="md:hidden flex items-center gap-2">
             <button 
               onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2 rounded-lg hover:bg-pink-50"
+              className="p-2 rounded-lg hover:bg-[#F5E6E6]"
               aria-label="Search"
             >
               🔍
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg hover:bg-pink-50"
+              className="p-2 rounded-lg hover:bg-[#F5E6E6]"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-[#3D3D3D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -155,7 +162,7 @@ export function Navigation() {
 
         {/* Search Bar */}
         {searchOpen && (
-          <div className="py-3 border-t border-pink-100">
+          <div className="py-3 border-t border-[#B8C9A9]">
             <form onSubmit={handleSearch} className="relative">
               <input
                 ref={searchInputRef}
@@ -163,12 +170,12 @@ export function Navigation() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search guides, problems, materials..."
-                className="w-full px-4 py-2 pl-10 rounded-lg border border-gray-200 focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+                className="w-full px-4 py-2 pl-10 rounded-lg border border-[#B8C9A9] focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
               />
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#9CAF88]">🔍</span>
               <button 
                 type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-pink-500 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-pink-600"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#9CAF88] text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-[#6B7F5E]"
               >
                 Search
               </button>
@@ -178,33 +185,36 @@ export function Navigation() {
 
         {/* Mobile Nav */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-pink-100">
+          <div className="md:hidden py-4 border-t border-[#B8C9A9]">
             <div className="flex flex-col gap-3">
-              <Link href="/guides" className="text-pink-600 hover:text-pink-700 py-2 font-semibold min-h-[44px] flex items-center">
+              <Link href="/guides" className="text-[#6B7F5E] hover:text-[#9CAF88] py-2 font-semibold min-h-[44px] flex items-center">
                 📚 Guides
               </Link>
-              <Link href="/troubleshoot" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
+              <Link href="/troubleshoot" className="text-[#3D3D3D] hover:text-[#9CAF88] py-2 font-medium min-h-[44px] flex items-center">
                 🔧 Troubleshoot
               </Link>
-              <Link href="/materials" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
+              <Link href="/materials" className="text-[#3D3D3D] hover:text-[#9CAF88] py-2 font-medium min-h-[44px] flex items-center">
                 📋 Materials
               </Link>
-              <Link href="/heat-press" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
+              <Link href="/heat-press" className="text-[#3D3D3D] hover:text-[#9CAF88] py-2 font-medium min-h-[44px] flex items-center">
                 🔥 Heat Press
               </Link>
-              <Link href="/profit-calculator" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
+              <Link href="/profit-calculator" className="text-[#3D3D3D] hover:text-[#9CAF88] py-2 font-medium min-h-[44px] flex items-center">
                 💰 Profit Calculator
               </Link>
-              <Link href="/niches" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
+              <Link href="/app" className="text-[#D4A5A5] hover:text-[#C08B8B] py-2 font-semibold min-h-[44px] flex items-center">
+                📱 CraftCalc App
+              </Link>
+              <Link href="/niches" className="text-[#3D3D3D] hover:text-[#9CAF88] py-2 font-medium min-h-[44px] flex items-center">
                 🎯 Craft Niches
               </Link>
-              <Link href="/creators" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
+              <Link href="/creators" className="text-[#3D3D3D] hover:text-[#9CAF88] py-2 font-medium min-h-[44px] flex items-center">
                 ⭐ Creators We Love
               </Link>
-              <Link href="/guides/error-codes-reference" className="text-gray-600 hover:text-pink-500 py-2 font-medium min-h-[44px] flex items-center">
+              <Link href="/guides/error-codes-reference" className="text-[#3D3D3D] hover:text-[#9CAF88] py-2 font-medium min-h-[44px] flex items-center">
                 ⚠️ Error Codes
               </Link>
-              <Link href="/shop" className="text-green-600 hover:text-green-700 py-2 font-semibold min-h-[44px] flex items-center">
+              <Link href="/shop" className="text-[#C9A962] hover:text-[#B89A52] py-2 font-semibold min-h-[44px] flex items-center">
                 🛒 Shop
               </Link>
             </div>

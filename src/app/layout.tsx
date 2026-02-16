@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -8,7 +8,17 @@ import { WebsiteSchema, OrganizationSchema } from "@/components/SchemaMarkup";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { Providers } from "@/components/Providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const cormorant = Cormorant_Garamond({ 
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cormorant",
+});
+
+const montserrat = Montserrat({ 
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -82,11 +92,11 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="CricutHelper" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="theme-color" content="#EC4899" />
+        <meta name="theme-color" content="#9CAF88" />
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
       </head>
-      <body className={`${inter.className} antialiased bg-gradient-to-b from-pink-50 to-white min-h-screen`}>
+      <body className={`${montserrat.variable} ${cormorant.variable} font-sans antialiased bg-gradient-to-b from-[#FAF8F5] to-white min-h-screen`}>
         <Providers>
           <WebsiteSchema />
           <OrganizationSchema />

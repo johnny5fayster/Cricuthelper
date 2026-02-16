@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": "post-001",
+      "image": "/Users/johnny/Documents/Johnny/projects/cricut-app/cricuthelper/content/instagram/ready/post-001-prepress.jpg",
+      "caption": "HTV not sticking? Try this 👆\n\nPre-pressing removes moisture that ruins adhesion.\n\n#cricut #cricuttips #htv #heatpress #craftlife #cricutmaker #cricutexplore #ironon #heattransfervinyl #cricutcrafts",
+      "scheduledFor": "2026-02-16T10:00:00-05:00",
+      "status": "pending"
+    },
+    {
+      "id": "post-002",
+      "image": "/Users/johnny/Documents/Johnny/projects/cricut-app/cricuthelper/content/instagram/ready/post-002-mirror.jpg",
+      "caption": "We've all done it 😅\n\nRemember: shiny/carrier side UP when pressing!\n\n#cricutmistakes #htv #ironon #cricutmaker #cricuttips #heatpress #cricutexplore #cricutcrafts #diytshirt #vinylcrafts",
+      "scheduledFor": "2026-02-18T10:00:00-05:00",
+      "status": "pending"
+    },
+    {
+      "id": "post-003",
+      "image": "/Users/johnny/Documents/Johnny/projects/cricut-app/cricuthelper/content/instagram/ready/post-003-blade.jpg",
+      "caption": "Cutting issues? Run through this checklist ✓\n\nComment which one fixed yours! 👇\n\n#cricuttroubleshoot #cricuthelp #cricutblade #cricutmaker #cricutexplore #cricuttips #cricutcrafts #cuttingmachine #diycraft",
+      "scheduledFor": "2026-02-20T10:00:00-05:00",
+      "status": "pending"
+    },
+    {
+      "id": "post-004",
+      "image": "/Users/johnny/Documents/Johnny/projects/cricut-app/cricuthelper/content/instagram/ready/post-004-temps.jpg",
+      "caption": "Save this for your next project! 📸\n\nFull heat guide at cricuthelper.com (link in bio)\n\n#heatpresssettings #htv #sublimation #cricuttips #heatpress #cricutmaker #infusibleink #heattransfer #cricutcrafts #craftcheatsheet",
+      "scheduledFor": "2026-02-22T10:00:00-05:00",
+      "status": "pending"
+    }
+  ],
+  "lastUpdated": "2026-02-15T11:20:00-05:00"
+}

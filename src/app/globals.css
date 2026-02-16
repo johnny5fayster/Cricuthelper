@@ -1,13 +1,35 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --sage: #9CAF88;
+  --sage-dark: #6B7F5E;
+  --sage-light: #B8C9A9;
+  --dusty-rose: #D4A5A5;
+  --dusty-rose-dark: #C08B8B;
+  --blush: #F5E6E6;
+  --gold: #C9A962;
+  --gold-light: #E5D4A1;
+  --cream: #FAF8F5;
+  --charcoal: #3D3D3D;
+  
+  --background: #FAF8F5;
+  --foreground: #3D3D3D;
 }
 
 body {
-  background: linear-gradient(to bottom, #fdf2f8, #ffffff);
+  background: linear-gradient(180deg, var(--cream) 0%, #FFFFFF 100%);
   min-height: 100vh;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  color: var(--charcoal);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  color: var(--sage-dark);
 }
 
 /* Custom scrollbar */
@@ -17,22 +39,22 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--cream);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ec4899;
+  background: var(--sage);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #db2777;
+  background: var(--sage-dark);
 }
 
 /* Focus styles */
 *:focus-visible {
-  outline: 2px solid #ec4899;
+  outline: 2px solid var(--sage);
   outline-offset: 2px;
 }
 
@@ -43,6 +65,108 @@ html {
 
 /* Selection color */
 ::selection {
-  background: #fbcfe8;
-  color: #831843;
+  background: var(--blush);
+  color: var(--sage-dark);
+}
+
+/* Brand utility classes */
+.text-sage { color: var(--sage); }
+.text-sage-dark { color: var(--sage-dark); }
+.text-dusty-rose { color: var(--dusty-rose); }
+.text-gold { color: var(--gold); }
+.text-charcoal { color: var(--charcoal); }
+
+.bg-sage { background-color: var(--sage); }
+.bg-sage-light { background-color: var(--sage-light); }
+.bg-dusty-rose { background-color: var(--dusty-rose); }
+.bg-blush { background-color: var(--blush); }
+.bg-cream { background-color: var(--cream); }
+.bg-gold { background-color: var(--gold); }
+
+.border-sage { border-color: var(--sage); }
+.border-dusty-rose { border-color: var(--dusty-rose); }
+.border-gold { border-color: var(--gold); }
+
+/* Hover states */
+.hover\:bg-sage:hover { background-color: var(--sage); }
+.hover\:bg-sage-dark:hover { background-color: var(--sage-dark); }
+.hover\:text-sage:hover { color: var(--sage); }
+.hover\:text-sage-dark:hover { color: var(--sage-dark); }
+
+/* Button styles */
+.btn-primary {
+  background: var(--sage);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(156, 175, 136, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--sage-dark);
+  box-shadow: 0 6px 20px rgba(156, 175, 136, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--sage-dark);
+  border: 2px solid var(--sage);
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--sage-light);
+  border-color: var(--sage-dark);
+}
+
+/* Card styles */
+.card {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid var(--sage-light);
+  transition: all 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 10px 40px rgba(156, 175, 136, 0.15);
+  border-color: var(--sage);
+}
+
+/* Gradient overlays */
+.gradient-sage {
+  background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+}
+
+.gradient-rose {
+  background: linear-gradient(135deg, var(--dusty-rose) 0%, var(--dusty-rose-dark) 100%);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Decorative elements */
+.decorative-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 2px;
 }

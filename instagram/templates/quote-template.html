@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quote Template</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    .container {
+      width: 1080px;
+      height: 1080px;
+      background: #F5E6E6;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px;
+      position: relative;
+    }
+    
+    /* Subtle decorative corners */
+    .corner {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border: 3px solid #D4A5A5;
+      opacity: 0.5;
+    }
+    
+    .corner-tl { top: 50px; left: 50px; border-right: none; border-bottom: none; }
+    .corner-tr { top: 50px; right: 50px; border-left: none; border-bottom: none; }
+    .corner-bl { bottom: 50px; left: 50px; border-right: none; border-top: none; }
+    .corner-br { bottom: 50px; right: 50px; border-left: none; border-top: none; }
+    
+    .quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-style: italic;
+      font-size: 52px;
+      color: #6B7F5E;
+      text-align: center;
+      line-height: 1.4;
+      max-width: 800px;
+      margin-bottom: 50px;
+    }
+    
+    .quote::before {
+      content: '"';
+      font-size: 120px;
+      color: #D4A5A5;
+      opacity: 0.4;
+      position: absolute;
+      top: 120px;
+      left: 100px;
+      font-style: normal;
+    }
+    
+    .emoji {
+      font-size: 64px;
+      margin-top: 20px;
+    }
+    
+    .watermark {
+      position: absolute;
+      bottom: 40px;
+      right: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #9CAF88;
+      opacity: 0.7;
+    }
+    
+    /* Gold sparkle accents */
+    .sparkle {
+      position: absolute;
+      font-size: 24px;
+      opacity: 0.6;
+    }
+    .sparkle-1 { top: 180px; right: 150px; }
+    .sparkle-2 { bottom: 200px; left: 120px; }
+    .sparkle-3 { top: 350px; left: 80px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+    
+    <span class="sparkle sparkle-1">✨</span>
+    <span class="sparkle sparkle-2">✨</span>
+    <span class="sparkle sparkle-3">✦</span>
+    
+    <p class="quote">
+      Crafting is cheaper than therapy...<br>
+      but don't check my vinyl stash.
+    </p>
+    
+    <div class="emoji">✂️</div>
+    
+    <div class="watermark">@cricuthelper</div>
+  </div>
+</body>
+</html>

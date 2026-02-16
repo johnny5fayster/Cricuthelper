@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Heat Settings Template</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    .container {
+      width: 1080px;
+      height: 1350px;
+      background: #9CAF88;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+      position: relative;
+    }
+    
+    .header {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: white;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    
+    .card {
+      background: #FAF8F5;
+      border-radius: 24px;
+      padding: 50px;
+      width: 100%;
+      max-width: 920px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .material-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 48px;
+      color: #6B7F5E;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .settings-row {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .setting-box {
+      background: #F5E6E6;
+      border-radius: 20px;
+      padding: 30px 50px;
+      text-align: center;
+      min-width: 180px;
+    }
+    
+    .setting-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 56px;
+      color: #6B7F5E;
+      line-height: 1;
+    }
+    
+    .setting-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #D4A5A5;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 8px;
+    }
+    
+    .details {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .detail-item {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      color: #3D3D3D;
+      margin: 12px 0;
+    }
+    
+    .detail-label {
+      font-weight: 700;
+      color: #6B7F5E;
+    }
+    
+    .divider {
+      width: 300px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #C9A962, transparent);
+      margin: 25px 0;
+    }
+    
+    .pro-tip {
+      background: rgba(201, 169, 98, 0.1);
+      border-radius: 16px;
+      padding: 25px 35px;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      max-width: 700px;
+    }
+    
+    .pro-tip-icon {
+      font-size: 28px;
+    }
+    
+    .pro-tip-content {
+      flex: 1;
+    }
+    
+    .pro-tip-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #C9A962;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+    
+    .pro-tip-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: #3D3D3D;
+      line-height: 1.5;
+    }
+    
+    .cta {
+      margin-top: auto;
+      padding-top: 40px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+    }
+    
+    .watermark {
+      position: absolute;
+      bottom: 25px;
+      right: 40px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: white;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">🔥 Heat Settings</div>
+    
+    <div class="card">
+      <h1 class="material-name">Regular HTV</h1>
+      
+      <div class="settings-row">
+        <div class="setting-box">
+          <div class="setting-value">305°</div>
+          <div class="setting-label">Temperature</div>
+        </div>
+        <div class="setting-box">
+          <div class="setting-value">15s</div>
+          <div class="setting-label">Time</div>
+        </div>
+      </div>
+      
+      <div class="details">
+        <div class="detail-item"><span class="detail-label">PRESSURE:</span> Medium-Firm</div>
+        <div class="detail-item"><span class="detail-label">PEEL:</span> Warm</div>
+      </div>
+      
+      <div class="divider"></div>
+      
+      <div class="pro-tip">
+        <span class="pro-tip-icon">💡</span>
+        <div class="pro-tip-content">
+          <div class="pro-tip-label">Pro Tip</div>
+          <div class="pro-tip-text">Let it cool 5 seconds before peeling for cleaner edges!</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cta">📌 SAVE THIS FOR LATER!</div>
+    
+    <div class="watermark">@cricuthelper</div>
+  </div>
+</body>
+</html>

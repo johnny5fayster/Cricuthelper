@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px;
+      height: 1080px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .card {
+      width: 1080px;
+      height: 1080px;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(145deg, #C9A962 0%, #B8983F 100%);
+      color: white;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      opacity: 0.9;
+    }
+    .tag {
+      background: rgba(255,255,255,0.25);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+    .title {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .table {
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .row {
+      display: flex;
+      padding: 20px 30px;
+      font-size: 26px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .row:last-child {
+      border-bottom: none;
+    }
+    .row-header {
+      background: rgba(0,0,0,0.15);
+      font-weight: 700;
+      font-size: 22px;
+    }
+    .col-material { flex: 2; }
+    .col-temp { flex: 1; text-align: center; font-weight: 600; }
+    .col-time { flex: 1; text-align: center; font-weight: 600; }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 22px;
+      opacity: 0.85;
+    }
+    .handle { font-weight: 600; }
+    .cta { font-style: italic; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="logo">CricutHelper</div>
+      <div class="tag">📋 Cheat Sheet</div>
+    </div>
+    <div class="content">
+      <div class="title">🔥 Heat Press Quick Ref</div>
+      <div class="table">
+        <div class="row row-header">
+          <div class="col-material">Material</div>
+          <div class="col-temp">Temp</div>
+          <div class="col-time">Time</div>
+        </div>
+        <div class="row">
+          <div class="col-material">Siser EasyWeed</div>
+          <div class="col-temp">305°F</div>
+          <div class="col-time">15s</div>
+        </div>
+        <div class="row">
+          <div class="col-material">Cricut Everyday</div>
+          <div class="col-temp">315°F</div>
+          <div class="col-time">30s</div>
+        </div>
+        <div class="row">
+          <div class="col-material">Glitter HTV</div>
+          <div class="col-temp">320°F</div>
+          <div class="col-time">20s</div>
+        </div>
+        <div class="row">
+          <div class="col-material">Infusible Ink</div>
+          <div class="col-temp">385°F</div>
+          <div class="col-time">40s</div>
+        </div>
+        <div class="row">
+          <div class="col-material">Sublimation</div>
+          <div class="col-temp">385°F</div>
+          <div class="col-time">60s</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="handle">@cricuthelper1</div>
+      <div class="cta">Screenshot this! 📸</div>
+    </div>
+  </div>
+</body>
+</html>
