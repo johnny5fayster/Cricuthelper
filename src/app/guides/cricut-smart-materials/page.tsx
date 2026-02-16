@@ -65,11 +65,11 @@ export default function CricutSmartMaterialsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
-      <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+      <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
         <article className="max-w-4xl mx-auto px-4">
           <header className="mb-8">
             <div className="flex items-center gap-2 mb-4">
-              <Link href="/guides" className="text-pink-600 hover:text-pink-700">← Back to Guides</Link>
+              <Link href="/guides" className="text-[#9CAF88] hover:text-[#6B7F5E]">← Back to Guides</Link>
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               Cricut Smart Materials: The Complete Guide
@@ -96,7 +96,7 @@ export default function CricutSmartMaterialsPage() {
           {/* TOC */}
           <nav className="bg-white rounded-xl shadow-lg p-6 mb-8">
             <h2 className="font-bold text-gray-900 mb-4">📋 In This Guide</h2>
-            <ul className="space-y-2 text-pink-600">
+            <ul className="space-y-2 text-[#9CAF88]">
               <li><a href="#what" className="hover:underline">→ What Are Smart Materials?</a></li>
               <li><a href="#types" className="hover:underline">→ All Smart Material Types</a></li>
               <li><a href="#how" className="hover:underline">→ How to Use Smart Materials</a></li>
@@ -141,7 +141,7 @@ export default function CricutSmartMaterialsPage() {
             
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
               <table className="w-full text-sm">
-                <thead className="bg-pink-100">
+                <thead className="bg-[#F5E6E6]">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold">Material</th>
                     <th className="px-4 py-3 text-left font-semibold">Width</th>
@@ -259,7 +259,7 @@ export default function CricutSmartMaterialsPage() {
             
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
               <table className="w-full text-sm">
-                <thead className="bg-pink-100">
+                <thead className="bg-[#F5E6E6]">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold">Material</th>
                     <th className="px-4 py-3 text-left font-semibold">Regular Price</th>
@@ -360,7 +360,7 @@ export default function CricutSmartMaterialsPage() {
           </section>
 
           {/* Summary */}
-          <section className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-8 mb-8">
+          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Bottom Line</h2>
             <div className="text-gray-700 space-y-2">
               <p>• Smart Materials = same quality material + stiffer backing for matless cutting</p>
@@ -390,7 +390,7 @@ export default function CricutSmartMaterialsPage() {
           <section className="bg-white rounded-2xl shadow-lg p-8 text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Having Trouble with Your Cricut?</h2>
             <p className="text-gray-600 mb-6">Our troubleshooting wizard helps solve problems fast.</p>
-            <Link href="/troubleshoot" className="inline-block bg-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors">
+            <Link href="/troubleshoot" className="inline-block bg-[#9CAF88] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#6B7F5E] transition-colors">
               Start Troubleshooting →
             </Link>
           </section>

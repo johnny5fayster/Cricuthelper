@@ -67,11 +67,11 @@ export default function CricutBladeGuidePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
-      <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+      <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
         <article className="max-w-4xl mx-auto px-4">
           <header className="mb-8">
             <div className="flex items-center gap-2 mb-4">
-              <Link href="/guides" className="text-pink-600 hover:text-pink-700">
+              <Link href="/guides" className="text-[#9CAF88] hover:text-[#6B7F5E]">
                 ← Back to Guides
               </Link>
             </div>
@@ -101,7 +101,7 @@ export default function CricutBladeGuidePage() {
           {/* Table of Contents */}
           <nav className="bg-white rounded-xl shadow-lg p-6 mb-8">
             <h2 className="font-bold text-gray-900 mb-4">📋 What's in This Guide</h2>
-            <ul className="space-y-2 text-pink-600">
+            <ul className="space-y-2 text-[#9CAF88]">
               <li><a href="#overview" className="hover:underline">→ Blade Overview Chart</a></li>
               <li><a href="#fine-point" className="hover:underline">→ Fine Point Blade (The Essential)</a></li>
               <li><a href="#deep-point" className="hover:underline">→ Deep Point Blade (Thick Materials)</a></li>
@@ -123,7 +123,7 @@ export default function CricutBladeGuidePage() {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="bg-pink-100">
+                  <thead className="bg-[#F5E6E6]">
                     <tr>
                       <th className="px-4 py-3 text-left font-semibold">Blade</th>
                       <th className="px-4 py-3 text-left font-semibold">Best For</th>
@@ -277,8 +277,8 @@ export default function CricutBladeGuidePage() {
               Rotary Blade: The Fabric Game-Changer
             </h2>
             <div className="prose max-w-none text-gray-700 space-y-4">
-              <div className="bg-pink-50 border border-pink-200 rounded-xl p-6 mb-4">
-                <p className="text-pink-700 font-medium">
+              <div className="bg-[#F5FAF3] border border-[#B8C9A9] rounded-xl p-6 mb-4">
+                <p className="text-[#6B7F5E] font-medium">
                   🎯 <strong>Maker Only:</strong> The Rotary blade requires the Maker's Adaptive Tool 
                   System. It won't work on Explore machines.
                 </p>
@@ -329,8 +329,8 @@ export default function CricutBladeGuidePage() {
               Knife Blade: Heavy Duty Cutting
             </h2>
             <div className="prose max-w-none text-gray-700 space-y-4">
-              <div className="bg-pink-50 border border-pink-200 rounded-xl p-6 mb-4">
-                <p className="text-pink-700 font-medium">
+              <div className="bg-[#F5FAF3] border border-[#B8C9A9] rounded-xl p-6 mb-4">
+                <p className="text-[#6B7F5E] font-medium">
                   🎯 <strong>Maker Only:</strong> The Knife blade uses the Adaptive Tool System and 
                   only works on Maker machines.
                 </p>
@@ -456,7 +456,7 @@ export default function CricutBladeGuidePage() {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="bg-pink-100">
+                  <thead className="bg-[#F5E6E6]">
                     <tr>
                       <th className="px-4 py-3 text-left font-semibold">Material</th>
                       <th className="px-4 py-3 text-left font-semibold">Blade</th>
@@ -641,7 +641,7 @@ export default function CricutBladeGuidePage() {
           </section>
 
           {/* Summary */}
-          <section className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-8 mb-8">
+          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Bottom Line
             </h2>
@@ -706,7 +706,7 @@ export default function CricutBladeGuidePage() {
             </p>
             <Link
               href="/troubleshoot"
-              className="inline-block bg-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
+              className="inline-block bg-[#9CAF88] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#6B7F5E] transition-colors"
             >
               Start Troubleshooting →
             </Link>

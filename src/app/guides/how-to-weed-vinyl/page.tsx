@@ -111,14 +111,14 @@ export default function WeedingVinylGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Breadcrumb */}
           <nav className="text-sm mb-6">
             <ol className="flex items-center space-x-2 text-gray-500">
-              <li><Link href="/" className="hover:text-pink-600">Home</Link></li>
+              <li><Link href="/" className="hover:text-[#9CAF88]">Home</Link></li>
               <li>/</li>
-              <li><Link href="/guides" className="hover:text-pink-600">Guides</Link></li>
+              <li><Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link></li>
               <li>/</li>
               <li className="text-gray-900">How to Weed Vinyl</li>
             </ol>
@@ -142,7 +142,7 @@ export default function WeedingVinylGuide() {
           </header>
 
           {/* Quick Tips Box */}
-          <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-6 mb-8 border-l-4 border-purple-500">
+          <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] rounded-xl p-6 mb-8 border-l-4 border-purple-500">
             <h2 className="font-bold text-lg text-gray-900 mb-3">⚡ Quick Weeding Wins</h2>
             <ul className="space-y-2 text-gray-700">
               <li className="flex items-start gap-2">
@@ -164,11 +164,11 @@ export default function WeedingVinylGuide() {
           <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
             <h2 className="font-bold text-lg mb-4">📋 In This Guide</h2>
             <ul className="space-y-2 text-gray-700">
-              <li><a href="#basics" className="text-pink-600 hover:underline">→ Weeding basics (if you're new)</a></li>
-              <li><a href="#tools" className="text-pink-600 hover:underline">→ Essential tools</a></li>
-              <li><a href="#techniques" className="text-pink-600 hover:underline">→ 12 pro techniques</a></li>
-              <li><a href="#reverse-weeding" className="text-pink-600 hover:underline">→ Reverse weeding tutorial</a></li>
-              <li><a href="#troubleshooting" className="text-pink-600 hover:underline">→ Troubleshooting common problems</a></li>
+              <li><a href="#basics" className="text-[#9CAF88] hover:underline">→ Weeding basics (if you're new)</a></li>
+              <li><a href="#tools" className="text-[#9CAF88] hover:underline">→ Essential tools</a></li>
+              <li><a href="#techniques" className="text-[#9CAF88] hover:underline">→ 12 pro techniques</a></li>
+              <li><a href="#reverse-weeding" className="text-[#9CAF88] hover:underline">→ Reverse weeding tutorial</a></li>
+              <li><a href="#troubleshooting" className="text-[#9CAF88] hover:underline">→ Troubleshooting common problems</a></li>
             </ul>
           </div>
 
@@ -351,7 +351,7 @@ export default function WeedingVinylGuide() {
                 that would normally be a nightmare to weed. Here's exactly how to do it:
               </p>
 
-              <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 my-6">
+              <div className="bg-gradient-to-r from-purple-50 to-[#FAF8F5] rounded-xl p-6 my-6">
                 <h3 className="font-bold text-xl text-gray-900 mb-4">Step-by-Step Reverse Weeding</h3>
                 
                 <ol className="list-decimal list-inside space-y-4 text-gray-700">
@@ -552,28 +552,28 @@ export default function WeedingVinylGuide() {
             <div className="grid md:grid-cols-2 gap-4">
               <Link 
                 href="/guides/cricut-not-cutting-vinyl"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Cricut Not Cutting Vinyl Properly</h3>
                 <p className="text-gray-600 text-sm mt-1">Fix cutting issues before they become weeding nightmares.</p>
               </Link>
               <Link 
                 href="/guides/htv-peeling-after-washing"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">HTV Peeling After Washing</h3>
                 <p className="text-gray-600 text-sm mt-1">Make sure your weeded HTV stays on the shirt.</p>
               </Link>
               <Link 
                 href="/guides/cricut-mat-not-sticky"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Mat Not Sticky?</h3>
                 <p className="text-gray-600 text-sm mt-1">A slipping mat makes weeding harder. Fix it.</p>
               </Link>
               <Link 
                 href="/materials"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Material Settings Database</h3>
                 <p className="text-gray-600 text-sm mt-1">Get the right cut settings for cleaner weeding.</p>
@@ -582,7 +582,7 @@ export default function WeedingVinylGuide() {
           </section>
 
           {/* CTA */}
-          <section className="mt-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-8 text-center text-white">
+          <section className="mt-12 bg-gradient-to-r from-purple-500 to-[#6B7F5E] rounded-xl p-8 text-center text-white">
             <h2 className="text-2xl font-bold mb-3">Still Having Trouble?</h2>
             <p className="text-purple-100 mb-6">
               If weeding is a nightmare, the problem might be with your cut. Our troubleshooting 

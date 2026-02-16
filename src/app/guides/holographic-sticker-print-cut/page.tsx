@@ -60,7 +60,7 @@ const howToSteps = [
 
 export default function HolographicStickerPrintCutPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
       <FAQSchema faqs={faqData} />
       <HowToSchema 
         name="How to Print Then Cut on Holographic Sticker Paper"
@@ -72,9 +72,9 @@ export default function HolographicStickerPrintCutPage() {
       <article className="max-w-4xl mx-auto px-4 py-12">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6">
-          <Link href="/" className="hover:text-pink-500">Home</Link>
+          <Link href="/" className="hover:text-[#9CAF88]">Home</Link>
           <span className="mx-2">→</span>
-          <Link href="/guides" className="hover:text-pink-500">Guides</Link>
+          <Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link>
           <span className="mx-2">→</span>
           <span className="text-gray-700">Holographic Sticker Print Then Cut</span>
         </nav>
@@ -131,14 +131,14 @@ export default function HolographicStickerPrintCutPage() {
         <div className="bg-white rounded-xl border border-gray-200 p-6 mb-10">
           <h2 className="text-lg font-bold text-gray-900 mb-3">📋 What We'll Cover</h2>
           <ul className="space-y-1 text-gray-600">
-            <li><a href="#why-fails" className="hover:text-pink-500">→ Why the Sensor Fails on Holographic Paper (The Science)</a></li>
-            <li><a href="#method-comparison" className="hover:text-pink-500">→ Which Method Should You Use?</a></li>
-            <li><a href="#method-1" className="hover:text-pink-500">→ Method 1: Laminate-First (Matte Over Holographic)</a></li>
-            <li><a href="#method-2" className="hover:text-pink-500">→ Method 2: Print-Then-Overlay (Most Popular)</a></li>
-            <li><a href="#settings" className="hover:text-pink-500">→ Cricut Settings for Laminated Sticker Paper</a></li>
-            <li><a href="#materials" className="hover:text-pink-500">→ Recommended Materials</a></li>
-            <li><a href="#troubleshooting" className="hover:text-pink-500">→ Troubleshooting Common Problems</a></li>
-            <li><a href="#faqs" className="hover:text-pink-500">→ FAQs</a></li>
+            <li><a href="#why-fails" className="hover:text-[#9CAF88]">→ Why the Sensor Fails on Holographic Paper (The Science)</a></li>
+            <li><a href="#method-comparison" className="hover:text-[#9CAF88]">→ Which Method Should You Use?</a></li>
+            <li><a href="#method-1" className="hover:text-[#9CAF88]">→ Method 1: Laminate-First (Matte Over Holographic)</a></li>
+            <li><a href="#method-2" className="hover:text-[#9CAF88]">→ Method 2: Print-Then-Overlay (Most Popular)</a></li>
+            <li><a href="#settings" className="hover:text-[#9CAF88]">→ Cricut Settings for Laminated Sticker Paper</a></li>
+            <li><a href="#materials" className="hover:text-[#9CAF88]">→ Recommended Materials</a></li>
+            <li><a href="#troubleshooting" className="hover:text-[#9CAF88]">→ Troubleshooting Common Problems</a></li>
+            <li><a href="#faqs" className="hover:text-[#9CAF88]">→ FAQs</a></li>
           </ul>
         </div>
 
@@ -226,11 +226,11 @@ export default function HolographicStickerPrintCutPage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-pink-300">
+              <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-[#9CAF88]">
                 <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                  <span className="bg-pink-100 text-pink-800 px-2 py-1 rounded text-sm">Method 2</span>
+                  <span className="bg-[#F5E6E6] text-[#6B7F5E] px-2 py-1 rounded text-sm">Method 2</span>
                   Print Then Overlay
-                  <span className="text-xs text-pink-500 ml-auto">⭐ RECOMMENDED</span>
+                  <span className="text-xs text-[#9CAF88] ml-auto">⭐ RECOMMENDED</span>
                 </h3>
                 <p className="text-gray-600 mb-4 text-sm">
                   Print on matte paper, apply holographic overlay, then cut
@@ -555,7 +555,7 @@ export default function HolographicStickerPrintCutPage() {
                   <li>• <strong>Bubbles in overlay:</strong> Air bubbles scatter light. Remove overlay, reapply more carefully.</li>
                   <li>• <strong>Overlay doesn't cover marks:</strong> Laminate MUST cover the entire registration box.</li>
                   <li>• <strong>Lighting issue:</strong> Even with overlay, direct sunlight can cause problems. Move machine.</li>
-                  <li>• <strong>Try standard troubleshooting:</strong> <Link href="/guides/print-then-cut-not-lining-up" className="text-pink-500 hover:underline">See our Print Then Cut alignment guide</Link></li>
+                  <li>• <strong>Try standard troubleshooting:</strong> <Link href="/guides/print-then-cut-not-lining-up" className="text-[#9CAF88] hover:underline">See our Print Then Cut alignment guide</Link></li>
                 </ul>
               </div>
 
@@ -625,7 +625,7 @@ export default function HolographicStickerPrintCutPage() {
           {/* Quick Summary */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Quick Summary</h2>
-            <div className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-xl p-6">
+            <div className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-xl p-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="font-bold text-gray-900 mb-3">The Problem:</h3>
@@ -642,7 +642,7 @@ export default function HolographicStickerPrintCutPage() {
                   </ul>
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-pink-200">
+              <div className="mt-4 pt-4 border-t border-[#B8C9A9]">
                 <h3 className="font-bold text-gray-900 mb-2">Key Settings:</h3>
                 <p className="text-gray-700 text-sm">
                   Material: Printable Sticker Paper | Pressure: More | Mat: LightGrip | Blade: Fine Point
@@ -657,19 +657,19 @@ export default function HolographicStickerPrintCutPage() {
         <section className="mt-12 pt-8 border-t border-gray-200">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Guides</h2>
           <div className="grid md:grid-cols-2 gap-4">
-            <Link href="/guides/how-to-make-stickers-cricut" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all">
+            <Link href="/guides/how-to-make-stickers-cricut" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all">
               <h3 className="font-semibold text-gray-900 mb-1">How to Make Stickers with Cricut</h3>
               <p className="text-sm text-gray-600">Complete beginner guide to Print Then Cut stickers</p>
             </Link>
-            <Link href="/guides/print-then-cut-not-lining-up" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all">
+            <Link href="/guides/print-then-cut-not-lining-up" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all">
               <h3 className="font-semibold text-gray-900 mb-1">Print Then Cut Not Lining Up?</h3>
               <p className="text-sm text-gray-600">9 proven fixes for alignment issues</p>
             </Link>
-            <Link href="/guides/how-to-calibrate-cricut" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all">
+            <Link href="/guides/how-to-calibrate-cricut" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all">
               <h3 className="font-semibold text-gray-900 mb-1">How to Calibrate Your Cricut</h3>
               <p className="text-sm text-gray-600">Step-by-step calibration guide for all machines</p>
             </Link>
-            <Link href="/guides/cricut-blade-guide" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all">
+            <Link href="/guides/cricut-blade-guide" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all">
               <h3 className="font-semibold text-gray-900 mb-1">Cricut Blade Guide</h3>
               <p className="text-sm text-gray-600">Which blade for every material</p>
             </Link>
@@ -677,14 +677,14 @@ export default function HolographicStickerPrintCutPage() {
         </section>
 
         {/* CTA */}
-        <section className="mt-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-8 text-white text-center">
+        <section className="mt-12 bg-gradient-to-r from-[#9CAF88] to-purple-500 rounded-2xl p-8 text-white text-center">
           <h2 className="text-2xl font-bold mb-3">Still Having Trouble?</h2>
           <p className="mb-4 opacity-90">
             Our troubleshooting wizard can help diagnose your specific Print Then Cut issue.
           </p>
           <Link 
             href="/troubleshoot" 
-            className="inline-block bg-white text-pink-500 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-[#9CAF88] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors"
           >
             Start Troubleshooting →
           </Link>

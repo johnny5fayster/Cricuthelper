@@ -201,7 +201,7 @@ const upcomingGuides = [
 
 export default function GuidesPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -225,7 +225,7 @@ export default function GuidesPage() {
               >
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-semibold bg-pink-100 text-pink-700 px-2 py-1 rounded-full">
+                    <span className="text-xs font-semibold bg-[#F5E6E6] text-[#6B7F5E] px-2 py-1 rounded-full">
                       {guide.category}
                     </span>
                     <span className="text-xs text-gray-500">{guide.readTime} read</span>
@@ -252,7 +252,7 @@ export default function GuidesPage() {
           <ul className="space-y-3">
             {upcomingGuides.map((guide, index) => (
               <li key={index} className="flex items-center gap-3 text-gray-700">
-                <span className="text-pink-400">📝</span>
+                <span className="text-[#C9A962]">📝</span>
                 {guide}
               </li>
             ))}
@@ -260,7 +260,7 @@ export default function GuidesPage() {
         </section>
 
         {/* CTA */}
-        <section className="mt-12 bg-pink-100 rounded-2xl p-8 text-center">
+        <section className="mt-12 bg-[#F5E6E6] rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Need Help Right Now?
           </h2>
@@ -269,7 +269,7 @@ export default function GuidesPage() {
           </p>
           <Link
             href="/troubleshoot"
-            className="inline-block bg-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
+            className="inline-block bg-[#9CAF88] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#6B7F5E] transition-colors"
           >
             Start Troubleshooting →
           </Link>

@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 
 export default function TermsOfServicePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
       <article className="max-w-3xl mx-auto px-4">
         <header className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Terms of Service</h1>
           <p className="text-gray-600">Last updated: February 8, 2026</p>
         </header>
 
-        <div className="prose prose-pink max-w-none">
+        <div className="prose prose-slate max-w-none">
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Agreement to Terms</h2>
             <p className="text-gray-700">
@@ -132,7 +132,7 @@ export default function TermsOfServicePage() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-200">
-          <Link href="/" className="text-pink-600 hover:text-pink-700">
+          <Link href="/" className="text-[#9CAF88] hover:text-[#6B7F5E]">
             ← Back to CricutHelper
           </Link>
         </div>

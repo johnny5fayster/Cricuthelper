@@ -49,11 +49,11 @@ export function EmailCapture({
 
   if (variant === "banner") {
     return (
-      <div className="bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl p-6 text-white">
+      <div className="bg-gradient-to-r from-[#9CAF88] to-purple-500 rounded-xl p-6 text-white">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
             <h3 className="font-bold text-lg">{title}</h3>
-            <p className="text-pink-100 text-sm">{description}</p>
+            <p className="text-white/80 text-sm">{description}</p>
           </div>
           <form onSubmit={handleSubmit} className="flex gap-2 w-full md:w-auto">
             <input
@@ -67,7 +67,7 @@ export function EmailCapture({
             <button
               type="submit"
               disabled={status === "loading"}
-              className="bg-white text-pink-600 px-6 py-2 rounded-lg font-semibold hover:bg-pink-50 transition-colors disabled:opacity-50"
+              className="bg-white text-[#9CAF88] px-6 py-2 rounded-lg font-semibold hover:bg-[#F5FAF3] transition-colors disabled:opacity-50"
             >
               {status === "loading" ? "..." : "Subscribe"}
             </button>
@@ -79,7 +79,7 @@ export function EmailCapture({
 
   // Inline variant (default)
   return (
-    <div className="bg-pink-50 border border-pink-200 rounded-xl p-6">
+    <div className="bg-[#F5FAF3] border border-[#B8C9A9] rounded-xl p-6">
       <h3 className="font-bold text-gray-800 text-lg mb-1">{title}</h3>
       <p className="text-gray-600 text-sm mb-4">{description}</p>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
@@ -89,12 +89,12 @@ export function EmailCapture({
           onChange={(e) => setEmail(e.target.value)}
           placeholder="your@email.com"
           required
-          className="flex-1 px-4 py-2 rounded-lg border border-pink-200 focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+          className="flex-1 px-4 py-2 rounded-lg border border-[#B8C9A9] focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="bg-pink-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-pink-600 transition-colors disabled:opacity-50"
+          className="bg-[#9CAF88] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#6B7F5E] transition-colors disabled:opacity-50"
         >
           {status === "loading" ? "Subscribing..." : "Get Free Tips"}
         </button>

@@ -48,7 +48,7 @@ const howToSteps = [
 
 export default function CricutNotCuttingVinylPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
       <FAQSchema faqs={faqData} />
       <HowToSchema 
         name="How to Fix Cricut Not Cutting Through Vinyl"
@@ -60,9 +60,9 @@ export default function CricutNotCuttingVinylPage() {
       <article className="max-w-4xl mx-auto px-4 py-12">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6">
-          <Link href="/" className="hover:text-pink-500">Home</Link>
+          <Link href="/" className="hover:text-[#9CAF88]">Home</Link>
           <span className="mx-2">→</span>
-          <Link href="/guides" className="hover:text-pink-500">Guides</Link>
+          <Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link>
           <span className="mx-2">→</span>
           <span className="text-gray-700">Cricut Not Cutting Vinyl</span>
         </nav>
@@ -86,26 +86,26 @@ export default function CricutNotCuttingVinylPage() {
         </header>
 
         {/* Quick Fixes Box */}
-        <div className="bg-pink-100 rounded-2xl p-6 mb-10">
+        <div className="bg-[#F5E6E6] rounded-2xl p-6 mb-10">
           <h2 className="text-xl font-bold text-gray-900 mb-3">⚡ Try These First (30 Second Fixes)</h2>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">1.</span>
+              <span className="text-[#9CAF88] font-bold">1.</span>
               <span><strong>Press the C button again</strong> — don't eject! Running a second pass often works.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">2.</span>
+              <span className="text-[#9CAF88] font-bold">2.</span>
               <span><strong>Check blade seating</strong> — push the housing firmly until it clicks.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">3.</span>
+              <span className="text-[#9CAF88] font-bold">3.</span>
               <span><strong>Verify material selection</strong> — "Premium Vinyl" and "Vinyl" have different settings.</span>
             </li>
           </ul>
         </div>
 
         {/* Main Content */}
-        <div className="prose prose-lg prose-pink max-w-none">
+        <div className="prose prose-lg prose-slate max-w-none">
           
           <h2 id="why-not-cutting">Why Your Cricut Isn't Cutting Through Vinyl</h2>
           <p>
@@ -321,14 +321,14 @@ export default function CricutNotCuttingVinylPage() {
             <li><strong>Contact Cricut Support</strong> — If nothing works, there may be a hardware issue. Check if your machine is under warranty.</li>
           </ul>
 
-          <div className="bg-pink-50 rounded-2xl p-6 my-8">
+          <div className="bg-[#F5FAF3] rounded-2xl p-6 my-8">
             <h3 className="text-xl font-bold text-gray-900 mb-3">Need More Help?</h3>
             <p className="text-gray-700 mb-4">
               Try our interactive troubleshooting wizard—it'll walk you through the exact steps for your specific situation.
             </p>
             <Link 
               href="/troubleshoot?issue=not-cutting" 
-              className="inline-block bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
+              className="inline-block bg-[#9CAF88] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#6B7F5E] transition-colors"
             >
               Start Troubleshooting Wizard →
             </Link>

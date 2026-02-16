@@ -100,14 +100,14 @@ export default function DesignSpaceNotWorkingGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Breadcrumb */}
           <nav className="text-sm mb-6">
             <ol className="flex items-center space-x-2 text-gray-500">
-              <li><Link href="/" className="hover:text-pink-600">Home</Link></li>
+              <li><Link href="/" className="hover:text-[#9CAF88]">Home</Link></li>
               <li>/</li>
-              <li><Link href="/guides" className="hover:text-pink-600">Guides</Link></li>
+              <li><Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link></li>
               <li>/</li>
               <li className="text-gray-900">Design Space Not Working</li>
             </ol>
@@ -131,19 +131,19 @@ export default function DesignSpaceNotWorkingGuide() {
           </header>
 
           {/* Quick Fix Box */}
-          <div className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-xl p-6 mb-8 border-l-4 border-pink-500">
+          <div className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-xl p-6 mb-8 border-l-4 border-[#9CAF88]">
             <h2 className="font-bold text-lg text-gray-900 mb-3">⚡ Quick Fixes (Try These First)</h2>
             <ol className="space-y-2 text-gray-700">
               <li className="flex items-start gap-2">
-                <span className="font-bold text-pink-600">1.</span>
+                <span className="font-bold text-[#9CAF88]">1.</span>
                 <span><strong>Restart everything</strong> — Close Design Space, restart your computer, restart your Cricut</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-bold text-pink-600">2.</span>
+                <span className="font-bold text-[#9CAF88]">2.</span>
                 <span><strong>Clear the cache</strong> — This fixes 80% of loading issues (instructions below)</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-bold text-pink-600">3.</span>
+                <span className="font-bold text-[#9CAF88]">3.</span>
                 <span><strong>Try the web version</strong> — Go to <strong>design.cricut.com</strong> in Chrome as a workaround</span>
               </li>
             </ol>
@@ -154,19 +154,19 @@ export default function DesignSpaceNotWorkingGuide() {
             <h2 className="font-bold text-lg mb-4">📋 What's Your Issue?</h2>
             <ul className="space-y-2 text-gray-700">
               <li>
-                <a href="#blank-screen" className="text-pink-600 hover:underline">→ Blank white screen on startup</a>
+                <a href="#blank-screen" className="text-[#9CAF88] hover:underline">→ Blank white screen on startup</a>
               </li>
               <li>
-                <a href="#slow-laggy" className="text-pink-600 hover:underline">→ Slow, laggy, or freezing</a>
+                <a href="#slow-laggy" className="text-[#9CAF88] hover:underline">→ Slow, laggy, or freezing</a>
               </li>
               <li>
-                <a href="#wont-open" className="text-pink-600 hover:underline">→ Won't open at all / crashes immediately</a>
+                <a href="#wont-open" className="text-[#9CAF88] hover:underline">→ Won't open at all / crashes immediately</a>
               </li>
               <li>
-                <a href="#connection-error" className="text-pink-600 hover:underline">→ Connection error or can't sign in</a>
+                <a href="#connection-error" className="text-[#9CAF88] hover:underline">→ Connection error or can't sign in</a>
               </li>
               <li>
-                <a href="#projects-not-loading" className="text-pink-600 hover:underline">→ Projects or images not loading</a>
+                <a href="#projects-not-loading" className="text-[#9CAF88] hover:underline">→ Projects or images not loading</a>
               </li>
             </ul>
           </div>
@@ -177,7 +177,7 @@ export default function DesignSpaceNotWorkingGuide() {
             {/* Fix 1: Clear Cache */}
             <section id="blank-screen" className="mb-10 scroll-mt-20">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+                <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
                 Clear the Design Space Cache
               </h2>
               <p className="text-gray-600 mt-2 mb-4">
@@ -221,7 +221,7 @@ export default function DesignSpaceNotWorkingGuide() {
             {/* Fix 2: Restart Everything */}
             <section id="slow-laggy" className="mb-10 scroll-mt-20">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
+                <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
                 Restart Your Computer (Yes, Really)
               </h2>
               <p className="text-gray-600 mt-2 mb-4">
@@ -241,7 +241,7 @@ export default function DesignSpaceNotWorkingGuide() {
             {/* Fix 3: Close Other Programs */}
             <section className="mb-10">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">3</span>
+                <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">3</span>
                 Close Background Programs
               </h2>
               <p className="text-gray-600 mt-2 mb-4">
@@ -267,7 +267,7 @@ export default function DesignSpaceNotWorkingGuide() {
             {/* Fix 4: Use Web Version */}
             <section className="mb-10">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">4</span>
+                <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">4</span>
                 Try the Web Version Instead
               </h2>
               <p className="text-gray-600 mt-2 mb-4">
@@ -279,7 +279,7 @@ export default function DesignSpaceNotWorkingGuide() {
               </p>
               <ol className="list-decimal list-inside space-y-2 my-4">
                 <li>Open <strong>Chrome</strong>, Firefox, or Edge (not Safari)</li>
-                <li>Go to <a href="https://design.cricut.com" className="text-pink-600 hover:underline">design.cricut.com</a></li>
+                <li>Go to <a href="https://design.cricut.com" className="text-[#9CAF88] hover:underline">design.cricut.com</a></li>
                 <li>Sign in with your Cricut account</li>
                 <li>Use it just like the desktop app</li>
               </ol>
@@ -292,7 +292,7 @@ export default function DesignSpaceNotWorkingGuide() {
             {/* Fix 5: Reinstall */}
             <section id="wont-open" className="mb-10 scroll-mt-20">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">5</span>
+                <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">5</span>
                 Uninstall and Reinstall Design Space
               </h2>
               <p className="text-gray-600 mt-2 mb-4">
@@ -309,7 +309,7 @@ export default function DesignSpaceNotWorkingGuide() {
                   <li>Uninstall Design Space through your system settings</li>
                   <li>Clear the cache folder (see Fix #1 above)</li>
                   <li>Restart your computer</li>
-                  <li>Download the latest version from <a href="https://design.cricut.com" className="text-pink-600 hover:underline">design.cricut.com</a></li>
+                  <li>Download the latest version from <a href="https://design.cricut.com" className="text-[#9CAF88] hover:underline">design.cricut.com</a></li>
                   <li>Install and sign in fresh</li>
                 </ol>
               </div>
@@ -325,7 +325,7 @@ export default function DesignSpaceNotWorkingGuide() {
             {/* Fix 6: Check Internet */}
             <section id="connection-error" className="mb-10 scroll-mt-20">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">6</span>
+                <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">6</span>
                 Check Your Internet Connection
               </h2>
               <p className="text-gray-600 mt-2 mb-4">
@@ -338,7 +338,7 @@ export default function DesignSpaceNotWorkingGuide() {
               <ul className="list-disc list-inside space-y-2 my-4">
                 <li>Try restarting your router/modem</li>
                 <li>If on WiFi, try moving closer to the router or use ethernet</li>
-                <li>Test your speed at <a href="https://fast.com" className="text-pink-600 hover:underline">fast.com</a> — you need at least 10 Mbps</li>
+                <li>Test your speed at <a href="https://fast.com" className="text-[#9CAF88] hover:underline">fast.com</a> — you need at least 10 Mbps</li>
                 <li>If you're on VPN, try disconnecting it temporarily</li>
               </ul>
             </section>
@@ -346,7 +346,7 @@ export default function DesignSpaceNotWorkingGuide() {
             {/* Fix 7: Disable Antivirus */}
             <section className="mb-10">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">7</span>
+                <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">7</span>
                 Temporarily Disable Antivirus/Firewall
               </h2>
               <p className="text-gray-600 mt-2 mb-4">
@@ -373,7 +373,7 @@ export default function DesignSpaceNotWorkingGuide() {
             {/* Fix 8: Update Graphics Drivers */}
             <section className="mb-10">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">8</span>
+                <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">8</span>
                 Update Graphics Drivers
               </h2>
               <p className="text-gray-600 mt-2 mb-4">
@@ -392,7 +392,7 @@ export default function DesignSpaceNotWorkingGuide() {
             {/* Fix 9: Check System Requirements */}
             <section className="mb-10">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">9</span>
+                <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">9</span>
                 Check System Requirements
               </h2>
               <p className="text-gray-600 mt-2 mb-4">
@@ -420,7 +420,7 @@ export default function DesignSpaceNotWorkingGuide() {
             {/* Fix 10: Try Beta Version */}
             <section className="mb-10">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">10</span>
+                <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">10</span>
                 Switch to Beta Version
               </h2>
               <p className="text-gray-600 mt-2 mb-4">
@@ -445,7 +445,7 @@ export default function DesignSpaceNotWorkingGuide() {
             {/* Fix 11: Wait for Cricut */}
             <section id="projects-not-loading" className="mb-10 scroll-mt-20">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">11</span>
+                <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">11</span>
                 Check If Cricut's Servers Are Down
               </h2>
               <p className="text-gray-600 mt-2 mb-4">
@@ -456,9 +456,9 @@ export default function DesignSpaceNotWorkingGuide() {
                 affect everyone.
               </p>
               <ul className="list-disc list-inside space-y-2 my-4">
-                <li>Check <a href="https://twitter.com/CricutHelp" className="text-pink-600 hover:underline">@CricutHelp on X/Twitter</a> for outage reports</li>
-                <li>Search "Cricut down" on <a href="https://downdetector.com/status/cricut/" className="text-pink-600 hover:underline">DownDetector</a></li>
-                <li>Check the <a href="https://www.reddit.com/r/cricut/" className="text-pink-600 hover:underline">r/cricut subreddit</a> to see if others are reporting issues</li>
+                <li>Check <a href="https://twitter.com/CricutHelp" className="text-[#9CAF88] hover:underline">@CricutHelp on X/Twitter</a> for outage reports</li>
+                <li>Search "Cricut down" on <a href="https://downdetector.com/status/cricut/" className="text-[#9CAF88] hover:underline">DownDetector</a></li>
+                <li>Check the <a href="https://www.reddit.com/r/cricut/" className="text-[#9CAF88] hover:underline">r/cricut subreddit</a> to see if others are reporting issues</li>
               </ul>
               <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 my-4">
                 <p className="text-purple-800">
@@ -475,7 +475,7 @@ export default function DesignSpaceNotWorkingGuide() {
                 If you've tried everything above and Design Space still won't cooperate:
               </p>
               <ul className="list-disc list-inside space-y-2 my-4">
-                <li><strong>Contact Cricut Support:</strong> <a href="https://help.cricut.com" className="text-pink-600 hover:underline">help.cricut.com</a> — they can check your account for issues</li>
+                <li><strong>Contact Cricut Support:</strong> <a href="https://help.cricut.com" className="text-[#9CAF88] hover:underline">help.cricut.com</a> — they can check your account for issues</li>
                 <li><strong>Try a different device:</strong> If you have a tablet or another computer, try using Design Space there</li>
                 <li><strong>Check for Windows/Mac updates:</strong> Sometimes OS updates fix compatibility issues</li>
               </ul>
@@ -536,28 +536,28 @@ export default function DesignSpaceNotWorkingGuide() {
             <div className="grid md:grid-cols-2 gap-4">
               <Link 
                 href="/guides/cricut-bluetooth-not-connecting"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Cricut Bluetooth Not Connecting</h3>
                 <p className="text-gray-600 text-sm mt-1">Can't get your Cricut to show up? Fix connection issues.</p>
               </Link>
               <Link 
                 href="/guides/print-then-cut-not-lining-up"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Print Then Cut Not Lining Up</h3>
                 <p className="text-gray-600 text-sm mt-1">Fix misaligned cuts and calibration issues.</p>
               </Link>
               <Link 
                 href="/guides/cricut-not-cutting-vinyl"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Cricut Not Cutting Vinyl Properly</h3>
                 <p className="text-gray-600 text-sm mt-1">Blade, pressure, and mat solutions.</p>
               </Link>
               <Link 
                 href="/troubleshoot"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Troubleshooting Wizard</h3>
                 <p className="text-gray-600 text-sm mt-1">Diagnose any Cricut issue step by step.</p>
@@ -566,14 +566,14 @@ export default function DesignSpaceNotWorkingGuide() {
           </section>
 
           {/* CTA */}
-          <section className="mt-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl p-8 text-center text-white">
+          <section className="mt-12 bg-gradient-to-r from-[#9CAF88] to-purple-500 rounded-xl p-8 text-center text-white">
             <h2 className="text-2xl font-bold mb-3">Need More Help?</h2>
-            <p className="text-pink-100 mb-6">
+            <p className="text-white/80 mb-6">
               Our troubleshooting wizard can diagnose your specific problem and walk you through the fix.
             </p>
             <Link
               href="/troubleshoot"
-              className="inline-block bg-white text-pink-600 font-bold py-3 px-8 rounded-full hover:bg-pink-50 transition-colors"
+              className="inline-block bg-white text-[#9CAF88] font-bold py-3 px-8 rounded-full hover:bg-[#F5FAF3] transition-colors"
             >
               Start Troubleshooting
             </Link>

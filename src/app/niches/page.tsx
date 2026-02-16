@@ -63,7 +63,7 @@ const niches = [
 
 export default function NichesPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -80,14 +80,14 @@ export default function NichesPage() {
             <Link
               key={niche.slug}
               href={`/niches/${niche.slug}`}
-              className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-transparent hover:border-pink-200"
+              className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-transparent hover:border-[#B8C9A9]"
             >
               <div className="flex items-start gap-4">
                 <span className="text-5xl">{niche.icon}</span>
                 <div>
                   <h2 className="text-xl font-bold text-gray-900 mb-2">{niche.name}</h2>
                   <p className="text-gray-600">{niche.description}</p>
-                  <span className="inline-block mt-3 text-pink-500 font-medium">
+                  <span className="inline-block mt-3 text-[#9CAF88] font-medium">
                     Explore →
                   </span>
                 </div>
@@ -96,7 +96,7 @@ export default function NichesPage() {
           ))}
         </div>
 
-        <div className="mt-12 bg-pink-100 rounded-2xl p-8 text-center">
+        <div className="mt-12 bg-[#F5E6E6] rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Don't See Your Niche?
           </h2>
@@ -112,7 +112,7 @@ export default function NichesPage() {
             </Link>
             <Link
               href="/troubleshoot"
-              className="bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
+              className="bg-[#9CAF88] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#6B7F5E] transition-colors"
             >
               🔧 Troubleshooting
             </Link>

@@ -54,7 +54,7 @@ function MaterialsContent() {
   return (
     <div className="max-w-5xl mx-auto">
       <div className="mb-8">
-        <Link href="/" className="text-pink-500 hover:underline">← Home</Link>
+        <Link href="/" className="text-[#9CAF88] hover:underline">← Home</Link>
         <h1 className="text-3xl font-bold text-gray-800 mt-4">📋 Material Settings Database</h1>
         <p className="text-gray-600 mt-2">Find the perfect cut settings for your material. Search or browse by category.</p>
       </div>
@@ -70,7 +70,7 @@ function MaterialsContent() {
               setSearchQuery(e.target.value);
               if (e.target.value) setSelectedCategory("all");
             }}
-            className="w-full px-4 py-3 pl-12 rounded-xl border border-gray-200 focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none transition-all"
+            className="w-full px-4 py-3 pl-12 rounded-xl border border-gray-200 focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none transition-all"
           />
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
           {searchQuery && (
@@ -96,7 +96,7 @@ function MaterialsContent() {
               }}
               className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
                 selectedCategory === cat && !searchQuery
-                  ? "bg-pink-500 text-white"
+                  ? "bg-[#9CAF88] text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
@@ -195,7 +195,7 @@ function RecommendedProducts() {
             href={`https://www.amazon.com/dp/${product.asin}?tag=cricuthelpe03-20`}
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-[#9CAF88] transition-all"
           >
             <h4 className="font-semibold text-gray-900 text-sm mb-2 line-clamp-2">{product.title}</h4>
             <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
@@ -204,7 +204,7 @@ function RecommendedProducts() {
               <span className="text-gray-400">({product.reviews})</span>
             </div>
             {product.note && <p className="text-gray-500 text-xs mt-2">{product.note}</p>}
-            <p className="text-pink-600 text-xs mt-3 font-medium">View on Amazon →</p>
+            <p className="text-[#9CAF88] text-xs mt-3 font-medium">View on Amazon →</p>
           </a>
         ))}
       </div>
@@ -222,12 +222,12 @@ export default function MaterialsPage() {
 
 function MaterialCard({ material, onClick }: { material: Material; onClick: () => void }) {
   return (
-    <div className="w-full bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all p-4">
+    <div className="w-full bg-white rounded-xl border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all p-4">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <button onClick={onClick} className="flex-1 text-left">
           <div className="flex items-center gap-2">
             <h3 className="font-semibold text-gray-800">{material.name}</h3>
-            {material.popular && <span className="text-xs bg-pink-100 text-pink-600 px-2 py-0.5 rounded-full">Popular</span>}
+            {material.popular && <span className="text-xs bg-[#F5E6E6] text-[#D4A5A5] px-2 py-0.5 rounded-full">Popular</span>}
           </div>
           <p className="text-sm text-gray-500 mt-1">
             {material.brand} • {categoryLabels[material.category]}
@@ -318,9 +318,9 @@ function MaterialModal({ material, onClose }: { material: Material; onClose: () 
           )}
 
           {/* Quick Tips */}
-          <div className="bg-pink-50 rounded-xl p-4">
-            <h3 className="font-semibold text-pink-800 mb-2">Getting good cuts:</h3>
-            <ul className="text-sm text-pink-700 space-y-1">
+          <div className="bg-[#F5FAF3] rounded-xl p-4">
+            <h3 className="font-semibold text-[#6B7F5E] mb-2">Getting good cuts:</h3>
+            <ul className="text-sm text-[#6B7F5E] space-y-1">
               {material.category === "vinyl-htv" && <li>• Remember to MIRROR your design!</li>}
               {material.category === "vinyl-htv" && <li>• Place shiny/carrier side DOWN on mat</li>}
               {material.matType === "strong" && <li>• Use StrongGrip (purple) mat</li>}
@@ -346,7 +346,7 @@ function MaterialModal({ material, onClose }: { material: Material; onClose: () 
             )}
             <button 
               onClick={onClose}
-              className={`${material.amazonAsin ? 'flex-1' : 'w-full'} bg-pink-500 text-white py-3 rounded-xl font-semibold hover:bg-pink-600 transition-colors`}
+              className={`${material.amazonAsin ? 'flex-1' : 'w-full'} bg-[#9CAF88] text-white py-3 rounded-xl font-semibold hover:bg-[#6B7F5E] transition-colors`}
             >
               Close
             </button>

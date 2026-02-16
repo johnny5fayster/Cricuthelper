@@ -66,7 +66,7 @@ export function InstallPrompt() {
   }
 
   return (
-    <div className="bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-6 mb-8 text-white relative overflow-hidden">
+    <div className="bg-gradient-to-r from-[#9CAF88] to-purple-500 rounded-2xl p-6 mb-8 text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
       <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12" />
@@ -77,14 +77,14 @@ export function InstallPrompt() {
           <h3 className="text-xl font-bold mb-1">
             Get the CricutHelper App!
           </h3>
-          <p className="text-pink-100 text-sm">
+          <p className="text-white/80 text-sm">
             Add to your home screen for instant access — even offline. It's free!
           </p>
         </div>
         <div className="flex gap-3">
           <button
             onClick={handleInstall}
-            className="bg-white text-pink-500 px-6 py-3 rounded-full font-bold hover:bg-pink-50 transition-colors shadow-lg"
+            className="bg-white text-[#9CAF88] px-6 py-3 rounded-full font-bold hover:bg-[#F5FAF3] transition-colors shadow-lg"
           >
             Install Free
           </button>

@@ -47,7 +47,7 @@ export default function ShareCard({
   return (
     <div
       id="share-card"
-      className="w-full aspect-square max-w-[400px] bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 rounded-2xl p-1"
+      className="w-full aspect-square max-w-[400px] bg-gradient-to-br from-purple-600 via-[#9CAF88] to-orange-400 rounded-2xl p-1"
     >
       <div className="w-full h-full bg-white rounded-xl p-6 flex flex-col justify-between">
         {/* Header */}
@@ -55,7 +55,7 @@ export default function ShareCard({
           <div className="flex items-center justify-center gap-2 mb-2">
             <span className="text-2xl">✂️</span>
             <span className="font-bold text-gray-800">
-              Cricut<span className="text-pink-500">Helper</span>
+              Cricut<span className="text-[#9CAF88]">Helper</span>
             </span>
           </div>
           <p className="text-xs text-gray-400 uppercase tracking-wide">Profit Calculator</p>
@@ -124,7 +124,7 @@ export default function ShareCard({
         {/* Message */}
         <div className="text-center">
           <p className="text-sm font-medium text-gray-700 mb-3 italic">"{message}"</p>
-          <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg py-2 px-4">
+          <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] rounded-lg py-2 px-4">
             <p className="text-xs text-purple-700 font-medium">
               Try it free → cricuthelper.com/profit-calculator
             </p>

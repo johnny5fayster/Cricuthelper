@@ -57,7 +57,7 @@ export default function CalculatorPage() {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="mb-8">
-        <Link href="/" className="text-pink-500 hover:underline">← Home</Link>
+        <Link href="/" className="text-[#9CAF88] hover:underline">← Home</Link>
         <h1 className="text-3xl font-bold text-gray-800 mt-4">🧮 Cut Calculator</h1>
         <p className="text-gray-600 mt-2">Calculate how much material you need. No more waste!</p>
       </div>
@@ -75,7 +75,7 @@ export default function CalculatorPage() {
                 value={designWidth}
                 onChange={(e) => setDesignWidth(e.target.value)}
                 placeholder="e.g., 3.5"
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
               />
             </div>
             <div>
@@ -86,7 +86,7 @@ export default function CalculatorPage() {
                 value={designHeight}
                 onChange={(e) => setDesignHeight(e.target.value)}
                 placeholder="e.g., 2.5"
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
               />
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function CalculatorPage() {
             min="1"
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+            className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
           />
         </div>
 
@@ -113,7 +113,7 @@ export default function CalculatorPage() {
                 type="radio"
                 checked={materialType === "roll"}
                 onChange={() => setMaterialType("roll")}
-                className="text-pink-500"
+                className="text-[#9CAF88]"
               />
               <span>Roll (continuous)</span>
             </label>
@@ -122,7 +122,7 @@ export default function CalculatorPage() {
                 type="radio"
                 checked={materialType === "sheet"}
                 onChange={() => setMaterialType("sheet")}
-                className="text-pink-500"
+                className="text-[#9CAF88]"
               />
               <span>Sheets</span>
             </label>
@@ -133,7 +133,7 @@ export default function CalculatorPage() {
               <select
                 value={materialWidth}
                 onChange={(e) => setMaterialWidth(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
               >
                 <option value="5.5">5.5" (Joy)</option>
                 <option value="12">12" (Standard)</option>
@@ -146,7 +146,7 @@ export default function CalculatorPage() {
                 <select
                   value={materialLength}
                   onChange={(e) => setMaterialLength(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
                 >
                   <option value="12">12" (Standard mat)</option>
                   <option value="24">24" (Long mat)</option>
@@ -167,7 +167,7 @@ export default function CalculatorPage() {
               value={pricePerUnit}
               onChange={(e) => setPricePerUnit(e.target.value)}
               placeholder="0.00"
-              className="w-full pl-8 pr-4 py-2 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+              className="w-full pl-8 pr-4 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
             />
           </div>
         </div>
@@ -228,9 +228,9 @@ export default function CalculatorPage() {
       </div>
 
       {/* Tips */}
-      <div className="mt-8 bg-pink-50 rounded-xl p-6">
-        <h3 className="font-semibold text-pink-800 mb-3">💡 Tips for Less Waste</h3>
-        <ul className="text-pink-700 space-y-2 text-sm">
+      <div className="mt-8 bg-[#F5FAF3] rounded-xl p-6">
+        <h3 className="font-semibold text-[#6B7F5E] mb-3">💡 Tips for Less Waste</h3>
+        <ul className="text-[#6B7F5E] space-y-2 text-sm">
           <li>• We add 0.5" margin around each design for weeding room</li>
           <li>• Rotate designs 90° if they fit better across the width</li>
           <li>• Group small designs together on one cut</li>

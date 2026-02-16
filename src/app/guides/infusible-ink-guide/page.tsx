@@ -67,14 +67,14 @@ export default function InfusibleInkGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Breadcrumb */}
           <nav className="text-sm mb-6">
             <ol className="flex items-center space-x-2 text-gray-500">
-              <li><Link href="/" className="hover:text-pink-600">Home</Link></li>
+              <li><Link href="/" className="hover:text-[#9CAF88]">Home</Link></li>
               <li>/</li>
-              <li><Link href="/guides" className="hover:text-pink-600">Guides</Link></li>
+              <li><Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link></li>
               <li>/</li>
               <li className="text-gray-900">Infusible Ink Guide</li>
             </ol>
@@ -83,7 +83,7 @@ export default function InfusibleInkGuide() {
           {/* Header */}
           <header className="mb-8">
             <div className="flex items-center gap-2 mb-3">
-              <span className="bg-gradient-to-r from-pink-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+              <span className="bg-gradient-to-r from-[#9CAF88] to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                 Tutorial
               </span>
               <span className="text-gray-500 text-sm">Updated February 2025</span>
@@ -98,7 +98,7 @@ export default function InfusibleInkGuide() {
           </header>
 
           {/* What Is Box */}
-          <div className="bg-gradient-to-r from-pink-100 via-purple-100 to-orange-100 rounded-xl p-6 mb-8 border-l-4 border-pink-500">
+          <div className="bg-gradient-to-r from-[#F5E6E6] via-purple-100 to-orange-100 rounded-xl p-6 mb-8 border-l-4 border-[#9CAF88]">
             <h2 className="font-bold text-lg text-gray-900 mb-3">✨ What Is Infusible Ink?</h2>
             <p className="text-gray-700 mb-3">
               Unlike HTV that sits <em>on top</em> of fabric, Infusible Ink <strong>infuses INTO</strong> the 
@@ -130,11 +130,11 @@ export default function InfusibleInkGuide() {
           <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
             <h2 className="font-bold text-lg mb-4">📋 In This Guide</h2>
             <ul className="space-y-2 text-gray-700">
-              <li><a href="#types" className="text-pink-600 hover:underline">→ Types of Infusible Ink (sheets vs markers)</a></li>
-              <li><a href="#blanks" className="text-pink-600 hover:underline">→ Compatible blanks</a></li>
-              <li><a href="#step-by-step" className="text-pink-600 hover:underline">→ Step-by-step tutorial</a></li>
-              <li><a href="#settings" className="text-pink-600 hover:underline">→ Temperature & time settings</a></li>
-              <li><a href="#troubleshooting" className="text-pink-600 hover:underline">→ Troubleshooting common problems</a></li>
+              <li><a href="#types" className="text-[#9CAF88] hover:underline">→ Types of Infusible Ink (sheets vs markers)</a></li>
+              <li><a href="#blanks" className="text-[#9CAF88] hover:underline">→ Compatible blanks</a></li>
+              <li><a href="#step-by-step" className="text-[#9CAF88] hover:underline">→ Step-by-step tutorial</a></li>
+              <li><a href="#settings" className="text-[#9CAF88] hover:underline">→ Temperature & time settings</a></li>
+              <li><a href="#troubleshooting" className="text-[#9CAF88] hover:underline">→ Troubleshooting common problems</a></li>
             </ul>
           </div>
 
@@ -146,7 +146,7 @@ export default function InfusibleInkGuide() {
               <h2 className="text-2xl font-bold text-gray-900">Types of Infusible Ink</h2>
               
               <div className="grid md:grid-cols-2 gap-4 my-6">
-                <div className="bg-white border-2 border-pink-200 rounded-xl p-5">
+                <div className="bg-white border-2 border-[#B8C9A9] rounded-xl p-5">
                   <h3 className="font-bold text-gray-900 text-lg mb-2">📄 Transfer Sheets</h3>
                   <p className="text-gray-600 text-sm mb-3">
                     Pre-printed sheets you cut with your Cricut. Available in solid colors, 
@@ -234,9 +234,9 @@ export default function InfusibleInkGuide() {
               <h2 className="text-2xl font-bold text-gray-900">Step-by-Step Tutorial (Transfer Sheets)</h2>
 
               <div className="space-y-6 my-6">
-                <div className="bg-gradient-to-r from-pink-50 to-orange-50 rounded-xl p-6 border-l-4 border-pink-500">
+                <div className="bg-gradient-to-r from-[#F5FAF3] to-[#FFFBF0] rounded-xl p-6 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-xl text-gray-900 flex items-center gap-2">
-                    <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center">1</span>
+                    <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center">1</span>
                     Design & Mirror
                   </h3>
                   <p className="text-gray-700 mt-2">
@@ -245,9 +245,9 @@ export default function InfusibleInkGuide() {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-pink-50 to-orange-50 rounded-xl p-6 border-l-4 border-pink-500">
+                <div className="bg-gradient-to-r from-[#F5FAF3] to-[#FFFBF0] rounded-xl p-6 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-xl text-gray-900 flex items-center gap-2">
-                    <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center">2</span>
+                    <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center">2</span>
                     Load & Cut
                   </h3>
                   <p className="text-gray-700 mt-2">
@@ -256,9 +256,9 @@ export default function InfusibleInkGuide() {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-pink-50 to-orange-50 rounded-xl p-6 border-l-4 border-pink-500">
+                <div className="bg-gradient-to-r from-[#F5FAF3] to-[#FFFBF0] rounded-xl p-6 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-xl text-gray-900 flex items-center gap-2">
-                    <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center">3</span>
+                    <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center">3</span>
                     Weed Carefully
                   </h3>
                   <p className="text-gray-700 mt-2">
@@ -267,9 +267,9 @@ export default function InfusibleInkGuide() {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-pink-50 to-orange-50 rounded-xl p-6 border-l-4 border-pink-500">
+                <div className="bg-gradient-to-r from-[#F5FAF3] to-[#FFFBF0] rounded-xl p-6 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-xl text-gray-900 flex items-center gap-2">
-                    <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center">4</span>
+                    <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center">4</span>
                     Pre-Press Your Blank
                   </h3>
                   <p className="text-gray-700 mt-2">
@@ -278,9 +278,9 @@ export default function InfusibleInkGuide() {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-pink-50 to-orange-50 rounded-xl p-6 border-l-4 border-pink-500">
+                <div className="bg-gradient-to-r from-[#F5FAF3] to-[#FFFBF0] rounded-xl p-6 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-xl text-gray-900 flex items-center gap-2">
-                    <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center">5</span>
+                    <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center">5</span>
                     Position Your Design
                   </h3>
                   <p className="text-gray-700 mt-2">
@@ -289,9 +289,9 @@ export default function InfusibleInkGuide() {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-pink-50 to-orange-50 rounded-xl p-6 border-l-4 border-pink-500">
+                <div className="bg-gradient-to-r from-[#F5FAF3] to-[#FFFBF0] rounded-xl p-6 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-xl text-gray-900 flex items-center gap-2">
-                    <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center">6</span>
+                    <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center">6</span>
                     Press!
                   </h3>
                   <p className="text-gray-700 mt-2">
@@ -300,9 +300,9 @@ export default function InfusibleInkGuide() {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-pink-50 to-orange-50 rounded-xl p-6 border-l-4 border-pink-500">
+                <div className="bg-gradient-to-r from-[#F5FAF3] to-[#FFFBF0] rounded-xl p-6 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-xl text-gray-900 flex items-center gap-2">
-                    <span className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center">7</span>
+                    <span className="bg-[#9CAF88] text-white w-8 h-8 rounded-full flex items-center justify-center">7</span>
                     Remove & Admire
                   </h3>
                   <p className="text-gray-700 mt-2">
@@ -330,31 +330,31 @@ export default function InfusibleInkGuide() {
                   <tbody>
                     <tr className="border-b">
                       <td className="px-4 py-3">T-shirts / Apparel</td>
-                      <td className="px-4 py-3 text-center font-bold text-pink-600">400°F</td>
+                      <td className="px-4 py-3 text-center font-bold text-[#9CAF88]">400°F</td>
                       <td className="px-4 py-3 text-center font-bold">40 sec</td>
                       <td className="px-4 py-3 text-center text-xs">Pre-press 15 sec</td>
                     </tr>
                     <tr className="border-b bg-gray-50">
                       <td className="px-4 py-3">Coasters (ceramic)</td>
-                      <td className="px-4 py-3 text-center font-bold text-pink-600">400°F</td>
+                      <td className="px-4 py-3 text-center font-bold text-[#9CAF88]">400°F</td>
                       <td className="px-4 py-3 text-center font-bold">60 sec</td>
                       <td className="px-4 py-3 text-center text-xs">Use EasyPress Mat</td>
                     </tr>
                     <tr className="border-b">
                       <td className="px-4 py-3">Tote Bags</td>
-                      <td className="px-4 py-3 text-center font-bold text-pink-600">400°F</td>
+                      <td className="px-4 py-3 text-center font-bold text-[#9CAF88]">400°F</td>
                       <td className="px-4 py-3 text-center font-bold">40 sec</td>
                       <td className="px-4 py-3 text-center text-xs">Protect inside</td>
                     </tr>
                     <tr className="border-b bg-gray-50">
                       <td className="px-4 py-3">Mugs (ceramic)</td>
-                      <td className="px-4 py-3 text-center font-bold text-pink-600">400°F</td>
+                      <td className="px-4 py-3 text-center font-bold text-[#9CAF88]">400°F</td>
                       <td className="px-4 py-3 text-center font-bold">240 sec (4 min)</td>
                       <td className="px-4 py-3 text-center text-xs">Use Mug Press</td>
                     </tr>
                     <tr className="border-b">
                       <td className="px-4 py-3">Baby Bodysuits</td>
-                      <td className="px-4 py-3 text-center font-bold text-pink-600">385°F</td>
+                      <td className="px-4 py-3 text-center font-bold text-[#9CAF88]">385°F</td>
                       <td className="px-4 py-3 text-center font-bold">40 sec</td>
                       <td className="px-4 py-3 text-center text-xs">Lower temp for delicates</td>
                     </tr>
@@ -419,7 +419,7 @@ export default function InfusibleInkGuide() {
               <h2 className="text-2xl font-bold text-gray-900">Pro Tips for Best Results</h2>
               
               <div className="grid md:grid-cols-2 gap-4 my-6">
-                <div className="bg-pink-50 rounded-lg p-4 border-l-4 border-pink-500">
+                <div className="bg-[#F5FAF3] rounded-lg p-4 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-gray-900">Use butcher paper</h3>
                   <p className="text-gray-700 text-sm">
                     Place butcher paper inside shirts (between layers) to prevent bleed-through 
@@ -427,7 +427,7 @@ export default function InfusibleInkGuide() {
                   </p>
                 </div>
 
-                <div className="bg-pink-50 rounded-lg p-4 border-l-4 border-pink-500">
+                <div className="bg-[#F5FAF3] rounded-lg p-4 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-gray-900">Lint roll everything</h3>
                   <p className="text-gray-700 text-sm">
                     Any lint, dust, or debris will show in your transfer. Lint roll your blank 
@@ -435,7 +435,7 @@ export default function InfusibleInkGuide() {
                   </p>
                 </div>
 
-                <div className="bg-pink-50 rounded-lg p-4 border-l-4 border-pink-500">
+                <div className="bg-[#F5FAF3] rounded-lg p-4 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-gray-900">Don't reposition</h3>
                   <p className="text-gray-700 text-sm">
                     Once the transfer sheet touches the heated blank, it starts transferring. 
@@ -443,7 +443,7 @@ export default function InfusibleInkGuide() {
                   </p>
                 </div>
 
-                <div className="bg-pink-50 rounded-lg p-4 border-l-4 border-pink-500">
+                <div className="bg-[#F5FAF3] rounded-lg p-4 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-gray-900">Test on scraps first</h3>
                   <p className="text-gray-700 text-sm">
                     Before your final project, test your settings on a scrap piece of the same 
@@ -499,28 +499,28 @@ export default function InfusibleInkGuide() {
             <div className="grid md:grid-cols-2 gap-4">
               <Link 
                 href="/guides/htv-peeling-after-washing"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">HTV Peeling After Washing</h3>
                 <p className="text-gray-600 text-sm mt-1">For when you're using iron-on instead.</p>
               </Link>
               <Link 
                 href="/heat-press"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Heat Press Temperature Guide</h3>
                 <p className="text-gray-600 text-sm mt-1">Settings for all heat transfer materials.</p>
               </Link>
               <Link 
                 href="/guides/how-to-weed-vinyl"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">How to Weed Like a Pro</h3>
                 <p className="text-gray-600 text-sm mt-1">Weeding tips that work for Infusible Ink too.</p>
               </Link>
               <Link 
                 href="/troubleshoot"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Troubleshooting Wizard</h3>
                 <p className="text-gray-600 text-sm mt-1">Diagnose any Cricut issue.</p>
@@ -529,14 +529,14 @@ export default function InfusibleInkGuide() {
           </section>
 
           {/* CTA */}
-          <section className="mt-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-xl p-8 text-center text-white">
+          <section className="mt-12 bg-gradient-to-r from-[#9CAF88] to-orange-500 rounded-xl p-8 text-center text-white">
             <h2 className="text-2xl font-bold mb-3">Ready to Try Infusible Ink?</h2>
-            <p className="text-pink-100 mb-6">
+            <p className="text-white/80 mb-6">
               Start with coasters — they're the most forgiving and make great gifts!
             </p>
             <Link
               href="/materials"
-              className="inline-block bg-white text-pink-600 font-bold py-3 px-8 rounded-full hover:bg-pink-50 transition-colors"
+              className="inline-block bg-white text-[#9CAF88] font-bold py-3 px-8 rounded-full hover:bg-[#F5FAF3] transition-colors"
             >
               View Material Settings
             </Link>

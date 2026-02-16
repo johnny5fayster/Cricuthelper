@@ -25,7 +25,7 @@ export function AffiliateLink({
       href={affiliateUrl}
       target="_blank"
       rel="noopener noreferrer sponsored"
-      className={`text-pink-600 hover:text-pink-700 underline ${className}`}
+      className={`text-[#9CAF88] hover:text-[#6B7F5E] underline ${className}`}
     >
       {children}
     </a>
@@ -50,7 +50,7 @@ export function ProductCard({ title, asin, rating, reviews, price, note, tag = "
       href={url}
       target="_blank"
       rel="noopener noreferrer sponsored"
-      className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
+      className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-[#9CAF88] transition-all"
     >
       <h4 className="font-semibold text-gray-900 text-sm mb-2 line-clamp-2">{title}</h4>
       <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
@@ -60,7 +60,7 @@ export function ProductCard({ title, asin, rating, reviews, price, note, tag = "
       </div>
       {price && <p className="text-green-600 font-medium text-sm">{price}</p>}
       {note && <p className="text-gray-500 text-xs mt-2">{note}</p>}
-      <p className="text-pink-600 text-xs mt-2 font-medium">View on Amazon →</p>
+      <p className="text-[#9CAF88] text-xs mt-2 font-medium">View on Amazon →</p>
     </a>
   );
 }

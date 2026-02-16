@@ -34,9 +34,9 @@ export default function CheatSheetPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
       <div className="max-w-4xl mx-auto px-4">
-        <Link href="/" className="text-pink-500 hover:underline">← Home</Link>
+        <Link href="/" className="text-[#9CAF88] hover:underline">← Home</Link>
         
         <div className="mt-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -49,16 +49,16 @@ export default function CheatSheetPage() {
         </div>
 
         {/* Preview */}
-        <div className="mt-12 bg-white rounded-2xl shadow-xl p-8 border-2 border-pink-200">
+        <div className="mt-12 bg-white rounded-2xl shadow-xl p-8 border-2 border-[#B8C9A9]">
           <div className="text-center mb-6">
             <span className="text-6xl">📄</span>
             <h2 className="text-2xl font-bold text-gray-900 mt-4">What's Inside</h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-pink-50 rounded-xl p-4">
-              <h3 className="font-bold text-pink-800 mb-2">🔪 Blade Quick Reference</h3>
-              <ul className="text-sm text-pink-700 space-y-1">
+            <div className="bg-[#F5FAF3] rounded-xl p-4">
+              <h3 className="font-bold text-[#6B7F5E] mb-2">🔪 Blade Quick Reference</h3>
+              <ul className="text-sm text-[#6B7F5E] space-y-1">
                 <li>• Which blade for every material</li>
                 <li>• Fine Point vs Deep Point vs Knife</li>
                 <li>• When to replace your blade</li>
@@ -116,7 +116,7 @@ export default function CheatSheetPage() {
         </div>
 
         {/* Download Form */}
-        <div className="mt-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-8 text-center text-white">
+        <div className="mt-12 bg-gradient-to-r from-[#9CAF88] to-purple-500 rounded-2xl p-8 text-center text-white">
           {!submitted ? (
             <>
               <h2 className="text-2xl font-bold mb-4">Get Your Free Cheat Sheet</h2>
@@ -138,7 +138,7 @@ export default function CheatSheetPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="bg-white text-pink-600 px-6 py-3 rounded-xl font-semibold hover:bg-pink-50 transition-colors disabled:opacity-50"
+                    className="bg-white text-[#9CAF88] px-6 py-3 rounded-xl font-semibold hover:bg-[#F5FAF3] transition-colors disabled:opacity-50"
                   >
                     {loading ? 'Sending...' : 'Send It! →'}
                   </button>

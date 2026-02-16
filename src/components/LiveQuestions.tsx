@@ -32,7 +32,7 @@ export function LiveQuestions() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-6">
+    <div className="bg-gradient-to-r from-[#F5FAF3] to-[#F5E6E6] rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold text-gray-800">
           💬 What Crafters Are Asking
@@ -51,7 +51,7 @@ export function LiveQuestions() {
             className="flex items-center justify-between p-3 bg-white rounded-xl hover:shadow-md transition-shadow"
           >
             <div className="flex items-center gap-3">
-              <span className="text-pink-400">❓</span>
+              <span className="text-[#C9A962]">❓</span>
               <span className="text-gray-700">{item.q}</span>
             </div>
             <span className="text-xs text-gray-400 whitespace-nowrap">{item.time}</span>
@@ -60,7 +60,7 @@ export function LiveQuestions() {
       </div>
       
       <div className="mt-4 text-center">
-        <Link href="/problems" className="text-pink-500 font-medium hover:underline">
+        <Link href="/problems" className="text-[#9CAF88] font-medium hover:underline">
           View all common questions →
         </Link>
       </div>

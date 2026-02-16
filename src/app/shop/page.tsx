@@ -281,11 +281,11 @@ export default function ShopPage() {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+    <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/" className="text-pink-500 hover:underline">← Home</Link>
+          <Link href="/" className="text-[#9CAF88] hover:underline">← Home</Link>
           <h1 className="text-3xl font-bold text-gray-800 mt-4">🛒 Cricut Shopping Guide</h1>
           <p className="text-gray-600 mt-2">
             Top-rated supplies recommended by the community. Build your shopping list!
@@ -308,8 +308,8 @@ export default function ShopPage() {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedCategory === cat.id
-                    ? "bg-pink-500 text-white"
-                    : "bg-white border border-gray-200 text-gray-600 hover:border-pink-300"
+                    ? "bg-[#9CAF88] text-white"
+                    : "bg-white border border-gray-200 text-gray-600 hover:border-[#9CAF88]"
                 }`}
               >
                 {cat.label}
@@ -337,7 +337,7 @@ export default function ShopPage() {
               {listProducts.length > 0 && (
                 <button
                   onClick={copyListToClipboard}
-                  className="text-sm text-pink-600 hover:underline"
+                  className="text-sm text-[#9CAF88] hover:underline"
                 >
                   📋 Copy List
                 </button>
@@ -356,7 +356,7 @@ export default function ShopPage() {
                         href={`https://www.${amazonDomain.domain}/dp/${product.asin}?tag=${amazonDomain.tag}`}
                         target="_blank"
                         rel="noopener noreferrer sponsored"
-                        className="text-sm text-pink-600 hover:underline"
+                        className="text-sm text-[#9CAF88] hover:underline"
                       >
                         View on Amazon →
                       </a>
@@ -379,7 +379,7 @@ export default function ShopPage() {
           {filteredProducts.map(product => (
             <div
               key={product.id}
-              className="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-lg hover:border-pink-300 transition-all relative flex flex-col h-full"
+              className="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-lg hover:border-[#9CAF88] transition-all relative flex flex-col h-full"
             >
               {/* Add to List Button */}
               <button
@@ -387,7 +387,7 @@ export default function ShopPage() {
                 className={`absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center text-lg transition-all ${
                   shoppingList.includes(product.id)
                     ? "bg-green-500 text-white"
-                    : "bg-gray-100 text-gray-400 hover:bg-pink-100 hover:text-pink-500"
+                    : "bg-gray-100 text-gray-400 hover:bg-[#F5FAF3] hover:text-[#9CAF88]"
                 }`}
               >
                 {shoppingList.includes(product.id) ? "✓" : "+"}
@@ -411,7 +411,7 @@ export default function ShopPage() {
                 href={`https://www.${amazonDomain.domain}/dp/${product.asin}?tag=${amazonDomain.tag}`}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="block w-full bg-pink-500 text-white text-center py-2 rounded-xl font-medium hover:bg-pink-600 transition-colors mt-auto"
+                className="block w-full bg-[#9CAF88] text-white text-center py-2 rounded-xl font-medium hover:bg-[#6B7F5E] transition-colors mt-auto"
               >
                 View on Amazon
               </a>
@@ -425,19 +425,19 @@ export default function ShopPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/guides/best-cricut-for-beginners"
-              className="text-pink-600 hover:underline"
+              className="text-[#9CAF88] hover:underline"
             >
               → Best Cricut for Beginners
             </Link>
             <Link
               href="/guides/cricut-blade-guide"
-              className="text-pink-600 hover:underline"
+              className="text-[#9CAF88] hover:underline"
             >
               → Which Blade Do I Need?
             </Link>
             <Link
               href="/materials"
-              className="text-pink-600 hover:underline"
+              className="text-[#9CAF88] hover:underline"
             >
               → Material Settings
             </Link>

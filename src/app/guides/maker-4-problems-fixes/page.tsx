@@ -59,7 +59,7 @@ const howToSteps = [
 
 export default function Maker4ProblemsFixes() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
       <FAQSchema faqs={faqData} />
       <HowToSchema 
         name="How to Fix Cricut Maker 4 Common Problems"
@@ -71,9 +71,9 @@ export default function Maker4ProblemsFixes() {
       <article className="max-w-4xl mx-auto px-4 py-12">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6">
-          <Link href="/" className="hover:text-pink-500">Home</Link>
+          <Link href="/" className="hover:text-[#9CAF88]">Home</Link>
           <span className="mx-2">→</span>
-          <Link href="/guides" className="hover:text-pink-500">Guides</Link>
+          <Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link>
           <span className="mx-2">→</span>
           <span className="text-gray-700">Maker 4 Problems & Fixes</span>
         </nav>
@@ -97,31 +97,31 @@ export default function Maker4ProblemsFixes() {
         </header>
 
         {/* Quick Jump Box */}
-        <div className="bg-pink-100 rounded-2xl p-6 mb-10">
+        <div className="bg-[#F5E6E6] rounded-2xl p-6 mb-10">
           <h2 className="text-xl font-bold text-gray-900 mb-3">🔧 Jump to Your Issue</h2>
           <div className="grid md:grid-cols-2 gap-2 text-gray-700">
-            <a href="#scoring-wheel" className="flex items-center gap-2 hover:text-pink-600">
+            <a href="#scoring-wheel" className="flex items-center gap-2 hover:text-[#9CAF88]">
               <span>→</span> Scoring Wheel Tearing Cardstock
             </a>
-            <a href="#speed-accuracy" className="flex items-center gap-2 hover:text-pink-600">
+            <a href="#speed-accuracy" className="flex items-center gap-2 hover:text-[#9CAF88]">
               <span>→</span> Speed vs Accuracy Issues
             </a>
-            <a href="#firmware" className="flex items-center gap-2 hover:text-pink-600">
+            <a href="#firmware" className="flex items-center gap-2 hover:text-[#9CAF88]">
               <span>→</span> Firmware Bugs & Updates
             </a>
-            <a href="#calibration" className="flex items-center gap-2 hover:text-pink-600">
+            <a href="#calibration" className="flex items-center gap-2 hover:text-[#9CAF88]">
               <span>→</span> Calibration Problems
             </a>
-            <a href="#bluetooth" className="flex items-center gap-2 hover:text-pink-600">
+            <a href="#bluetooth" className="flex items-center gap-2 hover:text-[#9CAF88]">
               <span>→</span> Bluetooth Connection Issues
             </a>
-            <a href="#mat-adhesion" className="flex items-center gap-2 hover:text-pink-600">
+            <a href="#mat-adhesion" className="flex items-center gap-2 hover:text-[#9CAF88]">
               <span>→</span> Mat Adhesion Problems
             </a>
-            <a href="#design-space" className="flex items-center gap-2 hover:text-pink-600">
+            <a href="#design-space" className="flex items-center gap-2 hover:text-[#9CAF88]">
               <span>→</span> Design Space Compatibility
             </a>
-            <a href="#cutting" className="flex items-center gap-2 hover:text-pink-600">
+            <a href="#cutting" className="flex items-center gap-2 hover:text-[#9CAF88]">
               <span>→</span> Cutting Issues & Errors
             </a>
           </div>
@@ -142,12 +142,12 @@ export default function Maker4ProblemsFixes() {
         </div>
 
         {/* Main Content */}
-        <div className="prose prose-lg prose-pink max-w-none">
+        <div className="prose prose-lg prose-slate max-w-none">
           
           {/* Problem 1: Scoring Wheel */}
           <section id="scoring-wheel" className="scroll-mt-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <span className="bg-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">1</span>
+              <span className="bg-[#9CAF88] text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">1</span>
               Scoring Wheel Tearing Cardstock
             </h2>
             
@@ -211,7 +211,7 @@ export default function Maker4ProblemsFixes() {
           {/* Problem 2: Speed vs Accuracy */}
           <section id="speed-accuracy" className="scroll-mt-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <span className="bg-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">2</span>
+              <span className="bg-[#9CAF88] text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">2</span>
               Speed vs Accuracy Tradeoffs
             </h2>
 
@@ -283,7 +283,7 @@ export default function Maker4ProblemsFixes() {
           {/* Problem 3: Firmware Bugs */}
           <section id="firmware" className="scroll-mt-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <span className="bg-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">3</span>
+              <span className="bg-[#9CAF88] text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">3</span>
               Firmware Bugs & Update Process
             </h2>
 
@@ -362,7 +362,7 @@ export default function Maker4ProblemsFixes() {
           {/* Problem 4: Calibration */}
           <section id="calibration" className="scroll-mt-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <span className="bg-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">4</span>
+              <span className="bg-[#9CAF88] text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">4</span>
               Calibration Issues
             </h2>
 
@@ -427,7 +427,7 @@ export default function Maker4ProblemsFixes() {
           {/* Problem 5: Bluetooth */}
           <section id="bluetooth" className="scroll-mt-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <span className="bg-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">5</span>
+              <span className="bg-[#9CAF88] text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">5</span>
               Bluetooth Connectivity Problems
             </h2>
 
@@ -502,7 +502,7 @@ export default function Maker4ProblemsFixes() {
             </p>
 
             <p className="mt-4">
-              <Link href="/guides/cricut-bluetooth-not-connecting" className="text-pink-600 hover:text-pink-700 font-semibold">
+              <Link href="/guides/cricut-bluetooth-not-connecting" className="text-[#9CAF88] hover:text-[#6B7F5E] font-semibold">
                 → Full Bluetooth troubleshooting guide →
               </Link>
             </p>
@@ -513,7 +513,7 @@ export default function Maker4ProblemsFixes() {
           {/* Problem 6: Mat Adhesion */}
           <section id="mat-adhesion" className="scroll-mt-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <span className="bg-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">6</span>
+              <span className="bg-[#9CAF88] text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">6</span>
               Mat Adhesion Problems
             </h2>
 
@@ -551,7 +551,7 @@ export default function Maker4ProblemsFixes() {
             <div className="overflow-x-auto">
               <table className="w-full my-6 text-sm">
                 <thead>
-                  <tr className="bg-pink-100">
+                  <tr className="bg-[#F5E6E6]">
                     <th className="text-left p-3 border-b">Mat Type</th>
                     <th className="text-left p-3 border-b">Color</th>
                     <th className="text-left p-3 border-b">Best For</th>
@@ -583,7 +583,7 @@ export default function Maker4ProblemsFixes() {
             </div>
 
             <p className="mt-4">
-              <Link href="/guides/cricut-mat-not-sticky" className="text-pink-600 hover:text-pink-700 font-semibold">
+              <Link href="/guides/cricut-mat-not-sticky" className="text-[#9CAF88] hover:text-[#6B7F5E] font-semibold">
                 → Complete mat care guide →
               </Link>
             </p>
@@ -594,7 +594,7 @@ export default function Maker4ProblemsFixes() {
           {/* Problem 7: Design Space */}
           <section id="design-space" className="scroll-mt-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <span className="bg-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">7</span>
+              <span className="bg-[#9CAF88] text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">7</span>
               Design Space Compatibility Issues
             </h2>
 
@@ -664,7 +664,7 @@ export default function Maker4ProblemsFixes() {
             </ul>
 
             <p className="mt-4">
-              <Link href="/guides/cricut-design-space-not-working" className="text-pink-600 hover:text-pink-700 font-semibold">
+              <Link href="/guides/cricut-design-space-not-working" className="text-[#9CAF88] hover:text-[#6B7F5E] font-semibold">
                 → Full Design Space troubleshooting guide →
               </Link>
             </p>
@@ -675,7 +675,7 @@ export default function Maker4ProblemsFixes() {
           {/* Problem 8: Cutting Issues */}
           <section id="cutting" className="scroll-mt-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <span className="bg-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">8</span>
+              <span className="bg-[#9CAF88] text-white w-10 h-10 rounded-full flex items-center justify-center text-lg">8</span>
               Cutting Issues & Mid-Cut Errors
             </h2>
 
@@ -728,7 +728,7 @@ export default function Maker4ProblemsFixes() {
             </ul>
 
             <p className="mt-4">
-              <Link href="/guides/cricut-not-cutting-vinyl" className="text-pink-600 hover:text-pink-700 font-semibold">
+              <Link href="/guides/cricut-not-cutting-vinyl" className="text-[#9CAF88] hover:text-[#6B7F5E] font-semibold">
                 → Complete cutting troubleshooting guide →
               </Link>
             </p>
@@ -737,7 +737,7 @@ export default function Maker4ProblemsFixes() {
           <hr className="my-10" />
 
           {/* Summary Box */}
-          <section className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-8">
+          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">🛠️ Quick Reference: Maker 4 Fixes</h2>
             <div className="grid md:grid-cols-2 gap-6 text-gray-700">
               <div>
@@ -807,14 +807,14 @@ export default function Maker4ProblemsFixes() {
         </section>
 
         {/* CTA */}
-        <section className="mt-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-8 text-center text-white">
+        <section className="mt-12 bg-gradient-to-r from-[#9CAF88] to-purple-500 rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-4">Still Having Issues?</h2>
           <p className="mb-6 opacity-90">
             Our interactive troubleshooting wizard can diagnose your specific problem step-by-step.
           </p>
           <Link 
             href="/troubleshoot" 
-            className="inline-block bg-white text-pink-600 px-8 py-3 rounded-full font-semibold hover:bg-pink-50 transition-colors"
+            className="inline-block bg-white text-[#9CAF88] px-8 py-3 rounded-full font-semibold hover:bg-[#F5FAF3] transition-colors"
           >
             Start Troubleshooting Wizard →
           </Link>

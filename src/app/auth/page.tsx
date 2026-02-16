@@ -79,7 +79,7 @@ function AuthForm() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <Link href="/" className="text-2xl font-bold text-pink-500">
+          <Link href="/" className="text-2xl font-bold text-[#9CAF88]">
             CricutHelper
           </Link>
           <h1 className="text-xl font-bold text-gray-800 mt-4">
@@ -115,7 +115,7 @@ function AuthForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
                 placeholder="you@example.com"
               />
             </div>
@@ -130,7 +130,7 @@ function AuthForm() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 minLength={6}
-                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
                 placeholder="••••••••"
               />
             </div>
@@ -138,7 +138,7 @@ function AuthForm() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+              className="w-full py-3 bg-gradient-to-r from-purple-500 to-[#6B7F5E] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
             >
               {loading ? "Loading..." : isLogin ? "Sign In" : "Create Account"}
             </button>
@@ -180,7 +180,7 @@ function AuthForm() {
             {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
             <button
               onClick={() => setIsLogin(!isLogin)}
-              className="text-pink-500 font-medium hover:underline"
+              className="text-[#9CAF88] font-medium hover:underline"
             >
               {isLogin ? "Sign up" : "Sign in"}
             </button>

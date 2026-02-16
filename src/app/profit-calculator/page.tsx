@@ -60,7 +60,7 @@ export default function ProfitCalculatorPage() {
   return (
     <div className="max-w-xl mx-auto">
       <div className="mb-6">
-        <Link href="/" className="text-pink-500 hover:underline text-sm">← Home</Link>
+        <Link href="/" className="text-[#9CAF88] hover:underline text-sm">← Home</Link>
         <h1 className="text-2xl font-bold text-gray-800 mt-3">💰 Profit Calculator</h1>
         <p className="text-gray-600 text-sm mt-1">Quick check — are you actually making money?</p>
       </div>
@@ -76,7 +76,7 @@ export default function ProfitCalculatorPage() {
               step="0.01"
               value={sellingPrice}
               onChange={(e) => setSellingPrice(e.target.value)}
-              className="w-full pl-8 pr-4 py-3 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none text-lg"
+              className="w-full pl-8 pr-4 py-3 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none text-lg"
             />
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function ProfitCalculatorPage() {
               value={materialCost}
               onChange={(e) => setMaterialCost(e.target.value)}
               placeholder="Blank + vinyl + extras"
-              className="w-full pl-8 pr-4 py-3 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+              className="w-full pl-8 pr-4 py-3 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
             />
           </div>
           <p className="text-xs text-gray-400 mt-1">Include blank, vinyl, packaging — everything</p>
@@ -106,7 +106,7 @@ export default function ProfitCalculatorPage() {
               type="number"
               value={timeMinutes}
               onChange={(e) => setTimeMinutes(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
             />
           </div>
           <div>
@@ -117,7 +117,7 @@ export default function ProfitCalculatorPage() {
                 type="number"
                 value={hourlyRate}
                 onChange={(e) => setHourlyRate(e.target.value)}
-                className="w-full pl-8 pr-4 py-3 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
+                className="w-full pl-8 pr-4 py-3 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none"
               />
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function ProfitCalculatorPage() {
           <select
             value={platform}
             onChange={(e) => setPlatform(e.target.value as Platform)}
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none bg-white"
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none bg-white"
           >
             {Object.entries(platformFees).map(([key, { label }]) => (
               <option key={key} value={key}>{label}</option>
@@ -176,7 +176,7 @@ export default function ProfitCalculatorPage() {
         {calculations.profit > 0 && (
           <button
             onClick={() => setShowShareModal(true)}
-            className="mt-4 w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all flex items-center justify-center gap-2"
+            className="mt-4 w-full bg-gradient-to-r from-[#9CAF88] to-[#6B7F5E] text-white font-semibold py-3 px-4 rounded-lg hover:from-[#6B7F5E] hover:to-[#5A6D4F] transition-all flex items-center justify-center gap-2"
           >
             <span>✨</span> Share My Margins
           </button>
@@ -213,14 +213,14 @@ export default function ProfitCalculatorPage() {
       </div>
 
       {/* Advanced Calculator Link */}
-      <div className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-5 text-white">
+      <div className="mt-6 bg-gradient-to-r from-[#9CAF88] to-[#6B7F5E] rounded-xl p-5 text-white">
         <h3 className="font-bold text-lg mb-2">Need more detail?</h3>
-        <p className="text-sm text-purple-100 mb-4">
+        <p className="text-sm text-white/80 mb-4">
           Track multiple materials, compare all marketplaces, add overhead costs, and more.
         </p>
         <Link 
           href="/profit-calculator/advanced"
-          className="inline-block bg-white text-purple-600 font-semibold px-5 py-2 rounded-lg hover:bg-purple-50 transition-colors"
+          className="inline-block bg-white text-[#6B7F5E] font-semibold px-5 py-2 rounded-lg hover:bg-[#F5FAF3] transition-colors"
         >
           Try Advanced Calculator →
         </Link>

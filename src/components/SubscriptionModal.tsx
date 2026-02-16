@@ -144,7 +144,7 @@ export default function SubscriptionModal({ isOpen, onClose, feature }: Subscrip
         <button
           onClick={handleSubscribe}
           disabled={loading}
-          className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50"
+          className="w-full py-3 bg-gradient-to-r from-purple-500 to-[#6B7F5E] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50"
         >
           {loading ? "Loading..." : "Start 7-Day Free Trial"}
         </button>

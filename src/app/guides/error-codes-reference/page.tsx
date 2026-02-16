@@ -42,7 +42,7 @@ const faqData = [
 
 export default function ErrorCodesReferencePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
       <FAQSchema faqs={faqData} />
       
       {/* JSON-LD for error codes table (ItemList schema) */}
@@ -67,9 +67,9 @@ export default function ErrorCodesReferencePage() {
       <article className="max-w-4xl mx-auto px-4 py-12">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6">
-          <Link href="/" className="hover:text-pink-500">Home</Link>
+          <Link href="/" className="hover:text-[#9CAF88]">Home</Link>
           <span className="mx-2">→</span>
-          <Link href="/guides" className="hover:text-pink-500">Guides</Link>
+          <Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link>
           <span className="mx-2">→</span>
           <span className="text-gray-700">Error Codes Reference</span>
         </nav>
@@ -116,47 +116,47 @@ export default function ErrorCodesReferencePage() {
               <span>✂️</span>
               <span className="text-sm font-medium text-red-800">Cutting/Hardware (5-8xxx)</span>
             </a>
-            <a href="#subscription" className="flex items-center gap-2 p-3 bg-pink-50 rounded-lg hover:bg-pink-100 transition-colors">
+            <a href="#subscription" className="flex items-center gap-2 p-3 bg-[#F5FAF3] rounded-lg hover:bg-[#F5E6E6] transition-colors">
               <span>💳</span>
-              <span className="text-sm font-medium text-pink-800">Subscription (9xxx)</span>
+              <span className="text-sm font-medium text-[#6B7F5E]">Subscription (9xxx)</span>
             </a>
           </div>
         </div>
 
         {/* Quick Answer Box for Featured Snippet */}
-        <div className="bg-pink-100 rounded-2xl p-6 mb-10">
+        <div className="bg-[#F5E6E6] rounded-2xl p-6 mb-10">
           <h2 className="text-xl font-bold text-gray-900 mb-3">⚡ Most Common Cricut Error Codes</h2>
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-pink-200">
+              <tr className="border-b border-[#B8C9A9]">
                 <th className="text-left py-2 font-semibold">Code</th>
                 <th className="text-left py-2 font-semibold">Meaning</th>
                 <th className="text-left py-2 font-semibold">Quick Fix</th>
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-pink-200">
-                <td className="py-2 font-mono font-bold text-pink-700">1001</td>
+              <tr className="border-b border-[#B8C9A9]">
+                <td className="py-2 font-mono font-bold text-[#6B7F5E]">1001</td>
                 <td className="py-2">Connection Error</td>
                 <td className="py-2">Restart machine + check Bluetooth</td>
               </tr>
-              <tr className="border-b border-pink-200">
-                <td className="py-2 font-mono font-bold text-pink-700">1006</td>
+              <tr className="border-b border-[#B8C9A9]">
+                <td className="py-2 font-mono font-bold text-[#6B7F5E]">1006</td>
                 <td className="py-2">Machine Not Found</td>
                 <td className="py-2">Forget & re-pair in Bluetooth settings</td>
               </tr>
-              <tr className="border-b border-pink-200">
-                <td className="py-2 font-mono font-bold text-pink-700">2003</td>
+              <tr className="border-b border-[#B8C9A9]">
+                <td className="py-2 font-mono font-bold text-[#6B7F5E]">2003</td>
                 <td className="py-2">Sensor Can't Read Marks</td>
                 <td className="py-2">Use matte paper, clean sensor</td>
               </tr>
-              <tr className="border-b border-pink-200">
-                <td className="py-2 font-mono font-bold text-pink-700">4001</td>
+              <tr className="border-b border-[#B8C9A9]">
+                <td className="py-2 font-mono font-bold text-[#6B7F5E]">4001</td>
                 <td className="py-2">USB Not Recognized</td>
                 <td className="py-2">Try different cable/port</td>
               </tr>
               <tr>
-                <td className="py-2 font-mono font-bold text-pink-700">7001</td>
+                <td className="py-2 font-mono font-bold text-[#6B7F5E]">7001</td>
                 <td className="py-2">Carriage Jam</td>
                 <td className="py-2">Turn off, clear obstruction</td>
               </tr>
@@ -165,7 +165,7 @@ export default function ErrorCodesReferencePage() {
         </div>
 
         {/* Main Content */}
-        <div className="prose prose-lg prose-pink max-w-none">
+        <div className="prose prose-lg prose-slate max-w-none">
           
           {/* CONNECTIVITY ERRORS */}
           <h2 id="connectivity" className="flex items-center gap-2">
@@ -950,9 +950,9 @@ export default function ErrorCodesReferencePage() {
           </p>
 
           {/* Error 9001 */}
-          <div className="bg-white rounded-xl border-2 border-pink-200 p-6 my-6 not-prose">
+          <div className="bg-white rounded-xl border-2 border-[#B8C9A9] p-6 my-6 not-prose">
             <div className="flex items-center gap-3 mb-4">
-              <span className="bg-pink-100 text-pink-700 px-4 py-2 rounded-lg font-mono font-bold text-xl">9001</span>
+              <span className="bg-[#F5E6E6] text-[#6B7F5E] px-4 py-2 rounded-lg font-mono font-bold text-xl">9001</span>
               <h3 className="text-xl font-bold text-gray-900">Subscription/Access Error</h3>
             </div>
             <p className="text-gray-600 mb-4">Unable to access Cricut Access content or premium features.</p>
@@ -982,9 +982,9 @@ export default function ErrorCodesReferencePage() {
           </div>
 
           {/* Error 9002 */}
-          <div className="bg-white rounded-xl border-2 border-pink-200 p-6 my-6 not-prose">
+          <div className="bg-white rounded-xl border-2 border-[#B8C9A9] p-6 my-6 not-prose">
             <div className="flex items-center gap-3 mb-4">
-              <span className="bg-pink-100 text-pink-700 px-4 py-2 rounded-lg font-mono font-bold text-xl">9002</span>
+              <span className="bg-[#F5E6E6] text-[#6B7F5E] px-4 py-2 rounded-lg font-mono font-bold text-xl">9002</span>
               <h3 className="text-xl font-bold text-gray-900">Content Not Available</h3>
             </div>
             <p className="text-gray-600 mb-4">The image or font you're trying to use is not available.</p>
@@ -1215,7 +1215,7 @@ export default function ErrorCodesReferencePage() {
         </section>
 
         {/* CTA Box */}
-        <div className="bg-pink-50 rounded-2xl p-6 mt-10">
+        <div className="bg-[#F5FAF3] rounded-2xl p-6 mt-10">
           <h3 className="text-xl font-bold text-gray-900 mb-3">Need Interactive Help?</h3>
           <p className="text-gray-700 mb-4">
             Our troubleshooting wizard walks you through fixes step-by-step based on your exact issue.
@@ -1223,13 +1223,13 @@ export default function ErrorCodesReferencePage() {
           <div className="flex flex-wrap gap-4">
             <Link 
               href="/troubleshoot" 
-              className="inline-block bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
+              className="inline-block bg-[#9CAF88] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#6B7F5E] transition-colors"
             >
               Start Troubleshooting Wizard →
             </Link>
             <Link 
               href="/error-codes" 
-              className="inline-block bg-white text-pink-500 border-2 border-pink-500 px-6 py-3 rounded-full font-semibold hover:bg-pink-50 transition-colors"
+              className="inline-block bg-white text-[#9CAF88] border-2 border-[#9CAF88] px-6 py-3 rounded-full font-semibold hover:bg-[#F5FAF3] transition-colors"
             >
               Search Error Codes →
             </Link>

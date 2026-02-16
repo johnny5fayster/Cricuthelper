@@ -69,7 +69,7 @@ export function Testimonials() {
               key={i}
               onClick={() => setCurrent(i)}
               className={`w-2 h-2 rounded-full transition-colors ${
-                i === current ? 'bg-pink-500' : 'bg-gray-300'
+                i === current ? 'bg-[#9CAF88]' : 'bg-gray-300'
               }`}
             />
           ))}
@@ -86,7 +86,7 @@ export function Testimonials() {
               <span className="text-gray-400">•</span>
               <span className="text-gray-500">{testimonial.location}</span>
               <span className="text-gray-400">•</span>
-              <span className="text-pink-500 text-sm">{testimonial.machine}</span>
+              <span className="text-[#9CAF88] text-sm">{testimonial.machine}</span>
             </div>
           </div>
         </div>

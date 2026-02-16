@@ -34,7 +34,7 @@ const tips = [
 
 export default function CakeDecoratingPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         {/* Hero */}
         <div className="text-center mb-12">
@@ -63,7 +63,7 @@ export default function CakeDecoratingPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">🍰 Edible Material Settings</h2>
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-pink-50">
+              <thead className="bg-[#F5FAF3]">
                 <tr>
                   <th className="text-left p-3 font-semibold">Material</th>
                   <th className="text-left p-3 font-semibold">Blade</th>
@@ -90,7 +90,7 @@ export default function CakeDecoratingPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">🧁 Project Ideas</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {projects.map((project) => (
-              <div key={project.name} className="bg-pink-50 rounded-xl p-4">
+              <div key={project.name} className="bg-[#F5FAF3] rounded-xl p-4">
                 <h3 className="font-bold text-gray-900 mb-1">{project.name}</h3>
                 <p className="text-gray-600">{project.description}</p>
               </div>
@@ -103,8 +103,8 @@ export default function CakeDecoratingPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">💡 Pro Tips</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {tips.map((tip) => (
-              <div key={tip.title} className="border border-pink-100 rounded-xl p-4">
-                <h3 className="font-bold text-pink-600 mb-2">{tip.title}</h3>
+              <div key={tip.title} className="border border-[#B8C9A9] rounded-xl p-4">
+                <h3 className="font-bold text-[#9CAF88] mb-2">{tip.title}</h3>
                 <p className="text-gray-600">{tip.content}</p>
               </div>
             ))}
@@ -112,7 +112,7 @@ export default function CakeDecoratingPage() {
         </section>
 
         {/* Troubleshooting */}
-        <section className="bg-pink-100 rounded-2xl p-8">
+        <section className="bg-[#F5E6E6] rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">🔧 Common Issues</h2>
           <div className="space-y-4">
             <div className="bg-white rounded-xl p-4">

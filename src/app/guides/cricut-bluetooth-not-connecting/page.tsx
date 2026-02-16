@@ -53,7 +53,7 @@ const howToSteps = [
 
 export default function CricutBluetoothNotConnectingPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
       <FAQSchema faqs={faqData} />
       <HowToSchema 
         name="How to Fix Cricut Bluetooth Connection Problems"
@@ -65,9 +65,9 @@ export default function CricutBluetoothNotConnectingPage() {
       <article className="max-w-4xl mx-auto px-4 py-12">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6">
-          <Link href="/" className="hover:text-pink-500">Home</Link>
+          <Link href="/" className="hover:text-[#9CAF88]">Home</Link>
           <span className="mx-2">→</span>
-          <Link href="/guides" className="hover:text-pink-500">Guides</Link>
+          <Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link>
           <span className="mx-2">→</span>
           <span className="text-gray-700">Bluetooth Not Connecting</span>
         </nav>
@@ -91,26 +91,26 @@ export default function CricutBluetoothNotConnectingPage() {
         </header>
 
         {/* Quick Fixes Box */}
-        <div className="bg-pink-100 rounded-2xl p-6 mb-10">
+        <div className="bg-[#F5E6E6] rounded-2xl p-6 mb-10">
           <h2 className="text-xl font-bold text-gray-900 mb-3">⚡ Try These First (60 Second Fixes)</h2>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">1.</span>
+              <span className="text-[#9CAF88] font-bold">1.</span>
               <span><strong>Turn it off and on again</strong> — seriously. Power cycle both the Cricut AND your device.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">2.</span>
+              <span className="text-[#9CAF88] font-bold">2.</span>
               <span><strong>Check the light</strong> — it should be SOLID, not blinking. Blinking = still starting up.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">3.</span>
+              <span className="text-[#9CAF88] font-bold">3.</span>
               <span><strong>Close Design Space completely</strong> — not just minimize. Reopen it fresh.</span>
             </li>
           </ul>
         </div>
 
         {/* Main Content */}
-        <div className="prose prose-lg prose-pink max-w-none">
+        <div className="prose prose-lg prose-slate max-w-none">
           
           <h2 id="understanding">Why Bluetooth Connections Fail</h2>
           <p>
@@ -419,14 +419,14 @@ export default function CricutBluetoothNotConnectingPage() {
             <li><strong>Contact Cricut Support</strong> — If nothing works, there may be a hardware issue with your machine's Bluetooth module. Visit help.cricut.com.</li>
           </ul>
 
-          <div className="bg-pink-50 rounded-2xl p-6 my-8">
+          <div className="bg-[#F5FAF3] rounded-2xl p-6 my-8">
             <h3 className="text-xl font-bold text-gray-900 mb-3">Need More Help?</h3>
             <p className="text-gray-700 mb-4">
               Our interactive troubleshooting wizard walks you through device-specific steps based on your exact setup.
             </p>
             <Link 
               href="/troubleshoot?issue=bluetooth" 
-              className="inline-block bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
+              className="inline-block bg-[#9CAF88] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#6B7F5E] transition-colors"
             >
               Start Troubleshooting Wizard →
             </Link>

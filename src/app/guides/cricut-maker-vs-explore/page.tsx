@@ -67,14 +67,14 @@ export default function MakerVsExploreGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Breadcrumb */}
           <nav className="text-sm mb-6">
             <ol className="flex items-center space-x-2 text-gray-500">
-              <li><Link href="/" className="hover:text-pink-600">Home</Link></li>
+              <li><Link href="/" className="hover:text-[#9CAF88]">Home</Link></li>
               <li>/</li>
-              <li><Link href="/guides" className="hover:text-pink-600">Guides</Link></li>
+              <li><Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link></li>
               <li>/</li>
               <li className="text-gray-900">Maker vs Explore</li>
             </ol>
@@ -98,7 +98,7 @@ export default function MakerVsExploreGuide() {
           </header>
 
           {/* Quick Answer Box */}
-          <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-6 mb-8 border-l-4 border-purple-500">
+          <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] rounded-xl p-6 mb-8 border-l-4 border-purple-500">
             <h2 className="font-bold text-lg text-gray-900 mb-4">🎯 The 30-Second Answer</h2>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
@@ -446,28 +446,28 @@ export default function MakerVsExploreGuide() {
             <div className="grid md:grid-cols-2 gap-4">
               <Link 
                 href="/guides/is-cricut-access-worth-it"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Is Cricut Access Worth It?</h3>
                 <p className="text-gray-600 text-sm mt-1">Decide if you need the subscription too.</p>
               </Link>
               <Link 
                 href="/guides/cricut-not-cutting-vinyl"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Vinyl Cutting Problems</h3>
                 <p className="text-gray-600 text-sm mt-1">Fix common issues on any machine.</p>
               </Link>
               <Link 
                 href="/materials"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Material Settings Database</h3>
                 <p className="text-gray-600 text-sm mt-1">Settings for both Maker and Explore.</p>
               </Link>
               <Link 
                 href="/troubleshoot"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Troubleshooting Wizard</h3>
                 <p className="text-gray-600 text-sm mt-1">Diagnose any Cricut issue.</p>
@@ -476,7 +476,7 @@ export default function MakerVsExploreGuide() {
           </section>
 
           {/* CTA */}
-          <section className="mt-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-8 text-center text-white">
+          <section className="mt-12 bg-gradient-to-r from-purple-500 to-[#6B7F5E] rounded-xl p-8 text-center text-white">
             <h2 className="text-2xl font-bold mb-3">Ready to Get Started?</h2>
             <p className="text-purple-100 mb-6">
               Whichever machine you choose, our guides and troubleshooting tools will help you 

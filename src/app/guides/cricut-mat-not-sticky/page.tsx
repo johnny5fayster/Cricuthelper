@@ -111,14 +111,14 @@ export default function MatNotStickyGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Breadcrumb */}
           <nav className="text-sm mb-6">
             <ol className="flex items-center space-x-2 text-gray-500">
-              <li><Link href="/" className="hover:text-pink-600">Home</Link></li>
+              <li><Link href="/" className="hover:text-[#9CAF88]">Home</Link></li>
               <li>/</li>
-              <li><Link href="/guides" className="hover:text-pink-600">Guides</Link></li>
+              <li><Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link></li>
               <li>/</li>
               <li className="text-gray-900">Mat Not Sticky</li>
             </ol>
@@ -158,11 +158,11 @@ export default function MatNotStickyGuide() {
           <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
             <h2 className="font-bold text-lg mb-4">📋 Jump To...</h2>
             <ul className="space-y-2 text-gray-700">
-              <li><a href="#why-sticky" className="text-pink-600 hover:underline">→ Why mats lose stickiness</a></li>
-              <li><a href="#daily-care" className="text-pink-600 hover:underline">→ Daily care tips (prevent the problem)</a></li>
-              <li><a href="#cleaning-methods" className="text-pink-600 hover:underline">→ 4 cleaning methods ranked</a></li>
-              <li><a href="#resticking" className="text-pink-600 hover:underline">→ How to restick a mat</a></li>
-              <li><a href="#mat-types" className="text-pink-600 hover:underline">→ Care by mat type (green, blue, purple, pink)</a></li>
+              <li><a href="#why-sticky" className="text-[#9CAF88] hover:underline">→ Why mats lose stickiness</a></li>
+              <li><a href="#daily-care" className="text-[#9CAF88] hover:underline">→ Daily care tips (prevent the problem)</a></li>
+              <li><a href="#cleaning-methods" className="text-[#9CAF88] hover:underline">→ 4 cleaning methods ranked</a></li>
+              <li><a href="#resticking" className="text-[#9CAF88] hover:underline">→ How to restick a mat</a></li>
+              <li><a href="#mat-types" className="text-[#9CAF88] hover:underline">→ Care by mat type (green, blue, purple, pink)</a></li>
             </ul>
           </div>
 
@@ -404,7 +404,7 @@ export default function MatNotStickyGuide() {
                   </p>
                 </div>
 
-                <div className="bg-pink-50 rounded-lg p-4 border-l-4 border-pink-500">
+                <div className="bg-[#F5FAF3] rounded-lg p-4 border-l-4 border-[#9CAF88]">
                   <h3 className="font-bold text-gray-900">🩷 Pink (FabricGrip)</h3>
                   <p className="text-gray-700 text-sm">
                     <strong>Best for:</strong> Fabric, felt, bonded fabric<br/>
@@ -489,28 +489,28 @@ export default function MatNotStickyGuide() {
             <div className="grid md:grid-cols-2 gap-4">
               <Link 
                 href="/guides/cricut-not-cutting-vinyl"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Cricut Not Cutting Vinyl Properly</h3>
                 <p className="text-gray-600 text-sm mt-1">Blade, pressure, and material settings solutions.</p>
               </Link>
               <Link 
                 href="/guides/htv-peeling-after-washing"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">HTV Peeling After Washing</h3>
                 <p className="text-gray-600 text-sm mt-1">Why iron-on won't stay and how to fix it.</p>
               </Link>
               <Link 
                 href="/materials"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Material Settings Database</h3>
                 <p className="text-gray-600 text-sm mt-1">Find the right settings for any material.</p>
               </Link>
               <Link 
                 href="/troubleshoot"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Troubleshooting Wizard</h3>
                 <p className="text-gray-600 text-sm mt-1">Diagnose any Cricut issue step by step.</p>

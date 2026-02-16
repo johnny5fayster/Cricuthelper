@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 
 export default function CheatSheetsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
       <div className="container mx-auto px-4 py-12 max-w-5xl">
         
         {/* Breadcrumb */}
         <nav className="text-sm mb-8">
           <ol className="flex items-center space-x-2 text-gray-500">
-            <li><Link href="/" className="hover:text-pink-600">Home</Link></li>
+            <li><Link href="/" className="hover:text-[#9CAF88]">Home</Link></li>
             <li>/</li>
             <li className="text-gray-900">Cheat Sheet Bundle</li>
           </ol>
@@ -29,8 +29,8 @@ export default function CheatSheetsPage() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Product Images */}
           <div className="space-y-4">
-            <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-pink-200">
-              <div className="aspect-[4/3] bg-gradient-to-br from-pink-100 to-purple-100 rounded-xl flex items-center justify-center">
+            <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-[#B8C9A9]">
+              <div className="aspect-[4/3] bg-gradient-to-br from-[#F5E6E6] to-purple-100 rounded-xl flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl mb-4">📋</div>
                   <div className="text-2xl font-bold text-gray-800">4 Cheat Sheets</div>
@@ -80,7 +80,7 @@ export default function CheatSheetsPage() {
             <a
               href="#coming-soon"
               id="buy"
-              className="block w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white text-center font-bold py-4 px-8 rounded-xl text-lg hover:from-pink-600 hover:to-purple-600 transition-all shadow-lg hover:shadow-xl mb-6"
+              className="block w-full bg-gradient-to-r from-[#9CAF88] to-purple-500 text-white text-center font-bold py-4 px-8 rounded-xl text-lg hover:from-[#6B7F5E] hover:to-purple-600 transition-all shadow-lg hover:shadow-xl mb-6"
             >
               Buy Now — Instant Download
             </a>
@@ -203,15 +203,15 @@ export default function CheatSheetsPage() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-8 text-center text-white">
+        <div className="mt-16 bg-gradient-to-r from-[#9CAF88] to-purple-500 rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-4">Ready to craft smarter?</h2>
-          <p className="text-pink-100 mb-6 max-w-xl mx-auto">
+          <p className="text-white/80 mb-6 max-w-xl mx-auto">
             Stop wasting time looking up settings. Get the cheat sheets and spend more time 
             actually making things.
           </p>
           <a
             href="#buy"
-            className="inline-block bg-white text-pink-600 font-bold py-3 px-8 rounded-full hover:bg-pink-50 transition-colors"
+            className="inline-block bg-white text-[#9CAF88] font-bold py-3 px-8 rounded-full hover:bg-[#F5FAF3] transition-colors"
           >
             Get the Bundle — $4.99
           </a>

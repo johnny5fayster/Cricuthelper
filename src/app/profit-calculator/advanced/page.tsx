@@ -174,17 +174,17 @@ export default function AdvancedProfitCalculatorPage() {
   return (
     <div className="max-w-5xl mx-auto">
       <div className="mb-6">
-        <Link href="/" className="text-pink-500 hover:underline text-sm">← Home</Link>
+        <Link href="/" className="text-[#9CAF88] hover:underline text-sm">← Home</Link>
         <div className="flex items-center gap-3 mt-3">
           <h1 className="text-2xl font-bold text-gray-800">💰 Advanced Profit Calculator</h1>
-          <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+          <span className="bg-gradient-to-r from-purple-500 to-[#6B7F5E] text-white text-xs font-bold px-2 py-1 rounded-full">
             PRO
           </span>
         </div>
         <p className="text-gray-600 text-sm mt-1">
           Calculate your true profit with materials, labor, overhead, and marketplace fees
         </p>
-        <Link href="/profit-calculator" className="text-pink-500 hover:underline text-sm">
+        <Link href="/profit-calculator" className="text-[#9CAF88] hover:underline text-sm">
           ← Back to Simple Calculator
         </Link>
       </div>
@@ -206,7 +206,7 @@ export default function AdvancedProfitCalculatorPage() {
                     step="0.01"
                     value={sellingPrice}
                     onChange={(e) => setSellingPrice(e.target.value)}
-                    className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                    className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                   />
                 </div>
               </div>
@@ -217,7 +217,7 @@ export default function AdvancedProfitCalculatorPage() {
                   min="1"
                   value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                 />
               </div>
               <div>
@@ -228,7 +228,7 @@ export default function AdvancedProfitCalculatorPage() {
                     step="1"
                     value={wasteFactor}
                     onChange={(e) => setWasteFactor(e.target.value)}
-                    className="w-full px-3 pr-7 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                    className="w-full px-3 pr-7 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                   />
                   <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
                 </div>
@@ -247,7 +247,7 @@ export default function AdvancedProfitCalculatorPage() {
                     placeholder="Material name"
                     value={material.name}
                     onChange={(e) => updateMaterial(index, "name", e.target.value)}
-                    className="flex-1 px-3 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                    className="flex-1 px-3 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                   />
                   <div className="relative w-20">
                     <span className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 text-xs">$</span>
@@ -257,7 +257,7 @@ export default function AdvancedProfitCalculatorPage() {
                       placeholder="Cost"
                       value={material.cost}
                       onChange={(e) => updateMaterial(index, "cost", e.target.value)}
-                      className="w-full pl-5 pr-2 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                      className="w-full pl-5 pr-2 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                     />
                   </div>
                   <input
@@ -266,7 +266,7 @@ export default function AdvancedProfitCalculatorPage() {
                     placeholder="Qty"
                     value={material.quantity}
                     onChange={(e) => updateMaterial(index, "quantity", e.target.value)}
-                    className="w-14 px-2 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm text-center"
+                    className="w-14 px-2 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm text-center"
                   />
                   <button
                     onClick={() => removeMaterial(index)}
@@ -279,7 +279,7 @@ export default function AdvancedProfitCalculatorPage() {
             </div>
             <button
               onClick={addMaterial}
-              className="mt-2 text-pink-500 hover:text-pink-600 text-sm font-medium"
+              className="mt-2 text-[#9CAF88] hover:text-[#9CAF88] text-sm font-medium"
             >
               + Add material
             </button>
@@ -296,7 +296,7 @@ export default function AdvancedProfitCalculatorPage() {
                     placeholder="Task"
                     value={item.name}
                     onChange={(e) => updateLaborItem(index, "name", e.target.value)}
-                    className="flex-1 px-3 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                    className="flex-1 px-3 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                   />
                   <div className="relative w-20">
                     <input
@@ -304,7 +304,7 @@ export default function AdvancedProfitCalculatorPage() {
                       placeholder="Min"
                       value={item.minutes}
                       onChange={(e) => updateLaborItem(index, "minutes", e.target.value)}
-                      className="w-full px-2 pr-8 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                      className="w-full px-2 pr-8 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                     />
                     <span className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 text-xs">min</span>
                   </div>
@@ -315,7 +315,7 @@ export default function AdvancedProfitCalculatorPage() {
                       placeholder="Rate"
                       value={item.rate}
                       onChange={(e) => updateLaborItem(index, "rate", e.target.value)}
-                      className="w-full pl-5 pr-6 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                      className="w-full pl-5 pr-6 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                     />
                     <span className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 text-xs">/hr</span>
                   </div>
@@ -330,7 +330,7 @@ export default function AdvancedProfitCalculatorPage() {
             </div>
             <button
               onClick={addLaborItem}
-              className="mt-2 text-pink-500 hover:text-pink-600 text-sm font-medium"
+              className="mt-2 text-[#9CAF88] hover:text-[#9CAF88] text-sm font-medium"
             >
               + Add task
             </button>
@@ -349,7 +349,7 @@ export default function AdvancedProfitCalculatorPage() {
                     step="0.01"
                     value={shippingCharged}
                     onChange={(e) => setShippingCharged(e.target.value)}
-                    className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                    className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                   />
                 </div>
               </div>
@@ -362,7 +362,7 @@ export default function AdvancedProfitCalculatorPage() {
                     step="0.01"
                     value={shippingCost}
                     onChange={(e) => setShippingCost(e.target.value)}
-                    className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                    className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                   />
                 </div>
               </div>
@@ -375,7 +375,7 @@ export default function AdvancedProfitCalculatorPage() {
                     step="0.01"
                     value={packagingCost}
                     onChange={(e) => setPackagingCost(e.target.value)}
-                    className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                    className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                   />
                 </div>
               </div>
@@ -405,7 +405,7 @@ export default function AdvancedProfitCalculatorPage() {
                       step="0.01"
                       value={machineDepreciation}
                       onChange={(e) => setMachineDepreciation(e.target.value)}
-                      className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                      className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                     />
                   </div>
                 </div>
@@ -418,7 +418,7 @@ export default function AdvancedProfitCalculatorPage() {
                       step="0.01"
                       value={matWear}
                       onChange={(e) => setMatWear(e.target.value)}
-                      className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                      className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                     />
                   </div>
                 </div>
@@ -431,7 +431,7 @@ export default function AdvancedProfitCalculatorPage() {
                       step="0.01"
                       value={bladeWear}
                       onChange={(e) => setBladeWear(e.target.value)}
-                      className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-pink-400 outline-none text-sm"
+                      className="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg focus:border-[#9CAF88] outline-none text-sm"
                     />
                   </div>
                 </div>
@@ -449,7 +449,7 @@ export default function AdvancedProfitCalculatorPage() {
                   onClick={() => selectMarketplace(index)}
                   className={`p-2 rounded-lg text-xs font-medium transition-all ${
                     mp.enabled 
-                      ? 'bg-pink-500 text-white' 
+                      ? 'bg-[#9CAF88] text-white' 
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 >
@@ -552,7 +552,7 @@ export default function AdvancedProfitCalculatorPage() {
               className="flex items-center justify-between w-full"
             >
               <h2 className="text-base font-bold text-gray-800">🔄 Compare Marketplaces</h2>
-              <span className="text-pink-500 text-sm">{showComparison ? 'Hide' : 'Show'}</span>
+              <span className="text-[#9CAF88] text-sm">{showComparison ? 'Hide' : 'Show'}</span>
             </button>
             
             {showComparison && (
@@ -580,7 +580,7 @@ export default function AdvancedProfitCalculatorPage() {
           </div>
 
           {/* Pro Actions */}
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-5 text-white">
+          <div className="bg-gradient-to-r from-purple-500 to-[#6B7F5E] rounded-xl p-5 text-white">
             <h3 className="font-bold mb-3">Pro Actions</h3>
             <div className="space-y-2">
               <button 
@@ -650,7 +650,7 @@ export default function AdvancedProfitCalculatorPage() {
                 Maybe Later
               </button>
               <button
-                className="flex-1 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-medium hover:opacity-90 text-sm"
+                className="flex-1 py-2 bg-gradient-to-r from-purple-500 to-[#6B7F5E] text-white rounded-lg font-medium hover:opacity-90 text-sm"
               >
                 Start Free Trial
               </button>

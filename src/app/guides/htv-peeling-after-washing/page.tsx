@@ -58,7 +58,7 @@ const howToSteps = [
 
 export default function HTVPeelingAfterWashingPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
       <FAQSchema faqs={faqData} />
       <HowToSchema 
         name="How to Fix HTV Peeling After Washing"
@@ -70,9 +70,9 @@ export default function HTVPeelingAfterWashingPage() {
       <article className="max-w-4xl mx-auto px-4 py-12">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6">
-          <Link href="/" className="hover:text-pink-500">Home</Link>
+          <Link href="/" className="hover:text-[#9CAF88]">Home</Link>
           <span className="mx-2">→</span>
-          <Link href="/guides" className="hover:text-pink-500">Guides</Link>
+          <Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link>
           <span className="mx-2">→</span>
           <span className="text-gray-700">HTV Peeling After Washing</span>
         </nav>
@@ -96,26 +96,26 @@ export default function HTVPeelingAfterWashingPage() {
         </header>
 
         {/* Quick Fixes Box */}
-        <div className="bg-pink-100 rounded-2xl p-6 mb-10">
+        <div className="bg-[#F5E6E6] rounded-2xl p-6 mb-10">
           <h2 className="text-xl font-bold text-gray-900 mb-3">⚡ Try These First</h2>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">1.</span>
+              <span className="text-[#9CAF88] font-bold">1.</span>
               <span><strong>Check your actual temperature</strong> — heat presses lie. Use an infrared thermometer.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">2.</span>
+              <span className="text-[#9CAF88] font-bold">2.</span>
               <span><strong>Press HARDER</strong> — most people don't use enough pressure.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">3.</span>
+              <span className="text-[#9CAF88] font-bold">3.</span>
               <span><strong>Wait 24-48 hours</strong> before washing — adhesive needs to cure.</span>
             </li>
           </ul>
         </div>
 
         {/* Main Content */}
-        <div className="prose prose-lg prose-pink max-w-none">
+        <div className="prose prose-lg prose-slate max-w-none">
           
           <h2 id="why-peeling">Why HTV Peels After Washing</h2>
           <p>
@@ -543,14 +543,14 @@ export default function HTVPeelingAfterWashingPage() {
             <li>☐ Tumble dry low or hang dry</li>
           </ul>
 
-          <div className="bg-pink-50 rounded-2xl p-6 my-8">
+          <div className="bg-[#F5FAF3] rounded-2xl p-6 my-8">
             <h3 className="text-xl font-bold text-gray-900 mb-3">Need More Help?</h3>
             <p className="text-gray-700 mb-4">
               Our interactive troubleshooting wizard can help diagnose your specific HTV problem.
             </p>
             <Link 
               href="/troubleshoot?issue=adhesion" 
-              className="inline-block bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
+              className="inline-block bg-[#9CAF88] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#6B7F5E] transition-colors"
             >
               Start Troubleshooting Wizard →
             </Link>

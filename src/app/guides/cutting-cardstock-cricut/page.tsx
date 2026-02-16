@@ -67,14 +67,14 @@ export default function CuttingCardstockGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Breadcrumb */}
           <nav className="text-sm mb-6">
             <ol className="flex items-center space-x-2 text-gray-500">
-              <li><Link href="/" className="hover:text-pink-600">Home</Link></li>
+              <li><Link href="/" className="hover:text-[#9CAF88]">Home</Link></li>
               <li>/</li>
-              <li><Link href="/guides" className="hover:text-pink-600">Guides</Link></li>
+              <li><Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link></li>
               <li>/</li>
               <li className="text-gray-900">Cutting Cardstock</li>
             </ol>
@@ -124,12 +124,12 @@ export default function CuttingCardstockGuide() {
           <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
             <h2 className="font-bold text-lg mb-4">📋 In This Guide</h2>
             <ul className="space-y-2 text-gray-700">
-              <li><a href="#settings" className="text-pink-600 hover:underline">→ Cardstock settings by weight</a></li>
-              <li><a href="#tearing" className="text-pink-600 hover:underline">→ Fix: Cardstock is tearing</a></li>
-              <li><a href="#not-cutting" className="text-pink-600 hover:underline">→ Fix: Not cutting through</a></li>
-              <li><a href="#dragging" className="text-pink-600 hover:underline">→ Fix: Blade is dragging</a></li>
-              <li><a href="#tips" className="text-pink-600 hover:underline">→ Pro tips for perfect cuts</a></li>
-              <li><a href="#brands" className="text-pink-600 hover:underline">→ Best cardstock brands</a></li>
+              <li><a href="#settings" className="text-[#9CAF88] hover:underline">→ Cardstock settings by weight</a></li>
+              <li><a href="#tearing" className="text-[#9CAF88] hover:underline">→ Fix: Cardstock is tearing</a></li>
+              <li><a href="#not-cutting" className="text-[#9CAF88] hover:underline">→ Fix: Not cutting through</a></li>
+              <li><a href="#dragging" className="text-[#9CAF88] hover:underline">→ Fix: Blade is dragging</a></li>
+              <li><a href="#tips" className="text-[#9CAF88] hover:underline">→ Pro tips for perfect cuts</a></li>
+              <li><a href="#brands" className="text-[#9CAF88] hover:underline">→ Best cardstock brands</a></li>
             </ul>
           </div>
 
@@ -469,28 +469,28 @@ export default function CuttingCardstockGuide() {
             <div className="grid md:grid-cols-2 gap-4">
               <Link 
                 href="/guides/cricut-not-cutting-vinyl"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Cricut Not Cutting Properly</h3>
                 <p className="text-gray-600 text-sm mt-1">General cutting troubleshooting for all materials.</p>
               </Link>
               <Link 
                 href="/guides/cricut-mat-not-sticky"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Mat Not Sticky?</h3>
                 <p className="text-gray-600 text-sm mt-1">Paper needs a sticky mat. Here's how to restore it.</p>
               </Link>
               <Link 
                 href="/guides/how-to-weed-vinyl"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">How to Weed Like a Pro</h3>
                 <p className="text-gray-600 text-sm mt-1">Same techniques work for paper projects.</p>
               </Link>
               <Link 
                 href="/materials"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Material Settings Database</h3>
                 <p className="text-gray-600 text-sm mt-1">Find settings for any material type.</p>

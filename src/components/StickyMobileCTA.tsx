@@ -39,11 +39,11 @@ export function StickyMobileCTA() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-      <div className="bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-3 shadow-lg">
+      <div className="bg-gradient-to-r from-[#9CAF88] to-purple-500 px-4 py-3 shadow-lg">
         <div className="flex items-center justify-between gap-3">
           <Link
             href="/troubleshoot"
-            className="flex-1 bg-white text-pink-600 px-4 py-3 rounded-full font-semibold text-center hover:bg-pink-50 transition-colors shadow-md"
+            className="flex-1 bg-white text-[#9CAF88] px-4 py-3 rounded-full font-semibold text-center hover:bg-[#F5FAF3] transition-colors shadow-md"
           >
             Having a problem? 🔧 Get Help
           </Link>
@@ -70,7 +70,7 @@ export function StickyMobileCTA() {
         </div>
       </div>
       {/* Safe area padding for phones with home indicator */}
-      <div className="bg-gradient-to-r from-pink-500 to-purple-500 h-[env(safe-area-inset-bottom)]" />
+      <div className="bg-gradient-to-r from-[#9CAF88] to-purple-500 h-[env(safe-area-inset-bottom)]" />
     </div>
   );
 }

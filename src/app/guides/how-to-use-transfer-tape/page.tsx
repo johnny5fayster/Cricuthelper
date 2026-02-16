@@ -116,14 +116,14 @@ export default function TransferTapeGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Breadcrumb */}
           <nav className="text-sm mb-6">
             <ol className="flex items-center space-x-2 text-gray-500">
-              <li><Link href="/" className="hover:text-pink-600">Home</Link></li>
+              <li><Link href="/" className="hover:text-[#9CAF88]">Home</Link></li>
               <li>/</li>
-              <li><Link href="/guides" className="hover:text-pink-600">Guides</Link></li>
+              <li><Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link></li>
               <li>/</li>
               <li className="text-gray-900">Transfer Tape</li>
             </ol>
@@ -169,11 +169,11 @@ export default function TransferTapeGuide() {
           <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
             <h2 className="font-bold text-lg mb-4">📋 In This Guide</h2>
             <ul className="space-y-2 text-gray-700">
-              <li><a href="#what-is" className="text-pink-600 hover:underline">→ What is transfer tape?</a></li>
-              <li><a href="#types" className="text-pink-600 hover:underline">→ Types of transfer tape</a></li>
-              <li><a href="#step-by-step" className="text-pink-600 hover:underline">→ Step-by-step tutorial</a></li>
-              <li><a href="#problems" className="text-pink-600 hover:underline">→ Troubleshooting common problems</a></li>
-              <li><a href="#tips" className="text-pink-600 hover:underline">→ Pro tips</a></li>
+              <li><a href="#what-is" className="text-[#9CAF88] hover:underline">→ What is transfer tape?</a></li>
+              <li><a href="#types" className="text-[#9CAF88] hover:underline">→ Types of transfer tape</a></li>
+              <li><a href="#step-by-step" className="text-[#9CAF88] hover:underline">→ Step-by-step tutorial</a></li>
+              <li><a href="#problems" className="text-[#9CAF88] hover:underline">→ Troubleshooting common problems</a></li>
+              <li><a href="#tips" className="text-[#9CAF88] hover:underline">→ Pro tips</a></li>
             </ul>
           </div>
 
@@ -530,28 +530,28 @@ export default function TransferTapeGuide() {
             <div className="grid md:grid-cols-2 gap-4">
               <Link 
                 href="/guides/cricut-not-cutting-vinyl"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Cricut Not Cutting Vinyl Properly</h3>
                 <p className="text-gray-600 text-sm mt-1">Fix cutting issues before you get to transfer.</p>
               </Link>
               <Link 
                 href="/guides/how-to-weed-vinyl"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">How to Weed Vinyl Like a Pro</h3>
                 <p className="text-gray-600 text-sm mt-1">Weeding happens before transfer tape.</p>
               </Link>
               <Link 
                 href="/guides/htv-peeling-after-washing"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">HTV Peeling After Washing</h3>
                 <p className="text-gray-600 text-sm mt-1">For iron-on projects (no transfer tape needed).</p>
               </Link>
               <Link 
                 href="/materials"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Material Settings Database</h3>
                 <p className="text-gray-600 text-sm mt-1">Find the right settings for any vinyl.</p>

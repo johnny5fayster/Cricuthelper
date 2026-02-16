@@ -373,7 +373,7 @@ function SearchResults() {
   }, [query]);
 
   const categoryColors: Record<string, string> = {
-    Guide: "bg-pink-100 text-pink-700",
+    Guide: "bg-[#F5E6E6] text-[#6B7F5E]",
     Tool: "bg-blue-100 text-blue-700",
     Problem: "bg-yellow-100 text-yellow-700",
     Niche: "bg-green-100 text-green-700",
@@ -383,7 +383,7 @@ function SearchResults() {
     <main className="min-h-screen">
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
-          <Link href="/" className="text-pink-500 hover:underline">← Home</Link>
+          <Link href="/" className="text-[#9CAF88] hover:underline">← Home</Link>
           <h1 className="text-3xl font-bold text-gray-800 mt-4">
             🔍 Search Results
           </h1>
@@ -404,7 +404,7 @@ function SearchResults() {
                   <Link
                     key={term}
                     href={`/search?q=${encodeURIComponent(term)}`}
-                    className="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-sm hover:bg-pink-100"
+                    className="px-3 py-1 bg-[#F5FAF3] text-[#9CAF88] rounded-full text-sm hover:bg-[#F5E6E6]"
                   >
                     {term}
                   </Link>
@@ -417,7 +417,7 @@ function SearchResults() {
             <p className="text-gray-500 text-lg mb-4">No results found for "{query}"</p>
             <p className="text-gray-400">Try different keywords or check out these popular pages:</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href="/troubleshoot" className="px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600">
+              <Link href="/troubleshoot" className="px-4 py-2 bg-[#9CAF88] text-white rounded-lg hover:bg-[#6B7F5E]">
                 Troubleshoot
               </Link>
               <Link href="/guides" className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200">
@@ -443,12 +443,12 @@ function SearchResults() {
                         {result.category}
                       </span>
                     </div>
-                    <h2 className="text-lg font-semibold text-gray-900 hover:text-pink-600">
+                    <h2 className="text-lg font-semibold text-gray-900 hover:text-[#9CAF88]">
                       {result.title}
                     </h2>
                     <p className="text-gray-600 mt-1">{result.description}</p>
                   </div>
-                  <span className="text-pink-400 text-xl">→</span>
+                  <span className="text-[#C9A962] text-xl">→</span>
                 </div>
               </Link>
             ))}
@@ -456,7 +456,7 @@ function SearchResults() {
         )}
 
         {/* Quick Links */}
-        <div className="mt-12 bg-pink-50 rounded-xl p-6">
+        <div className="mt-12 bg-[#F5FAF3] rounded-xl p-6">
           <h3 className="font-bold text-gray-800 mb-4">Can't find what you're looking for?</h3>
           <div className="grid md:grid-cols-2 gap-4">
             <Link href="/troubleshoot" className="flex items-center gap-3 p-3 bg-white rounded-lg hover:shadow-md transition-shadow">

@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
       <article className="max-w-3xl mx-auto px-4">
         <header className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
           <p className="text-gray-600">Last updated: February 8, 2026</p>
         </header>
 
-        <div className="prose prose-pink max-w-none">
+        <div className="prose prose-slate max-w-none">
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Overview</h2>
             <p className="text-gray-700">
@@ -67,9 +67,9 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Third-Party Services</h2>
             <p className="text-gray-700 mb-4">We use the following third-party services:</p>
             <ul className="text-gray-700 space-y-2">
-              <li><strong>Google Analytics:</strong> For website analytics. <a href="https://policies.google.com/privacy" className="text-pink-600 hover:underline" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a></li>
-              <li><strong>Buttondown:</strong> For email newsletter delivery. <a href="https://buttondown.email/privacy" className="text-pink-600 hover:underline" target="_blank" rel="noopener noreferrer">Buttondown's Privacy Policy</a></li>
-              <li><strong>Vercel:</strong> For website hosting. <a href="https://vercel.com/legal/privacy-policy" className="text-pink-600 hover:underline" target="_blank" rel="noopener noreferrer">Vercel's Privacy Policy</a></li>
+              <li><strong>Google Analytics:</strong> For website analytics. <a href="https://policies.google.com/privacy" className="text-[#9CAF88] hover:underline" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a></li>
+              <li><strong>Buttondown:</strong> For email newsletter delivery. <a href="https://buttondown.email/privacy" className="text-[#9CAF88] hover:underline" target="_blank" rel="noopener noreferrer">Buttondown's Privacy Policy</a></li>
+              <li><strong>Vercel:</strong> For website hosting. <a href="https://vercel.com/legal/privacy-policy" className="text-[#9CAF88] hover:underline" target="_blank" rel="noopener noreferrer">Vercel's Privacy Policy</a></li>
             </ul>
           </section>
 
@@ -135,7 +135,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-200">
-          <Link href="/" className="text-pink-600 hover:text-pink-700">
+          <Link href="/" className="text-[#9CAF88] hover:text-[#6B7F5E]">
             ← Back to CricutHelper
           </Link>
         </div>

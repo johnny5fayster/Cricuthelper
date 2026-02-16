@@ -54,7 +54,7 @@ const howToSteps = [
 
 export default function PrintThenCutNotLiningUpPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
       <FAQSchema faqs={faqData} />
       <HowToSchema 
         name="How to Fix Cricut Print Then Cut Not Lining Up"
@@ -66,9 +66,9 @@ export default function PrintThenCutNotLiningUpPage() {
       <article className="max-w-4xl mx-auto px-4 py-12">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6">
-          <Link href="/" className="hover:text-pink-500">Home</Link>
+          <Link href="/" className="hover:text-[#9CAF88]">Home</Link>
           <span className="mx-2">→</span>
-          <Link href="/guides" className="hover:text-pink-500">Guides</Link>
+          <Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link>
           <span className="mx-2">→</span>
           <span className="text-gray-700">Print Then Cut Not Lining Up</span>
         </nav>
@@ -92,19 +92,19 @@ export default function PrintThenCutNotLiningUpPage() {
         </header>
 
         {/* Quick Fixes Box */}
-        <div className="bg-pink-100 rounded-2xl p-6 mb-10">
+        <div className="bg-[#F5E6E6] rounded-2xl p-6 mb-10">
           <h2 className="text-xl font-bold text-gray-900 mb-3">⚡ Check These First (60 Second Fixes)</h2>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">1.</span>
+              <span className="text-[#9CAF88] font-bold">1.</span>
               <span><strong>Printer scaling at 100%?</strong> — "Fit to Page" is the #1 cause. Must be exactly 100%.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">2.</span>
+              <span className="text-[#9CAF88] font-bold">2.</span>
               <span><strong>Using glossy paper?</strong> — The sensor can't read reflective surfaces. Use matte.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-pink-500 font-bold">3.</span>
+              <span className="text-[#9CAF88] font-bold">3.</span>
               <span><strong>Direct sunlight on machine?</strong> — Move it to a shaded spot and try again.</span>
             </li>
           </ul>
@@ -114,16 +114,16 @@ export default function PrintThenCutNotLiningUpPage() {
         <div className="bg-white rounded-xl border border-gray-200 p-6 mb-10">
           <h2 className="text-lg font-bold text-gray-900 mb-3">📋 What We'll Cover</h2>
           <ul className="space-y-1 text-gray-600">
-            <li><a href="#how-ptc-works" className="hover:text-pink-500">→ How Print Then Cut Actually Works</a></li>
-            <li><a href="#printer-settings" className="hover:text-pink-500">→ Fix #1: Printer Scale Settings (The #1 Cause)</a></li>
-            <li><a href="#calibration" className="hover:text-pink-500">→ Fix #2: Calibrate Your Machine</a></li>
-            <li><a href="#paper-type" className="hover:text-pink-500">→ Fix #3: Use the Right Paper</a></li>
-            <li><a href="#lighting" className="hover:text-pink-500">→ Fix #4: Fix Your Lighting</a></li>
-            <li><a href="#sensor" className="hover:text-pink-500">→ Fix #5: Clean the Sensor</a></li>
-            <li><a href="#mat-loading" className="hover:text-pink-500">→ Fix #6: Load Your Mat Correctly</a></li>
-            <li><a href="#software" className="hover:text-pink-500">→ Fix #7: Update Design Space</a></li>
-            <li><a href="#bleed" className="hover:text-pink-500">→ Fix #8: Check Bleed Settings</a></li>
-            <li><a href="#still-not-working" className="hover:text-pink-500">→ Still Not Working? Advanced Fixes</a></li>
+            <li><a href="#how-ptc-works" className="hover:text-[#9CAF88]">→ How Print Then Cut Actually Works</a></li>
+            <li><a href="#printer-settings" className="hover:text-[#9CAF88]">→ Fix #1: Printer Scale Settings (The #1 Cause)</a></li>
+            <li><a href="#calibration" className="hover:text-[#9CAF88]">→ Fix #2: Calibrate Your Machine</a></li>
+            <li><a href="#paper-type" className="hover:text-[#9CAF88]">→ Fix #3: Use the Right Paper</a></li>
+            <li><a href="#lighting" className="hover:text-[#9CAF88]">→ Fix #4: Fix Your Lighting</a></li>
+            <li><a href="#sensor" className="hover:text-[#9CAF88]">→ Fix #5: Clean the Sensor</a></li>
+            <li><a href="#mat-loading" className="hover:text-[#9CAF88]">→ Fix #6: Load Your Mat Correctly</a></li>
+            <li><a href="#software" className="hover:text-[#9CAF88]">→ Fix #7: Update Design Space</a></li>
+            <li><a href="#bleed" className="hover:text-[#9CAF88]">→ Fix #8: Check Bleed Settings</a></li>
+            <li><a href="#still-not-working" className="hover:text-[#9CAF88]">→ Still Not Working? Advanced Fixes</a></li>
           </ul>
         </div>
 
@@ -350,7 +350,7 @@ export default function PrintThenCutNotLiningUpPage() {
             
             <h3 className="text-xl font-semibold text-gray-900 mb-3">How to Update:</h3>
             <ol className="list-decimal list-inside space-y-2 text-gray-700 mb-4">
-              <li>Go to <a href="https://cricut.com/setup" className="text-pink-500 hover:underline">cricut.com/setup</a></li>
+              <li>Go to <a href="https://cricut.com/setup" className="text-[#9CAF88] hover:underline">cricut.com/setup</a></li>
               <li>Download the latest version</li>
               <li>Install it (it will replace your current version)</li>
               <li>Sign back in and try Print Then Cut again</li>
@@ -420,7 +420,7 @@ export default function PrintThenCutNotLiningUpPage() {
                 <p className="text-gray-700">
                   If you've tried everything and it's still off, there may be a hardware issue 
                   with the sensor. Cricut support can run diagnostics: 
-                  <a href="https://help.cricut.com" className="text-pink-500 hover:underline ml-1">help.cricut.com</a>
+                  <a href="https://help.cricut.com" className="text-[#9CAF88] hover:underline ml-1">help.cricut.com</a>
                 </p>
               </div>
             </div>
@@ -429,7 +429,7 @@ export default function PrintThenCutNotLiningUpPage() {
           {/* Summary */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Quick Summary</h2>
-            <div className="bg-pink-50 rounded-xl p-6">
+            <div className="bg-[#F5FAF3] rounded-xl p-6">
               <ol className="list-decimal list-inside space-y-2 text-gray-700">
                 <li><strong>Print at 100%</strong> — Never use "Fit to Page" (fixes 70% of issues)</li>
                 <li><strong>Calibrate your machine</strong> — Do this after any major alignment problems</li>
@@ -450,11 +450,11 @@ export default function PrintThenCutNotLiningUpPage() {
         <section className="mt-12 pt-8 border-t border-gray-200">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Guides</h2>
           <div className="grid md:grid-cols-2 gap-4">
-            <Link href="/guides/cricut-not-cutting-vinyl" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all">
+            <Link href="/guides/cricut-not-cutting-vinyl" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all">
               <h3 className="font-semibold text-gray-900 mb-1">Cricut Not Cutting Through Vinyl?</h3>
               <p className="text-sm text-gray-600">7 fixes when your blade isn't cutting deep enough</p>
             </Link>
-            <Link href="/guides/cricut-bluetooth-not-connecting" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all">
+            <Link href="/guides/cricut-bluetooth-not-connecting" className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all">
               <h3 className="font-semibold text-gray-900 mb-1">Bluetooth Not Connecting?</h3>
               <p className="text-sm text-gray-600">Get your Cricut connected wirelessly</p>
             </Link>
@@ -462,14 +462,14 @@ export default function PrintThenCutNotLiningUpPage() {
         </section>
 
         {/* CTA */}
-        <section className="mt-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-8 text-white text-center">
+        <section className="mt-12 bg-gradient-to-r from-[#9CAF88] to-purple-500 rounded-2xl p-8 text-white text-center">
           <h2 className="text-2xl font-bold mb-3">Still Stuck?</h2>
           <p className="mb-4 opacity-90">
             Our troubleshooting wizard can help diagnose your specific issue in under 2 minutes.
           </p>
           <Link 
             href="/troubleshoot" 
-            className="inline-block bg-white text-pink-500 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-[#9CAF88] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors"
           >
             Start Troubleshooting →
           </Link>

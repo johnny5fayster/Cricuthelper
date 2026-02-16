@@ -83,11 +83,11 @@ export default function HowToPriceCricutCraftsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
-      <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+      <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
         <article className="max-w-4xl mx-auto px-4">
           <header className="mb-8">
             <div className="flex items-center gap-2 mb-4">
-              <Link href="/guides" className="text-pink-600 hover:text-pink-700">
+              <Link href="/guides" className="text-[#9CAF88] hover:text-[#6B7F5E]">
                 ← Back to Guides
               </Link>
             </div>
@@ -104,13 +104,13 @@ export default function HowToPriceCricutCraftsPage() {
               <span>Updated February 2026</span>
             </div>
             <div className="flex items-center gap-2 mt-4 text-sm">
-              <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full">By Maya Chen</span>
+              <span className="bg-[#F5E6E6] text-[#6B7F5E] px-3 py-1 rounded-full">By Maya Chen</span>
               <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">With Keisha Williams</span>
             </div>
           </header>
 
           {/* Author Box */}
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-6 mb-8">
+          <div className="bg-gradient-to-r from-purple-50 to-[#FAF8F5] border border-purple-200 rounded-xl p-6 mb-8">
             <div className="flex items-start gap-4">
               <div className="text-4xl">👩🏾‍💼</div>
               <div>
@@ -127,7 +127,7 @@ export default function HowToPriceCricutCraftsPage() {
           {/* Table of Contents */}
           <nav className="bg-white rounded-xl shadow-lg p-6 mb-8">
             <h2 className="font-bold text-gray-900 mb-4">📋 In This Guide</h2>
-            <ul className="space-y-2 text-pink-600">
+            <ul className="space-y-2 text-[#9CAF88]">
               <li><a href="#why-underpricing" className="hover:underline">→ Why Most Crafters Underprice (And Why It's Killing Your Business)</a></li>
               <li><a href="#pricing-formula" className="hover:underline">→ The True Cost Formula</a></li>
               <li><a href="#material-costs" className="hover:underline">→ How to Calculate Material Costs</a></li>
@@ -183,7 +183,7 @@ export default function HowToPriceCricutCraftsPage() {
             </div>
 
             {/* Keisha's Take */}
-            <div className="bg-gradient-to-r from-purple-100 to-pink-100 border-l-4 border-purple-500 p-6 rounded-r-xl mt-6">
+            <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] border-l-4 border-purple-500 p-6 rounded-r-xl mt-6">
               <div className="flex items-start gap-3">
                 <span className="text-2xl">💜</span>
                 <div>
@@ -298,7 +298,7 @@ export default function HowToPriceCricutCraftsPage() {
                 <h3 className="font-bold text-gray-900 mb-4">Quick Material Cost Reference</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-left">
-                    <thead className="bg-pink-50">
+                    <thead className="bg-[#F5FAF3]">
                       <tr>
                         <th className="p-3 font-semibold">Material</th>
                         <th className="p-3 font-semibold">Typical Cost</th>
@@ -423,7 +423,7 @@ export default function HowToPriceCricutCraftsPage() {
               </div>
 
               {/* Keisha's Take */}
-              <div className="bg-gradient-to-r from-purple-100 to-pink-100 border-l-4 border-purple-500 p-6 rounded-r-xl">
+              <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] border-l-4 border-purple-500 p-6 rounded-r-xl">
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">💜</span>
                   <div>
@@ -677,7 +677,7 @@ export default function HowToPriceCricutCraftsPage() {
               </div>
 
               {/* Keisha's Take */}
-              <div className="bg-gradient-to-r from-purple-100 to-pink-100 border-l-4 border-purple-500 p-6 rounded-r-xl">
+              <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] border-l-4 border-purple-500 p-6 rounded-r-xl">
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">💜</span>
                   <div>
@@ -708,9 +708,9 @@ export default function HowToPriceCricutCraftsPage() {
             <div className="space-y-8">
               {/* T-Shirt Example */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="bg-gradient-to-r from-pink-500 to-purple-500 text-white p-4">
+                <div className="bg-gradient-to-r from-[#9CAF88] to-purple-500 text-white p-4">
                   <h3 className="font-bold text-xl">Example 1: Custom T-Shirt with HTV</h3>
-                  <p className="text-pink-100">Answering: "How much to charge for Cricut shirts?"</p>
+                  <p className="text-white/80">Answering: "How much to charge for Cricut shirts?"</p>
                 </div>
                 <div className="p-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -947,7 +947,7 @@ export default function HowToPriceCricutCraftsPage() {
                   </div>
                   <p className="text-sm text-gray-500 mt-3">
                     💡 Stickers have great margins because design time is amortized across many sales. 
-                    Learn more in our <Link href="/guides/how-to-make-stickers-cricut" className="text-pink-600 hover:underline">complete sticker-making guide</Link>.
+                    Learn more in our <Link href="/guides/how-to-make-stickers-cricut" className="text-[#9CAF88] hover:underline">complete sticker-making guide</Link>.
                   </p>
                 </div>
               </div>
@@ -1048,7 +1048,7 @@ export default function HowToPriceCricutCraftsPage() {
             </div>
 
             {/* Keisha's Take */}
-            <div className="bg-gradient-to-r from-purple-100 to-pink-100 border-l-4 border-purple-500 p-6 rounded-r-xl mt-8">
+            <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] border-l-4 border-purple-500 p-6 rounded-r-xl mt-8">
               <div className="flex items-start gap-3">
                 <span className="text-2xl">💜</span>
                 <div>
@@ -1105,30 +1105,30 @@ export default function HowToPriceCricutCraftsPage() {
               <div className="bg-white rounded-xl shadow-lg p-6">
                 <h3 className="font-bold text-gray-900 mb-4">How to Raise Prices (Without Losing Customers)</h3>
                 <div className="space-y-4">
-                  <div className="border-l-4 border-pink-400 pl-4">
+                  <div className="border-l-4 border-[#9CAF88] pl-4">
                     <p className="font-semibold text-gray-900">1. Raise by 10-15% at a time</p>
                     <p className="text-gray-600 text-sm">Large jumps shock customers. Gradual increases feel natural.</p>
                   </div>
-                  <div className="border-l-4 border-pink-400 pl-4">
+                  <div className="border-l-4 border-[#9CAF88] pl-4">
                     <p className="font-semibold text-gray-900">2. Give advance notice (2-4 weeks)</p>
                     <p className="text-gray-600 text-sm">"Prices will increase on [date]. Order now at current rates!"</p>
                   </div>
-                  <div className="border-l-4 border-pink-400 pl-4">
+                  <div className="border-l-4 border-[#9CAF88] pl-4">
                     <p className="font-semibold text-gray-900">3. Explain the value (not the cost)</p>
                     <p className="text-gray-600 text-sm">Don't apologize or over-explain. Focus on quality and what they're getting.</p>
                   </div>
-                  <div className="border-l-4 border-pink-400 pl-4">
+                  <div className="border-l-4 border-[#9CAF88] pl-4">
                     <p className="font-semibold text-gray-900">4. Consider grandfathering repeat customers</p>
                     <p className="text-gray-600 text-sm">"Returning customers get 10% off for the next 60 days" softens the transition.</p>
                   </div>
-                  <div className="border-l-4 border-pink-400 pl-4">
+                  <div className="border-l-4 border-[#9CAF88] pl-4">
                     <p className="font-semibold text-gray-900">5. Add value with the increase</p>
                     <p className="text-gray-600 text-sm">Upgrade packaging, add a small freebie, or improve quality alongside the increase.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-pink-50 border border-pink-200 rounded-xl p-6">
+              <div className="bg-[#F5FAF3] border border-[#B8C9A9] rounded-xl p-6">
                 <h3 className="font-bold text-gray-900 mb-4">Sample Price Increase Announcement</h3>
                 <div className="bg-white rounded-lg p-4 text-gray-700 italic">
                   "Hey craft fam! 💕 Quick heads up: prices will be going up by 15% starting March 1st. 
@@ -1139,7 +1139,7 @@ export default function HowToPriceCricutCraftsPage() {
               </div>
 
               {/* Keisha's Take */}
-              <div className="bg-gradient-to-r from-purple-100 to-pink-100 border-l-4 border-purple-500 p-6 rounded-r-xl">
+              <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] border-l-4 border-purple-500 p-6 rounded-r-xl">
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">💜</span>
                   <div>
@@ -1173,7 +1173,7 @@ export default function HowToPriceCricutCraftsPage() {
           </section>
 
           {/* Quick Reference */}
-          <section className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-8 mb-8">
+          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Quick Pricing Checklist
             </h2>
@@ -1209,7 +1209,7 @@ export default function HowToPriceCricutCraftsPage() {
             </p>
             <Link
               href="/profit-calculator"
-              className="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg"
+              className="inline-block bg-gradient-to-r from-[#9CAF88] to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:from-[#6B7F5E] hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg"
             >
               Open Profit Calculator →
             </Link>

@@ -178,7 +178,7 @@ export default function HeatPressPage() {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-        <Link href="/" className="text-pink-500 hover:underline">← Home</Link>
+        <Link href="/" className="text-[#9CAF88] hover:underline">← Home</Link>
         <h1 className="text-3xl font-bold text-gray-800 mt-4">🔥 Heat Press Guide</h1>
         <p className="text-gray-600 mt-2">Everything you need to know about heat pressing HTV, Infusible Ink, and more.</p>
       </div>
@@ -235,7 +235,7 @@ export default function HeatPressPage() {
       )}
 
       {/* Quick Reference Card */}
-      <div className="mt-8 bg-gradient-to-r from-orange-500 to-pink-500 rounded-2xl p-6 text-white">
+      <div className="mt-8 bg-gradient-to-r from-orange-500 to-[#6B7F5E] rounded-2xl p-6 text-white">
         <h3 className="text-xl font-bold mb-4">⚡ Quick Reference</h3>
         <div className="grid sm:grid-cols-3 gap-4">
           <div className="bg-white/20 rounded-xl p-4">
@@ -268,7 +268,7 @@ export default function HeatPressPage() {
             href="https://www.amazon.com/dp/B07G51DZ45?tag=cricuthelpe03-20"
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-[#9CAF88] transition-all"
           >
             <h4 className="font-semibold text-gray-900 text-sm mb-2">Cricut EasyPress 2 (12x10)</h4>
             <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
@@ -277,14 +277,14 @@ export default function HeatPressPage() {
               <span className="text-gray-400">(15,000+ reviews)</span>
             </div>
             <p className="text-gray-500 text-xs">Best for beginners, precise temp control</p>
-            <p className="text-pink-600 text-xs mt-3 font-medium">View on Amazon →</p>
+            <p className="text-[#9CAF88] text-xs mt-3 font-medium">View on Amazon →</p>
           </a>
           
           <a
             href="https://www.amazon.com/dp/B0B6GTVZFH?tag=cricuthelpe03-20"
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-[#9CAF88] transition-all"
           >
             <h4 className="font-semibold text-gray-900 text-sm mb-2">HTVRONT Heat Press Machine (15x15)</h4>
             <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
@@ -293,14 +293,14 @@ export default function HeatPressPage() {
               <span className="text-gray-400">(9,500+ reviews)</span>
             </div>
             <p className="text-gray-500 text-xs">Budget-friendly, full pressure control</p>
-            <p className="text-pink-600 text-xs mt-3 font-medium">View on Amazon →</p>
+            <p className="text-[#9CAF88] text-xs mt-3 font-medium">View on Amazon →</p>
           </a>
           
           <a
             href="https://www.amazon.com/dp/B074S8SNZN?tag=cricuthelpe03-20"
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-[#9CAF88] transition-all"
           >
             <h4 className="font-semibold text-gray-900 text-sm mb-2">Cricut EasyPress Mat (12x12)</h4>
             <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
@@ -309,14 +309,14 @@ export default function HeatPressPage() {
               <span className="text-gray-400">(11,000+ reviews)</span>
             </div>
             <p className="text-gray-500 text-xs">Protects surfaces, improves results</p>
-            <p className="text-pink-600 text-xs mt-3 font-medium">View on Amazon →</p>
+            <p className="text-[#9CAF88] text-xs mt-3 font-medium">View on Amazon →</p>
           </a>
           
           <a
             href="https://www.amazon.com/dp/B0127RTOYQ?tag=cricuthelpe03-20"
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-pink-300 transition-all"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-[#9CAF88] transition-all"
           >
             <h4 className="font-semibold text-gray-900 text-sm mb-2">Siser EasyWeed HTV Bundle (12 Sheets)</h4>
             <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
@@ -325,7 +325,7 @@ export default function HeatPressPage() {
               <span className="text-gray-400">(8,900+ reviews)</span>
             </div>
             <p className="text-gray-500 text-xs">Industry-standard HTV, easy to weed</p>
-            <p className="text-pink-600 text-xs mt-3 font-medium">View on Amazon →</p>
+            <p className="text-[#9CAF88] text-xs mt-3 font-medium">View on Amazon →</p>
           </a>
         </div>
       </div>

@@ -66,7 +66,7 @@ function TroubleshootContent() {
   return (
     <div className="max-w-3xl mx-auto">
       <div className="mb-8">
-        <Link href="/" className="text-pink-500 hover:underline">← Home</Link>
+        <Link href="/" className="text-[#9CAF88] hover:underline">← Home</Link>
         <h1 className="text-3xl font-bold text-gray-800 mt-4">🔧 Troubleshooting Wizard</h1>
         <p className="text-gray-600 mt-2">Answer a few questions and we'll help you fix your Cricut issue.</p>
       </div>
@@ -83,7 +83,7 @@ function TroubleshootContent() {
                 disabled={!troubleshootingFlows[category.id]}
                 className={`flex items-center gap-4 p-4 min-h-[44px] rounded-xl border-2 text-left transition-all ${
                   troubleshootingFlows[category.id]
-                    ? "border-gray-200 hover:border-pink-400 hover:bg-pink-50"
+                    ? "border-gray-200 hover:border-[#9CAF88] hover:bg-[#F5FAF3]"
                     : "border-gray-100 bg-gray-50 text-gray-400 cursor-not-allowed"
                 }`}
               >
@@ -105,7 +105,7 @@ function TroubleshootContent() {
       {selectedIssue && !solution && currentStep && (
         <div className="bg-white rounded-2xl shadow-lg p-8">
           <div className="flex items-center justify-between mb-6">
-            <button onClick={handleBack} className="text-gray-500 hover:text-pink-500 flex items-center gap-1">
+            <button onClick={handleBack} className="text-gray-500 hover:text-[#9CAF88] flex items-center gap-1">
               ← Back
             </button>
             <button onClick={handleStartOver} className="text-gray-400 hover:text-gray-600 text-sm">
@@ -116,7 +116,7 @@ function TroubleshootContent() {
           {/* Progress indicator */}
           <div className="flex gap-1 mb-6">
             {[...Array(history.length + 1)].map((_, i) => (
-              <div key={i} className="h-1 flex-1 rounded-full bg-pink-400" />
+              <div key={i} className="h-1 flex-1 rounded-full bg-[#9CAF88]" />
             ))}
             {[...Array(3)].map((_, i) => (
               <div key={`empty-${i}`} className="h-1 flex-1 rounded-full bg-gray-200" />
@@ -130,7 +130,7 @@ function TroubleshootContent() {
               <button
                 key={index}
                 onClick={() => handleSelectOption(option.nextStep, option.solution)}
-                className="p-4 min-h-[44px] rounded-xl border-2 border-gray-200 hover:border-pink-400 hover:bg-pink-50 text-left transition-all font-medium"
+                className="p-4 min-h-[44px] rounded-xl border-2 border-gray-200 hover:border-[#9CAF88] hover:bg-[#F5FAF3] text-left transition-all font-medium"
               >
                 {option.label}
               </button>
@@ -143,7 +143,7 @@ function TroubleshootContent() {
       {solution && (
         <div className="bg-white rounded-2xl shadow-lg p-8">
           <div className="flex items-center justify-between mb-6">
-            <button onClick={handleBack} className="text-gray-500 hover:text-pink-500 flex items-center gap-1">
+            <button onClick={handleBack} className="text-gray-500 hover:text-[#9CAF88] flex items-center gap-1">
               ← Back
             </button>
             <button onClick={handleStartOver} className="text-gray-400 hover:text-gray-600 text-sm">
@@ -164,7 +164,7 @@ function TroubleshootContent() {
             <ol className="space-y-2">
               {solution.steps.map((step, index) => (
                 <li key={index} className="flex gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm font-medium">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F5E6E6] text-[#9CAF88] flex items-center justify-center text-sm font-medium">
                     {index + 1}
                   </span>
                   <span className="text-gray-700">{step}</span>
@@ -219,7 +219,7 @@ function TroubleshootContent() {
           <div className="mt-6 text-center">
             <button 
               onClick={handleStartOver}
-              className="text-pink-500 hover:underline font-medium"
+              className="text-[#9CAF88] hover:underline font-medium"
             >
               ← Start a new troubleshooting session
             </button>

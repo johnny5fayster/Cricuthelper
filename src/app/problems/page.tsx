@@ -101,7 +101,7 @@ const problemCategories = [
 
 export default function ProblemsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
       <FAQSchema faqs={faqData} />
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
@@ -126,7 +126,7 @@ export default function ProblemsPage() {
                   <Link
                     key={problem.title}
                     href={`/troubleshoot?issue=${problem.slug}`}
-                    className="block p-4 rounded-xl bg-pink-50 hover:bg-pink-100 transition-colors border border-pink-100"
+                    className="block p-4 rounded-xl bg-[#F5FAF3] hover:bg-[#F5E6E6] transition-colors border border-[#B8C9A9]"
                   >
                     <h3 className="font-semibold text-gray-900 mb-2">
                       {problem.title}
@@ -148,7 +148,7 @@ export default function ProblemsPage() {
           ))}
         </div>
 
-        <div className="mt-12 bg-pink-100 rounded-2xl p-8 text-center">
+        <div className="mt-12 bg-[#F5E6E6] rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Can't Find Your Problem?
           </h2>
@@ -157,14 +157,14 @@ export default function ProblemsPage() {
           </p>
           <Link
             href="/troubleshoot"
-            className="inline-block bg-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
+            className="inline-block bg-[#9CAF88] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#6B7F5E] transition-colors"
           >
             Start Troubleshooting →
           </Link>
         </div>
 
         {/* SEO content block */}
-        <div className="mt-12 prose prose-pink max-w-none">
+        <div className="mt-12 prose prose-slate max-w-none">
           <h2>Why Is My Cricut Not Working?</h2>
           <p>
             Cricut machines are powerful crafting tools, but they can sometimes be finicky. 

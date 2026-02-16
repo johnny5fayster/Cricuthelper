@@ -13,7 +13,7 @@ export default function CommunityPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-6xl mb-4 block">✨</span>
@@ -30,7 +30,7 @@ export default function CommunityPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">🌟 Recently Featured</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-pink-200 to-purple-200 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-br from-[#D4A5A5] to-purple-200 flex items-center justify-center">
                 <span className="text-6xl">🎨</span>
               </div>
               <div className="p-4">
@@ -81,7 +81,7 @@ export default function CommunityPage() {
                 <input
                   type="text"
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9CAF88] focus:border-[#9CAF88]"
                   placeholder="@craftymama or Sarah J."
                 />
               </div>
@@ -93,7 +93,7 @@ export default function CommunityPage() {
                 <input
                   type="email"
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9CAF88] focus:border-[#9CAF88]"
                   placeholder="you@email.com"
                 />
               </div>
@@ -105,7 +105,7 @@ export default function CommunityPage() {
                 <input
                   type="url"
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9CAF88] focus:border-[#9CAF88]"
                   placeholder="Link to your photo (Instagram, Imgur, etc.)"
                 />
                 <p className="text-sm text-gray-500 mt-1">
@@ -120,7 +120,7 @@ export default function CommunityPage() {
                 <textarea
                   required
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9CAF88] focus:border-[#9CAF88]"
                   placeholder="What did you make? What materials did you use? Any tips for others trying this?"
                 />
               </div>
@@ -131,7 +131,7 @@ export default function CommunityPage() {
                 </label>
                 <select
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9CAF88] focus:border-[#9CAF88]"
                 >
                   <option value="">Select your machine</option>
                   <option value="maker3">Cricut Maker 3</option>
@@ -159,7 +159,7 @@ export default function CommunityPage() {
 
               <button
                 type="submit"
-                className="w-full bg-pink-500 text-white py-3 rounded-lg font-semibold hover:bg-pink-600 transition-colors"
+                className="w-full bg-[#9CAF88] text-white py-3 rounded-lg font-semibold hover:bg-[#6B7F5E] transition-colors"
               >
                 Submit My Project ✨
               </button>
@@ -168,7 +168,7 @@ export default function CommunityPage() {
         </section>
 
         {/* Why Submit */}
-        <section className="mt-12 bg-pink-100 rounded-2xl p-8">
+        <section className="mt-12 bg-[#F5E6E6] rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Get Featured?</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">

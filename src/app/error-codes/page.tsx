@@ -291,7 +291,7 @@ export default function ErrorCodesPage() {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-        <Link href="/" className="text-pink-500 hover:underline">← Home</Link>
+        <Link href="/" className="text-[#9CAF88] hover:underline">← Home</Link>
         <h1 className="text-3xl font-bold text-gray-800 mt-4">🚨 Cricut Error Codes</h1>
         <p className="text-gray-600 mt-2">
           Look up any Cricut Design Space error code and get solutions to fix it.
@@ -306,7 +306,7 @@ export default function ErrorCodesPage() {
             placeholder="Search by error code (e.g., 1001) or keyword..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-4 py-3 pl-12 rounded-xl border border-gray-200 focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none transition-all"
+            className="w-full px-4 py-3 pl-12 rounded-xl border border-gray-200 focus:border-[#9CAF88] focus:ring-2 focus:ring-[#B8C9A9] outline-none transition-all"
           />
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
         </div>
@@ -374,7 +374,7 @@ export default function ErrorCodesPage() {
                 <div className="mt-4 pt-4 border-t border-gray-200">
                   <p className="text-xs text-gray-400">
                     Still having issues? Try the{" "}
-                    <Link href="/troubleshoot" className="text-pink-500 hover:underline">
+                    <Link href="/troubleshoot" className="text-[#9CAF88] hover:underline">
                       Troubleshooting Wizard
                     </Link>{" "}
                     for step-by-step help.
@@ -396,9 +396,9 @@ export default function ErrorCodesPage() {
       )}
 
       {/* Help Box */}
-      <div className="mt-8 bg-pink-50 border border-pink-200 rounded-xl p-6">
-        <h3 className="font-bold text-pink-800 mb-2">💡 Don't see your error code?</h3>
-        <p className="text-pink-700 text-sm">
+      <div className="mt-8 bg-[#F5FAF3] border border-[#B8C9A9] rounded-xl p-6">
+        <h3 className="font-bold text-[#6B7F5E] mb-2">💡 Don't see your error code?</h3>
+        <p className="text-[#6B7F5E] text-sm">
           Cricut uses different error formats across devices and versions. If you see an error
           message (not a code), try our{" "}
           <Link href="/troubleshoot" className="font-medium underline">

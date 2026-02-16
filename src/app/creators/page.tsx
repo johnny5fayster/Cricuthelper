@@ -80,11 +80,11 @@ const creators: Creator[] = [
 
 export default function CreatorsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+    <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/" className="text-pink-500 hover:underline">← Home</Link>
+          <Link href="/" className="text-[#9CAF88] hover:underline">← Home</Link>
           <h1 className="text-4xl font-bold text-gray-900 mt-4">
             ❤️ Cricut Creators We Love
           </h1>
@@ -95,8 +95,8 @@ export default function CreatorsPage() {
         </div>
 
         {/* Note */}
-        <div className="bg-pink-50 border border-pink-200 rounded-xl p-4 mb-8">
-          <p className="text-pink-800">
+        <div className="bg-[#F5FAF3] border border-[#B8C9A9] rounded-xl p-4 mb-8">
+          <p className="text-[#6B7F5E]">
             <strong>Note:</strong> We're not affiliated with these creators — we just think they're awesome! 
             These are independent recommendations based on content quality and helpfulness to the community.
           </p>
@@ -110,12 +110,12 @@ export default function CreatorsPage() {
               className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow"
             >
               <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shrink-0">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#D4A5A5] to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shrink-0">
                   {creator.name.charAt(0)}
                 </div>
                 <div className="flex-1">
                   <h2 className="text-xl font-bold text-gray-900">{creator.name}</h2>
-                  <p className="text-pink-600 text-sm">{creator.handle}</p>
+                  <p className="text-[#9CAF88] text-sm">{creator.handle}</p>
                   <span className="inline-block mt-1 text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">
                     {creator.specialty}
                   </span>
@@ -152,7 +152,7 @@ export default function CreatorsPage() {
                     href={creator.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm bg-pink-100 text-pink-700 px-3 py-1.5 rounded-full hover:bg-pink-200 transition-colors"
+                    className="inline-flex items-center gap-1 text-sm bg-[#F5E6E6] text-[#6B7F5E] px-3 py-1.5 rounded-full hover:bg-[#D4A5A5] transition-colors"
                   >
                     📷 Instagram
                   </a>
@@ -173,7 +173,7 @@ export default function CreatorsPage() {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-8 text-center text-white">
+        <div className="mt-12 bg-gradient-to-r from-[#9CAF88] to-purple-500 rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-4">Know a Creator We Should Feature?</h2>
           <p className="mb-6 opacity-90">
             We're always looking for amazing Cricut creators to highlight. 
@@ -181,7 +181,7 @@ export default function CreatorsPage() {
           </p>
           <a 
             href="mailto:hello@cricuthelper.com?subject=Creator Suggestion"
-            className="inline-block bg-white text-pink-600 px-6 py-3 rounded-full font-semibold hover:bg-pink-50 transition-colors"
+            className="inline-block bg-white text-[#9CAF88] px-6 py-3 rounded-full font-semibold hover:bg-[#F5FAF3] transition-colors"
           >
             Suggest a Creator
           </a>
@@ -191,13 +191,13 @@ export default function CreatorsPage() {
         <div className="mt-8 text-center">
           <p className="text-gray-600 mb-4">Looking for help with your Cricut?</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/guides" className="text-pink-600 hover:underline">
+            <Link href="/guides" className="text-[#9CAF88] hover:underline">
               → Browse Our Guides
             </Link>
-            <Link href="/troubleshoot" className="text-pink-600 hover:underline">
+            <Link href="/troubleshoot" className="text-[#9CAF88] hover:underline">
               → Troubleshoot a Problem
             </Link>
-            <Link href="/materials" className="text-pink-600 hover:underline">
+            <Link href="/materials" className="text-[#9CAF88] hover:underline">
               → Material Settings
             </Link>
           </div>

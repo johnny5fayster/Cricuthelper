@@ -10,7 +10,7 @@ export function CommunityStats() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-8 text-white">
+    <div className="bg-gradient-to-r from-[#9CAF88] to-purple-500 rounded-2xl p-8 text-white">
       <h2 className="text-2xl font-bold text-center mb-8">
         Join the Community That Gets It Done
       </h2>
@@ -38,7 +38,7 @@ export function CommunityStats() {
         />
       </div>
 
-      <p className="text-center mt-8 text-pink-100">
+      <p className="text-center mt-8 text-white/80">
         Real help from real crafters. No subscription required.
       </p>
     </div>
@@ -50,7 +50,7 @@ function StatCard({ number, label, icon }: { number: string; label: string; icon
     <div className="text-center">
       <span className="text-3xl mb-2 block">{icon}</span>
       <div className="text-3xl md:text-4xl font-bold mb-1">{number}</div>
-      <div className="text-pink-100 text-sm">{label}</div>
+      <div className="text-white/80 text-sm">{label}</div>
     </div>
   );
 }

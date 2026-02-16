@@ -94,11 +94,11 @@ export default function HowToMakeStickersCricutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
-      <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+      <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
         <article className="max-w-4xl mx-auto px-4">
           <header className="mb-8">
             <div className="flex items-center gap-2 mb-4">
-              <Link href="/guides" className="text-pink-600 hover:text-pink-700">
+              <Link href="/guides" className="text-[#9CAF88] hover:text-[#6B7F5E]">
                 ← Back to Guides
               </Link>
             </div>
@@ -127,7 +127,7 @@ export default function HowToMakeStickersCricutPage() {
           {/* Table of Contents */}
           <nav className="bg-white rounded-xl shadow-lg p-6 mb-8">
             <h2 className="font-bold text-gray-900 mb-4">📋 In This Guide</h2>
-            <ul className="space-y-2 text-pink-600">
+            <ul className="space-y-2 text-[#9CAF88]">
               <li><a href="#overview" className="hover:underline">→ How Cricut Stickers Work (Print Then Cut)</a></li>
               <li><a href="#supplies" className="hover:underline">→ Best Sticker Supplies</a></li>
               <li><a href="#design" className="hover:underline">→ Creating Your Sticker Designs</a></li>
@@ -263,8 +263,8 @@ export default function HowToMakeStickersCricutPage() {
                   <li><strong>4.</strong> Select all elements and click "Flatten" — this is critical!</li>
                   <li><strong>5.</strong> "Flatten" converts your design to a single printable image</li>
                 </ol>
-                <div className="mt-4 bg-pink-50 border border-pink-200 rounded-lg p-4">
-                  <p className="text-pink-800 text-sm">
+                <div className="mt-4 bg-[#F5FAF3] border border-[#B8C9A9] rounded-lg p-4">
+                  <p className="text-[#6B7F5E] text-sm">
                     <strong>🎯 Pro tip:</strong> Add an offset (border) around your sticker for 
                     easier peeling. Select your design → Offset → set to 0.05-0.1 inches.
                   </p>
@@ -570,7 +570,7 @@ export default function HowToMakeStickersCricutPage() {
           </section>
 
           {/* Summary */}
-          <section className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-8 mb-8">
+          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Quick Reference
             </h2>
@@ -644,7 +644,7 @@ export default function HowToMakeStickersCricutPage() {
             </p>
             <Link
               href="/troubleshoot"
-              className="inline-block bg-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
+              className="inline-block bg-[#9CAF88] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#6B7F5E] transition-colors"
             >
               Start Troubleshooting →
             </Link>

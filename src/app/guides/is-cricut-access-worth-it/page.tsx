@@ -67,14 +67,14 @@ export default function CricutAccessGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Breadcrumb */}
           <nav className="text-sm mb-6">
             <ol className="flex items-center space-x-2 text-gray-500">
-              <li><Link href="/" className="hover:text-pink-600">Home</Link></li>
+              <li><Link href="/" className="hover:text-[#9CAF88]">Home</Link></li>
               <li>/</li>
-              <li><Link href="/guides" className="hover:text-pink-600">Guides</Link></li>
+              <li><Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link></li>
               <li>/</li>
               <li className="text-gray-900">Is Cricut Access Worth It?</li>
             </ol>
@@ -126,11 +126,11 @@ export default function CricutAccessGuide() {
           <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
             <h2 className="font-bold text-lg mb-4">📋 In This Guide</h2>
             <ul className="space-y-2 text-gray-700">
-              <li><a href="#what-is" className="text-pink-600 hover:underline">→ What is Cricut Access?</a></li>
-              <li><a href="#pricing" className="text-pink-600 hover:underline">→ Pricing breakdown</a></li>
-              <li><a href="#what-you-get" className="text-pink-600 hover:underline">→ What you actually get</a></li>
-              <li><a href="#alternatives" className="text-pink-600 hover:underline">→ Free alternatives</a></li>
-              <li><a href="#verdict" className="text-pink-600 hover:underline">→ Our verdict</a></li>
+              <li><a href="#what-is" className="text-[#9CAF88] hover:underline">→ What is Cricut Access?</a></li>
+              <li><a href="#pricing" className="text-[#9CAF88] hover:underline">→ Pricing breakdown</a></li>
+              <li><a href="#what-you-get" className="text-[#9CAF88] hover:underline">→ What you actually get</a></li>
+              <li><a href="#alternatives" className="text-[#9CAF88] hover:underline">→ Free alternatives</a></li>
+              <li><a href="#verdict" className="text-[#9CAF88] hover:underline">→ Our verdict</a></li>
             </ul>
           </div>
 
@@ -428,28 +428,28 @@ export default function CricutAccessGuide() {
             <div className="grid md:grid-cols-2 gap-4">
               <Link 
                 href="/guides/cricut-design-space-not-working"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Design Space Not Working</h3>
                 <p className="text-gray-600 text-sm mt-1">Troubleshoot the free software you'll use either way.</p>
               </Link>
               <Link 
                 href="/guides/cricut-not-cutting-vinyl"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Vinyl Cutting Problems</h3>
                 <p className="text-gray-600 text-sm mt-1">Fix cutting issues regardless of subscription status.</p>
               </Link>
               <Link 
                 href="/troubleshoot"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Troubleshooting Wizard</h3>
                 <p className="text-gray-600 text-sm mt-1">Diagnose any Cricut issue step by step.</p>
               </Link>
               <Link 
                 href="/materials"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Material Settings</h3>
                 <p className="text-gray-600 text-sm mt-1">Free settings database — no subscription needed.</p>

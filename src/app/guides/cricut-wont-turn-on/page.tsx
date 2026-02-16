@@ -59,14 +59,14 @@ export default function CricutWontTurnOnGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Breadcrumb */}
           <nav className="text-sm mb-6">
             <ol className="flex items-center space-x-2 text-gray-500">
-              <li><Link href="/" className="hover:text-pink-600">Home</Link></li>
+              <li><Link href="/" className="hover:text-[#9CAF88]">Home</Link></li>
               <li>/</li>
-              <li><Link href="/guides" className="hover:text-pink-600">Guides</Link></li>
+              <li><Link href="/guides" className="hover:text-[#9CAF88]">Guides</Link></li>
               <li>/</li>
               <li className="text-gray-900">Won't Turn On</li>
             </ol>
@@ -95,19 +95,19 @@ export default function CricutWontTurnOnGuide() {
             <ul className="space-y-2 text-gray-700">
               <li className="flex items-start gap-2">
                 <span className="font-bold text-red-600">→</span>
-                <span><strong>No lights at all?</strong> Power cord issue — <a href="#no-power" className="text-pink-600 underline">Jump to fixes</a></span>
+                <span><strong>No lights at all?</strong> Power cord issue — <a href="#no-power" className="text-[#9CAF88] underline">Jump to fixes</a></span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-red-600">→</span>
-                <span><strong>Solid red light?</strong> Firmware update needed — <a href="#red-light" className="text-pink-600 underline">Jump to fixes</a></span>
+                <span><strong>Solid red light?</strong> Firmware update needed — <a href="#red-light" className="text-[#9CAF88] underline">Jump to fixes</a></span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-red-600">→</span>
-                <span><strong>Blinking red light?</strong> Error state — <a href="#blinking-red" className="text-pink-600 underline">Jump to fixes</a></span>
+                <span><strong>Blinking red light?</strong> Error state — <a href="#blinking-red" className="text-[#9CAF88] underline">Jump to fixes</a></span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-red-600">→</span>
-                <span><strong>Turns on but won't connect?</strong> That's Bluetooth, not power — <a href="/guides/cricut-bluetooth-not-connecting" className="text-pink-600 underline">See Bluetooth guide</a></span>
+                <span><strong>Turns on but won't connect?</strong> That's Bluetooth, not power — <a href="/guides/cricut-bluetooth-not-connecting" className="text-[#9CAF88] underline">See Bluetooth guide</a></span>
               </li>
             </ul>
           </div>
@@ -124,9 +124,9 @@ export default function CricutWontTurnOnGuide() {
               </p>
 
               {/* Fix 1 */}
-              <div className="bg-white border-l-4 border-pink-500 pl-4 py-3 my-4">
+              <div className="bg-white border-l-4 border-[#9CAF88] pl-4 py-3 my-4">
                 <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                  <span className="bg-pink-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">1</span>
+                  <span className="bg-[#9CAF88] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">1</span>
                   Check the Power Cord Connection (Both Ends)
                 </h3>
                 <p className="text-gray-600 mt-2">
@@ -141,9 +141,9 @@ export default function CricutWontTurnOnGuide() {
               </div>
 
               {/* Fix 2 */}
-              <div className="bg-white border-l-4 border-pink-500 pl-4 py-3 my-4">
+              <div className="bg-white border-l-4 border-[#9CAF88] pl-4 py-3 my-4">
                 <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                  <span className="bg-pink-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">2</span>
+                  <span className="bg-[#9CAF88] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">2</span>
                   Try a Different Outlet
                 </h3>
                 <p className="text-gray-600 mt-2">
@@ -158,9 +158,9 @@ export default function CricutWontTurnOnGuide() {
               </div>
 
               {/* Fix 3 */}
-              <div className="bg-white border-l-4 border-pink-500 pl-4 py-3 my-4">
+              <div className="bg-white border-l-4 border-[#9CAF88] pl-4 py-3 my-4">
                 <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                  <span className="bg-pink-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">3</span>
+                  <span className="bg-[#9CAF88] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">3</span>
                   Bypass Power Strips
                 </h3>
                 <p className="text-gray-600 mt-2">
@@ -174,9 +174,9 @@ export default function CricutWontTurnOnGuide() {
               </div>
 
               {/* Fix 4 */}
-              <div className="bg-white border-l-4 border-pink-500 pl-4 py-3 my-4">
+              <div className="bg-white border-l-4 border-[#9CAF88] pl-4 py-3 my-4">
                 <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                  <span className="bg-pink-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">4</span>
+                  <span className="bg-[#9CAF88] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">4</span>
                   Test the Power Adapter
                 </h3>
                 <p className="text-gray-600 mt-2">
@@ -191,9 +191,9 @@ export default function CricutWontTurnOnGuide() {
               </div>
 
               {/* Fix 5 */}
-              <div className="bg-white border-l-4 border-pink-500 pl-4 py-3 my-4">
+              <div className="bg-white border-l-4 border-[#9CAF88] pl-4 py-3 my-4">
                 <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                  <span className="bg-pink-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">5</span>
+                  <span className="bg-[#9CAF88] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">5</span>
                   Wait After a Power Surge
                 </h3>
                 <p className="text-gray-600 mt-2">
@@ -400,28 +400,28 @@ export default function CricutWontTurnOnGuide() {
             <div className="grid md:grid-cols-2 gap-4">
               <Link 
                 href="/guides/cricut-bluetooth-not-connecting"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Bluetooth Not Connecting</h3>
                 <p className="text-gray-600 text-sm mt-1">If your Cricut turns on but won't connect.</p>
               </Link>
               <Link 
                 href="/guides/cricut-design-space-not-working"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Design Space Not Working</h3>
                 <p className="text-gray-600 text-sm mt-1">Software issues that might look like power problems.</p>
               </Link>
               <Link 
                 href="/troubleshoot"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Troubleshooting Wizard</h3>
                 <p className="text-gray-600 text-sm mt-1">Diagnose any Cricut issue step by step.</p>
               </Link>
               <Link 
                 href="/error-codes"
-                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-pink-300 hover:shadow-md transition-all"
+                className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-[#9CAF88] hover:shadow-md transition-all"
               >
                 <h3 className="font-bold text-gray-900">Error Code Lookup</h3>
                 <p className="text-gray-600 text-sm mt-1">Decode error messages and lights.</p>

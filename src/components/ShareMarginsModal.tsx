@@ -134,7 +134,7 @@ export default function ShareMarginsModal({ isOpen, onClose, data }: ShareMargin
                   onClick={() => setPrivacyLevel(option.value)}
                   className={`w-full p-3 rounded-xl border-2 text-left transition-all ${
                     privacyLevel === option.value
-                      ? "border-pink-500 bg-pink-50"
+                      ? "border-[#9CAF88] bg-[#F5FAF3]"
                       : "border-gray-200 hover:border-gray-300"
                   }`}
                 >
@@ -142,7 +142,7 @@ export default function ShareMarginsModal({ isOpen, onClose, data }: ShareMargin
                     <div
                       className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                         privacyLevel === option.value
-                          ? "border-pink-500 bg-pink-500"
+                          ? "border-[#9CAF88] bg-[#9CAF88]"
                           : "border-gray-300"
                       }`}
                     >
@@ -168,7 +168,7 @@ export default function ShareMarginsModal({ isOpen, onClose, data }: ShareMargin
             <select
               value={selectedMessage}
               onChange={(e) => setSelectedMessage(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:border-pink-400 outline-none text-sm"
+              className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:border-[#9CAF88] outline-none text-sm"
             >
               {SHARE_MESSAGES.map((msg) => (
                 <option key={msg} value={msg}>
@@ -199,7 +199,7 @@ export default function ShareMarginsModal({ isOpen, onClose, data }: ShareMargin
                 onClick={() => setShareFormat("image")}
                 className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                   shareFormat === "image"
-                    ? "bg-pink-500 text-white"
+                    ? "bg-[#9CAF88] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -209,7 +209,7 @@ export default function ShareMarginsModal({ isOpen, onClose, data }: ShareMargin
                 onClick={() => setShareFormat("text")}
                 className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                   shareFormat === "text"
-                    ? "bg-pink-500 text-white"
+                    ? "bg-[#9CAF88] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -230,7 +230,7 @@ export default function ShareMarginsModal({ isOpen, onClose, data }: ShareMargin
               <button
                 onClick={downloadImage}
                 disabled={downloading}
-                className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50"
+                className="w-full py-3 bg-gradient-to-r from-purple-500 to-[#6B7F5E] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50"
               >
                 {downloading ? "Generating..." : "📥 Download Image"}
               </button>
@@ -240,7 +240,7 @@ export default function ShareMarginsModal({ isOpen, onClose, data }: ShareMargin
                 className={`w-full py-3 font-semibold rounded-xl transition-all ${
                   copySuccess
                     ? "bg-green-500 text-white"
-                    : "bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90"
+                    : "bg-gradient-to-r from-purple-500 to-[#6B7F5E] text-white hover:opacity-90"
                 }`}
               >
                 {copySuccess ? "✓ Copied!" : "📋 Copy Text"}

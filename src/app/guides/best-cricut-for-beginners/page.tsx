@@ -71,11 +71,11 @@ export default function BestCricutForBeginnersPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
-      <main className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-12">
+      <main className="min-h-screen bg-gradient-to-b from-[#FAF8F5] to-white py-12">
         <article className="max-w-4xl mx-auto px-4">
           <header className="mb-8">
             <div className="flex items-center gap-2 mb-4">
-              <Link href="/guides" className="text-pink-600 hover:text-pink-700">
+              <Link href="/guides" className="text-[#9CAF88] hover:text-[#6B7F5E]">
                 ← Back to Guides
               </Link>
             </div>
@@ -93,9 +93,9 @@ export default function BestCricutForBeginnersPage() {
             </div>
           </header>
 
-          <div className="bg-pink-100 border-l-4 border-pink-500 p-4 mb-8 rounded-r-lg">
-            <p className="font-semibold text-pink-800">🎯 Quick Answer</p>
-            <p className="text-pink-700">
+          <div className="bg-[#F5E6E6] border-l-4 border-[#9CAF88] p-4 mb-8 rounded-r-lg">
+            <p className="font-semibold text-[#6B7F5E]">🎯 Quick Answer</p>
+            <p className="text-[#6B7F5E]">
               <strong>For most beginners: Cricut Explore 3</strong> (~$300). Best balance of 
               capability, price, and room to grow. Only consider Maker if you need fabric cutting.
             </p>
@@ -104,7 +104,7 @@ export default function BestCricutForBeginnersPage() {
           {/* Table of Contents */}
           <nav className="bg-white rounded-xl shadow-lg p-6 mb-8">
             <h2 className="font-bold text-gray-900 mb-4">📋 In This Guide</h2>
-            <ul className="space-y-2 text-pink-600">
+            <ul className="space-y-2 text-[#9CAF88]">
               <li><a href="#overview" className="hover:underline">→ All Cricut Machines at a Glance</a></li>
               <li><a href="#joy" className="hover:underline">→ Cricut Joy: The Compact One</a></li>
               <li><a href="#explore" className="hover:underline">→ Cricut Explore 3: The Sweet Spot</a></li>
@@ -126,7 +126,7 @@ export default function BestCricutForBeginnersPage() {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="bg-pink-100">
+                  <thead className="bg-[#F5E6E6]">
                     <tr>
                       <th className="px-4 py-3 text-left font-semibold">Machine</th>
                       <th className="px-4 py-3 text-left font-semibold">Price (2026)</th>
@@ -360,7 +360,7 @@ export default function BestCricutForBeginnersPage() {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="bg-pink-100">
+                  <thead className="bg-[#F5E6E6]">
                     <tr>
                       <th className="px-4 py-3 text-left font-semibold">Feature</th>
                       <th className="px-4 py-3 text-center font-semibold">Joy</th>
@@ -441,7 +441,7 @@ export default function BestCricutForBeginnersPage() {
                 <p className="text-gray-700 mb-2">
                   Pantry labels, bin labels, home decor signs
                 </p>
-                <p className="text-pink-600 font-medium">
+                <p className="text-[#9CAF88] font-medium">
                   → Cricut Joy or Explore 3 (Joy if you want compact)
                 </p>
               </div>
@@ -451,7 +451,7 @@ export default function BestCricutForBeginnersPage() {
                 <p className="text-gray-700 mb-2">
                   Custom shirts, hoodies, bags with iron-on vinyl
                 </p>
-                <p className="text-pink-600 font-medium">
+                <p className="text-[#9CAF88] font-medium">
                   → Cricut Explore 3 (best value for HTV work)
                 </p>
               </div>
@@ -461,7 +461,7 @@ export default function BestCricutForBeginnersPage() {
                 <p className="text-gray-700 mb-2">
                   Greeting cards, invitations, party decorations
                 </p>
-                <p className="text-pink-600 font-medium">
+                <p className="text-[#9CAF88] font-medium">
                   → Cricut Explore 3 (paper is its sweet spot)
                 </p>
               </div>
@@ -471,7 +471,7 @@ export default function BestCricutForBeginnersPage() {
                 <p className="text-gray-700 mb-2">
                   Cutting fabric for quilts, appliqué, sewing patterns
                 </p>
-                <p className="text-pink-600 font-medium">
+                <p className="text-[#9CAF88] font-medium">
                   → Cricut Maker 3 (Rotary blade is essential)
                 </p>
               </div>
@@ -481,7 +481,7 @@ export default function BestCricutForBeginnersPage() {
                 <p className="text-gray-700 mb-2">
                   Stickers, decals, custom products for sale
                 </p>
-                <p className="text-pink-600 font-medium">
+                <p className="text-[#9CAF88] font-medium">
                   → Cricut Explore 3 (start here, upgrade to Maker if needed)
                 </p>
               </div>
@@ -491,7 +491,7 @@ export default function BestCricutForBeginnersPage() {
                 <p className="text-gray-700 mb-2">
                   Not sure yet, want maximum flexibility
                 </p>
-                <p className="text-pink-600 font-medium">
+                <p className="text-[#9CAF88] font-medium">
                   → Cricut Maker 3 (if budget allows) or Explore 3 (better value)
                 </p>
               </div>
@@ -594,7 +594,7 @@ export default function BestCricutForBeginnersPage() {
           </section>
 
           {/* Final Recommendation */}
-          <section className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-8 mb-8">
+          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Our Final Recommendation
             </h2>
@@ -659,7 +659,7 @@ export default function BestCricutForBeginnersPage() {
             </p>
             <Link
               href="/troubleshoot"
-              className="inline-block bg-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-600 transition-colors"
+              className="inline-block bg-[#9CAF88] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#6B7F5E] transition-colors"
             >
               Start Troubleshooting →
             </Link>
