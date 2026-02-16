@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: "🐰 30 Cricut Easter Projects for Beginners",
+    description: "DIY bunnies, Easter eggs, spring decor, and festive crafts. Perfect for April 20!",
+    href: "/guides/cricut-easter-projects",
+    category: "Seasonal",
+    readTime: "15 min",
+    featured: true,
+  },
+  {
     title: "🍀 25 Cricut St. Patrick's Day Projects",
     description: "DIY shamrock crafts, lucky shirts, and green decor. Easy projects for March 17!",
     href: "/guides/cricut-st-patricks-day-projects",
