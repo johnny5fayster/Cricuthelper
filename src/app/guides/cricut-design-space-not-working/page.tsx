@@ -131,7 +131,7 @@ export default function DesignSpaceNotWorkingGuide() {
           </header>
 
           {/* Quick Fix Box */}
-          <div className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-xl p-6 mb-8 border-l-4 border-[#9CAF88]">
+          <div className="bg-gradient-to-r from-[#F5FAF3] to-purple-100 rounded-xl p-6 mb-8 border-l-4 border-[#9CAF88]">
             <h2 className="font-bold text-lg text-gray-900 mb-3">⚡ Quick Fixes (Try These First)</h2>
             <ol className="space-y-2 text-gray-700">
               <li className="flex items-start gap-2">

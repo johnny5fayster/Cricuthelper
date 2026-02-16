@@ -32,7 +32,7 @@ export function LiveQuestions() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-[#F5FAF3] to-[#F5E6E6] rounded-2xl p-6">
+    <div className="bg-gradient-to-r from-[#F5FAF3] to-[#F5FAF3] rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold text-gray-800">
           💬 What Crafters Are Asking

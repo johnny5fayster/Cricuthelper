@@ -227,7 +227,7 @@ function MaterialCard({ material, onClick }: { material: Material; onClick: () =
         <button onClick={onClick} className="flex-1 text-left">
           <div className="flex items-center gap-2">
             <h3 className="font-semibold text-gray-800">{material.name}</h3>
-            {material.popular && <span className="text-xs bg-[#F5E6E6] text-[#D4A5A5] px-2 py-0.5 rounded-full">Popular</span>}
+            {material.popular && <span className="text-xs bg-[#F5FAF3] text-[#C9A962] px-2 py-0.5 rounded-full">Popular</span>}
           </div>
           <p className="text-sm text-gray-500 mt-1">
             {material.brand} • {categoryLabels[material.category]}

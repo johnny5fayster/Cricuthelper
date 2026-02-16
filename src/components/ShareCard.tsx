@@ -124,7 +124,7 @@ export default function ShareCard({
         {/* Message */}
         <div className="text-center">
           <p className="text-sm font-medium text-gray-700 mb-3 italic">"{message}"</p>
-          <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] rounded-lg py-2 px-4">
+          <div className="bg-gradient-to-r from-purple-100 to-[#F5FAF3] rounded-lg py-2 px-4">
             <p className="text-xs text-purple-700 font-medium">
               Try it free → cricuthelper.com/profit-calculator
             </p>

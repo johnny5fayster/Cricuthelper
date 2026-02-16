@@ -20,7 +20,7 @@ export default function Home() {
           🎉 The Cricut community that actually helps
         </p>
         <h1 className="text-4xl md:text-5xl font-bold text-[#6B7F5E] mb-6 font-serif">
-          Get Unstuck Fast. <span className="text-[#D4A5A5]">For Free.</span>
+          Get Unstuck Fast. <span className="text-[#C9A962]">For Free.</span>
         </h1>
         <p className="text-xl text-[#3D3D3D] max-w-2xl mx-auto mb-8">
           Real answers from real crafters. No corporate scripts. No 15-minute YouTube videos. 
@@ -35,7 +35,7 @@ export default function Home() {
           </Link>
           <Link 
             href="/community" 
-            className="bg-white text-[#6B7F5E] border-2 border-[#9CAF88] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#F5E6E6] transition-all"
+            className="bg-white text-[#6B7F5E] border-2 border-[#9CAF88] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#F5FAF3] transition-all"
           >
             ✨ Join the Community
           </Link>
@@ -56,7 +56,7 @@ export default function Home() {
           title="Troubleshooting Wizard"
           description="Click through and find your fix in 60 seconds. Works for Maker, Explore, and Joy."
           href="/troubleshoot"
-          color="rose"
+          color="gold"
         />
         <FeatureCard
           emoji="📋"
@@ -70,7 +70,7 @@ export default function Home() {
           title="Heat Press Guide"
           description="Temperature and time for every HTV type. Plus why it's not sticking."
           href="/heat-press"
-          color="rose"
+          color="gold"
         />
       </section>
 
@@ -107,7 +107,7 @@ export default function Home() {
             </ul>
             <Link 
               href="/app"
-              className="inline-flex items-center gap-2 bg-white text-[#6B7F5E] px-6 py-3 rounded-full font-semibold hover:bg-[#F5E6E6] transition-all"
+              className="inline-flex items-center gap-2 bg-white text-[#6B7F5E] px-6 py-3 rounded-full font-semibold hover:bg-[#F5FAF3] transition-all"
             >
               Learn More
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -207,7 +207,7 @@ export default function Home() {
       </section>
 
       {/* Trust Section */}
-      <section className="text-center py-8 bg-[#F5E6E6] rounded-2xl">
+      <section className="text-center py-8 bg-[#F5FAF3] rounded-2xl">
         <p className="text-[#6B7F5E] mb-2">
           Made by crafters, for crafters 💕
         </p>
@@ -233,11 +233,10 @@ function FeatureCard({
   title: string; 
   description: string; 
   href: string;
-  color: "sage" | "rose" | "gold";
+  color: "sage" | "gold";
 }) {
   const colorClasses = {
     sage: "bg-[#F5FAF3] border-[#B8C9A9] hover:border-[#9CAF88] hover:shadow-[0_10px_40px_rgba(156,175,136,0.15)]",
-    rose: "bg-[#FDF5F5] border-[#E5C5C5] hover:border-[#D4A5A5] hover:shadow-[0_10px_40px_rgba(212,165,165,0.15)]",
     gold: "bg-[#FFFBF0] border-[#E5D4A1] hover:border-[#C9A962] hover:shadow-[0_10px_40px_rgba(201,169,98,0.15)]",
   };
 
@@ -254,7 +253,7 @@ function ProblemLink({ title, href }: { title: string; href: string }) {
   return (
     <Link 
       href={href} 
-      className="flex items-center gap-2 p-4 min-h-[44px] rounded-lg bg-[#FAF8F5] hover:bg-[#F5E6E6] transition-colors text-[#3D3D3D] hover:text-[#6B7F5E] border border-transparent hover:border-[#D4A5A5]"
+      className="flex items-center gap-2 p-4 min-h-[44px] rounded-lg bg-[#FAF8F5] hover:bg-[#F5FAF3] transition-colors text-[#3D3D3D] hover:text-[#6B7F5E] border border-transparent hover:border-[#C9A962]"
     >
       <span className="text-[#9CAF88]">→</span>
       {title}

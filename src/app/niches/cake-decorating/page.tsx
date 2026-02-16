@@ -112,7 +112,7 @@ export default function CakeDecoratingPage() {
         </section>
 
         {/* Troubleshooting */}
-        <section className="bg-[#F5E6E6] rounded-2xl p-8">
+        <section className="bg-[#F5FAF3] rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">🔧 Common Issues</h2>
           <div className="space-y-4">
             <div className="bg-white rounded-xl p-4">

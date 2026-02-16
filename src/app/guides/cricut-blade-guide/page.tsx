@@ -123,7 +123,7 @@ export default function CricutBladeGuidePage() {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="bg-[#F5E6E6]">
+                  <thead className="bg-[#F5FAF3]">
                     <tr>
                       <th className="px-4 py-3 text-left font-semibold">Blade</th>
                       <th className="px-4 py-3 text-left font-semibold">Best For</th>
@@ -456,7 +456,7 @@ export default function CricutBladeGuidePage() {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="bg-[#F5E6E6]">
+                  <thead className="bg-[#F5FAF3]">
                     <tr>
                       <th className="px-4 py-3 text-left font-semibold">Material</th>
                       <th className="px-4 py-3 text-left font-semibold">Blade</th>
@@ -641,7 +641,7 @@ export default function CricutBladeGuidePage() {
           </section>
 
           {/* Summary */}
-          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8 mb-8">
+          <section className="bg-gradient-to-r from-[#F5FAF3] to-purple-100 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Bottom Line
             </h2>

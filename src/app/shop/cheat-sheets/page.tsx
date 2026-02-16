@@ -30,7 +30,7 @@ export default function CheatSheetsPage() {
           {/* Product Images */}
           <div className="space-y-4">
             <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-[#B8C9A9]">
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#F5E6E6] to-purple-100 rounded-xl flex items-center justify-center">
+              <div className="aspect-[4/3] bg-gradient-to-br from-[#F5FAF3] to-purple-100 rounded-xl flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl mb-4">📋</div>
                   <div className="text-2xl font-bold text-gray-800">4 Cheat Sheets</div>

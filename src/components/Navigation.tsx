@@ -90,35 +90,35 @@ export function Navigation() {
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-[#B8C9A9] py-2 z-50">
                   <Link 
                     href="/heat-press" 
-                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5E6E6] hover:text-[#6B7F5E] transition-colors"
+                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5FAF3] hover:text-[#6B7F5E] transition-colors"
                     onClick={() => setMoreDropdownOpen(false)}
                   >
                     🔥 Heat Press
                   </Link>
                   <Link 
                     href="/app" 
-                    className="block px-4 py-2 text-[#D4A5A5] hover:bg-[#F5E6E6] hover:text-[#C08B8B] transition-colors font-semibold"
+                    className="block px-4 py-2 text-[#C9A962] hover:bg-[#F5FAF3] hover:text-[#B89A52] transition-colors font-semibold"
                     onClick={() => setMoreDropdownOpen(false)}
                   >
                     📱 CraftCalc App
                   </Link>
                   <Link 
                     href="/niches" 
-                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5E6E6] hover:text-[#6B7F5E] transition-colors"
+                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5FAF3] hover:text-[#6B7F5E] transition-colors"
                     onClick={() => setMoreDropdownOpen(false)}
                   >
                     🎯 Niches
                   </Link>
                   <Link 
                     href="/creators" 
-                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5E6E6] hover:text-[#6B7F5E] transition-colors"
+                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5FAF3] hover:text-[#6B7F5E] transition-colors"
                     onClick={() => setMoreDropdownOpen(false)}
                   >
                     ⭐ Creators
                   </Link>
                   <Link 
                     href="/guides/error-codes-reference" 
-                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5E6E6] hover:text-[#6B7F5E] transition-colors"
+                    className="block px-4 py-2 text-[#3D3D3D] hover:bg-[#F5FAF3] hover:text-[#6B7F5E] transition-colors"
                     onClick={() => setMoreDropdownOpen(false)}
                   >
                     ⚠️ Error Codes
@@ -140,14 +140,14 @@ export function Navigation() {
           <div className="md:hidden flex items-center gap-2">
             <button 
               onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2 rounded-lg hover:bg-[#F5E6E6]"
+              className="p-2 rounded-lg hover:bg-[#F5FAF3]"
               aria-label="Search"
             >
               🔍
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg hover:bg-[#F5E6E6]"
+              className="p-2 rounded-lg hover:bg-[#F5FAF3]"
             >
               <svg className="w-6 h-6 text-[#3D3D3D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (
@@ -202,7 +202,7 @@ export function Navigation() {
               <Link href="/profit-calculator" className="text-[#3D3D3D] hover:text-[#9CAF88] py-2 font-medium min-h-[44px] flex items-center">
                 💰 Profit Calculator
               </Link>
-              <Link href="/app" className="text-[#D4A5A5] hover:text-[#C08B8B] py-2 font-semibold min-h-[44px] flex items-center">
+              <Link href="/app" className="text-[#C9A962] hover:text-[#B89A52] py-2 font-semibold min-h-[44px] flex items-center">
                 📱 CraftCalc App
               </Link>
               <Link href="/niches" className="text-[#3D3D3D] hover:text-[#9CAF88] py-2 font-medium min-h-[44px] flex items-center">

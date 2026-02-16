@@ -373,7 +373,7 @@ function SearchResults() {
   }, [query]);
 
   const categoryColors: Record<string, string> = {
-    Guide: "bg-[#F5E6E6] text-[#6B7F5E]",
+    Guide: "bg-[#F5FAF3] text-[#6B7F5E]",
     Tool: "bg-blue-100 text-blue-700",
     Problem: "bg-yellow-100 text-yellow-700",
     Niche: "bg-green-100 text-green-700",
@@ -404,7 +404,7 @@ function SearchResults() {
                   <Link
                     key={term}
                     href={`/search?q=${encodeURIComponent(term)}`}
-                    className="px-3 py-1 bg-[#F5FAF3] text-[#9CAF88] rounded-full text-sm hover:bg-[#F5E6E6]"
+                    className="px-3 py-1 bg-[#F5FAF3] text-[#9CAF88] rounded-full text-sm hover:bg-[#F5FAF3]"
                   >
                     {term}
                   </Link>

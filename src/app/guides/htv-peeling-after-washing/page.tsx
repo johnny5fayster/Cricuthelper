@@ -96,7 +96,7 @@ export default function HTVPeelingAfterWashingPage() {
         </header>
 
         {/* Quick Fixes Box */}
-        <div className="bg-[#F5E6E6] rounded-2xl p-6 mb-10">
+        <div className="bg-[#F5FAF3] rounded-2xl p-6 mb-10">
           <h2 className="text-xl font-bold text-gray-900 mb-3">⚡ Try These First</h2>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-2">

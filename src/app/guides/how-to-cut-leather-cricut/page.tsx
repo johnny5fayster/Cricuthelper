@@ -112,7 +112,7 @@ export default function HowToCutLeatherCricutPage() {
             
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
               <table className="w-full text-sm">
-                <thead className="bg-[#F5E6E6]">
+                <thead className="bg-[#F5FAF3]">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold">Leather Type</th>
                     <th className="px-4 py-3 text-left font-semibold">Machine</th>
@@ -248,7 +248,7 @@ export default function HowToCutLeatherCricutPage() {
             
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <table className="w-full text-sm">
-                <thead className="bg-[#F5E6E6]">
+                <thead className="bg-[#F5FAF3]">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold">Material</th>
                     <th className="px-4 py-3 text-left font-semibold">Blade</th>
@@ -382,7 +382,7 @@ export default function HowToCutLeatherCricutPage() {
           </section>
 
           {/* Summary */}
-          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8 mb-8">
+          <section className="bg-gradient-to-r from-[#F5FAF3] to-purple-100 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Quick Reference</h2>
             <div className="grid md:grid-cols-2 gap-6 text-gray-700">
               <div>

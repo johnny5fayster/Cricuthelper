@@ -116,7 +116,7 @@ export default function ErrorCodesReferencePage() {
               <span>✂️</span>
               <span className="text-sm font-medium text-red-800">Cutting/Hardware (5-8xxx)</span>
             </a>
-            <a href="#subscription" className="flex items-center gap-2 p-3 bg-[#F5FAF3] rounded-lg hover:bg-[#F5E6E6] transition-colors">
+            <a href="#subscription" className="flex items-center gap-2 p-3 bg-[#F5FAF3] rounded-lg hover:bg-[#F5FAF3] transition-colors">
               <span>💳</span>
               <span className="text-sm font-medium text-[#6B7F5E]">Subscription (9xxx)</span>
             </a>
@@ -124,7 +124,7 @@ export default function ErrorCodesReferencePage() {
         </div>
 
         {/* Quick Answer Box for Featured Snippet */}
-        <div className="bg-[#F5E6E6] rounded-2xl p-6 mb-10">
+        <div className="bg-[#F5FAF3] rounded-2xl p-6 mb-10">
           <h2 className="text-xl font-bold text-gray-900 mb-3">⚡ Most Common Cricut Error Codes</h2>
           <table className="w-full text-sm">
             <thead>
@@ -952,7 +952,7 @@ export default function ErrorCodesReferencePage() {
           {/* Error 9001 */}
           <div className="bg-white rounded-xl border-2 border-[#B8C9A9] p-6 my-6 not-prose">
             <div className="flex items-center gap-3 mb-4">
-              <span className="bg-[#F5E6E6] text-[#6B7F5E] px-4 py-2 rounded-lg font-mono font-bold text-xl">9001</span>
+              <span className="bg-[#F5FAF3] text-[#6B7F5E] px-4 py-2 rounded-lg font-mono font-bold text-xl">9001</span>
               <h3 className="text-xl font-bold text-gray-900">Subscription/Access Error</h3>
             </div>
             <p className="text-gray-600 mb-4">Unable to access Cricut Access content or premium features.</p>
@@ -984,7 +984,7 @@ export default function ErrorCodesReferencePage() {
           {/* Error 9002 */}
           <div className="bg-white rounded-xl border-2 border-[#B8C9A9] p-6 my-6 not-prose">
             <div className="flex items-center gap-3 mb-4">
-              <span className="bg-[#F5E6E6] text-[#6B7F5E] px-4 py-2 rounded-lg font-mono font-bold text-xl">9002</span>
+              <span className="bg-[#F5FAF3] text-[#6B7F5E] px-4 py-2 rounded-lg font-mono font-bold text-xl">9002</span>
               <h3 className="text-xl font-bold text-gray-900">Content Not Available</h3>
             </div>
             <p className="text-gray-600 mb-4">The image or font you're trying to use is not available.</p>

@@ -110,7 +110,7 @@ export default function CreatorsPage() {
               className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow"
             >
               <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#D4A5A5] to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shrink-0">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#C9A962] to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shrink-0">
                   {creator.name.charAt(0)}
                 </div>
                 <div className="flex-1">
@@ -152,7 +152,7 @@ export default function CreatorsPage() {
                     href={creator.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm bg-[#F5E6E6] text-[#6B7F5E] px-3 py-1.5 rounded-full hover:bg-[#D4A5A5] transition-colors"
+                    className="inline-flex items-center gap-1 text-sm bg-[#F5FAF3] text-[#6B7F5E] px-3 py-1.5 rounded-full hover:bg-[#C9A962] transition-colors"
                   >
                     📷 Instagram
                   </a>

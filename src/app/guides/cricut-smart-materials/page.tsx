@@ -141,7 +141,7 @@ export default function CricutSmartMaterialsPage() {
             
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
               <table className="w-full text-sm">
-                <thead className="bg-[#F5E6E6]">
+                <thead className="bg-[#F5FAF3]">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold">Material</th>
                     <th className="px-4 py-3 text-left font-semibold">Width</th>
@@ -259,7 +259,7 @@ export default function CricutSmartMaterialsPage() {
             
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
               <table className="w-full text-sm">
-                <thead className="bg-[#F5E6E6]">
+                <thead className="bg-[#F5FAF3]">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold">Material</th>
                     <th className="px-4 py-3 text-left font-semibold">Regular Price</th>
@@ -360,7 +360,7 @@ export default function CricutSmartMaterialsPage() {
           </section>
 
           {/* Summary */}
-          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8 mb-8">
+          <section className="bg-gradient-to-r from-[#F5FAF3] to-purple-100 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Bottom Line</h2>
             <div className="text-gray-700 space-y-2">
               <p>• Smart Materials = same quality material + stiffer backing for matless cutting</p>

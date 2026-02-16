@@ -225,7 +225,7 @@ export default function GuidesPage() {
               >
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-semibold bg-[#F5E6E6] text-[#6B7F5E] px-2 py-1 rounded-full">
+                    <span className="text-xs font-semibold bg-[#F5FAF3] text-[#6B7F5E] px-2 py-1 rounded-full">
                       {guide.category}
                     </span>
                     <span className="text-xs text-gray-500">{guide.readTime} read</span>
@@ -260,7 +260,7 @@ export default function GuidesPage() {
         </section>
 
         {/* CTA */}
-        <section className="mt-12 bg-[#F5E6E6] rounded-2xl p-8 text-center">
+        <section className="mt-12 bg-[#F5FAF3] rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Need Help Right Now?
           </h2>

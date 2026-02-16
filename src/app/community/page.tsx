@@ -30,7 +30,7 @@ export default function CommunityPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">🌟 Recently Featured</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-[#D4A5A5] to-purple-200 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-br from-[#C9A962] to-purple-200 flex items-center justify-center">
                 <span className="text-6xl">🎨</span>
               </div>
               <div className="p-4">
@@ -168,7 +168,7 @@ export default function CommunityPage() {
         </section>
 
         {/* Why Submit */}
-        <section className="mt-12 bg-[#F5E6E6] rounded-2xl p-8">
+        <section className="mt-12 bg-[#F5FAF3] rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Get Featured?</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">

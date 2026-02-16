@@ -126,7 +126,7 @@ export default function ProblemsPage() {
                   <Link
                     key={problem.title}
                     href={`/troubleshoot?issue=${problem.slug}`}
-                    className="block p-4 rounded-xl bg-[#F5FAF3] hover:bg-[#F5E6E6] transition-colors border border-[#B8C9A9]"
+                    className="block p-4 rounded-xl bg-[#F5FAF3] hover:bg-[#F5FAF3] transition-colors border border-[#B8C9A9]"
                   >
                     <h3 className="font-semibold text-gray-900 mb-2">
                       {problem.title}
@@ -148,7 +148,7 @@ export default function ProblemsPage() {
           ))}
         </div>
 
-        <div className="mt-12 bg-[#F5E6E6] rounded-2xl p-8 text-center">
+        <div className="mt-12 bg-[#F5FAF3] rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Can't Find Your Problem?
           </h2>

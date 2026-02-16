@@ -570,7 +570,7 @@ export default function HowToMakeStickersCricutPage() {
           </section>
 
           {/* Summary */}
-          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8 mb-8">
+          <section className="bg-gradient-to-r from-[#F5FAF3] to-purple-100 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Quick Reference
             </h2>

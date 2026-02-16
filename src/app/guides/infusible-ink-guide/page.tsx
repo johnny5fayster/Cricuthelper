@@ -98,7 +98,7 @@ export default function InfusibleInkGuide() {
           </header>
 
           {/* What Is Box */}
-          <div className="bg-gradient-to-r from-[#F5E6E6] via-purple-100 to-orange-100 rounded-xl p-6 mb-8 border-l-4 border-[#9CAF88]">
+          <div className="bg-gradient-to-r from-[#F5FAF3] via-purple-100 to-orange-100 rounded-xl p-6 mb-8 border-l-4 border-[#9CAF88]">
             <h2 className="font-bold text-lg text-gray-900 mb-3">✨ What Is Infusible Ink?</h2>
             <p className="text-gray-700 mb-3">
               Unlike HTV that sits <em>on top</em> of fabric, Infusible Ink <strong>infuses INTO</strong> the 

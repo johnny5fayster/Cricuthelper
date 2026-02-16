@@ -98,7 +98,7 @@ export default function MakerVsExploreGuide() {
           </header>
 
           {/* Quick Answer Box */}
-          <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] rounded-xl p-6 mb-8 border-l-4 border-purple-500">
+          <div className="bg-gradient-to-r from-purple-100 to-[#F5FAF3] rounded-xl p-6 mb-8 border-l-4 border-purple-500">
             <h2 className="font-bold text-lg text-gray-900 mb-4">🎯 The 30-Second Answer</h2>
             <div className="space-y-3">
               <div className="flex items-start gap-3">

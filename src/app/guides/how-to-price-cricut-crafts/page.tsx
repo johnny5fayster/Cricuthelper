@@ -104,7 +104,7 @@ export default function HowToPriceCricutCraftsPage() {
               <span>Updated February 2026</span>
             </div>
             <div className="flex items-center gap-2 mt-4 text-sm">
-              <span className="bg-[#F5E6E6] text-[#6B7F5E] px-3 py-1 rounded-full">By Maya Chen</span>
+              <span className="bg-[#F5FAF3] text-[#6B7F5E] px-3 py-1 rounded-full">By Maya Chen</span>
               <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">With Keisha Williams</span>
             </div>
           </header>
@@ -183,7 +183,7 @@ export default function HowToPriceCricutCraftsPage() {
             </div>
 
             {/* Keisha's Take */}
-            <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] border-l-4 border-purple-500 p-6 rounded-r-xl mt-6">
+            <div className="bg-gradient-to-r from-purple-100 to-[#F5FAF3] border-l-4 border-purple-500 p-6 rounded-r-xl mt-6">
               <div className="flex items-start gap-3">
                 <span className="text-2xl">💜</span>
                 <div>
@@ -423,7 +423,7 @@ export default function HowToPriceCricutCraftsPage() {
               </div>
 
               {/* Keisha's Take */}
-              <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] border-l-4 border-purple-500 p-6 rounded-r-xl">
+              <div className="bg-gradient-to-r from-purple-100 to-[#F5FAF3] border-l-4 border-purple-500 p-6 rounded-r-xl">
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">💜</span>
                   <div>
@@ -677,7 +677,7 @@ export default function HowToPriceCricutCraftsPage() {
               </div>
 
               {/* Keisha's Take */}
-              <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] border-l-4 border-purple-500 p-6 rounded-r-xl">
+              <div className="bg-gradient-to-r from-purple-100 to-[#F5FAF3] border-l-4 border-purple-500 p-6 rounded-r-xl">
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">💜</span>
                   <div>
@@ -1048,7 +1048,7 @@ export default function HowToPriceCricutCraftsPage() {
             </div>
 
             {/* Keisha's Take */}
-            <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] border-l-4 border-purple-500 p-6 rounded-r-xl mt-8">
+            <div className="bg-gradient-to-r from-purple-100 to-[#F5FAF3] border-l-4 border-purple-500 p-6 rounded-r-xl mt-8">
               <div className="flex items-start gap-3">
                 <span className="text-2xl">💜</span>
                 <div>
@@ -1139,7 +1139,7 @@ export default function HowToPriceCricutCraftsPage() {
               </div>
 
               {/* Keisha's Take */}
-              <div className="bg-gradient-to-r from-purple-100 to-[#F5E6E6] border-l-4 border-purple-500 p-6 rounded-r-xl">
+              <div className="bg-gradient-to-r from-purple-100 to-[#F5FAF3] border-l-4 border-purple-500 p-6 rounded-r-xl">
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">💜</span>
                   <div>
@@ -1173,7 +1173,7 @@ export default function HowToPriceCricutCraftsPage() {
           </section>
 
           {/* Quick Reference */}
-          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8 mb-8">
+          <section className="bg-gradient-to-r from-[#F5FAF3] to-purple-100 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Quick Pricing Checklist
             </h2>

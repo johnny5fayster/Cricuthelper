@@ -228,7 +228,7 @@ export default function HolographicStickerPrintCutPage() {
 
               <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-[#9CAF88]">
                 <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                  <span className="bg-[#F5E6E6] text-[#6B7F5E] px-2 py-1 rounded text-sm">Method 2</span>
+                  <span className="bg-[#F5FAF3] text-[#6B7F5E] px-2 py-1 rounded text-sm">Method 2</span>
                   Print Then Overlay
                   <span className="text-xs text-[#9CAF88] ml-auto">⭐ RECOMMENDED</span>
                 </h3>
@@ -625,7 +625,7 @@ export default function HolographicStickerPrintCutPage() {
           {/* Quick Summary */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Quick Summary</h2>
-            <div className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-xl p-6">
+            <div className="bg-gradient-to-r from-[#F5FAF3] to-purple-100 rounded-xl p-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="font-bold text-gray-900 mb-3">The Problem:</h3>

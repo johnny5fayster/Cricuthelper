@@ -96,7 +96,7 @@ export default function NichesPage() {
           ))}
         </div>
 
-        <div className="mt-12 bg-[#F5E6E6] rounded-2xl p-8 text-center">
+        <div className="mt-12 bg-[#F5FAF3] rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Don't See Your Niche?
           </h2>

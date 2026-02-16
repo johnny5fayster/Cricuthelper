@@ -93,7 +93,7 @@ export default function BestCricutForBeginnersPage() {
             </div>
           </header>
 
-          <div className="bg-[#F5E6E6] border-l-4 border-[#9CAF88] p-4 mb-8 rounded-r-lg">
+          <div className="bg-[#F5FAF3] border-l-4 border-[#9CAF88] p-4 mb-8 rounded-r-lg">
             <p className="font-semibold text-[#6B7F5E]">🎯 Quick Answer</p>
             <p className="text-[#6B7F5E]">
               <strong>For most beginners: Cricut Explore 3</strong> (~$300). Best balance of 
@@ -126,7 +126,7 @@ export default function BestCricutForBeginnersPage() {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="bg-[#F5E6E6]">
+                  <thead className="bg-[#F5FAF3]">
                     <tr>
                       <th className="px-4 py-3 text-left font-semibold">Machine</th>
                       <th className="px-4 py-3 text-left font-semibold">Price (2026)</th>
@@ -360,7 +360,7 @@ export default function BestCricutForBeginnersPage() {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="bg-[#F5E6E6]">
+                  <thead className="bg-[#F5FAF3]">
                     <tr>
                       <th className="px-4 py-3 text-left font-semibold">Feature</th>
                       <th className="px-4 py-3 text-center font-semibold">Joy</th>
@@ -594,7 +594,7 @@ export default function BestCricutForBeginnersPage() {
           </section>
 
           {/* Final Recommendation */}
-          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8 mb-8">
+          <section className="bg-gradient-to-r from-[#F5FAF3] to-purple-100 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Our Final Recommendation
             </h2>

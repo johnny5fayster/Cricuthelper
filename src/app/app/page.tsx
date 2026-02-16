@@ -11,7 +11,7 @@ export default function CraftCalcPage() {
     <div className="space-y-16 py-8">
       {/* Hero */}
       <section className="text-center">
-        <span className="inline-block px-4 py-2 bg-[#F5E6E6] text-[#D4A5A5] rounded-full text-sm font-semibold mb-6">
+        <span className="inline-block px-4 py-2 bg-[#F5FAF3] text-[#C9A962] rounded-full text-sm font-semibold mb-6">
           📱 Coming Soon to iOS & Android
         </span>
         <h1 className="text-4xl md:text-6xl font-bold text-[#6B7F5E] mb-6 font-serif">
@@ -191,7 +191,7 @@ export default function CraftCalcPage() {
                 <span className="text-[#C9A962]">★</span> Refer a friend = 12 calcs/day
               </li>
             </ul>
-            <button className="w-full py-3 rounded-full border-2 border-[#9CAF88] text-[#6B7F5E] font-semibold hover:bg-[#F5E6E6] transition-colors">
+            <button className="w-full py-3 rounded-full border-2 border-[#9CAF88] text-[#6B7F5E] font-semibold hover:bg-[#F5FAF3] transition-colors">
               Get Started Free
             </button>
           </div>
@@ -221,7 +221,7 @@ export default function CraftCalcPage() {
                 <span className="text-[#C9A962]">✓</span> Priority support
               </li>
             </ul>
-            <button className="w-full py-3 rounded-full bg-white text-[#6B7F5E] font-semibold hover:bg-[#F5E6E6] transition-colors">
+            <button className="w-full py-3 rounded-full bg-white text-[#6B7F5E] font-semibold hover:bg-[#F5FAF3] transition-colors">
               Start Free Trial
             </button>
           </div>
@@ -229,7 +229,7 @@ export default function CraftCalcPage() {
       </section>
 
       {/* CTA */}
-      <section className="text-center bg-[#F5E6E6] rounded-2xl p-12">
+      <section className="text-center bg-[#F5FAF3] rounded-2xl p-12">
         <h2 className="text-3xl font-bold text-[#6B7F5E] mb-4 font-serif">
           Get Notified at Launch
         </h2>

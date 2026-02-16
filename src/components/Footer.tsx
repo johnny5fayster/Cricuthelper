@@ -49,7 +49,7 @@ export function Footer() {
             <h3 className="font-semibold text-[#6B7F5E] mb-4 font-serif text-lg">More</h3>
             <ul className="space-y-2">
               <li><Link href="/heat-press" className="text-[#3D3D3D] hover:text-[#9CAF88] transition-colors">Heat Press Guide</Link></li>
-              <li><Link href="/app" className="text-[#D4A5A5] hover:text-[#C08B8B] transition-colors font-medium">📱 CraftCalc App</Link></li>
+              <li><Link href="/app" className="text-[#C9A962] hover:text-[#B89A52] transition-colors font-medium">📱 CraftCalc App</Link></li>
               <li><Link href="/shop" className="text-[#3D3D3D] hover:text-[#9CAF88] transition-colors">Shop</Link></li>
               <li><Link href="/creators" className="text-[#3D3D3D] hover:text-[#9CAF88] transition-colors">Creators We Love</Link></li>
               <li><Link href="/niches" className="text-[#3D3D3D] hover:text-[#9CAF88] transition-colors">Project Niches</Link></li>

@@ -97,7 +97,7 @@ export default function Maker4ProblemsFixes() {
         </header>
 
         {/* Quick Jump Box */}
-        <div className="bg-[#F5E6E6] rounded-2xl p-6 mb-10">
+        <div className="bg-[#F5FAF3] rounded-2xl p-6 mb-10">
           <h2 className="text-xl font-bold text-gray-900 mb-3">🔧 Jump to Your Issue</h2>
           <div className="grid md:grid-cols-2 gap-2 text-gray-700">
             <a href="#scoring-wheel" className="flex items-center gap-2 hover:text-[#9CAF88]">
@@ -551,7 +551,7 @@ export default function Maker4ProblemsFixes() {
             <div className="overflow-x-auto">
               <table className="w-full my-6 text-sm">
                 <thead>
-                  <tr className="bg-[#F5E6E6]">
+                  <tr className="bg-[#F5FAF3]">
                     <th className="text-left p-3 border-b">Mat Type</th>
                     <th className="text-left p-3 border-b">Color</th>
                     <th className="text-left p-3 border-b">Best For</th>
@@ -737,7 +737,7 @@ export default function Maker4ProblemsFixes() {
           <hr className="my-10" />
 
           {/* Summary Box */}
-          <section className="bg-gradient-to-r from-[#F5E6E6] to-purple-100 rounded-2xl p-8">
+          <section className="bg-gradient-to-r from-[#F5FAF3] to-purple-100 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">🛠️ Quick Reference: Maker 4 Fixes</h2>
             <div className="grid md:grid-cols-2 gap-6 text-gray-700">
               <div>

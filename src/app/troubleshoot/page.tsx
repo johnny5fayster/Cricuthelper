@@ -164,7 +164,7 @@ function TroubleshootContent() {
             <ol className="space-y-2">
               {solution.steps.map((step, index) => (
                 <li key={index} className="flex gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F5E6E6] text-[#9CAF88] flex items-center justify-center text-sm font-medium">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F5FAF3] text-[#9CAF88] flex items-center justify-center text-sm font-medium">
                     {index + 1}
                   </span>
                   <span className="text-gray-700">{step}</span>

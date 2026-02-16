@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Brand Colors */
+  /* Brand Colors - Sage & Gold Palette */
   --sage: #9CAF88;
   --sage-dark: #6B7F5E;
   --sage-light: #B8C9A9;
-  --dusty-rose: #D4A5A5;
-  --dusty-rose-dark: #C08B8B;
-  --blush: #F5E6E6;
+  --sage-bg: #F5FAF3;
   --gold: #C9A962;
+  --gold-dark: #B89A52;
   --gold-light: #E5D4A1;
+  --gold-bg: #FFFBF0;
   --cream: #FAF8F5;
   --charcoal: #3D3D3D;
   
@@ -65,26 +65,25 @@ html {
 
 /* Selection color */
 ::selection {
-  background: var(--blush);
+  background: var(--gold-bg);
   color: var(--sage-dark);
 }
 
 /* Brand utility classes */
 .text-sage { color: var(--sage); }
 .text-sage-dark { color: var(--sage-dark); }
-.text-dusty-rose { color: var(--dusty-rose); }
 .text-gold { color: var(--gold); }
+.text-gold-dark { color: var(--gold-dark); }
 .text-charcoal { color: var(--charcoal); }
 
 .bg-sage { background-color: var(--sage); }
 .bg-sage-light { background-color: var(--sage-light); }
-.bg-dusty-rose { background-color: var(--dusty-rose); }
-.bg-blush { background-color: var(--blush); }
-.bg-cream { background-color: var(--cream); }
+.bg-sage-bg { background-color: var(--sage-bg); }
 .bg-gold { background-color: var(--gold); }
+.bg-gold-bg { background-color: var(--gold-bg); }
+.bg-cream { background-color: var(--cream); }
 
 .border-sage { border-color: var(--sage); }
-.border-dusty-rose { border-color: var(--dusty-rose); }
 .border-gold { border-color: var(--gold); }
 
 /* Hover states */
@@ -143,8 +142,8 @@ html {
   background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
 }
 
-.gradient-rose {
-  background: linear-gradient(135deg, var(--dusty-rose) 0%, var(--dusty-rose-dark) 100%);
+.gradient-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
 }
 
 /* Animations */
