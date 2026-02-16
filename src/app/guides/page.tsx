@@ -57,6 +57,22 @@ const guides = [
     featured: true,
   },
   {
+    title: "😤 Design Space Update Problems? 8 Fixes",
+    description: "Did an update just break everything? Fix crashes, slowdowns, and bugs caused by Cricut updates.",
+    href: "/guides/design-space-update-problems",
+    category: "Software",
+    readTime: "10 min",
+    featured: true,
+  },
+  {
+    title: "🎨 How to Match Vinyl Colors Accurately",
+    description: "Stop guessing at vinyl colors. Learn pro techniques for perfect matches every time.",
+    href: "/guides/vinyl-color-matching",
+    category: "Materials",
+    readTime: "12 min",
+    featured: true,
+  },
+  {
     title: "Cricut Design Space Not Working? 11 Fixes That Actually Work",
     description: "Design Space frozen, slow, or showing a blank screen? Fix loading issues, lag, crashes, and connection problems.",
     href: "/guides/cricut-design-space-not-working",
