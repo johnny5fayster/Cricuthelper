@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import CraftCalcCTA from "@/components/CraftCalcCTA";
 
 export default function CalculatorPage() {
   const [designWidth, setDesignWidth] = useState<string>("");
@@ -237,6 +238,9 @@ export default function CalculatorPage() {
           <li>• Save scraps for smaller projects!</li>
         </ul>
       </div>
+
+      {/* CraftCalc CTA */}
+      <CraftCalcCTA context="cut-calculator" />
     </div>
   );
 }

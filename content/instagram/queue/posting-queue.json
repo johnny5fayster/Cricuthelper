@@ -5,7 +5,9 @@
       "image": "/Users/johnny/Documents/Johnny/projects/cricut-app/cricuthelper/content/instagram/ready/post-001-prepress.jpg",
       "caption": "HTV not sticking? Try this 👆\n\nPre-pressing removes moisture that ruins adhesion.\n\n#cricut #cricuttips #htv #heatpress #craftlife #cricutmaker #cricutexplore #ironon #heattransfervinyl #cricutcrafts",
       "scheduledFor": "2026-02-16T10:00:00-05:00",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-02-17T10:35:00-05:00",
+      "notes": "Posted via Meta Business Suite. Instagram web upload was blocked ('Something went wrong'), but Business Suite worked perfectly."
     },
     {
       "id": "post-002",
@@ -29,5 +31,6 @@
       "status": "pending"
     }
   ],
-  "lastUpdated": "2026-02-15T11:20:00-05:00"
+  "lastUpdated": "2026-02-17T10:35:00-05:00",
+  "postingMethod": "Meta Business Suite (https://business.facebook.com/latest/home)"
 }

@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import CraftCalcCTA from "@/components/CraftCalcCTA";
 
 interface MaterialCost {
   name: string;
@@ -612,6 +613,11 @@ export default function AdvancedProfitCalculatorPage() {
             </ul>
           </div>
         </div>
+      </div>
+
+      {/* CraftCalc CTA - Compact for advanced page since there's already a lot of content */}
+      <div className="mt-8">
+        <CraftCalcCTA variant="compact" context="profit-calculator" />
       </div>
 
       {/* Save Modal (placeholder for subscription) */}

@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import ShareMarginsModal from "@/components/ShareMarginsModal";
+import CraftCalcCTA from "@/components/CraftCalcCTA";
 
 type Platform = "etsy" | "amazon" | "local" | "shopify" | "ebay" | "facebook";
 
@@ -225,6 +226,9 @@ export default function ProfitCalculatorPage() {
           Try Advanced Calculator →
         </Link>
       </div>
+
+      {/* CraftCalc CTA */}
+      <CraftCalcCTA context="profit-calculator" />
 
       {/* Share Modal */}
       <ShareMarginsModal
