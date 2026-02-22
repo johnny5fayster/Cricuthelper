@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
       <article className="max-w-3xl mx-auto px-4">
         <header className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
-          <p className="text-gray-600">Last updated: February 8, 2026</p>
+          <p className="text-gray-600">Last updated: February 22, 2026</p>
         </header>
 
         <div className="prose prose-slate max-w-none">
@@ -64,12 +64,37 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">CraftCalc Mobile App</h2>
+            <p className="text-gray-700 mb-4">
+              This section applies specifically to the CraftCalc mobile application.
+            </p>
+            
+            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Data Collected by the App</h3>
+            <ul className="text-gray-700 space-y-2">
+              <li><strong>Account information:</strong> If you create an account, we store your email address and encrypted password via Supabase (our authentication provider).</li>
+              <li><strong>Guest mode:</strong> You can use the app without creating an account. No personal data is collected in guest mode.</li>
+              <li><strong>Calculations and preferences:</strong> Your craft calculations, saved templates, and app preferences are stored locally on your device and optionally synced to our servers if you have an account.</li>
+              <li><strong>Purchase information:</strong> If you subscribe to CraftCalc Pro, your purchase is processed by Apple through the App Store. We use RevenueCat to manage subscriptions but do not have access to your payment details.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Data NOT Collected</h3>
+            <ul className="text-gray-700 space-y-2">
+              <li>We do <strong>not</strong> collect location data</li>
+              <li>We do <strong>not</strong> access your contacts, photos, or other device data</li>
+              <li>We do <strong>not</strong> use advertising trackers in the app</li>
+              <li>We do <strong>not</strong> sell any data collected through the app</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Third-Party Services</h2>
             <p className="text-gray-700 mb-4">We use the following third-party services:</p>
             <ul className="text-gray-700 space-y-2">
               <li><strong>Google Analytics:</strong> For website analytics. <a href="https://policies.google.com/privacy" className="text-[#9CAF88] hover:underline" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a></li>
               <li><strong>Buttondown:</strong> For email newsletter delivery. <a href="https://buttondown.email/privacy" className="text-[#9CAF88] hover:underline" target="_blank" rel="noopener noreferrer">Buttondown's Privacy Policy</a></li>
               <li><strong>Vercel:</strong> For website hosting. <a href="https://vercel.com/legal/privacy-policy" className="text-[#9CAF88] hover:underline" target="_blank" rel="noopener noreferrer">Vercel's Privacy Policy</a></li>
+              <li><strong>Supabase:</strong> For app authentication and data storage. <a href="https://supabase.com/privacy" className="text-[#9CAF88] hover:underline" target="_blank" rel="noopener noreferrer">Supabase's Privacy Policy</a></li>
+              <li><strong>RevenueCat:</strong> For subscription management. <a href="https://www.revenuecat.com/privacy" className="text-[#9CAF88] hover:underline" target="_blank" rel="noopener noreferrer">RevenueCat's Privacy Policy</a></li>
             </ul>
           </section>
 
