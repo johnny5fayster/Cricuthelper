@@ -105,6 +105,14 @@ const guides = [
     featured: false,
   },
   {
+    title: "🔵 Cricut Bluetooth Not Working? Complete Troubleshooting Guide",
+    description: "Fix Bluetooth on every Cricut model and every device. Covers Maker, Explore, Joy, Joy Xtra with Windows, Mac, iOS, and Android solutions.",
+    href: "/guides/cricut-bluetooth-troubleshooting",
+    category: "Troubleshooting",
+    readTime: "15 min",
+    featured: true,
+  },
+  {
     title: "Cricut Bluetooth Not Connecting? 8 Fixes That Actually Work",
     description: "Cricut won't connect? Step-by-step solutions for Windows, Mac, iPhone, iPad, and Android.",
     href: "/guides/cricut-bluetooth-not-connecting",
