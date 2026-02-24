@@ -66,7 +66,7 @@ const howToSteps = [
 export default function HTVLayeringGuidePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-sage-50 to-white">
-      <FAQSchema data={faqData} />
+      <FAQSchema faqs={faqData} />
       <HowToSchema 
         name="How to Layer HTV (Heat Transfer Vinyl)"
         description="Step-by-step guide to layering multiple colors of iron-on vinyl for professional multi-color designs."
