@@ -21,6 +21,10 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cricuthelper.com'),
+  alternates: {
+    canonical: './',
+  },
   title: {
     default: "CricutHelper - Free Troubleshooting & Material Settings for Cricut",
     template: "%s | CricutHelper",

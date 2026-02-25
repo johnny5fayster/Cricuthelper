@@ -9,6 +9,30 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: "Complete Cricut Machine Comparison Guide [2026]",
+    description: "Every Cricut machine compared side-by-side. Joy vs Explore vs Maker — find the perfect machine for your projects and budget.",
+    href: "/guides/cricut-machine-comparison",
+    category: "Buying Guide",
+    readTime: "20 min",
+    featured: true,
+  },
+  {
+    title: "HTV Layering Guide: How to Layer Iron-On Vinyl Like a Pro",
+    description: "Master HTV layering with the correct order, temperatures, and techniques for flawless multi-color designs.",
+    href: "/guides/htv-layering-guide",
+    category: "Tutorial",
+    readTime: "18 min",
+    featured: true,
+  },
+  {
+    title: "Advanced Vinyl Application Techniques for Cricut",
+    description: "Go beyond basics with wet application, complex curves, textured surfaces, and pro finishing techniques.",
+    href: "/guides/advanced-vinyl-application-techniques",
+    category: "Tutorial",
+    readTime: "22 min",
+    featured: true,
+  },
+  {
     title: "🐰 30 Cricut Easter Projects for Beginners",
     description: "DIY bunnies, Easter eggs, spring decor, and festive crafts. Perfect for April 20!",
     href: "/guides/cricut-easter-projects",
