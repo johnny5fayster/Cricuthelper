@@ -177,6 +177,14 @@ const guides = [
     featured: false,
   },
   {
+    title: "How to Cut Thick Cardstock & Heavy Materials with Cricut",
+    description: "Master cutting 65lb+ cardstock, chipboard, and balsa wood. Blade selection, pressure settings, multi-pass technique, and troubleshooting.",
+    href: "/guides/cutting-thick-cardstock-cricut",
+    category: "Materials",
+    readTime: "15 min",
+    featured: false,
+  },
+  {
     title: "Cricut Won't Turn On? 8 Fixes for Power Problems",
     description: "No lights? Red light? Step-by-step troubleshooting for all power issues on Explore, Maker, and Joy.",
     href: "/guides/cricut-wont-turn-on",
