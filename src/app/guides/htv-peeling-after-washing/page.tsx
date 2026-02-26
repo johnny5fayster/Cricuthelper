@@ -133,6 +133,7 @@ export default function HTVPeelingAfterWashingPage() {
             <li><strong>Washing too soon</strong> — adhesive hadn't fully cured</li>
             <li><strong>Fabric softener</strong> — breaks down the adhesive over time</li>
             <li><strong>Wrong HTV for fabric type</strong> — polyester needs low-temp HTV</li>
+            <li><strong>Poor cut quality</strong> — if your <Link href="/guides/cricut-not-cutting-vinyl" className="text-[#9CAF88] hover:underline">Cricut isn't cutting vinyl properly</Link>, edges won't seal well</li>
           </ul>
           <p>
             Let's fix each one.
@@ -366,7 +367,7 @@ export default function HTVPeelingAfterWashingPage() {
           </p>
           <ul>
             <li>Glitter HTV</li>
-            <li>Layered designs</li>
+            <li>Layered designs (see our <Link href="/guides/htv-layering-guide" className="text-[#9CAF88] hover:underline">HTV layering guide</Link> for best practices)</li>
             <li>Intricate cuts with small pieces</li>
             <li>High-wash items (work uniforms, kids' clothes)</li>
           </ul>
@@ -590,6 +591,14 @@ export default function HTVPeelingAfterWashingPage() {
             <Link href="/troubleshoot" className="block p-4 bg-white rounded-xl shadow hover:shadow-md transition-shadow">
               <h3 className="font-semibold text-gray-900">Interactive Troubleshooting Wizard</h3>
               <p className="text-gray-600 text-sm mt-1">Step-by-step diagnosis for any problem</p>
+            </Link>
+            <Link href="/guides/how-to-weed-vinyl" className="block p-4 bg-white rounded-xl shadow hover:shadow-md transition-shadow">
+              <h3 className="font-semibold text-gray-900">How to Weed Vinyl Like a Pro</h3>
+              <p className="text-gray-600 text-sm mt-1">Clean weeding = better HTV results</p>
+            </Link>
+            <Link href="/guides/htv-layering-guide" className="block p-4 bg-white rounded-xl shadow hover:shadow-md transition-shadow">
+              <h3 className="font-semibold text-gray-900">HTV Layering Guide</h3>
+              <p className="text-gray-600 text-sm mt-1">Multi-color designs without peeling</p>
             </Link>
           </div>
         </section>

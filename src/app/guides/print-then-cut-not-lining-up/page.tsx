@@ -199,7 +199,7 @@ export default function PrintThenCutNotLiningUpPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Fix #2: Calibrate Your Machine</h2>
             <p className="text-gray-700 mb-4">
               Calibration teaches your Cricut exactly where its sensor is in relation to where its blade cuts. 
-              Even small misalignments matter—and they can drift over time.
+              Even small misalignments matter—and they can drift over time. We have a <Link href="/guides/how-to-calibrate-cricut" className="text-[#9CAF88] hover:underline">full calibration walkthrough</Link> if you need more detail.
             </p>
             
             <h3 className="text-xl font-semibold text-gray-900 mb-3">How to Calibrate (Desktop):</h3>
@@ -243,7 +243,7 @@ export default function PrintThenCutNotLiningUpPage() {
             
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Paper Types That Work Well:</h3>
             <ul className="list-disc list-inside space-y-1 text-gray-700 mb-4">
-              <li>Matte sticker paper ✅</li>
+              <li>Matte sticker paper ✅ (see our <Link href="/guides/how-to-make-stickers-cricut" className="text-[#9CAF88] hover:underline">sticker-making guide</Link> for recommendations)</li>
               <li>Matte photo paper ✅</li>
               <li>Regular printer paper (for tests) ✅</li>
               <li>Matte cardstock ✅</li>

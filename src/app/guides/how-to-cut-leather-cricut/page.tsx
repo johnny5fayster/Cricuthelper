@@ -213,8 +213,8 @@ export default function HowToCutLeatherCricutPage() {
             
             <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 mb-6">
               <p className="text-purple-800">
-                <strong>⚠️ Maker Required:</strong> Genuine leather requires the Knife blade and 
-                Maker's Adaptive Tool System (10lb cutting force). Explore machines cannot cut real leather.
+                <strong>⚠️ Maker Required:</strong> Genuine leather requires the <Link href="/guides/cricut-blade-guide" className="text-[#9CAF88] hover:underline">Knife blade</Link> and 
+                Maker's Adaptive Tool System (10lb cutting force). Explore machines cannot cut real leather — see our <Link href="/guides/cricut-maker-vs-explore" className="text-[#9CAF88] hover:underline">Maker vs Explore comparison</Link> for details.
               </p>
             </div>
 

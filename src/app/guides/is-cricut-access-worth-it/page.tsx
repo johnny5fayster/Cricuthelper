@@ -234,7 +234,7 @@ export default function CricutAccessGuide() {
                   </h3>
                   <p className="text-gray-600 mt-2">
                     Complete project files with instructions — cards, boxes, home decor, etc. Great 
-                    for beginners who want step-by-step guidance.
+                    for beginners who want step-by-step guidance. Not sure which machine to start with? See our <Link href="/guides/best-cricut-for-beginners" className="text-[#9CAF88] hover:underline">best Cricut for beginners guide</Link>.
                   </p>
                 </div>
 

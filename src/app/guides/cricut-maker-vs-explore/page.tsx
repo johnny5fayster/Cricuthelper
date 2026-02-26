@@ -210,14 +210,14 @@ export default function MakerVsExploreGuide() {
               </p>
               <ul className="list-disc list-inside space-y-2 my-4">
                 <li><strong>Rotary Blade:</strong> Cuts fabric WITHOUT backing (cotton, denim, felt, silk)</li>
-                <li><strong>Knife Blade:</strong> Cuts thick materials (leather, basswood, chipboard, matboard)</li>
+                <li><strong>Knife Blade:</strong> Cuts thick materials (<Link href="/guides/how-to-cut-leather-cricut" className="text-[#9CAF88] hover:underline">leather</Link>, basswood, chipboard, matboard)</li>
                 <li><strong>Scoring Wheel:</strong> Creates crisp fold lines for cards and boxes</li>
                 <li><strong>Engraving Tip:</strong> Engraves metal, leather, acrylic</li>
                 <li><strong>Debossing Tip:</strong> Creates pressed designs in leather/paper</li>
               </ul>
               <p>
                 The Explore uses standard blades (fine point, deep point) which handle vinyl, iron-on, 
-                and cardstock beautifully — but can't do the specialty materials above.
+                and cardstock beautifully — but can't do the specialty materials above. Learn more about all the blade types in our <Link href="/guides/cricut-blade-guide" className="text-[#9CAF88] hover:underline">Cricut blade guide</Link>.
               </p>
 
               <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 my-6">

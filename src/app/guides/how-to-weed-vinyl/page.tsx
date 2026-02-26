@@ -405,14 +405,14 @@ export default function WeedingVinylGuide() {
                   <h3 className="font-bold text-gray-900">❌ Vinyl won't separate at all</h3>
                   <p className="text-gray-600">
                     <strong>Fix:</strong> Your blade isn't cutting deep enough. Increase pressure, 
-                    check blade sharpness, or do a second pass. The vinyl should lift cleanly along cut lines.
+                    check blade sharpness, or do a second pass. See our <Link href="/guides/cricut-blade-guide" className="text-[#9CAF88] hover:underline">complete blade guide</Link> if you're unsure which blade to use. The vinyl should lift cleanly along cut lines.
                   </p>
                 </div>
 
                 <div className="bg-gray-50 rounded-lg p-4">
                   <h3 className="font-bold text-gray-900">❌ Design lifts up with the excess</h3>
                   <p className="text-gray-600">
-                    <strong>Fix:</strong> Mat isn't sticky enough, or you're pulling at the wrong angle. 
+                    <strong>Fix:</strong> Mat isn't sticky enough (here's <Link href="/guides/cricut-mat-not-sticky" className="text-[#9CAF88] hover:underline">how to restore mat stickiness</Link>), or you're pulling at the wrong angle. 
                     Peel slowly at 45° and hold down pieces with tweezers. Or try reverse weeding.
                   </p>
                 </div>
@@ -501,7 +501,7 @@ export default function WeedingVinylGuide() {
                 <p className="text-purple-800">
                   <strong>💡 Pro tip:</strong> If you MUST use a thin font at small sizes, try it 
                   in HTV instead of adhesive vinyl. HTV is easier to weed because it's bonded to 
-                  a stable carrier sheet.
+                  a stable carrier sheet. Learn more in our <Link href="/guides/htv-layering-guide" className="text-[#9CAF88] hover:underline">HTV layering guide</Link>.
                 </p>
               </div>
             </section>

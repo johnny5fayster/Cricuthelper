@@ -256,6 +256,7 @@ export default function AdvancedVinylApplication() {
               
               <p className="text-gray-700 leading-relaxed mb-4">
                 Weeding is where precision matters most. A perfectly cut design can be ruined by improper weeding. 
+                If you're new to weeding, start with our <Link href="/guides/how-to-weed-vinyl" className="text-[#9CAF88] hover:underline">beginner weeding guide</Link> first. 
                 Advanced techniques help you handle intricate details without tearing your vinyl.
               </p>
 
@@ -308,7 +309,7 @@ export default function AdvancedVinylApplication() {
               <h2 className="text-2xl font-bold text-gray-900">Transfer Tape Mastery</h2>
               
               <p className="text-gray-700 leading-relaxed mb-4">
-                Transfer tape is the bridge between your weeded vinyl and the final surface. Choosing the right type 
+                Transfer tape is the bridge between your weeded vinyl and the final surface. If you need a primer on transfer tape basics, check our <Link href="/guides/how-to-use-transfer-tape" className="text-[#9CAF88] hover:underline">transfer tape guide</Link>. Choosing the right type 
                 and applying it correctly determines whether your vinyl sticks or fails.
               </p>
 

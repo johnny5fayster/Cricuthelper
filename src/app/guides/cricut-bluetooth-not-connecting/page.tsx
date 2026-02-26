@@ -347,7 +347,7 @@ export default function CricutBluetoothNotConnectingPage() {
 
           <h2 id="fix-8-reinstall">Fix #8: Reinstall Design Space</h2>
           <p>
-            If nothing else works, the Design Space installation itself may be corrupted. A clean reinstall 
+            If nothing else works, the Design Space installation itself may be corrupted. See our guide on <Link href="/guides/cricut-design-space-not-working" className="text-[#9CAF88] hover:underline">fixing Design Space issues</Link> for more troubleshooting. A clean reinstall 
             often fixes persistent connection issues.
           </p>
 
@@ -439,7 +439,7 @@ export default function CricutBluetoothNotConnectingPage() {
             Once you get connected, here's how to keep it working:
           </p>
           <ul>
-            <li><strong>Keep Design Space updated</strong> — Updates often fix Bluetooth bugs</li>
+            <li><strong>Keep Design Space updated</strong> — Updates often fix Bluetooth bugs (see <Link href="/guides/design-space-update-problems" className="text-[#9CAF88] hover:underline">fixing Design Space update issues</Link> if updates fail)</li>
             <li><strong>Update device OS</strong> — Operating system updates include Bluetooth improvements</li>
             <li><strong>Use USB for big projects</strong> — Avoid risking disconnection during complex cuts</li>
             <li><strong>Close Design Space when done</strong> — Don't leave it running in the background</li>

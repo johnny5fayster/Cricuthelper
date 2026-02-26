@@ -262,7 +262,7 @@ export default function InfusibleInkGuide() {
                     Weed Carefully
                   </h3>
                   <p className="text-gray-700 mt-2">
-                    Remove the excess material around your design. <strong>Don't touch the ink 
+                    Remove the excess material around your design using proper <Link href="/guides/how-to-weed-vinyl" className="text-[#9CAF88] hover:underline">weeding technique</Link>. <strong>Don't touch the ink 
                     side</strong> with bare fingers — oils from your skin can affect the transfer.
                   </p>
                 </div>

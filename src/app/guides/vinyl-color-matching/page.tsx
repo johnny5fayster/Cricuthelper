@@ -323,6 +323,14 @@ export default function VinylColorMatchingPage() {
                 <h3 className="font-bold text-gray-900">How to Use Transfer Tape</h3>
                 <p className="text-sm text-gray-600">Apply your perfectly matched vinyl</p>
               </Link>
+              <Link href="/guides/advanced-vinyl-application-techniques" className="block bg-white rounded-xl shadow p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-bold text-gray-900">Advanced Vinyl Application Techniques</h3>
+                <p className="text-sm text-gray-600">Master layering, curved surfaces, and more</p>
+              </Link>
+              <Link href="/guides/how-to-weed-vinyl" className="block bg-white rounded-xl shadow p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-bold text-gray-900">How to Weed Vinyl Like a Pro</h3>
+                <p className="text-sm text-gray-600">Perfect weeding techniques for clean results</p>
+              </Link>
             </div>
           </section>
 

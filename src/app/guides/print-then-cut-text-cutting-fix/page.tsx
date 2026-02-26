@@ -176,7 +176,8 @@ export default function PrintThenCutTextFix() {
               <h3 className="text-lg font-semibold text-red-400 mb-2">Mistake 4: Forgetting to include the background shape</h3>
               <p className="text-gray-300">
                 For stickers, you need a background shape for the cut line. If your image doesn't have a 
-                solid background, add a shape behind it, then select all three (shape + image + text) and flatten.
+                solid background, add a shape behind it, then select all three (shape + image + text) and flatten. 
+                See our <Link href="/guides/how-to-make-stickers-cricut" className="text-[#9CAF88] hover:underline">complete sticker-making guide</Link> for more details.
               </p>
             </div>
           </div>

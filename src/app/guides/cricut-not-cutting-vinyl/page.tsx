@@ -116,7 +116,7 @@ export default function CricutNotCuttingVinylPage() {
             When cuts aren't going through, it's almost always one of these issues:
           </p>
           <ul>
-            <li><strong>Dull blade</strong> — the #1 cause, responsible for about 60% of cutting problems</li>
+            <li><strong>Dull blade</strong> — the #1 cause, responsible for about 60% of cutting problems (see our <Link href="/guides/cricut-blade-guide" className="text-[#9CAF88] hover:underline">complete Cricut blade guide</Link>)</li>
             <li><strong>Wrong pressure settings</strong> — either too light, or material selected incorrectly</li>
             <li><strong>Material movement</strong> — vinyl sliding on a worn mat</li>
             <li><strong>Blade housing issues</strong> — debris blocking the blade or housing not seated properly</li>
@@ -217,7 +217,7 @@ export default function CricutNotCuttingVinylPage() {
           <h3>Signs Your Mat Has Lost Grip</h3>
           <ul>
             <li>Vinyl peels up at corners during cutting</li>
-            <li>Material slides when you load the mat</li>
+            <li>Material slides when you load the mat (here's our full guide on <Link href="/guides/cricut-mat-not-sticky" className="text-[#9CAF88] hover:underline">restoring mat stickiness</Link>)</li>
             <li>Cuts are wavy or misaligned</li>
             <li>The mat looks visibly dirty or dull</li>
           </ul>
@@ -305,7 +305,7 @@ export default function CricutNotCuttingVinylPage() {
           </ol>
           <p>
             Calibration helps with precision but won't fix a dull blade or low pressure. 
-            It's the last thing to try after checking everything else.
+            It's the last thing to try after checking everything else. For a detailed walkthrough, see our <Link href="/guides/how-to-calibrate-cricut" className="text-[#9CAF88] hover:underline">complete Cricut calibration guide</Link>.
           </p>
 
           <hr className="my-8" />

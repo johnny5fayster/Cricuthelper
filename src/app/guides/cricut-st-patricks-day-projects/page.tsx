@@ -208,7 +208,7 @@ export default function StPatricksDayProjectsPage() {
                 <span className="text-green-500 text-xl">✓</span>
                 <div>
                   <strong>Use multiple greens.</strong> Mix kelly green, emerald, lime, and forest green 
-                  for more visual interest. Monochrome looks flat.
+                  for more visual interest. Our <Link href="/guides/vinyl-color-matching" className="text-[#9CAF88] hover:underline">vinyl color matching guide</Link> helps you pick the right shades. Monochrome looks flat.
                 </div>
               </div>
               <div className="flex gap-3">
@@ -228,7 +228,7 @@ export default function StPatricksDayProjectsPage() {
               <div className="flex gap-3">
                 <span className="text-green-500 text-xl">✓</span>
                 <div>
-                  <strong>Test your settings.</strong> Green glitter vinyl can be tricky. Always 
+                  <strong>Test your settings.</strong> Green glitter vinyl can be tricky — if your <Link href="/guides/cricut-not-cutting-vinyl" className="text-[#9CAF88] hover:underline">Cricut isn't cutting through</Link>, adjust pressure. Always 
                   do a test cut before your main project.
                 </div>
               </div>

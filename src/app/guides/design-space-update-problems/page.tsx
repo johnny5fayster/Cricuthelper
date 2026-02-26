@@ -339,6 +339,14 @@ export default function DesignSpaceUpdateProblemsPage() {
                 <h3 className="font-bold text-gray-900">Bluetooth Not Connecting?</h3>
                 <p className="text-sm text-gray-600">Fix connection issues</p>
               </Link>
+              <Link href="/guides/error-codes-reference" className="block bg-white rounded-xl shadow p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-bold text-gray-900">Cricut Error Codes Reference</h3>
+                <p className="text-sm text-gray-600">Look up any error code</p>
+              </Link>
+              <Link href="/guides/cricut-wont-turn-on" className="block bg-white rounded-xl shadow p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-bold text-gray-900">Cricut Won't Turn On?</h3>
+                <p className="text-sm text-gray-600">Hardware troubleshooting steps</p>
+              </Link>
             </div>
           </section>
 

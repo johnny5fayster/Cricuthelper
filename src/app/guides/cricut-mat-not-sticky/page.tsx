@@ -422,7 +422,7 @@ export default function MatNotStickyGuide() {
                 Even with great care, mats don't last forever. It's time for a new one when:
               </p>
               <ul className="list-disc list-inside space-y-2 my-4">
-                <li><strong>Deep grooves or cuts</strong> — The blade has carved channels that affect cutting quality</li>
+                <li><strong>Deep grooves or cuts</strong> — The blade has carved channels that affect cutting quality (using the <Link href="/guides/cricut-blade-guide" className="text-[#9CAF88] hover:underline">right blade for each material</Link> helps prevent this)</li>
                 <li><strong>Warping</strong> — Mat won't lay flat anymore</li>
                 <li><strong>Cleaned 10+ times and resticked twice</strong> — Diminishing returns at this point</li>
                 <li><strong>Adhesive is completely gone</strong> — Some areas just won't hold anything</li>

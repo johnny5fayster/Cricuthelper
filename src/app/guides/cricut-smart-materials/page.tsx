@@ -236,7 +236,7 @@ export default function CricutSmartMaterialsPage() {
                 <li>
                   <strong>4. Cut as normal</strong>
                   <p className="text-gray-600 text-sm mt-1">
-                    The machine cuts at 2X speed (on 3-series machines). Weeding and application are the same.
+                    The machine cuts at 2X speed (on 3-series machines). <Link href="/guides/how-to-weed-vinyl" className="text-[#9CAF88] hover:underline">Weeding</Link> and application are the same.
                   </p>
                 </li>
               </ol>

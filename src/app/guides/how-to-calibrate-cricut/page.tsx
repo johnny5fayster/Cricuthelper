@@ -123,9 +123,9 @@ export default function HowToCalibrateCricutPage() {
               <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
                 <h3 className="font-bold text-yellow-800 mb-3">⚠️ Don't Calibrate For:</h3>
                 <ul className="text-yellow-700 space-y-2">
-                  <li>• Regular cutting issues (check blade first)</li>
-                  <li>• Vinyl not cutting through (pressure issue)</li>
-                  <li>• Mat problems (clean or replace mat)</li>
+                  <li>• Regular cutting issues (<Link href="/guides/cricut-blade-guide" className="text-[#9CAF88] hover:underline">check your blade first</Link>)</li>
+                  <li>• <Link href="/guides/cricut-not-cutting-vinyl" className="text-[#9CAF88] hover:underline">Vinyl not cutting through</Link> (pressure issue)</li>
+                  <li>• <Link href="/guides/cricut-mat-not-sticky" className="text-[#9CAF88] hover:underline">Mat problems</Link> (clean or replace mat)</li>
                   <li>• Before every project (not needed)</li>
                 </ul>
               </div>
